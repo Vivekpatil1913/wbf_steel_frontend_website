@@ -1,7 +1,7 @@
 /*  PROJECTS SECTION */
 .projects-section {
   background-color: #fff;
-  padding: 50px 50px;
+  padding: 30px 50px;
   font-family: "Outfit", sans-serif;
 }
 
@@ -76,16 +76,43 @@
   border-radius: 10px;
 }
 
+/* Image */
 .project-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
-/* hover zoom effect */
+/* Dark overlay — below text */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* darker overlay for contrast */
+  z-index: 2;
+}
+
+/* White title text above overlay */
+.card-title {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff !important; /* force white text */
+  z-index: 3; /* keep text above overlay */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  pointer-events: none; /* prevents blocking hover effect */
+}
+
+/* Hover zoom effect */
 .project-card:hover img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .card-title {
@@ -94,11 +121,11 @@
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  color: #fff;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-  z-index: 2;
+  color: #ffffff;
+  z-index: 3; /* ensure it's above overlay */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Make right images bright and clear */
@@ -106,7 +133,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.35); /* increased from 0.1 to 0.35 */
+  z-index: 2;
 }
 
 /* RESPONSIVE  */

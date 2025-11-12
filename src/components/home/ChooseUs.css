@@ -3,8 +3,23 @@
   background: #fff;
   padding: 40px 0 60px; 
   font-family: 'Outfit', sans-serif;
-  margin-top: -75px; 
+  margin-top: -65px; 
 }
+
+
+
+.why-section .why-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background-color: #cfcfcf;
+  height: 100%;
+  transform: translateX(50%);
+}
+
 
 /* each column box */
 .why-item {
@@ -93,6 +108,7 @@
 @media (max-width: 576px) {
   .why-item .icon i {
     font-size: 40px;
+  
   }
 
   .why-title {
@@ -108,4 +124,50 @@
   .why-section {
     padding: 30px 15px;
   }
+}
+
+/* --------- Equal-height vertical dividers for Why Choose Us --------- */
+/* Attach lines to the row so both dividers are always the same height */
+.why-section .row {
+  position: relative;          /* make row the reference for the two lines */
+  align-items: stretch !important; /* ensure columns are full equal-height */
+}
+
+/* Remove per-item divider if present (keeps it from interfering) */
+.why-section .why-item:not(:last-child)::after {
+  display: none !important;
+}
+
+/* Two vertical lines drawn on the row (one between col1 & col2, one between col2 & col3) */
+.why-section .row::before,
+.why-section .row::after {
+  content: "";
+  position: absolute;
+  top: 8%;             /* adjust top offset to match design */
+  bottom: 8%;          /* adjust bottom offset to match design */
+  width: 1px;
+  background-color: #cfcfcf;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* place lines at ~33.33% and ~66.66% across the row */
+.why-section .row::before {
+  left: 33.3333%;
+  transform: translateX(-50%);
+}
+.why-section .row::after {
+  left: 66.6666%;
+  transform: translateX(-50%);
+}
+
+/* hide the dividers on narrow screens (stacked layout) */
+@media (max-width: 992px) {
+  .why-section .row::before,
+  .why-section .row::after {
+    display: none;
+  }
+
+  /* keep existing small-screen behavior */
+  .why-item:not(:last-child)::after { display: none; }
 }

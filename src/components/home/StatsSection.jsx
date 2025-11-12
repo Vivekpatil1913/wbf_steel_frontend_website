@@ -1,13 +1,70 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./StatsSection.css";
 
 function StatsSection() {
+  const [stats, setStats] = useState({
+    experts: 0,
+    platforms: 0,
+    clients: 0,
+  });
+  const sectionRef = useRef(null);
+  const animationRef = useRef(null);
+
+  const targets = { experts: 118, platforms: 900, clients: 99 };
+  const duration = 2500; // total duration in ms
+  const frameRate = 15; // ~60fps
+  const steps = duration / frameRate;
+  const easeOutQuad = (t) => t * (2 - t);
+
+  const startAnimation = () => {
+    let currentStep = 0;
+    clearInterval(animationRef.current);
+    animationRef.current = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+
+      setStats({
+        experts: Math.floor(targets.experts * easeOutQuad(progress)),
+        platforms: Math.floor(targets.platforms * easeOutQuad(progress)),
+        clients: Math.floor(targets.clients * easeOutQuad(progress)),
+      });
+
+      if (progress >= 1) clearInterval(animationRef.current);
+    }, frameRate);
+  };
+
+  const resetStats = () => {
+    clearInterval(animationRef.current);
+    setStats({ experts: 0, platforms: 0, clients: 0 });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          startAnimation();
+        } else {
+          resetStats();
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% visible
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      clearInterval(animationRef.current);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="stats-section">
+    <section className="stats-section" ref={sectionRef}>
       <div className="container">
         <div className="stats-box">
           <div className="row align-items-center">
-            {/*  LEFT TEXT */}
+            {/* LEFT TEXT */}
             <div className="col-lg-4 col-md-12 text-lg-start text-center mb-4 mb-lg-0">
               <h2 className="stats-title">WBF Steel</h2>
               <p className="stats-subtitle">Detailing in Numbers</p>
@@ -16,7 +73,7 @@ function StatsSection() {
               </a>
             </div>
 
-            {/*  RIGHT STATS  */}
+            {/* RIGHT STATS */}
             <div className="col-lg-8 col-md-12">
               <div className="stats-grid">
                 {/* Row 1 */}
@@ -24,7 +81,7 @@ function StatsSection() {
                   <div className="stat-item">
                     <div className="stat-header">
                       <i className="bi bi-people-fill"></i>
-                      <h3>118 +</h3>
+                      <h3>{stats.experts} +</h3>
                     </div>
                     <p>EXPERT EMPLOYED</p>
                   </div>
@@ -34,7 +91,7 @@ function StatsSection() {
                   <div className="stat-item">
                     <div className="stat-header">
                       <i className="bi bi-clipboard-data"></i>
-                      <h3>900 +</h3>
+                      <h3>{stats.platforms} +</h3>
                     </div>
                     <p>WORK PLATFORMS</p>
                   </div>
@@ -45,7 +102,7 @@ function StatsSection() {
                   <div className="stat-item">
                     <div className="stat-header">
                       <i className="bi bi-globe"></i>
-                      <h3>99 +</h3>
+                      <h3>{stats.clients} +</h3>
                     </div>
                     <p>CLIENTS</p>
                   </div>

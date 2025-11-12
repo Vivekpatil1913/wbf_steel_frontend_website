@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -6,29 +6,56 @@ import "swiper/css/pagination";
 import "./Testimonials.css";
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Edward Glenn",
-      text: "WBF team did a fantastic project, they were quick, efficient and very professional.",
-    },
-    {
-      name: "Mark Tiner",
-      text: "I’ve been working with these guys for a long time and I can say that our projects are in the perfect hands.",
-    },
-    {
-      name: "Sarah Johnson",
-      text: "Excellent communication, on-time delivery, and great attention to detail. Highly recommended!",
-    },
-    {
-      name: "David Miller",
-      text: "They exceeded expectations. Every detail was taken care of efficiently and professionally.",
-    },
-  ];
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    // TODO: Replace this with your actual backend API call later
+    const fetchTestimonials = async () => {
+      try {
+        // Simulated API response
+        const data = [
+          {
+            name: "Edward Glenn",
+            text: "WBF team did a fantastic project, they were quick, efficient and very professional.",
+          },
+          {
+            name: "Mark Tiner",
+            text: "I’ve been working with these guys for a long time and I can say that our projects are in the perfect hands.",
+          },
+          {
+            name: "Sarah Johnson",
+            text: "Excellent communication, on-time delivery, and great attention to detail. Highly recommended!",
+          },
+          {
+            name: "David Miller",
+            text: "They exceeded expectations. Every detail was taken care of efficiently and professionally.",
+          },
+        ];
+
+        // Mimic delay to simulate fetching
+        setTimeout(() => setTestimonials(data), 500);
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  if (testimonials.length === 0) {
+    return (
+      <section className="testimonials-section">
+        <div className="testimonials-wrapper">
+          <p>Loading testimonials...</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="testimonials-section">
       <div className="testimonials-wrapper">
-        {/* LEFT STATIC */}
+        {/* LEFT STATIC PART */}
         <div className="testimonials-left">
           <h2 className="testimonials-title">TESTIMONIALS</h2>
           <p className="testimonials-quote">
@@ -38,7 +65,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* RIGHT CAROUSEL */}
+        {/* RIGHT DYNAMIC SWIPER */}
         <div className="testimonials-right">
           <Swiper
             modules={[Pagination, Autoplay]}

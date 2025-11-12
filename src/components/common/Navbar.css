@@ -1,4 +1,9 @@
-
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
 
 .top-infobar {
   background: #fff;
@@ -6,6 +11,11 @@
   font-family: 'Outfit', sans-serif;
   padding-top: 6px;
   padding-bottom: 6px;
+  position:sticky;
+  top: 0;
+  z-index: 1100; /* above content */
+  transition: all 0.4s ease-in-out;
+
   
 }
 
@@ -45,6 +55,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  margin-bottom: 10px;
 }
 
 .social-icons a {
@@ -56,7 +67,7 @@
   border-radius: 50%;
   background: #f0f0f0;
   transition: all 0.3s ease;
-  padding: 6px;
+  padding: 8px;
 }
 
 .social-icons a:hover {
@@ -69,6 +80,7 @@
   object-fit: contain;
 }
 
+
 /* ======= NAVBAR ======= */
 .main-navbar {
   background: linear-gradient(90deg, #0f4c8a, #022a64);
@@ -79,6 +91,10 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   box-shadow: none !important;
+    position: sticky;
+   /* same height as infobar */
+  z-index: 1090;
+  transition: top 0.4s ease-in-out;
 }
 
 .main-navbar .navbar-nav {
@@ -118,6 +134,13 @@
 .main-navbar .nav-link.active::after {
   width: 100%;
 }
+
+.nav-link.active,
+.menu-link.active {
+  color: #ffc107 !important; /* Yellow highlight */
+  font-weight: 700;
+}
+
 
 /* ======= RESPONSIVE ======= */
 @media (max-width: 1200px) {
@@ -194,3 +217,90 @@
     font-size: 16px;
   }
 }
+
+/* ======= MOBILE VIEW ONLY ======= */
+@media (max-width: 768px) {
+  /* Show only phone + email in infobar */
+  .top-infobar .left-logo,
+  .top-infobar .social-icons,
+  .top-infobar .info-item:nth-child(2) {
+    display: none !important;
+  }
+
+  .top-infobar .right-info {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Navbar shows only logo on left */
+  .main-navbar .navbar-collapse,
+  .main-navbar .navbar-nav {
+    display: none !important;
+  }
+
+  .main-navbar .navbar-mobile-logo {
+    display: block !important;
+    height: 55px;
+    object-fit: contain;
+  }
+
+  /* Navbar sticky for mobile */
+  .main-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+}
+
+/* ======= Default (Desktop) hide mobile logo ======= */
+.navbar-mobile-logo {
+  display: none;
+}
+
+/* ======= Hide Infobar on scroll ======= */
+.hide-infobar {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+
+/* ===== MOBILE NAVBAR LOGO ===== */
+.navbar-mobile-logo {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-mobile-logo {
+    display: block !important;
+    height: 45px;
+    object-fit: contain;
+  }
+
+   /* Keep navbar sticky on mobile */
+  .main-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Align logo to left side */
+  .main-navbar .container {
+    justify-content: flex-start !important;
+    display: flex;
+    align-items: center;
+    height: 55px;
+  }
+
+  /* Hide navbar-toggler icon fully */
+  .navbar-toggler {
+    display: none !important;
+  }
+   
+
+}
+

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./Footer.css";
 import logo from "../../../public/assets/images/logo.webp";
 import bg from "../../../public/assets/images/Footer.webp"; // your background image
@@ -46,21 +47,29 @@ function Footer() {
             <h4 className="footer-title mb-4">MENU</h4>
             <ul className="footer-menu">
               <li>
-                <a href="#" className="active-menu">
+                <NavLink to="/" className="menu-link">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#">About Us</a>
+                <NavLink to="/AboutUs" className="menu-link">
+                  About Us
+                </NavLink>
               </li>
               <li>
-                <a href="#">Projects</a>
+                <NavLink to="/Projects" className="menu-link">
+                  Services
+                </NavLink>
               </li>
               <li>
-                <a href="#">Careers</a>
+                <NavLink to="/Services" className="menu-link">
+                  Projects
+                </NavLink>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <NavLink to="/ContactUs" className="menu-link">
+                  Contact Us
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -68,7 +77,7 @@ function Footer() {
           {/* ===== RIGHT COLUMN ===== */}
           <div className="col-lg-4 col-md-4 text-lg-start text-center">
             <img src={logo} alt="WBF Logo" className="footer-logo mb-3" />
-        
+
             <p className="footer-desc">
               We have been increasing current standards in the matter of
               transmission impeccable building structures.

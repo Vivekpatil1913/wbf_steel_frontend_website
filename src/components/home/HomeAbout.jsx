@@ -15,7 +15,7 @@ const HomeAbout = () => {
             support and advice team always helps customers wholeheartedly and
             answers all customers' questions.
           </p>
-          <a href="#" className="learn-more">
+          <a href="AboutUs" className="learn-more">
             LEARN MORE <i className="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>

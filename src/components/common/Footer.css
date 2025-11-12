@@ -5,7 +5,9 @@
   position: relative;
   z-index: 0;
   overflow: hidden;
-  padding: 30px 80px 15px; /* balanced top/bottom and wide left-right */
+  padding: 30px 80px 15px;
+  
+  
 }
 
 .footer-section::before {
@@ -171,6 +173,13 @@
   color: #fff; /* keeps "Made With Passion..." in yellow */
   transition: color 0.3s ease;
 }
+
+.nav-link.active,
+.menu-link.active {
+  color: #ffc107 !important; /* Yellow highlight */
+  font-weight: 700;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
   .footer-section .row {

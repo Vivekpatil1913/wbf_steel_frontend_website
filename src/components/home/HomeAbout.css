@@ -6,15 +6,15 @@
 }
 
 .home-about-container {
-  width: 100%; /* increased full width */
-  max-width: 1400px; /* wider box */
+  width: 100%;
+  max-width: 1400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1.5px dashed black;
   border-radius: 35px;
   padding: 40px 70px;
-  gap: 60px; /*  more space between text and image */
+  gap: 60px;
 }
 
 .home-about-text {
@@ -31,7 +31,7 @@
 .home-about-text p {
   font-size: 24px;
   font-weight: 500;
-  color: #605A5A;
+  color: #605a5a;
   line-height: 1.6;
   margin-bottom: 30px;
   margin-top: -10px;
@@ -69,14 +69,42 @@
 
 .home-about-image img {
   width: 100%;
-  max-width: 500px; /* increased for larger image */
-  height: 500px; /* square shape */
+  max-width: 500px;
+  height: 500px;
   border-radius: 10px;
   object-fit: cover;
   border: 2px solid #ffcc00;
 }
 
-/*  Responsive Design */
+/*  ========= Responsive Design ========= */
+
+/* Large Tablets (≤1200px) */
+@media (max-width: 1200px) {
+  .home-about {
+    padding: 50px 60px;
+  }
+
+  .home-about-container {
+    padding: 35px 50px;
+    gap: 50px;
+  }
+
+  .home-about-text h2 {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+
+  .home-about-text p {
+    font-size: 20px;
+  }
+
+  .home-about-image img {
+    max-width: 420px;
+    height: 420px;
+  }
+}
+
+/* Tablets (≤992px) */
 @media (max-width: 992px) {
   .home-about-container {
     flex-direction: column;
@@ -93,6 +121,14 @@
     order: 2;
   }
 
+  .home-about-text h2 {
+    font-size: 30px;
+  }
+
+  .home-about-text p {
+    font-size: 18px;
+  }
+
   .home-about-image img {
     width: 90%;
     max-width: 350px;
@@ -100,22 +136,76 @@
   }
 }
 
-@media (max-width: 600px) {
-  .home-about-text h2 {
-    font-size: 24px;
-  }
-
-  .home-about-text p {
-    font-size: 15px;
+/* Mobile Landscape (≤768px) */
+@media (max-width: 768px) {
+  .home-about {
+    padding: 40px 20px;
   }
 
   .home-about-container {
     padding: 25px 20px;
+    gap: 25px;
+  }
+
+  .home-about-text h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .home-about-text p {
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .home-about-image img {
-    width: 100%;
-    max-width: 280px;
-    height: 280px;
+    max-width: 300px;
+    height: 300px;
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .home-about {
+    padding: 30px 15px;
+    margin-top: -355px;
+  }
+
+  .home-about-container {
+    padding: 20px 15px;
+    border-radius: 25px;
+    gap: 20px;
+  }
+
+  .home-about-text h2 {
+    font-size: 22px;
+  }
+
+  .home-about-text p {
+    font-size: 14px;
+  }
+
+  .learn-more {
+    font-size: 14px;
+  }
+
+  .home-about-image img {
+    max-width: 250px;
+    height: 250px;
+  }
+}
+
+/* Very Small Devices (≤360px) */
+@media (max-width: 360px) {
+  .home-about-text h2 {
+    font-size: 20px;
+  }
+
+  .home-about-text p {
+    font-size: 13px;
+  }
+
+  .home-about-image img {
+    max-width: 220px;
+    height: 220px;
   }
 }

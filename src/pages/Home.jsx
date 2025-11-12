@@ -8,6 +8,7 @@ import StatsSection from "../components/home/StatsSection";
 import Projects from "../components/home/Projects";
 import WorkPlatforms from "../components/home/WorkPlatforms";
 import Testimonials from "../components/home/Testimonials";
+import MapSection from "../components/common/MapSection";
 function Home() {
   return (
     <>
@@ -20,6 +21,7 @@ function Home() {
       <Projects />
       <WorkPlatforms/>
       <Testimonials/>
+      <MapSection />
       
     </>
   );

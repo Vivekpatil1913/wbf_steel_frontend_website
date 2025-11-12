@@ -4,6 +4,7 @@
   font-family: "Outfit", sans-serif;
   display: flex;
   justify-content: center;
+   margin-top: -90px;
 }
 
 .testimonials-wrapper {
@@ -40,10 +41,12 @@
 .testimonials-right {
   width: 100%;
   overflow: hidden;
+
 }
 
 .testimonial-swiper {
   width: 100%;
+ 
 }
 
 .testimonial-card {
@@ -79,6 +82,7 @@
 .swiper-pagination {
   margin-top: 30px;
   text-align: center;
+  display: none;
 }
 
 .swiper-pagination-bullet {
@@ -112,6 +116,9 @@
 }
 
 @media (max-width: 576px) {
+
+  
+
   .testimonials-title {
     font-size: 30px;
   }

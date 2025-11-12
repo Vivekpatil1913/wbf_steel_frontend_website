@@ -5,6 +5,7 @@
   font-family: "Outfit", sans-serif;
   display: flex;
   justify-content: center;
+   margin-top: -55px;
 }
 
 /*  MAIN BOX  */
@@ -113,6 +114,12 @@
 }
 
 @media (max-width: 768px) {
+  .work-platform-section {
+   margin-top: -80px;
+   
+  }
+
+
   .work-platform-content {
     flex-direction: column;
     text-align: center;
