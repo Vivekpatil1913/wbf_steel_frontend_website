@@ -1,0 +1,243 @@
+/* STATS SECTION  */
+.stats-section {
+  background-color: #EEF3F8;
+  padding: 7px 0;
+  margin-bottom: 50px;
+  font-family: "Outfit", sans-serif;
+}
+
+.stats-box {
+  background-color: #EEF3F8;
+  border-radius: 8px;
+  padding: 40px 80px;
+}
+
+/* LEFT TEXT BLOCK */
+.stats-title {
+  font-size: 55px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.stats-subtitle {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.get-in-touch {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+  transition: all 0.3s ease;
+}
+
+.get-in-touch:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT STATS  */
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Row (2 on top, 1 below) */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+
+/* For single centered item row */
+.stats-row.single {
+  justify-content: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+/* Icon + number inline */
+.stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.stat-header i {
+  font-size: 36px;
+  color: #000;
+}
+
+.stat-header h3 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+/* Description below */
+.stat-item p {
+  font-size: 18px;
+  color: #666;
+  font-weight: 600;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Vertical divider between top two items */
+.vertical-line {
+  width: 1px;
+  height: 60px;
+  background-color: #ccc;
+}
+
+/*  RESPONSIVE DESIGN  */
+
+/* Large screens (between 1200px–1400px) */
+@media (max-width: 1400px) {
+  .stats-box {
+    padding: 40px 60px;
+  }
+  .stats-title {
+    font-size: 48px;
+  }
+  .stats-subtitle {
+    font-size: 26px;
+  }
+}
+
+/* Medium devices (tablets, ≤992px) */
+@media (max-width: 992px) {
+  .stats-box {
+    padding: 40px 30px;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .stats-grid {
+    gap: 25px;
+  }
+
+  .stats-title,
+  .stats-subtitle,
+  .get-in-touch {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .get-in-touch {
+    justify-content: center;
+  }
+
+  .stats-title {
+    font-size: 42px;
+  }
+
+  .stats-subtitle {
+    font-size: 22px;
+  }
+
+  .get-in-touch {
+    font-size: 18px;
+  }
+
+  .stat-header i {
+    font-size: 32px;
+  }
+
+  .stat-header h3 {
+    font-size: 30px;
+  }
+
+  .stat-item p {
+    font-size: 16px;
+  }
+}
+
+/* Small devices (phones, ≤576px) */
+@media (max-width: 576px) {
+  .stats-section {
+    padding: 30px 0;
+  }
+
+  .stats-box {
+    padding: 25px 15px;
+  }
+
+  .stats-title {
+    font-size: 32px;
+  }
+
+  .stats-subtitle {
+    font-size: 18px;
+  }
+
+  .get-in-touch {
+    font-size: 16px;
+  }
+
+  .stats-row {
+    gap: 20px;
+  }
+
+  .stat-header i {
+    font-size: 26px;
+  }
+
+  .stat-header h3 {
+    font-size: 24px;
+  }
+
+  .stat-item p {
+    font-size: 14px;
+  }
+}
+
+/* Extra-small screens (≤400px) */
+@media (max-width: 400px) {
+  .stats-title {
+    font-size: 26px;
+  }
+
+  .stats-subtitle {
+    font-size: 16px;
+  }
+
+  .get-in-touch {
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .stat-header i {
+    font-size: 22px;
+  }
+
+  .stat-header h3 {
+    font-size: 22px;
+  }
+
+  .stat-item p {
+    font-size: 13px;
+  }
+}

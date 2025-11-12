@@ -1,0 +1,111 @@
+/* WHY CHOOSE US SECTION  */
+.why-section {
+  background: #fff;
+  padding: 40px 0 60px; 
+  font-family: 'Outfit', sans-serif;
+  margin-top: -75px; 
+}
+
+/* each column box */
+.why-item {
+  position: relative;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+/* equal height columns with vertical divider */
+.row {
+  align-items: stretch !important;
+}
+
+.why-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 0;
+  height: 90%; 
+  width: 1px;
+  background-color: #cfcfcf;
+}
+
+/* icons */
+.why-item .icon i {
+  font-size: 50px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+/* headings */
+.why-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* paragraph text */
+.why-text {
+  font-size: 18px;
+  color: #111;
+  line-height: 1.75;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* RESPONSIVE  */
+@media (max-width: 992px) {
+  .why-section {
+    padding: 40px 20px;
+  }
+
+  .why-item {
+    margin-bottom: 35px;
+    padding: 0 20px;
+  }
+
+  .why-item:not(:last-child)::after {
+    display: none; /* remove divider on small screens */
+    content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%; /* full height of column */
+  width: 1px;
+  background-color: #cfcfcf;
+
+  }
+
+  .why-title {
+    font-size: 20px;
+  }
+
+  .why-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-item .icon i {
+    font-size: 40px;
+  }
+
+  .why-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .why-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .why-section {
+    padding: 30px 15px;
+  }
+}
