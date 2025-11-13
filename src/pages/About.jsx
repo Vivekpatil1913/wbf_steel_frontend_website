@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import about_banner from '../../public/assets/about_img/Abpout_banner.png'
 import about_img1 from '../../public/assets/about_img/about_img1.png'
 import about_img2 from '../../public/assets/about_img/about_img2.png'
 import about_img3 from '../../public/assets/about_img/about_img3.png'
@@ -35,6 +36,7 @@ function About() {
 
     return (
         <>
+        <img src={about_banner} class="img-fluid " alt="..." width={'100%'}></img>
             <h3 className='text-center mt-2'><b>Company Overview</b></h3>
             <div className='paraAbout'>
                 <p>
