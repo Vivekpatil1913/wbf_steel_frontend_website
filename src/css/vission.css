@@ -14,9 +14,9 @@
 
 .card_vission {
     
-    background-color: #E5E5E5;
-    border-top-right-radius: 150px;
-    border-bottom-right-radius: 150px;
+    background-color: #E5E5E5 !important;
+    border-top-right-radius: 150px !important;
+    border-bottom-right-radius: 150px !important;
     border: 0;
 }
 
@@ -28,9 +28,9 @@
 
 .card_mission {
    
-    background-color:#0D1678;
-    border-top-left-radius: 150px;
-    border-bottom-left-radius: 150px;
+    background-color:#0D1678 !important;
+    border-top-left-radius: 150px !important;
+    border-bottom-left-radius: 150px !important;
     border: 0;
 }
 
@@ -75,7 +75,7 @@
 .card_name{
     color: #0D1678;
     font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-     font-size: 64px;
+     font-size: 40px;
     font-weight: 600;
 }
 

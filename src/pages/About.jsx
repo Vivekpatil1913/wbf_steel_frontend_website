@@ -10,12 +10,13 @@ import about_img2 from '../../public/assets/about_img/about_img2.png'
 import about_img3 from '../../public/assets/about_img/about_img3.png'
 
 import constrction_icons from '../../public/assets/about_img/constractionperson_img.png'
-import file_img  from '../../public/assets/about_img/exportFile_img.png'
+import file_img from '../../public/assets/about_img/exportFile_img.png'
 import export_global from '../../public/assets/about_img/globalIMg.png'
 
 import CountUp from 'react-countup';
 import VissionMission from './VissionMission';
 import FaqCom from './FaqCom';
+import Testimonials from './Testimonials';
 // import VissionMission from '../Vision_mission/VissionMission';
 // import FaqCom from '../FAQ/FaqCom';
 // import Testimonials from '../testimonials/Testimonials';
@@ -154,8 +155,11 @@ function About() {
                     </Col>
                 </Row>
             </Container>
-            <FaqCom/>
-            
+
+            <VissionMission />
+            <FaqCom />
+            <Testimonials/>
+
 
         </>
     )

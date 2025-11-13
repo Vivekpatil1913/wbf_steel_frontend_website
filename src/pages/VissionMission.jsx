@@ -23,7 +23,7 @@ function VissionMission() {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col lg={6} md={12} sm={12}>
+                      <Col lg={6} md={12} sm={12}>
                         <p className='card_name namecard'>MISSION</p>
                         <Card className='card_mission'>
                             <Card.Body>
@@ -45,3 +45,17 @@ function VissionMission() {
 export default VissionMission;
 
 
+{/* <Col lg={6} md={6} sm={12}>
+                        <p className='card_name namecard'>MISSION</p>
+                        <Card className='card_mission'>
+                            <Card.Body>
+                                <div className='missionpara d-flex align-items-center'>
+
+                                    <img src={mission_img} className="vision-image" alt="Vision" />
+                                    <p className='pl-3'>
+                                        We strive to build an ecosystem that fuels our clients’ growth through continuous improvement, integrity, reliability, responsibility, and passion in everything we do."
+                                    </p>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    </Col> */}

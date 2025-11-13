@@ -17,7 +17,7 @@ function FaqCom() {
                             architecto beatae vitae dicta sunt explicabo.
                         </p>
                         <div className="d-flex justify-content-center mb-5">
-                            <div className="progress" style={{ height: "5px", width: "80%" }}>
+                            <div className="progress" style={{ height: "5px", width: "50%" }}>
                                 <div
                                     className="progress-bar"
                                     role="progressbar"
@@ -31,135 +31,105 @@ function FaqCom() {
 
 
 
-                        <div className="accordion" id="accordionExample">
-                            <div className="card">
-                                <div className="card-header accordion_header" id="headingOne">
-                                    <h2 className="mb-0">
-                                        <button
-                                            className="btn  btn-block text-left"
-                                            type="button"
-                                            data-toggle="collapse"
-                                            data-target="#collapseOne"
-                                            aria-expanded="true"
-                                            aria-controls="collapseOne"
-                                        >
-                                            Is there free parking?
-                                        </button>
-                                    </h2>
-                                </div>
-
-                                <div
-                                    id="collapseOne"
-                                    className="collapse show"
-                                    aria-labelledby="headingOne"
-                                    data-parent="#accordionExample"
-                                >
-                                    <div className="card-body card_data">
-                                        No, cell phones aren’t permitted on the ropes and
-                                        trampoline areas due to safety reasons.
-                                        We do have a cell phone storage area to put them in or
-                                        you can get a locker to store your phone.
-                                    </div>
+                        <div id="accordionExample">
+                            {/* card1 */}
+                            <button
+                                className="btn btn_custom fixed_btn"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#collapseOne"
+                                aria-expanded="true"
+                                aria-controls="collapseOne"
+                            >
+                                Is there free parking?
+                            </button>
+                            <div
+                                className="collapse show"
+                                id="collapseOne"
+                                data-parent="#accordionExample"  // 👈 ensure it’s part of same group
+                            >
+                                <div className="card card-body card_data">
+                                    No, cell phones aren’t permitted on the ropes and trampoline areas due to safety reasons.
+                                    We do have a cell phone storage area to put them in or you can get a locker to store your phone.
                                 </div>
                             </div>
 
-                            <div className="card mt-3">
-                                <div className="card-header accordion_header" id="headingTwo">
-                                    <h2 className="mb-0">
-                                        <button
-                                            className="btn btn-link btn-block text-left collapsed"
-                                            type="button"
-                                            data-toggle="collapse"
-                                            data-target="#collapseTwo"
-                                            aria-expanded="false"
-                                            aria-controls="collapseTwo"
-                                        >
-                                            Can I bring my cell phone on the trampoline or ropes course?
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div
-                                    id="collapseTwo"
-                                    className="collapse"
-                                    aria-labelledby="headingTwo"
-                                    data-parent="#accordionExample"
-                                >
-                                    <div className="card-body card_data">
-                                        No, cell phones aren’t permitted on the ropes and
-                                        trampoline areas due to safety reasons.
-                                        We do have a cell phone storage area to put them in or
-                                        you can get a locker to store your phone.
-                                    </div>
-                                </div>
+                            {/* card2 */}
+                            <button
+                                className="btn btn_custom collapsed mt-3"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="collapseTwo"
+                            >
+                                Can I bring my cell phone on the trampoline or ropes course?
+                            </button>
+                            <div
+                                className="collapse"
+                                id="collapseTwo"
+                                data-parent="#accordionExample"  // 👈 same parent
+                            >
+                                <div className="card card-body card_data">
+
+                                    No, cell phones aren’t permitted on the ropes and
+                                    trampoline areas due to safety reasons.
+                                    We do have a cell phone storage area to put them in or
+                                    you can get a locker to store your phone.                                </div>
                             </div>
 
-                            <div className="card mt-3">
-                                <div className="card-header accordion_header" id="headingthree">
-                                    <h2 className="mb-0">
-                                        <button
-                                            className="btn btn-link btn-block text-left collapsed"
-                                            type="button"
-                                            data-toggle="collapse"
-                                            data-target="#collapsethree"
-                                            aria-expanded="false"
-                                            aria-controls="collapsethree"
-                                        >
-                                            Do you have a nursing station?
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div
-                                    id="collapsethree"
-                                    className="collapse"
-                                    aria-labelledby="headingthree"
-                                    data-parent="#accordionExample"
-                                >
-                                    <div className="card-body card_data">
-                                        No, cell phones aren’t permitted on the ropes and
-                                        trampoline areas due to safety reasons.
-                                        We do have a cell phone storage area to put them in or
-                                        you can get a locker to store your phone.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card mt-3 mb-3">
-                                <div className="card-header accordion_header" id="headingfour">
-                                    <h2 className="mb-0">
-                                        <button
-                                            className="btn btn-link btn-block text-left collapsed"
-                                            type="button"
-                                            data-toggle="collapse"
-                                            data-target="#collapsefour"
-                                            aria-expanded="false"
-                                            aria-controls="headingfour"
-                                        >
-                                            When should I arrive before my scheduled attraction?
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div
-                                    id="collapsefour"
-                                    className="collapse"
-                                    aria-labelledby="headingfour"
-                                    data-parent="#accordionExample"
-                                >
-                                    <div className="card-body card_data">
-                                        No, cell phones aren’t permitted on the ropes and
-                                        trampoline areas due to safety reasons.
-                                        We do have a cell phone storage area to put them in or
-                                        you can get a locker to store your phone.
-                                    </div>
-                                </div>
+                            {/* card3 */}
+                            <button
+                                className="btn btn_custom collapsed mt-3"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#collapsethree"
+                                aria-expanded="false"
+                                aria-controls="collapsethree"
+                            >
+                                Do you have a nursing station?
+                            </button>
+                            <div
+                                className="collapse"
+                                id="collapsethree"
+                                data-parent="#accordionExample"  // 👈 same parent
+                            >
+                                <div className="card card-body card_data">
+
+                                    No, cell phones aren’t permitted on the ropes and
+                                    trampoline areas due to safety reasons.
+                                    We do have a cell phone storage area to put them in or
+                                    you can get a locker to store your phone.                                </div>
                             </div>
 
+                            {/* card4 */}
+                            <button
+                                className="btn btn_custom collapsed mt-3"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#collapsefour"
+                                aria-expanded="false"
+                                aria-controls="collapsefour"
+                            >
+                                When should I arrive before my scheduled attraction?
+                            </button>
+                            <div
+                                className="collapse"
+                                id="collapsefour"
+                                data-parent="#accordionExample"  // 👈 same parent
+                            >
+                                <div className="card card-body card_data">
+                                    Comfortable athletic clothing and grip socks are recommended.
+                                </div>
+                            </div>
                         </div>
 
                     </Col>
 
-                  <Col lg={6} md={12} sm={12} className='mt-5 mb-3'>
+                    <Col lg={6} md={12} sm={12} className='mt-5 mb-3'>
                         <div className="card card_faq custom-triangle">
                             <div className="card-body mt-5 mb-5">
-                                <h3 className='title'>Request A Quote</h3>
+                                <h3 className='title_req'>Request A Quote</h3>
                                 <p className='parafaq mb-5'>
                                     Fill all information details to consult with us to
                                     get services from us

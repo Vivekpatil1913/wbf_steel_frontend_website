@@ -5,8 +5,19 @@
 .title {
     text-align: center;
     color: #0D1678;
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      font-family: "Outfit", sans-serif;
     font-size: 25px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.title_req{
+   text-align: center;
+    color: #0D1678;
+      font-family: "Outfit", sans-serif;
+    font-size: 48px;
     line-height: 1.5;
     letter-spacing: 0.01em;
     margin: 0 auto;
@@ -16,8 +27,8 @@
 .parafaq {
     text-align: center;             
     color: #8a8a8a;                
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;  
-    font-size: 16px;                 
+      font-family: "Outfit", sans-serif;
+    font-size: 20px;                 
     line-height: 1.5;               
     letter-spacing: 0.01em;          
     margin: 0 auto;                 
@@ -25,12 +36,66 @@
 }
 
 .card-header {
-    background-color: #055597;
+    background-color: #055597 !important;
     padding: 0; /* optional: remove default padding if needed */
 }
 .card{
     border: 0px;
+    background-color: #055597 ;
 }
+
+.btn_custom {
+  background-color: #055597;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 400;
+  width: 100%;
+  text-align: left !important;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: none !important;
+  outline: none !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Closed state (for normal buttons) */
+.btn_custom.collapsed {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Open state (active collapse) */
+.btn_custom:not(.collapsed) {
+  background-color: #055597 !important;
+  color: white !important;
+}
+
+/* Remove borders on click/focus */
+.btn_custom:focus,
+.btn_custom:active,
+.btn_custom:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* 🟦 Fixed first button always stays blue */
+.fixed_btn,
+.fixed_btn.collapsed,
+.fixed_btn:not(.collapsed) {
+  background-color: #055597 !important;
+  color: white !important;
+  border: none !important;
+}
+
 
 .card-header .btn {
     color: white;
@@ -40,22 +105,22 @@
     padding: 1rem 1.25rem; /* consistent padding */
     background: transparent;
     border: none;
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;  
+      font-family: "Outfit", sans-serif; 
     font-size: 16px;                 
     line-height: 1.5;               
     letter-spacing: 0.01em;          
     margin: 0 auto;                 
     font-weight: 400;               
 }
-.card_data{
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;  
-    font-size: 16px;      
+.card_data {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  border-radius: 0px;
 }
-
 /* First card header default style */
 .accordion .card:first-child .card-header {
     background-color: #055597 !important;
-    color: white;
+    color: white ;
 }
 
 /* First card header button text color */
@@ -65,8 +130,8 @@
 
 /* All other card headers default */
 .accordion .card:not(:first-child) .card-header {
-    background-color: #055597;
-    color: white;
+    background-color: #055597 !important;
+    color: white ;
     border-top: 1px solid #ddd;
 }
 
@@ -77,20 +142,20 @@
 
 /* Default all accordion header button styles */
 .accordion_header button {
-    background-color: white;
+    background-color: white  ;
     color: black;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Open (expanded) state: button without .collapsed class */
 .accordion_header button:not(.collapsed) {
-    background-color: #055597;
-    color: white;
+    background-color: #055597 !important ;
+    color: white ;
 }
 
 .accordion_header button:not(.collapsed) {
     background-color: #055597 !important;
-    color: white !important;
+    color: white ;
 }
 
 
@@ -110,7 +175,7 @@
   width: 100%;
   box-sizing: border-box;
   margin: 10px 0; /* vertical spacing */
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-family: "Outfit", sans-serif;
   font-size: 16px;
   color: #333;
   background-color: #fff;
@@ -129,7 +194,7 @@
   background-color: #0D1678;
   width: 150px;
   padding: 10px;
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+   font-family: "Outfit", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.01em;
