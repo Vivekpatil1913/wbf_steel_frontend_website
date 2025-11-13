@@ -1,5 +1,12 @@
+import React from 'react'
+
 function Projects() {
-  return <h1>About Page</h1>;
+  return (
+    <div>
+      <h1>Project Page</h1>
+    </div>
+  )
 }
 
-export default Projects;
+export default Projects
+
