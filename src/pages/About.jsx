@@ -38,6 +38,7 @@ function About() {
         <>
         <img src={about_banner} class="img-fluid " alt="..." width={'100%'}></img>
             <h3 className='text-center mt-2'><b>Company Overview</b></h3>
+           
             <div className='paraAbout'>
                 <p>
                     {

@@ -16,6 +16,8 @@ import services_card2 from '../../public/assets/services/service_card2_img.png'
 import service_card3 from '../../public/assets/services/services_card3_img.png'
 import Services_cards from '../components/service_page_cards_data/Services_cards';
 import Start_work_together from '../components/Work Together Com/Start_work_together';
+import OurExperience from '../components/our experience/OurExperience';
+import Service_Faqs from '../components/service_faqs/Service_Faqs';
 
 function Services() {
   return (
@@ -61,8 +63,10 @@ function Services() {
           </Col>
         </Row>
       </Container>
-      {/* <Services_cards/> */}
+      <Services_cards/>
       <Start_work_together/>
+      <OurExperience />
+      <Service_Faqs/>
 
 
     </>

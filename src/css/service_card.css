@@ -12,13 +12,23 @@
     padding-right: 28px !important;
 
 }
-
 .service_card1_headingstrature {
-    font-family: "Outfit", sans-serif;
-    color: white;
-    font-size: 40px;
-    padding-left: 27px;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-size: 40px;
+  padding-left: 27px;
+  text-align: left !important; /* default for mobile */
 }
+
+/* Desktop view - 992px and above */
+@media (min-width: 992px) {
+  .service_card1_headingstrature {
+    text-align: left !important;
+  }
+}
+
+
+
 
 .responsive-image {
     width: 100%;
@@ -96,6 +106,7 @@
 .colum_backcolor {
     background-color: black;
     color: white;
+    padding-left: 0px !important;
 }
 
 .row {
@@ -114,5 +125,5 @@
   color: white !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
+  justify-content: left !important;
 }

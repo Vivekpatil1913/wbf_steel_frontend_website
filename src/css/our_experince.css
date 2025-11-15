@@ -1,0 +1,58 @@
+.ourExperince_title {
+    text-align: center !important;
+    font-family: "Outfit", sans-serif !important;
+    font-size: 35px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+.expe1 {
+    background-color: #055597 !important;
+    color: white !important;
+    height: 96% !important;
+}
+
+.expe2 {
+    background-color: #FFC422 !important;
+    color: black !important;
+    height: 96% !important;
+}
+
+.card {
+    border: none !important;
+    border-radius: 0px !important;
+}
+
+/* To ensure equal column height */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+/* Ensure columns stretch to same height */
+.row>div[class*='col-'] {
+    /* display: flex !important; */
+    flex-direction: column !important;
+    justify-content: center !important;
+    /* align-items: center !important; */
+}
+
+@media (min-width: 992px) {
+    .col-xs-12.col-sm-12.col-md-3.col-lg-6.col-xl-3 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+.office-text {
+    display: block;
+    font-family: "Outfit", sans-serif !important;
+    font-size: 21px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+
+}
