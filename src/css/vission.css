@@ -1,0 +1,121 @@
+.vissionpara {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8a8a8a;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    font-weight: 400;
+    gap: 20px; 
+}
+
+.card_vission {
+    
+    background-color: #E5E5E5 !important;
+    border-top-right-radius: 150px !important;
+    border-bottom-right-radius: 150px !important;
+    border: 0;
+}
+
+.vision-image {
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.card_mission {
+   
+    background-color:#0D1678 !important;
+    border-top-left-radius: 150px !important;
+    border-bottom-left-radius: 150px !important;
+    border: 0;
+}
+
+.missionpara {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    font-weight: 400;
+    gap: 20px; 
+}
+
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-equal-height > .col, 
+.row-equal-height > div[class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_vission, .card_mission {
+    flex: 1 1 auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    
+  
+}
+
+.vissionpara, .missionpara {
+    flex-grow: 1;
+}
+
+.card_name{
+    color: #0D1678;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+     font-size: 40px;
+    font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+    .vissionpara, .missionpara {
+        font-size: 12px;
+       
+    }
+  
+    
+}
+@media (max-width: 480px) {
+    .vissionpara, .missionpara {
+        font-size: 13px;
+    }
+    .namecard{
+        text-align: end;
+    }
+    
+}
+@media (max-width: 767.98px) {
+    .row-equal-height {
+        flex-direction: column; 
+    }
+    .row-equal-height > .col {
+        display: block;
+    }
+    .card_vission, .card_mission {
+        height: auto; /* natural height on small devices */
+       
+    }
+  
+    
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .namecard {
+        text-align: right;
+        margin-left: 0; 
+    }
+}
+
+

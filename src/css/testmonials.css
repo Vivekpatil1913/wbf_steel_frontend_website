@@ -1,0 +1,123 @@
+/* Overall container */
+
+
+.heading_name {
+    font-family: "Outfit", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #055597;
+    margin-bottom: 20px;
+}
+
+.para_testimonial {
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+}
+
+/* Card styling */
+.testy_card{
+    background-color: #d9d9d96e !important;
+    border-radius: 12px !important;
+    padding: 25px 20px !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1) !important;
+    height: 100% !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+
+.card_title {
+    color: #997614;
+     font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card_data {
+     font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Slider spacing */
+.slider-card-wrapper {
+    padding: 10px;
+}
+
+/* Remove arrows */
+.slick-arrow {
+    display: none !important;
+}
+
+/* Desktop view adjustments */
+@media (max-width: 1200px) {
+    .testimonials-container {
+        padding: 40px 60px;
+    }
+
+    .card_title {
+        font-size: 26px;
+    }
+
+    .card_data {
+        font-size: 17px;
+    }
+}
+
+/* Tablet view adjustments */
+@media (max-width: 992px) {
+    .testimonials-container {
+        padding: 30px 40px;
+        text-align: center;
+    }
+
+    .heading_name {
+        font-size: 30px;
+    }
+
+    .para_testimonial {
+        font-size: 18px;
+    }
+
+    .card_title {
+        font-size: 24px;
+    }
+
+    .card_data {
+        font-size: 16px;
+    }
+}
+
+/* Mobile view adjustments */
+@media (max-width: 576px) {
+    .testimonials-container {
+        padding: 20px;
+    }
+
+    .heading_name {
+        font-size: 26px;
+    }
+
+    .para_testimonial {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card_title {
+        font-size: 22px;
+    }
+
+    .card_data {
+        font-size: 15px;
+    }
+
+    .slider-card-wrapper {
+        padding: 5px;
+    }
+}

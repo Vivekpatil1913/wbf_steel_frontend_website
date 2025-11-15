@@ -145,17 +145,17 @@ function Navbar() {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/AboutUs" className="nav-link">
+                  <NavLink to="/about" className="nav-link">
                     About Us
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/Services" className="nav-link">
+                  <NavLink to="/services" className="nav-link">
                     Services
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/Projects" className="nav-link">
+                  <NavLink to="/projects" className="nav-link">
                     Projects
                   </NavLink>
                 </li>

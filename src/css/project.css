@@ -1,0 +1,883 @@
+.head_project {
+  font-family: "Outfit", sans-serif;
+  font-weight: bolder;
+  /* font-size: 64px; */
+}
+
+#pills-tab {
+  display: flex;
+  justify-content: space-between;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+  font-family: "Outfit", sans-serif;
+
+}
+
+#pills-tab .nav-item {
+  flex: 1 1 0;
+  text-align: center;
+  margin: 0;
+  border-right: 1.5px solid #e0e0e0;
+  padding-left: 20px;
+  font-family: "Outfit", sans-serif;
+}
+
+#pills-tab .nav-item:last-child {
+  border-right: none;
+}
+
+
+#pills-tab .nav-link {
+  border: none;
+  border-radius: 0;
+  color: #333;
+  background: transparent;
+  font-weight: 500;
+  padding: 10px 0;
+  transition: background 0.2s, color 0.2s;
+
+
+}
+
+.nav-link {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+
+#pills-tab .nav-link.active {
+
+  color: #222;
+  font-weight: 700;
+  box-shadow: none;
+
+}
+
+.border-top-dashed-custom {
+  border-style: dashed !important;
+  border-width: 2px !important;
+  border-color: #7a7373 !important;
+
+}
+
+.work_proces_text {
+  font-size: 64px !important;
+  font-weight: 200 !important;
+  line-height: 1.3 !important;
+}
+
+.conactus_name {
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.para_conatc {
+  font-family: "Outfit", sans-serif;
+  font-size: 30px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  max-width: 90%;
+  font-weight: 100;
+
+}
+
+.get_in_touch {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.get_in_touch i {
+  margin-left: 8px;
+}
+
+
+@media (max-width: 992px) {
+
+  .work_proces_text {
+    font-size: 25px !important;
+
+  }
+
+  .conactus_name {
+    font-size: 20px;
+
+  }
+
+  .para_conatc {
+    font-size: 15px;
+
+
+  }
+
+  .get_in_touch {
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+
+/* -------------------
+   Mobile View (max-width: 576px)
+--------------------- */
+@media (max-width: 576px) {
+
+  .work_proces_text {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .conactus_name {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .para_conatc {
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .get_in_touch {
+    font-size: 15px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.our_experties {
+  background-color: transparent !important;
+  border: 1px solid black !important;
+}
+
+.para_experites {
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500px;
+}
+
+.imgbrand {
+  text-align: center !important;
+}
+
+.product_name {
+  font-family: "Outfit", sans-serif;
+
+  font-size: 20px;
+  font-weight: 500px;
+}
+
+.img_container {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  /* ✅ fixed height for all images */
+  border-radius: 10px;
+  /* optional */
+}
+
+.img_product {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  /* ✅ keeps image proportion without stretching */
+  transition: transform 0.3s ease-in-out;
+}
+
+.img_container:hover .img_product {
+  transform: scale(1.1);
+  /* ✅ zoom inside column */
+}
+
+
+.product2_buttom_card {
+  background-color: #EEF3F8 !important;
+  padding: 30px;
+
+}
+
+.border-right-column {
+  border-right: 2px solid #000;
+  /* vertical line */
+}
+
+/* Remove line in mobile view */
+@media (max-width: 768px) {
+  .border-right-column {
+    border-right: none;
+    border-bottom: 2px solid #000;
+    /* optional horizontal line for mobile */
+  }
+}
+
+.wbf_steel_name {
+  font-family: "Outfit", sans-serif;
+  font-size: 50px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 700 !important;
+}
+
+.Detailing_num {
+
+  font-family: "Outfit", sans-serif;
+  font-size: 30px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 200 !important;
+
+}
+
+.gettouch {
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 400 !important;
+}
+
+.workingpara {
+  font-family: "Outfit", sans-serif;
+  font-size: 64px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 200 !important;
+  padding-left: 50px;
+}
+
+.bold_work {
+  font-weight: 400 !important;
+}
+
+.para_card {
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 200 !important;
+  padding-left: 50px;
+
+
+}
+
+@media (max-width: 992px) {
+  .workingpara {
+    font-size: 48px;
+    padding-left: 30px;
+    margin-top: 10px;
+  }
+}
+
+/* For small tablets and large mobiles */
+@media (max-width: 768px) {
+  .workingpara {
+    font-size: 36px;
+    padding-left: 20px;
+    text-align: center;
+    /* optional for better mobile look */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  .workingpara {
+    font-size: 28px;
+    padding-left: 10px;
+    text-align: center;
+  }
+}
+
+
+/* Tablet view */
+@media (max-width: 992px) {
+  .para_card {
+    font-size: 20px;
+    padding-left: 30px;
+  }
+}
+
+/* Small tablets / large mobiles */
+@media (max-width: 768px) {
+  .para_card {
+    font-size: 18px;
+    padding-left: 20px;
+    text-align: center;
+    /* optional: center align for better readability */
+  }
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+  .para_card {
+    font-size: 16px;
+    padding-left: 10px;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .wbf_steel_name {
+    font-size: 42px;
+    padding-left: 30px;
+
+  }
+
+  .Detailing_num {
+    font-size: 26px;
+    padding-left: 30px;
+  }
+
+  .gettouch {
+    font-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 20p;
+
+  }
+}
+
+/* ✅ Small tablet / large mobile */
+@media (max-width: 768px) {
+  .wbf_steel_name {
+    font-size: 36px;
+    padding-left: 20px;
+    text-align: center;
+  }
+
+  .Detailing_num {
+    font-size: 22px;
+    padding-left: 20px;
+    text-align: center;
+  }
+
+  .gettouch {
+    font-size: 18px;
+    padding-left: 20px;
+    text-align: center;
+  }
+}
+
+/* ✅ Mobile view */
+@media (max-width: 576px) {
+  .wbf_steel_name {
+    font-size: 30px;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .Detailing_num {
+    font-size: 20px;
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .gettouch {
+    font-size: 16px;
+    padding-left: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.brands-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  /* Always 2 per row */
+  justify-content: center;
+  gap: 16px;
+  /* spacing between images */
+}
+
+.brand-img {
+  width: 45%;
+  /* 2 per row */
+  height: 120px;
+  /* bigger height for desktop */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: flex;
+  margin: 0 auto;
+  /* center alignment */
+}
+
+.brand-img:hover {
+  transform: scale(1.08);
+}
+
+@media (max-width: 992px) {
+  .brand-img {
+    width: 45%;
+    /* still 2 per row */
+    height: 90px;
+    /* medium size */
+  }
+}
+
+
+/* Mobile View */
+@media (max-width: 576px) {
+  .brand-img {
+    width: 48%;
+    /* perfect 2 per row */
+    height: 60px;
+    /* small and clean */
+    margin: 0 auto;
+    /* center image */
+  }
+}
+
+/* Tablet View */
+@media (min-width: 577px) and (max-width: 992px) {
+  .brand-img {
+    height: 65px;
+    /* medium for tablet */
+  }
+}
+
+.experties {
+  font-family: "Outfit", sans-serif;
+  font-size: 40px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 500 !important;
+}
+
+/* Wrapper around the card (its column) */
+.experties-card-wrapper {
+  display: flex;
+  justify-content: center;
+  /* center left–right */
+  align-items: center;
+  /* center top–bottom */
+  height: 100%;
+  /* allow vertical centering */
+  padding: 30px;
+  /* equal spacing on all sides */
+}
+
+/* Card styling */
+.experties-card {
+  width: 100%;
+  max-width: 1000px;
+  /* keeps card centered and not too wide */
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid black !important;
+
+  background-color: transparent !important;
+  /* removes border */
+  box-shadow: none !important;
+}
+
+/* Responsive card padding */
+@media (max-width: 768px) {
+  .experties-card-wrapper {
+    padding: 10px;
+  }
+
+  .experties-card {
+    max-width: 100%;
+  }
+}
+
+.slide-img {
+  width: 70% !important;
+  height: 150px !important;
+  /* Desktop/Tablet image height */
+  object-fit: cover;
+
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .slide-img {
+    height: 150px !important;
+    /* Smaller height for mobile */
+  }
+}
+
+/* Column wrapping the slider */
+.slider-col {
+  padding: 20px;
+  /* equal padding for all sides */
+  position: relative;
+  text-align: center;
+}
+
+/* WRAPPER for slider (keeps buttons centered) */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* IMAGE SIZE */
+.slide-img {
+  width: 70%;
+  height: 130px !important;
+  object-fit: cover;
+  margin: 0 auto;
+
+}
+
+/* BUTTONS (TRANSPARENT, NO BORDER) */
+.slider-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  /* transparent background */
+  border: none;
+  /* no border */
+  padding: 6px 10px;
+  cursor: pointer;
+  z-index: 10;
+  color: black;
+  /* icon color */
+  font-size: 20px;
+}
+
+
+/* TOP BUTTON OVER SLIDER */
+.top-btn {
+  top: -20px;
+}
+
+/* BOTTOM BUTTON OVER SLIDER */
+.bottom-btn {
+  bottom: -20px;
+}
+
+/* MOBILE VIEW — Make images smaller */
+/* MOBILE VIEW — Make images smaller */
+@media (max-width: 576px) {
+
+  /* slider becomes horizontal */
+  .slide-img {
+
+    height: 90px !important;
+    object-fit: cover;
+  }
+
+  /* REMOVE ROTATION — keep same arrow */
+  .top-btn i,
+  .bottom-btn i {
+    transform: none !important;
+  }
+
+  /* adjust button placement for mobile */
+
+}
+
+
+.Commercial_name {
+  font-family: "Outfit", sans-serif !important;
+  font-size: 40px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 600 !important;
+  text-align: left;
+}
+
+@media (max-width: 576px) {
+  .Commercial_name {
+    font-size: 22px !important;
+    /* smaller font */
+    text-align: left !important;
+    /* center text */
+    line-height: 1.3;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .Commercial_name {
+    font-size: 30px !important;
+    /* medium size */
+    text-align: left !important;
+
+  }
+
+  .product_img {
+    height: 63%;
+    width: 100%;
+  }
+}
+
+.text-box {
+  font-family: "Outfit", sans-serif !important;
+  font-size: 24px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  /* vertically center text */
+  justify-content: center;
+  /* horizontally center text */
+  text-align: left;
+  /* center align text */
+  color: black;
+}
+
+/* Tablet View */
+@media (max-width: 992px) {
+  .text-box {
+    padding: 20px;
+    font-size: 18px !important;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 576px) {
+  .text-box {
+    padding: 16px !important;
+  }
+}
+
+.para_background {
+  padding: 45px !important;
+  /* equal padding on all sides */
+  display: flex;
+  align-items: center;
+  /* vertically center text */
+  justify-content: center;
+  /* horizontally center text */
+  /* center align text */
+  background-color: #000;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+  background-color: #FFC422CC;
+
+
+}
+
+/* Make all columns equal height */
+.card-row {
+  display: flex;
+  align-items: stretch;
+}
+
+/* This makes column 3 push content to the bottom */
+.text-box {
+  display: flex !important;
+  align-items: flex-end !important;
+  /* Keep bottom alignment for desktop */
+  justify-content: left !important;
+  padding: 50px;
+  margin-right: -16px;
+
+
+}
+
+/* Background spacing */
+.para_background {
+  padding: 40px;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* ----------------------------- */
+/* 📱 MOBILE VIEW (Center fully) */
+/* ----------------------------- */
+@media (max-width: 576px) {
+  .text-box {
+    align-items: center !important;
+    /* Vertical center */
+    justify-content: center !important;
+    /* Horizontal center */
+    padding: 7px !important;
+    /* Reduce padding for mobile */
+    margin-right: 0 !important;
+    /* Remove negative margin */
+    text-align: center !important;
+    /* Center text */
+  }
+
+  .para_background {
+    padding: 20px !important;
+    /* Smaller padding for mobile */
+    text-align: left !important;
+    /* Center text */
+  }
+}
+
+/* For tablet view only */
+@media (max-width: 991px) {
+  .text-box {
+    font-size: 15px !important;
+    padding: -30px !important;
+  }
+}
+
+.description {
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+
+.external-icon {
+  font-size: 18px;
+  /* Desktop */
+  margin-left: 6px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .external-icon {
+    font-size: 14px;
+
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .external-icon {
+    font-size: 12px;
+
+  }
+}
+
+.main_card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+/* When only one project */
+.single-tab {
+  justify-content: center !important;
+  /* center UL */
+}
+
+.single-tab .nav-item {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  /* adjust width as needed */
+}
+
+.single-tab .nav-link {
+  width: 100%;
+  text-align: center;
+  /* center text */
+}
+
+
+
+.responsive-tab-link {
+  display: flex;
+  /* use flexbox */
+  align-items: center !important;
+  /* vertical center */
+  justify-content: center !important;
+  /* horizontal center */
+  text-align: center !important;
+  /* fallback for text */
+  height: 100% !important;
+  /* full height of tab */
+  padding: 10px 0px !important;
+  /* optional: adjust for spacing */
+}
+
+
+
+/* Wrapper to allow horizontal scroll */
+.responsive-tabs-wrapper {
+  overflow-x: auto;
+  
+
+  width: 100%;
+}
+
+/* Tabs container */
+.responsive-tabs {
+  display: flex;
+  padding-left: 10px !important;
+  flex-wrap: nowrap;
+  /* keep all tabs in a single row */
+  width: max-content;
+  /* allow container to grow with tabs */
+}
+
+
+
+/* Each tab item */
+.responsive-tab-item {
+  flex: 0 0 auto;
+  margin-right: 150px;
+
+}
+
+.responsive-tab-item:not(:last-child)::after {
+  content: "";
+  /* required for pseudo-element */
+  position: absolute;
+  right: 0;
+  /* place on the right edge */
+  top: 25%;
+  /* adjust vertical position */
+  height: 50%;
+  /* length of the line */
+  width: 1px;
+  /* thickness of the line */
+  background-color: #000000;
+  /* color of the line */
+}
+
+
+/* Optional: make scroll smooth */
+.responsive-tabs-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.responsive-tabs-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.responsive-tabs-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 768px) {
+  .responsive-tabs {
+    flex-wrap: nowrap !important;
+    /* keep all tabs in a single line */
+    width: max-content !important;
+    /* allow container to grow with all tabs */
+    overflow-x: auto;
+    /* enable horizontal scroll */
+  }
+
+  .responsive-tab-item {
+    flex: 0 0 auto !important;
+    /* width based on content */
+    margin-right: 50px !important;
+    /* spacing between tabs */
+  }
+}
+
+.read-more{
+  font-size: 16px;
+  margin-left: 10px;
+}
