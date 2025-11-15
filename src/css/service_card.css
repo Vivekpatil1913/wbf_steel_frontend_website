@@ -1,0 +1,118 @@
+.service_card1_heading {
+    font-family: "Outfit", sans-serif;
+    color: white;
+    font-size: 40px;
+    /* Desktop font size */
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    text-align: left;
+    white-space: nowrap;
+    padding-left: 28px;
+    padding-right: 28px !important;
+
+}
+
+.service_card1_headingstrature {
+    font-family: "Outfit", sans-serif;
+    color: white;
+    font-size: 40px;
+    padding-left: 27px;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    /* Default height, keeps aspect ratio */
+    max-height: 600px;
+    /* Large enough for desktops and Mac */
+    object-fit: cover;
+}
+
+/* Increase height specifically for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .responsive-image {
+        height: 100% !important;
+        /* Height optimized for tablets */
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .service_card1_heading {
+        font-size: 28px !important;
+        padding-left: 0px !important;
+
+    }
+    .service_card1_headingstrature{
+        padding-left: 0px;
+    }
+}
+
+/* Optional tablet view adjustment for intermediate size reduction */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .service_card1_heading {
+        font-size: 34px !important;
+        padding-left: 0px !important;
+        /* Medium font size for tablets */
+
+    }
+    .service_card1_headingstrature{
+        padding-left: 0px;
+    }
+}
+
+.service_card_para {
+    font-size: 20px !important;
+    font-weight: 200;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+@media (max-width: 1024px) {
+
+    /* Tablet */
+    .service_card_para {
+        font-size: 20px !important;
+        /* Smaller font size for tablets */
+        font-weight: 200;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile */
+    .service_card_para {
+        font-size: 20px !important;
+        /* Even smaller font size for mobiles */
+        font-weight: 200;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.colum_backcolor {
+    background-color: black;
+    color: white;
+}
+
+.row {
+  display: flex !important;           /* Make row a flex container */
+  align-items: stretch !important;   /* Stretch both columns to same height */
+}
+
+.img-fluid.responsive-image {
+  width: 100% !important;
+  height: 100% !important;           /* Take full height of parent column */
+  object-fit: cover !important;      /* Maintain aspect ratio and cover */
+}
+
+.colum_backcolor {
+  background-color: black !important;
+  color: white !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
