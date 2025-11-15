@@ -140,39 +140,76 @@ function Projects() {
     },
     {
       name: "Project 2",
-      location: "Commercial Test, GA USA",
+      location: "Commercial Building, GA USA",
       description: "Located in Georgia, USA, WBF Steel Company specializes in commercial building projects. The company provides high-quality structural steel fabrication, design, and erection services for industrial and commercial constructions. Known for durability, precision, and timely project delivery ",
+      mainImage: product9,
+
+      sliderImages: [product1, product2, product3, product3]
+    },
+    {
+      name: "Project 3",
+      location: "Commercial Building, GA USA",
+      description: "Located in Georgia, USA, WBF Steel Company specializes in commercial building projects. The company provides high-quality structural steel fabrication, design, and erection services for industrial and commercial constructions. Known for durability, precision, and timely project delivery",
+      mainImage: product8,
+
+      sliderImages: [product1, product2, product3, product3]
+    },
+    {
+      name: "Project 4",
+      location: "Commercial Building, GA USA",
+      description: "Located in Georgia, USA, WBF Steel Company specializes in commercial building projects. The company provides high-quality structural steel fabrication, design, and erection services for industrial and commercial constructions. Known for durability, precision, and timely project delivery",
       mainImage: product10,
 
-      sliderImages: [product10, product5, product8, product9, product7]
+      sliderImages: [product1, product2, product3, product3]
     },
+    {
+      name: "Project 5",
+      location: "Commercial Building, GA USA",
+      description: "Located in Georgia, USA, WBF Steel Company specializes in commercial building projects. The company provides high-quality structural steel fabrication, design, and erection services for industrial and commercial constructions. Known for durability, precision, and timely project delivery",
+      mainImage: product5,
+
+      sliderImages: [product1, product2, product3, product3]
+    },
+    {
+      name: "Project 6",
+      location: "Commercial Building, GA USA",
+      description: "Located in Georgia, USA, WBF Steel Company specializes in commercial building projects. The company provides high-quality structural steel fabrication, design, and erection services for industrial and commercial constructions. Known for durability, precision, and timely project delivery",
+      mainImage: product10,
+
+      sliderImages: [product1, product2, product3, product3]
+    },
+    // {
+    //   name: "Project 7",
+    //   location: "Commercial Building, GA USA",
+    //   description: "Located in Georgia, USA, WBF Steel Company specializes in commercial building projects. The company provides high-quality structural steel fabrication, design, and erection services for industrial and commercial constructions. Known for durability, precision, and timely project delivery",
+    //   mainImage: product10,
+
+    //   sliderImages: [product1, product2, product3, product3]
+    // },
+
+
+
+
+
 
 
 
   ];
 
-
   const [showProductSection, setShowProductSection] = useState(false);
-
 
 
   return (
     <>
-      <img src={project_banner} class="img-fluid" alt="project_img" width={'100%'}/>
+      <img src={project_banner} class="img-fluid" alt="project_img" width={'100%'} />
       <h1 className='text-center head_project mt-3 mb-3'>Built to Power Your Product</h1>
       <div className='container'>
-        <div className="tabs-wrapper">
-          <ul
-            className={`nav nav-pills mb-3 tab-scroll ${projects.length === 1 ? "single-tab" : ""
-              }`}
-            id="pills-tab"
-            role="tablist"
-          >
+        <div className="responsive-tabs-wrapper">
+          <ul className="nav nav-pills mb-3 responsive-tabs" id="pills-tab" role="tablist">
             {projects.map((project, index) => (
-              <li className="nav-item" role="presentation" key={index}>
+              <li className="responsive-tab-item" role="presentation" key={index}>
                 <button
-                  className={`nav-link w-100 text-center ${index === 0 ? "active" : ""
-                    }`}
+                  className={`nav-link responsive-tab-link text-center ${index === 0 ? "active" : ""}`}
                   id={`project${index}-tab`}
                   data-bs-toggle="pill"
                   data-bs-target={`#project${index}`}
@@ -250,17 +287,28 @@ function Projects() {
                           <div className="para_background">
                             <p>
                               {project.description.length > MAX_LENGTH
-                                ? project.description.substring(0, MAX_LENGTH)
+                                ? project.description
+                                  .substring(0, MAX_LENGTH)             // truncate
+                                  .replace(/\s+\S*$/, "")               // remove last word
                                 : project.description}
 
                               {project.description.length > MAX_LENGTH && (
-                                <FaExternalLinkAlt
-                                  className="external-icon"
+                                <span
+                                  className="read-more"
                                   onClick={() => setShowProductSection(true)}
-                                  style={{ cursor: "pointer" }}
-                                />
+                                  style={{
+                                    cursor: "pointer",
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: "5px",
+                                    color: "#007bff",
+                                  }}
+                                >
+                                  Read More <FaExternalLinkAlt />
+                                </span>
                               )}
                             </p>
+
                           </div>
                         </div>
 

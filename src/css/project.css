@@ -18,7 +18,7 @@
 
 #pills-tab .nav-item {
   flex: 1 1 0;
-  text-align: center ;
+  text-align: center;
   margin: 0;
   border-right: 1.5px solid #e0e0e0;
   padding-left: 20px;
@@ -38,7 +38,7 @@
   font-weight: 500;
   padding: 10px 0;
   transition: background 0.2s, color 0.2s;
-  
+
 
 }
 
@@ -665,9 +665,9 @@
   /* horizontally center text */
   /* center align text */
   background-color: #000;
- box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
   background-color: #FFC422CC;
-  
+
 
 }
 
@@ -685,7 +685,7 @@
   justify-content: left !important;
   padding: 50px;
   margin-right: -16px;
-  
+
 
 }
 
@@ -728,6 +728,7 @@
     padding: -30px !important;
   }
 }
+
 .description {
   overflow: visible;
   white-space: normal;
@@ -736,7 +737,8 @@
 
 
 .external-icon {
-  font-size: 18px; /* Desktop */
+  font-size: 18px;
+  /* Desktop */
   margin-left: 6px;
 }
 
@@ -755,30 +757,127 @@
 
   }
 }
-.main_card{
+
+.main_card {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 /* When only one project */
 .single-tab {
-  justify-content: center !important; /* center UL */
+  justify-content: center !important;
+  /* center UL */
 }
 
 .single-tab .nav-item {
   display: flex;
   justify-content: center;
-  width: 200px;  /* adjust width as needed */
+  width: 200px;
+  /* adjust width as needed */
 }
 
 .single-tab .nav-link {
   width: 100%;
-  text-align: center; /* center text */
+  text-align: center;
+  /* center text */
 }
 
 
 
+.responsive-tab-link {
+  display: flex;
+  /* use flexbox */
+  align-items: center !important;
+  /* vertical center */
+  justify-content: center !important;
+  /* horizontal center */
+  text-align: center !important;
+  /* fallback for text */
+  height: 100% !important;
+  /* full height of tab */
+  padding: 10px 0px !important;
+  /* optional: adjust for spacing */
+}
 
 
 
+/* Wrapper to allow horizontal scroll */
+.responsive-tabs-wrapper {
+  overflow-x: auto;
+  
+
+  width: 100%;
+}
+
+/* Tabs container */
+.responsive-tabs {
+  display: flex;
+  padding-left: 10px !important;
+  flex-wrap: nowrap;
+  /* keep all tabs in a single row */
+  width: max-content;
+  /* allow container to grow with tabs */
+}
 
 
+
+/* Each tab item */
+.responsive-tab-item {
+  flex: 0 0 auto;
+  margin-right: 150px;
+
+}
+
+.responsive-tab-item:not(:last-child)::after {
+  content: "";
+  /* required for pseudo-element */
+  position: absolute;
+  right: 0;
+  /* place on the right edge */
+  top: 25%;
+  /* adjust vertical position */
+  height: 50%;
+  /* length of the line */
+  width: 1px;
+  /* thickness of the line */
+  background-color: #000000;
+  /* color of the line */
+}
+
+
+/* Optional: make scroll smooth */
+.responsive-tabs-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.responsive-tabs-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.responsive-tabs-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 768px) {
+  .responsive-tabs {
+    flex-wrap: nowrap !important;
+    /* keep all tabs in a single line */
+    width: max-content !important;
+    /* allow container to grow with all tabs */
+    overflow-x: auto;
+    /* enable horizontal scroll */
+  }
+
+  .responsive-tab-item {
+    flex: 0 0 auto !important;
+    /* width based on content */
+    margin-right: 50px !important;
+    /* spacing between tabs */
+  }
+}
+
+.read-more{
+  font-size: 16px;
+  margin-left: 10px;
+}
