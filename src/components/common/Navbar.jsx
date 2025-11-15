@@ -110,17 +110,17 @@ function Navbar() {
           </div>
         </div>
 
-        {/* ======== NAVBAR ======== */}
+        
         <nav className="navbar navbar-expand-lg navbar-dark main-navbar sticky-top">
           <div className="container d-flex justify-content-between align-items-center">
-            {/* === MOBILE LOGO === */}
+            
             <img
               src={logo}
               alt="WBF Logo"
               className="navbar-mobile-logo d-lg-none"
             />
 
-            {/* === NAVBAR TOGGLER (Right side) === */}
+            
             <button
               className="navbar-toggler ms-auto"
               type="button"
@@ -133,7 +133,7 @@ function Navbar() {
               <span className="navbar-toggler-icon"></span>
             </button>
 
-            {/* === NAV MENU === */}
+            
             <div
               className="collapse navbar-collapse justify-content-center"
               id="mainNav"

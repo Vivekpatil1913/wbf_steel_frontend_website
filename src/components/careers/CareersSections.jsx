@@ -11,12 +11,12 @@ const CareersSections = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
 
-  // 📌 TRUNCATE TEXT HELPER
+  
   const truncate = (str, max = 20) => {
     return str.length > max ? str.substring(0, max) + "..." : str;
   };
 
-  // 📌 FILE NAME TRUNCATION
+  
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -24,7 +24,6 @@ const CareersSections = () => {
     }
   };
 
-  // 📌 MESSAGE LIMIT (250 chars)
   const handleMessageChange = (e) => {
     const text = e.target.value;
     if (text.length <= 250) {
@@ -32,7 +31,7 @@ const CareersSections = () => {
     }
   };
 
-  // 📌 FINAL FORM VALIDATION + RESET
+
   const validateForm = (e) => {
     e.preventDefault();
 
@@ -48,7 +47,7 @@ const CareersSections = () => {
     if (Object.keys(newErrors).length === 0) {
       alert("Form Submitted Successfully!");
 
-      // ✅ CLEAR ALL FIELDS AFTER SUCCESS
+      // reset all fields
       setMobile("");
       setFileName("");
       setMessage("");
@@ -56,23 +55,19 @@ const CareersSections = () => {
       setEmail("");
       setSubject("");
       setErrors({});
-      
-      // also reset actual file input
       document.getElementById("fileInput").value = "";
     }
   };
 
   return (
     <>
-   
-           {/* WHY WORK WITH US */}
+      {/* WHY WORK WITH US */}
       <section className="why-work">
         <h2>Why Work With Us?</h2>
         <p className="why-sub">
-          With Decades Of Experience In Manufacturing Switchgear, Busbars,{" "}
-          <br></br>
+          With Decades Of Experience In Manufacturing Switchgear, Busbars, <br />
           Laminations, And Transformers, We Are Trusted By Clients Across
-          Industries <br></br> And Continents.
+          Industries <br /> And Continents.
         </p>
 
         <div className="why-grid">
@@ -105,44 +100,42 @@ const CareersSections = () => {
         </div>
       </section>
 
-  
-
-       
+      {/* FORM SECTION */}
       <section className="career-section">
         <h2 className="text-center job-title">Currently Job Openings</h2>
 
         <div className="career-box container">
           <h5 className="text-center join-title">Join Our Team</h5>
 
-          <form className="career-form" onSubmit={validateForm}>
+          <form className="career-form" onSubmit={validateForm} noValidate>
             <h6 className="form-heading">UPLOAD YOUR CV</h6>
 
-            {/* Name + Email */}
+            
             <div className="row mb-3">
               <div className="col-md-6">
                 <label>Name :</label>
-                <input 
-                  className="form-control" 
-                  type="text" 
+                <input
+                  className="form-control"
+                  type="text"
                   value={name}
-                  onChange={(e)=>setName(e.target.value)}
-                  required 
+                  onChange={(e) => setName(e.target.value)}
+                  required
                 />
               </div>
 
               <div className="col-md-6">
                 <label>Email Id:</label>
-                <input 
-                  className="form-control" 
-                  type="email" 
+                <input
+                  className="form-control"
+                  type="email"
                   value={email}
-                  onChange={(e)=>setEmail(e.target.value)}
-                  required 
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
             </div>
 
-            {/* Mobile + Subject */}
+            
             <div className="row mb-3">
               <div className="col-md-6">
                 <label>Email/Mobile Number With Country Code :</label>
@@ -175,7 +168,13 @@ const CareersSections = () => {
                 </small>
 
                 {errors.mobile && (
-                  <small style={{ color: "red", marginLeft: "10px", fontSize: "11px" }}>
+                  <small
+                    style={{
+                      color: "red",
+                      marginLeft: "10px",
+                      fontSize: "11px",
+                    }}
+                  >
                     {errors.mobile}
                   </small>
                 )}
@@ -183,12 +182,12 @@ const CareersSections = () => {
 
               <div className="col-md-6">
                 <label>Subject:</label>
-                <input 
-                  className="form-control" 
-                  type="text" 
+                <input
+                  className="form-control"
+                  type="text"
                   value={subject}
-                  onChange={(e)=>setSubject(e.target.value)}
-                  required 
+                  onChange={(e) => setSubject(e.target.value)}
+                  required
                 />
               </div>
             </div>
@@ -218,7 +217,7 @@ const CareersSections = () => {
               </small>
             )}
 
-            {/* Message */}
+            
             <label>Messages</label>
             <textarea
               rows="4"
@@ -238,7 +237,14 @@ const CareersSections = () => {
               </p>
             )}
 
-            {/* reCAPTCHA + Submit same row */}
+          
+            {Object.keys(errors).length > 0 && (
+              <p className="error-message">
+                Please fix the errors above and submit again.
+              </p>
+            )}
+
+            {/* reCAPTCHA + Submit */}
             <div className="recaptcha-submit-row">
               <div className="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
 

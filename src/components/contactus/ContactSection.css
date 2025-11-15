@@ -189,7 +189,7 @@
   }
 }
 
-/* Ensure equal alignment for info rows */
+
 .info-row {
   margin-top: 20px;
   gap: 20px;
@@ -253,10 +253,19 @@
 /* Mobile */
 @media (max-width: 576px) {
   .Contact {
-    height: 120px; /* adjust as needed */
+    height: 120px; 
     background-position: center top;
     background-size: cover;
   }
+}
+
+.error-message {
+  color: #ff3b3b;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 400;
+  text-align: center;
+  align-items: center;
 }
 
 

@@ -1,6 +1,4 @@
-/* ===========================================
-   FOOTER BASE
-=========================================== */
+
 .footer-section {
   position: relative;
   padding: 30px 80px 15px;
@@ -33,9 +31,7 @@
   min-width: 300px;
 }
 
-/* ===========================================
-   HEADINGS
-=========================================== */
+
 .footer-title {
   font-size: 26px;
   font-weight: 800;
@@ -44,9 +40,7 @@
   letter-spacing: 1px;
 }
 
-/* ===========================================
-   CONTACT
-=========================================== */
+
 .footer-contact li {
   display: flex;
   align-items: center;
@@ -62,9 +56,7 @@
   font-size: 20px;
 }
 
-/* ===========================================
-   MENU
-=========================================== */
+
 .footer-menu {
   padding-left: 20px;
   list-style: disc;
@@ -88,9 +80,7 @@
   padding-left: 5px;
 }
 
-/* ===========================================
-   LOGO + DESCRIPTION
-=========================================== */
+
 .footer-logo {
   height: 120px;
   object-fit: contain;
@@ -105,9 +95,7 @@
   max-width: 400px;
 }
 
-/* ===========================================
-   FOLLOW + SOCIAL
-=========================================== */
+
 .footer-follow-title {
   color: #fff;
   font-weight: 800;
@@ -148,9 +136,7 @@
   transform: scale(1.15);
 }
 
-/* ===========================================
-   COPYRIGHT
-=========================================== */
+
 .footer-bottom {
   margin-top: 5px;
   font-size: 16px;
@@ -158,9 +144,6 @@
   color: #fff;
 }
 
-/* ===========================================
-   MAP
-=========================================== */
 .footer-map-section {
   width: 100%;
   overflow: hidden;
@@ -172,9 +155,6 @@
   object-fit: cover;
 }
 
-/* ===========================================
-   TABLET VIEW (≤1200px)
-=========================================== */
 @media (max-width: 1200px) {
   .footer-section {
     padding: 30px 40px;
@@ -201,9 +181,7 @@
   }
 }
 
-/* ===========================================
-   MOBILE TABLET VIEW (≤768px)
-=========================================== */
+
 @media (max-width: 768px) {
   .footer-section {
     padding: 25px 30px;
@@ -237,9 +215,6 @@
   }
 }
 
-/* ===========================================
-   SMALL MOBILE VIEW (≤480px)
-=========================================== */
 @media (max-width: 480px) {
   .footer-section {
     padding: 20px;
@@ -266,9 +241,7 @@
 }
 
 
-/* ===========================================
-   MOBILE FIX (≤480px)
-=========================================== */
+
 @media (max-width: 480px) {
 
   .footer-section {
@@ -280,7 +253,7 @@
     margin-bottom: 10px;
   }
 
-  /* Contact text + icons smaller */
+  
   .footer-contact li {
     font-size: 18px;
     gap: 6px;
@@ -320,8 +293,8 @@
   .footer-social {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;        /* prevents wrapping */
-    justify-content: center !important;  /* center horizontally */
+    flex-wrap: nowrap !important;        
+    justify-content: center !important;  
     align-items: center !important;
     gap: 10px !important;
     width: 100% !important;
@@ -330,7 +303,7 @@
   .footer-social a {
     width: 34px !important;
     height: 34px !important;
-    min-width: 34px !important;          /* ensures strict width */
+    min-width: 34px !important;          
   }
 
   .footer-social a img {
@@ -345,10 +318,20 @@
     margin-top: 10px;
   }
 
-  /* Column width constraint */
+  
   .footer-section .col-lg-4,
   .footer-section .col-lg-3 {
     max-width: 320px;
   }
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 

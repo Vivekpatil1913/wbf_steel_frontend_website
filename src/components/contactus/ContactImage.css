@@ -3,19 +3,19 @@
   width: 100%;
   aspect-ratio: 16 / 9; 
   background: url("../../../src/assets/images/Group\ 1000005624.png") center center / cover no-repeat;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   overflow: hidden;
   margin: 0px 0;
-  margin-bottom: -20px;
-  height: 430px;
+
+  
 }
 
 /* Larger screens */
 @media (min-width: 1200px) {
   .Contact {
-    aspect-ratio: 21 / 9; /* wider look for desktop */
+    aspect-ratio: 21 / 9; 
   }
 }
 
@@ -31,9 +31,9 @@
 @media (max-width: 576px) {
   .Contact {
    
-    aspect-ratio: 3 / 4; /* taller for mobile */
+    aspect-ratio: 3 / 4; 
     background-position: top center;
-    background-size: contain; /* show entire image */
+    background-size: contain; 
     background-repeat: no-repeat;
   }
 }

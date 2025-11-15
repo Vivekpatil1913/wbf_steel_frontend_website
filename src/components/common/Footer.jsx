@@ -3,15 +3,14 @@ import "./Footer.css";
 import logo from "../../assets/images/wbfnewlogo.png";
 import bg from "../../assets/images/Footer.webp"; // Background image
 
-// Social icons
+
 import facebookIcon from "../../assets/icons/logos_facebook.png";
 import instaIcon from "../../assets/icons/insta.png";
 import whatsappIcon from "../../assets/icons/logos_whatsapp-icon.png";
 import linkedinIcon from "../../assets/icons/Group.png";
 import mailIcon from "../../assets/icons/mail.png";
 
-//  Map image 
-// import mapImage from "../../assets/images/Map.png";
+
 
 function Footer() {
   return (
@@ -35,11 +34,13 @@ function Footer() {
             <div className="col-lg-4 col-md-4 text-md-start text-center">
               <h4 className="footer-title mb-4">CONTACT COMPANY</h4>
               <ul className="footer-contact list-unstyled">
+                
                 <li>
                   <i className="bi bi-telephone-fill me-2 text-warning fs-5"></i>
                   248-301-0901
                 </li>
                 <li>
+                  
                   <i className="bi bi-envelope-fill me-2 text-warning fs-5"></i>
                   info@wbfsteel.com,
                   <br />
@@ -109,19 +110,19 @@ function Footer() {
               </h5>
 
               <div className="footer-social d-flex gap-2 justify-content-lg-start justify-content-center">
-                <a href="#">
+                <a href="https://www.facebook.com/">
                   <img src={facebookIcon} alt="Facebook" />
                 </a>
-                <a href="#">
+                <a href="https://www.instagram.com/">
                   <img src={instaIcon} alt="Instagram" />
                 </a>
-                <a href="#">
+                <a href="https://www.whatsapp.com/">
                   <img src={whatsappIcon} alt="WhatsApp" />
                 </a>
-                <a href="#">
+                <a href="https://in.linkedin.com/">
                   <img src={linkedinIcon} alt="LinkedIn" />
                 </a>
-                <a href="#">
+                <a href="https://www.mail.com/">
                   <img src={mailIcon} alt="Email" />
                 </a>
               </div>

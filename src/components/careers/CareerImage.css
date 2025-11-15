@@ -27,8 +27,8 @@
 /* Mobile */
 @media (max-width: 576px) {
   .career-image {
-    aspect-ratio: auto;      /* REMOVE artificial height */
-    height: 250px;           /* or any fixed height you prefer */
+    aspect-ratio: auto;      
+    height: 250px;           
     background-position: center;
     background-size: cover
   }
