@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomeAbout.css";
-import aboutImg from "../../../public/assets/images/image 136.png"; 
+import aboutImg from "../../assets/images/image 136.png";
 
 const HomeAbout = () => {
   return (
@@ -15,8 +15,18 @@ const HomeAbout = () => {
             support and advice team always helps customers wholeheartedly and
             answers all customers' questions.
           </p>
-          <a href="AboutUs" className="learn-more">
-            LEARN MORE <i className="fa-solid fa-arrow-up-right-from-square"></i>
+          <a
+            href="AboutUs"
+            className="learn-more"
+            onClick={(e) => {
+              e.currentTarget.classList.add("clicked");
+              setTimeout(() => {
+                e.currentTarget.classList.remove("clicked");
+              }, 400);
+            }}
+          >
+            LEARN MORE{" "}
+            <i className="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
         <div className="home-about-image">

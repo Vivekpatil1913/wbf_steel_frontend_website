@@ -1,24 +1,27 @@
-.home-banner {
+.Contact{
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9; 
-  background: url("../../../src/assets/images/Banner.jpg") center center / cover no-repeat;
+  background: url("../../../src/assets/images/Group\ 1000005624.png") center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin: 0px 0;
+  margin-bottom: -20px;
+  height: 430px;
 }
 
 /* Larger screens */
 @media (min-width: 1200px) {
-  .home-banner {
+  .Contact {
     aspect-ratio: 21 / 9; /* wider look for desktop */
   }
 }
 
 /* Tablets */
 @media (max-width: 992px) {
-  .home-banner {
+  .Contact {
     aspect-ratio: 10 / 4;
     background-position: center top;
   }
@@ -26,11 +29,9 @@
 
 /* Mobile */
 @media (max-width: 576px) {
-  .home-banner {
-       height: 510px; 
-    background-size: cover; 
-    background-position: center;
-    aspect-ratio: 4 / 5; /* taller for mobile */
+  .Contact {
+   
+    aspect-ratio: 3 / 4; /* taller for mobile */
     background-position: top center;
     background-size: contain; /* show entire image */
     background-repeat: no-repeat;

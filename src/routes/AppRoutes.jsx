@@ -6,6 +6,7 @@ import About from "../pages/About";
 import Services from "../pages/Services";
 import Projects from "../pages/Projects";
 import ContactUs from "../pages/ContactUs";
+import Careers from "../pages/Careers";
 
 function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ function AppRoutes() {
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
       <Footer />
     </Router>

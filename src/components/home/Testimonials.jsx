@@ -7,12 +7,12 @@ import "./Testimonials.css";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
 
   useEffect(() => {
-    // TODO: Replace this with your actual backend API call later
     const fetchTestimonials = async () => {
       try {
-        // Simulated API response
         const data = [
           {
             name: "Edward Glenn",
@@ -32,7 +32,6 @@ const Testimonials = () => {
           },
         ];
 
-        // Mimic delay to simulate fetching
         setTimeout(() => setTestimonials(data), 500);
       } catch (error) {
         console.error("Error fetching testimonials:", error);
@@ -51,6 +50,11 @@ const Testimonials = () => {
       </section>
     );
   }
+
+  const handleReadMore = (item) => {
+    setSelectedTestimonial(item);
+    setShowModal(true);
+  };
 
   return (
     <section className="testimonials-section">
@@ -86,13 +90,49 @@ const Testimonials = () => {
               <SwiperSlide key={index}>
                 <div className="testimonial-card">
                   <h3>{item.name}</h3>
-                  <p>{item.text}</p>
+
+                  <p>
+                    {item.text.length > 58
+                      ? item.text.slice(0, 58) + "..."
+                      : item.text}
+                    {item.text.length > 58 && (
+                      <span
+                        className="text-warning fw-semibold read-more"
+                        onClick={() => handleReadMore(item)}
+                      >
+                        Read more
+                      </span>
+                    )}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       </div>
+
+      {/* MODAL */}
+      {showModal && selectedTestimonial && (
+        <div
+          className="modal-backdrop-custom"
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className="modal-box"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h5 className="fw-bold mb-3">{selectedTestimonial.name}</h5>
+            <p className="mb-4">{selectedTestimonial.text}</p>
+
+            <button
+              className="btn btn-warning"
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -1,38 +1,31 @@
 import React, { useEffect, useState } from "react";
 import "./Projects.css";
 
+// ✅ Import images directly
+import img1 from "../../assets/images/1.png";
+import img2 from "../../assets/images/2.png";
+import img3 from "../../assets/images/3.png";
+import img4 from "../../assets/images/4.png";
+import img5 from "../../assets/images/5.png";
+
 const Projects = () => {
   const [projectsData, setProjectsData] = useState(null);
 
   useEffect(() => {
-    // Simulate backend call for now (replace with fetch/axios later)
     const data = {
       featured: {
         title: "WBF Steel",
         subtitle: "Featured Projects",
-        image: "../../../public/assets/images/1.png"
+        image: img1, // ✅ use imported variable
       },
       projects: [
-        {
-          title: "Commercial Building USA",
-          image: "../../../public/assets/images/2.png"
-        },
-        {
-          title: "Commercial Building, FL USA",
-          image: "../../../public/assets/images/3.png"
-        },
-        {
-          title: "Commercial Building, GA USA",
-          image: "../../../public/assets/images/4.png"
-        },
-        {
-          title: "Commercial Building, MD USA",
-          image: "../../../public/assets/images/5.png"
-        }
-      ]
+        { title: "Commercial Building USA", image: img2 },
+        { title: "Commercial Building, FL USA", image: img3 },
+        { title: "Commercial Building, GA USA", image: img4 },
+        { title: "Commercial Building, MD USA", image: img5 },
+      ],
     };
 
-    // Mimic async load
     setTimeout(() => {
       setProjectsData(data);
     }, 500);
@@ -47,7 +40,10 @@ const Projects = () => {
       <div className="projects-grid">
         {/* LEFT MAIN PROJECT */}
         <div className="project-main">
-          <img src={projectsData.featured.image} alt={projectsData.featured.title} />
+          <img
+            src={projectsData.featured.image}
+            alt={projectsData.featured.title}
+          />
           <div className="project-overlay center">
             <div className="overlay-content">
               <h2>{projectsData.featured.title}</h2>

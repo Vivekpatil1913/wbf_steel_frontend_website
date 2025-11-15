@@ -143,8 +143,8 @@
 .why-section .row::after {
   content: "";
   position: absolute;
-  top: 8%;             /* adjust top offset to match design */
-  bottom: 8%;          /* adjust bottom offset to match design */
+  top: 0%;             /* adjust top offset to match design */
+  bottom: 0%;          /* adjust bottom offset to match design */
   width: 1px;
   background-color: #cfcfcf;
   z-index: 1;

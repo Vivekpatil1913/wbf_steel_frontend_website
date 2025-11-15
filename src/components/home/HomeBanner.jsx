@@ -1,5 +1,5 @@
 import "./HomeBanner.css";
-import bannerImg from "../../../public/assets/images/Group 1000005614[1].png"; 
+import bannerImg from "../../assets/images/Group 1000005614[1].png"; 
 
 function HomeBanner() {
   return (

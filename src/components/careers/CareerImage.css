@@ -1,8 +1,8 @@
-.home-banner {
+.career-image {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9; 
-  background: url("../../../src/assets/images/Banner.jpg") center center / cover no-repeat;
+  background: url("../../assets/images/careers.png") center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,14 +11,14 @@
 
 /* Larger screens */
 @media (min-width: 1200px) {
-  .home-banner {
+  .career-image {
     aspect-ratio: 21 / 9; /* wider look for desktop */
   }
 }
 
 /* Tablets */
 @media (max-width: 992px) {
-  .home-banner {
+  .career-image {
     aspect-ratio: 10 / 4;
     background-position: center top;
   }
@@ -26,13 +26,10 @@
 
 /* Mobile */
 @media (max-width: 576px) {
-  .home-banner {
-       height: 510px; 
-    background-size: cover; 
+  .career-image {
+    aspect-ratio: auto;      /* REMOVE artificial height */
+    height: 250px;           /* or any fixed height you prefer */
     background-position: center;
-    aspect-ratio: 4 / 5; /* taller for mobile */
-    background-position: top center;
-    background-size: contain; /* show entire image */
-    background-repeat: no-repeat;
+    background-size: cover
   }
 }
