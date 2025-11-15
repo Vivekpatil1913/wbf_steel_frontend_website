@@ -1,7 +1,14 @@
 import "./Navbar.css";
-import logo from "../../../public/assets/images/wbfnewlogo.png";
+import logo from "../../assets/images/wbfnewlogo.png";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+
+
+import facebookIcon from "../../assets/icons/logos_facebook.png";
+import instaIcon from "../../assets/icons/insta.png";
+import whatsappIcon from "../../assets/icons/logos_whatsapp-icon.png";
+import linkedinIcon from "../../assets/icons/Group.png";
+import mailIcon from "../../assets/icons/mail.png";
 
 function Navbar() {
   const [hideInfobar, setHideInfobar] = useState(false);
@@ -67,6 +74,10 @@ function Navbar() {
 
               {/* Location Info */}
               <div className="info-item d-flex align-items-center me-4">
+                <a
+                  href="#"
+                  className="d-flex align-items-center text-decoration-none text-dark"
+                >
                 <i className="bi bi-geo-alt-fill text-warning fs-4 me-2"></i>
                 <div>
                   <div className="fw-semibold info-title">
@@ -74,62 +85,55 @@ function Navbar() {
                   </div>
                   <div className="text-muted info-sub">WY 82801, USA</div>
                 </div>
+                </a>
               </div>
 
               {/* Social Icons */}
               <div className="social-icons d-flex align-items-center">
-                <a href="#">
-                  <img
-                    src="../../../public/assets/icons/logos_facebook.png"
-                    alt="Facebook"
-                  />
+                <a href="https://www.facebook.com/" className="me-2">
+                  <img src={facebookIcon} alt="Facebook" />
                 </a>
-                <a href="#">
-                  <img
-                    src="../../../public/assets/icons/insta.png"
-                    alt="Instagram"
-                  />
+                <a href="https://www.instagram.com/" className="me-2">
+                  <img src={instaIcon} alt="Instagram" />
                 </a>
-                <a href="#">
-                  <img
-                    src="../../../public/assets/icons/logos_whatsapp-icon.png"
-                    alt="WhatsApp"
-                  />
+                <a href="https://www.whatsapp.com/" className="me-2">
+                  <img src={whatsappIcon} alt="WhatsApp" />
                 </a>
-                <a href="#">
-                  <img
-                    src="../../../public/assets/icons/Group.png"
-                    alt="LinkedIn"
-                  />
+                <a href="https://in.linkedin.com/" className="me-2">
+                  <img src={linkedinIcon} alt="LinkedIn" />
                 </a>
-                <a href="#">
-                  <img src="../../../public/assets/icons/mail.png" alt="Mail" />
+                <a href="https://www.mail.com/">
+                  <img src={mailIcon} alt="Mail" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* ======== NAVBAR ======== */}
-        <nav className="navbar navbar-expand-lg navbar-dark main-navbar">
-          <div className="container">
-            {/* === MOBILE LOGO (instead of toggle) === */}
+        
+        <nav className="navbar navbar-expand-lg navbar-dark main-navbar sticky-top">
+          <div className="container d-flex justify-content-between align-items-center">
+            
             <img
               src={logo}
               alt="WBF Logo"
               className="navbar-mobile-logo d-lg-none"
             />
 
-            {/* Keep toggle for menu (hidden anyway) */}
+            
             <button
-              className="navbar-toggler d-none"
+              className="navbar-toggler ms-auto"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#mainNav"
+              aria-controls="mainNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
             </button>
 
+            
             <div
               className="collapse navbar-collapse justify-content-center"
               id="mainNav"

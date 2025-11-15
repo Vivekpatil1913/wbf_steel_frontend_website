@@ -6,6 +6,7 @@ import About from '../pages/About'
 import Services from "../pages/Services";
 import Projects from "../pages/Projects";
 import ContactUs from "../pages/ContactUs";
+import Careers from "../pages/Careers";
 import ProjectDetails from "../pages/ProjectDetails";
 import ProjectNav from "../components/projectCom/ProjectNav";
 
@@ -22,6 +23,7 @@ function AppRoutes() {
         <Route path="/projects" element={<Projects />} />
         {/* <Route path="/projects/details" element={<ProjectDetails />} /> */}
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
       <Footer />
     </Router>

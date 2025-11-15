@@ -1,10 +1,10 @@
 import React from "react";
 import "./WorkPlatforms.css";
-import draftsight from "../../../public/assets/images/draft.png";
-import autocad from "../../../public/assets/images/auto.png";
-import tekla from "../../../public/assets/images/tekla.png";
-import rebars from "../../../public/assets/images/rebar.png";
-import sds from "../../../public/assets/images/Sds.png";
+import draftsight from "../../assets/images/draft.png";
+import autocad from "../../assets/images/auto.png";
+import tekla from "../../assets/images/tekla.png";
+import rebars from "../../assets/images/rebar.png";
+import sds from "../../assets/images/Sds.png";
 
 const WorkPlatforms = () => {
   return (
