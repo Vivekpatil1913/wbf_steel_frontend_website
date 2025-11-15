@@ -39,16 +39,16 @@ import { Link } from 'react-router-dom'
 
 
 function Projects() {
-  return (
-  <>
-    <ProjectImage />
-    <ProjectProducts />
-    <ProjectDetails />
-    <ExpertiseSection />
+  // return (
+  // <>
+  //   <ProjectImage />
+  //   <ProjectProducts />
+  //   <ProjectDetails />
+  //   <ExpertiseSection />
   
-  </>
+  // </>
   
-  );
+  // );
 
   const sliderRefs = useRef([]);   // store refs for each project
 
