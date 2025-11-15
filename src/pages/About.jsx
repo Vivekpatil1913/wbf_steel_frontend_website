@@ -37,9 +37,9 @@ function About() {
     return (
         <>
         <img src={about_banner} class="img-fluid " alt="..." width={'100%'}></img>
-            {/* <h3 className='text-center mt-2'><b>Company Overview</b></h3> */}
+            <h3 className='text-center mt-2'><b>Company Overview</b></h3>
           
-            {/* <div className='paraAbout'>
+            <div className='paraAbout'>
                 <p>
                     {
                         compoverview.map((item, index) => (
@@ -47,9 +47,9 @@ function About() {
                         ))
                     }
                 </p>
-            </div> */}
+            </div>
 
-            {/* <Container>
+            <Container>
                 <Row>
                     <Col lg={6} md={6} sm={12} className='p-0 m-0'>
                         <img src={about_img1} class="img-fluid aboutimgs" alt="..."></img>
@@ -101,8 +101,8 @@ function About() {
                         </div>
                     </Col>
                 </Row>
-            </Container> */}
-            {/* <Container className='mt-5'>
+            </Container> 
+           <Container className='mt-5'>
                 <div className='background_color_aboutus_name'>
                     <h3 className='aboutus_name'><b>About Us</b></h3>
                 </div>
@@ -157,7 +157,7 @@ function About() {
                         </div>
                     </Col>
                 </Row>
-            </Container> */}
+            </Container>
 
             <VissionMission />
             <FaqCom />
