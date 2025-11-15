@@ -1,15 +1,80 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/faq.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useSearchParams } from 'react-router-dom';
 
 function FaqCom() {
+
+    const [name, setname] = useState("");
+    const [email, setemail] = useState("");
+    const [subject, setsubject] = useState("");
+    const [message, setmessage] = useState("");
+
+    const [errors, setErrors] = useState({})
+
+
+    const validateForm = () => {
+        let errors = {};
+        let isValid = true;
+
+        if (!name.trim()) {
+            errors.name = 'Name is required';
+            isValid = false;
+        }
+        if (!email.trim()) {
+            errors.email = 'email is required';
+            isValid = false;
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            errors.email = 'invalid email address';
+            isValid = false;
+        }
+        if (!subject.trim()) {
+            errors.subject = 'subject is required';
+            isValid = false;
+        }
+        if (!message.trim()) {
+            errors.message = 'message is required only < 200 only';
+            isValid = false;
+        }
+
+
+
+        setErrors(errors);
+        return isValid;
+    };
+    console.log("errors", errors);
+
+
+    const handleChange = (e) => {
+        const text = e.target.value;
+        const words = text.trim().split(/\s+/);
+        if (words.length <= 200) {
+            setmessage(text);
+        } else {
+            // Limit to first 200 words if exceeded
+            setmessage(words.slice(0, 200).join(" "));
+        }
+    };
+
+    const wordCount = message.trim() === "" ? 0 : message.trim().split(/\s+/).length;
+
+    // 3. Diplay Data Which is store into state and print data into console. (Check Data is proper accepting or Not)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            let newData = {
+                name, email, subject, message
+            }
+            console.log("newData", newData);
+        };
+    }
     return (
         <div className='backimge mt-5 ' >
             <Container>
                 <Row>
-                    <Col lg={6} md={12} sm={12} className='mt-5'>
+                    <Col lg={7} md={12} sm={12} className='mt-5'>
                         <h3 className='title'>FAQ of customer</h3>
                         <p className='parafaq mb-5'>
                             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -56,7 +121,7 @@ function FaqCom() {
 
                             {/* card2 */}
                             <button
-                                className="btn btn_custom collapsed mt-3"
+                                className="btn btn_custom collapsed mt-5"
                                 type="button"
                                 data-toggle="collapse"
                                 data-target="#collapseTwo"
@@ -80,7 +145,7 @@ function FaqCom() {
 
                             {/* card3 */}
                             <button
-                                className="btn btn_custom collapsed mt-3"
+                                className="btn btn_custom collapsed mt-5"
                                 type="button"
                                 data-toggle="collapse"
                                 data-target="#collapsethree"
@@ -104,7 +169,7 @@ function FaqCom() {
 
                             {/* card4 */}
                             <button
-                                className="btn btn_custom collapsed mt-3"
+                                className="btn btn_custom collapsed mt-5"
                                 type="button"
                                 data-toggle="collapse"
                                 data-target="#collapsefour"
@@ -126,7 +191,7 @@ function FaqCom() {
 
                     </Col>
 
-                    <Col lg={6} md={12} sm={12} className='mt-5 mb-3'>
+                    <Col lg={5} md={12} sm={12} className='mt-5 mb-3'>
                         <div className="card card_faq custom-triangle">
                             <div className="card-body mt-5 mb-5">
                                 <h3 className='title_req'>Request A Quote</h3>
@@ -135,35 +200,53 @@ function FaqCom() {
                                     get services from us
                                 </p>
                                 <Container className='Formstart '>
-                                    <form>
+                                    <form onSubmit={handleSubmit}>
                                         <div className="form-group">
                                             <input
                                                 type="text"
                                                 className="form-control custom-input"
                                                 placeholder="Enter Name"
+                                                value={name}
+                                                onChange={(e) => setname(e.target.value)}
                                             />
+                                            {errors.name && <span className="error text-danger">{errors.name}</span>}
                                         </div>
                                         <div className="form-group">
                                             <input
                                                 type="email"
                                                 className="form-control custom-input"
                                                 placeholder="Enter Email"
+                                                value={email}
+                                                onChange={(e) => setemail(e.target.value)}
                                             />
+                                            {errors.email && <span className="error text-danger">{errors.email}</span>}
                                         </div>
                                         <div className="form-group">
                                             <input
                                                 type="text"
                                                 className="form-control custom-input"
                                                 placeholder="Enter Subject"
+                                                value={subject}
+                                                onChange={(e) => setsubject(e.target.value)}
                                             />
+                                            {errors.subject && <span className="error text-danger">{errors.subject}</span>}
                                         </div>
                                         <div className="form-group">
-                                            <textarea
-                                                className="form-control custom-input"
-                                                placeholder="Enter Message"
-                                                rows="3"
-                                            />
+                                            <div className="form-group">
+                                                <textarea
+                                                    className="form-control custom-input"
+                                                    placeholder="Enter Message"
+                                                    rows="3"
+                                                    maxLength={200}
+                                                    value={message}
+                                                    onChange={(e) => setmessage(e.target.value)}
+                                                />
+                                                {errors.message && <span className="error text-danger">{errors.message}</span>}
+                                                <div>{message.length} / 200</div>
+                                            </div>
+
                                         </div>
+
 
                                         <div className="text-center">
                                             <button type="submit" className="send_btn">

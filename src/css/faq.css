@@ -178,14 +178,14 @@
     font-family: "Outfit", sans-serif;
   font-size: 16px;
   color: #333;
-  background-color: #fff;
+  background-color: #D9D9D966!important;
   transition: border-color 0.3s ease;
 }
 
 .custom-input:focus {
-  border-color: #0D1678;
-  outline: none;
-  box-shadow: 0 0 5px rgba(13, 22, 120, 0.5);
+  border-color: #817373 !important;  /* keep initial border color or any you want */
+  outline: none !important; /* removes the default focus outline */
+  box-shadow: none !important; /* removes the blue glow shadow on focus */
 }
 
 /* Style the send button and center it */
