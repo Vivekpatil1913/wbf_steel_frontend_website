@@ -200,60 +200,73 @@ function FaqCom() {
                                     get services from us
                                 </p>
                                 <Container className='Formstart '>
-                                    <form onSubmit={handleSubmit}>
-                                        <div className="form-group">
-                                            <input
-                                                type="text"
-                                                className="form-control custom-input"
-                                                placeholder="Enter Name"
-                                                value={name}
-                                                onChange={(e) => setname(e.target.value)}
-                                            />
-                                            {errors.name && <span className="error text-danger">{errors.name}</span>}
-                                        </div>
-                                        <div className="form-group">
-                                            <input
-                                                type="email"
-                                                className="form-control custom-input"
-                                                placeholder="Enter Email"
-                                                value={email}
-                                                onChange={(e) => setemail(e.target.value)}
-                                            />
-                                            {errors.email && <span className="error text-danger">{errors.email}</span>}
-                                        </div>
-                                        <div className="form-group">
-                                            <input
-                                                type="text"
-                                                className="form-control custom-input"
-                                                placeholder="Enter Subject"
-                                                value={subject}
-                                                onChange={(e) => setsubject(e.target.value)}
-                                            />
-                                            {errors.subject && <span className="error text-danger">{errors.subject}</span>}
-                                        </div>
-                                        <div className="form-group">
+                                    <div className='container'>
+                                        <form onSubmit={handleSubmit}>
                                             <div className="form-group">
-                                                <textarea
+                                                <input
+                                                    type="text"
                                                     className="form-control custom-input"
-                                                    placeholder="Enter Message"
-                                                    rows="3"
-                                                    maxLength={200}
-                                                    value={message}
-                                                    onChange={(e) => setmessage(e.target.value)}
+                                                    placeholder="Enter Name"
+                                                    value={name}
+                                                    onChange={(e) => setname(e.target.value)}
                                                 />
-                                                {errors.message && <span className="error text-danger">{errors.message}</span>}
-                                                <div>{message.length} / 200</div>
+                                                {errors.name && <span className="error text-danger">{errors.name}</span>}
+                                            </div>
+                                            <div className="form-group ">
+                                                <input
+                                                    type="email"
+                                                    className="form-control custom-input "
+                                                    placeholder="Enter Email"
+                                                    value={email}
+                                                    onChange={(e) => setemail(e.target.value)}
+                                                />
+                                                {errors.email && <span className="error text-danger">{errors.email}</span>}
+                                            </div>
+                                            <div className="form-group">
+                                                <input
+                                                    type="text"
+                                                    className="form-control custom-input"
+                                                    placeholder="Enter Subject"
+                                                    value={subject}
+                                                    onChange={(e) => setsubject(e.target.value)}
+                                                />
+                                                {errors.subject && <span className="error text-danger">{errors.subject}</span>}
                                             </div>
 
-                                        </div>
+                                            <div className="form-group">
+                                                <div className="form-group">
+                                                    <input
+                                                        type="text"
+                                                        className="form-control custom-input"
+                                                        placeholder="Enter message"
+                                                        value={message}
+                                                        onChange={(e) => setmessage(e.target.value)}
+                                                    />
+                                                    {/* <textarea
+                                                        className="form-control custom-input"
+                                                        placeholder="Enter Message"
+                                                        rows="1"
+                                                        maxLength={200}
+                                                        value={message}
+                                                        onChange={(e) => setmessage(e.target.value)}
+                                                    /> */}
+                                                    {errors.message && <span className="error text-danger">{errors.message}</span>}
+                                                    <div>{message.length} / 200</div>
+                                                </div>
+
+                                            </div>
 
 
-                                        <div className="text-center">
-                                            <button type="submit" className="send_btn">
-                                                SEND
-                                            </button>
-                                        </div>
-                                    </form>
+
+
+                                            <div className="text-center">
+                                                <button type="submit" className="send_btn">
+                                                    SEND
+                                                </button>
+
+                                            </div>
+                                        </form>
+                                    </div>
                                 </Container>
 
                             </div>
@@ -263,7 +276,7 @@ function FaqCom() {
                 </Row>
             </Container>
 
-        </div>
+        </div >
     );
 }
 

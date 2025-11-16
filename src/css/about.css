@@ -1,76 +1,268 @@
-
 .paraAbout {
-    text-align: center;             
-    color: #8a8a8a;                
-    font-family: "Outfit", sans-serif;
-    font-size: 16px;                 
-    line-height: 1.5;               
-    letter-spacing: 0.01em;          
-    margin: 0 auto;                 
-    font-weight: 400;               
+  text-align: center;
+  color: #8a8a8a;
+  font-family: "Outfit", sans-serif;
+  font-size: 21px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 400;
+}
+@media (max-width: 480px) {
+  .paraAbout {
+    font-size: 16\8px; /* smaller font size on mobile */
+  }
+}
+.backcol1_color {
+  background-color: #FFC422;
+  color: black;
+
 }
 
-.backcol1_color{
-    background-color:#FFC422;
-    color: black;
- 
+.back_color_about {
+  background-color: #FFC422 !important;
+  color: black !important;
 }
-.backcol2_color{
-    background-color: #0D1678;
-    color: white;
+
+.back_color_about1 {
+  background-color: #0D1678 !important;
+  color: white !important;
+}
+
+.back_color_about3 {
+  background-color: white !important;
+  color: black !important;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.number_about_page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 120px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 700 !important;
+  padding-top: 0px !important;
+}
+
+.title_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 35px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 700 !important;
+  gap: 20px;
+}
+
+.about_card_para {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 20px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 00 !important;
+  gap: 20px;
+}
+
+
+.backcol2_color {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 120px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 700 !important;
+  padding-top: 0px !important;
 
 }
-.backcol3_color{
+
+
+.backcol3_color {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 120px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 700 !important;
+  padding-top: 0px !important;
+
+}
+
+.title_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 35px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 700 !important;
+  gap: 20px;
+}
+
+.title_card1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 35px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 700 !important;
+  gap: 20px;
+}
+
+.title_card3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 35px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 700 !important;
+  gap: 20px;
+}
+
+
+.about_card_para1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 20px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 00 !important;
+  gap: 20px;
+}
+
+.about_card_para3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 20px !important;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  
+  gap: 20px;
+}
+
+.backcol3_color {
     background-color: white;
     color: black;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
-}
-.content_card1{
-    padding: 30px;
-}
-.text-content{
-   font-family: "Outfit", sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-}
-.text-content-text{
-    font-size: 20px;
-}
-.number_card{
-    font-size: 128px;
-    font-weight: 700;
-}
-
-@media (min-width: 768px)  {
-    .aboutimgs{
-        height: 590px !important;
-    }
-}
-
-.aboutus_name{
-    font-weight: 400;
-}
-.background_color_aboutus_name{
-    padding: 5px;
-    background-color:#FFC422;
-    border-radius: 10px;
-    text-align: center;
-    width: 160px;
-     font-family: "Outfit", sans-serif;
-   
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
 }
 
 
-.paraAbout1{
-              
-    color: #8a8a8a;                
-      font-family: "Outfit", sans-serif;
-    font-size: 20px;                 
-    line-height: 1.5;               
-    letter-spacing: 0.01em;          
-    margin: 0 auto;                 
-    font-weight: 400;  
+@media (max-width: 480px) {
+  .about_card_para {
+    font-size: 22px !important;
+    /* Smaller font size for mobiles */
+
+  }
+  .about_card_para1 {
+    font-size: 22px !important;
+    /* Smaller font size for mobiles */
+
+  }
+  .about_card_para3 {
+    font-size: 22px !important;
+    /* Smaller font size for mobiles */
+
+  }
+
+  .back_color_about {
+    padding: 20px !important;
+  }
+
+  .number_about_page {
+    font-size: 60px !important;
+  }
+  .backcol2_color{
+     font-size: 60px !important;
+  }
+}
+
+
+
+
+
+.content_card1 {
+  padding: 30px;
+}
+
+.text-content {
+  font-family: "Outfit", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.text-content-text {
+  font-size: 20px;
+}
+
+.number_card {
+  font-size: 128px;
+  font-weight: 700;
+}
+
+
+.aboutus_name {
+  font-weight: 400;
+}
+
+.background_color_aboutus_name {
+  padding: 5px;
+  background-color: #FFC422;
+  border-radius: 10px;
+  text-align: center;
+  width: 160px;
+  font-family: "Outfit", sans-serif;
+
+}
+
+
+.paraAbout1 {
+
+  color: #8a8a8a;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 400;
 }
 
 
@@ -79,7 +271,7 @@
   display: flex;
   align-items: center;
   gap: 28px;
- 
+
 }
 
 .icon {
@@ -114,7 +306,14 @@
   font-weight: 600;
   color: #142382;
 }
-
-
-
-
+.aboutimgs{
+  height: 400px !important;
+  width: 100% !important;
+ 
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .aboutimgs {
+    height: 100% !important; /* Set your desired height for tablet */
+    object-fit: cover; /* To maintain aspect ratio and cover the area */
+  }
+}

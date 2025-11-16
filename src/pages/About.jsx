@@ -33,76 +33,77 @@ function About() {
         }
     ];
 
+    // Split the paragraph into two parts by the sentence beginning
+    const splitSentence = "Driven by passion and professionalism";
+
+
+    const paragraphs = compoverview[0].para.split(splitSentence);
+
+
 
     return (
         <>
-        <img src={about_banner} class="img-fluid " alt="..." width={'100%'}></img>
-            <h3 className='text-center mt-2'><b>Company Overview</b></h3>
-          
+            <img src={about_banner} class="img-fluid " alt="..." width={'100%'}></img>
+            <h3 className='text-center mt-4'><b>Company Overview</b></h3>
+
+            
             <div className='paraAbout'>
-                <p>
-                    {
-                        compoverview.map((item, index) => (
-                            <span key={index}>{item.para}</span>
-                        ))
-                    }
-                </p>
+                <p>{paragraphs[0].trim()}</p>
+                <p>{splitSentence + paragraphs[1]}</p>
             </div>
 
-            <Container>
-                <Row>
-                    <Col lg={6} md={6} sm={12} className='p-0 m-0'>
-                        <img src={about_img1} class="img-fluid aboutimgs" alt="..."></img>
-                    </Col>
-                    <Col lg={6} md={6} sm={12} className='backcol1_color p-0 m-0'>
-                        <div className='content_card1'>
-                            <h1 className='number_card'>1</h1>
-                            <h3 className='text-content'><b>Environment</b></h3>
-                            <p className='text-content-text'>Safety is one of the highest priorities within
-                                Facmaster.It is imperative that everyone follows the
-                                policies and guidelinesto ensure their own safety
-                                and the safety of others around them.
-                                We are providing different.</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col lg={6} md={6} sm={12} className='backcol2_color p-0 m-0'>
-                        <div className='content_card1'>
-                            <h1 className='number_card'>2</h1>
-                            <h3 className='text-content'><b>Health & Safety</b></h3>
-                            <p className='text-content-text'>Health & Safety
-                                Safety is one of the highest priorities within
-                                Facmaster. It is imperative that everyone follows the
-                                policies and guidelines to ensure their own safety
-                                and the safety of others around them.Lorem Ipsum is
-                                simply dummy.</p>
-                        </div>
-                    </Col>
-                    <Col lg={6} md={6} sm={12} className='p-0 m-0'>
-                        <img src={about_img2} class="img-fluid aboutimgs" alt="..."></img>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col lg={6} md={6} sm={12} className='p-0 m-0'>
-                        <img src={about_img3} class="img-fluid aboutimgs" alt="..."></img>
-                    </Col>
-                    <Col lg={6} md={6} sm={12} className='backcol3_color p-0 m-0'>
+            <div class="container mt-5 mb-5">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 m-0">
+                        <img src={about_img1} class="aboutimgs " alt="..."></img>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 back_color_about pb-5 pl-4">
+                        <p className='number_about_page'>1</p>
+                        <p className='title_card'>Environment</p>
+                        <p className='about_card_para'>
+                            Safety is one of the highest priorities within Facmaster. It is imperative that everyone follows the policies and guidelines to ensure their own safety and the safety of others around them. We are providing different.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 back_color_about1 pb-5 pl-4">
+                        <p className='backcol2_color'>2</p>
+                        <p className='title_card1'>Health & Safety</p>
+                        <p className='about_card_para1'>
+                            Safety is one of the highest priorities within
+                            Facmaster. It is imperative that everyone follows the
+                            policies and guidelines to ensure their own safety
+                            and the safety of others around them.Lorem Ipsum is
+                            simply dummy.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 m-0">
+                        <img src={about_img2} class="aboutimgs " alt="..."></img>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 m-0">
+                        <img src={about_img3} class="aboutimgs " alt="..."></img>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 back_color_about3 pb-3 pl-4">
+                        <p className='backcol3_color'>3</p>
+                        <p className='title_card3'>Integrity</p>
+                        <p className='about_card_para3'>
+                            Safety is one of the highest priorities within
+                            Facmaster. It is imperative that everyone follows the
+                            policies and guidelines to ensure their own safety
+                            and the safety of others around them. It is a long
+                            established fact that a reader
+                        </p>
+                    </div>
 
-                        <div className='content_card1'>
-                            <h1 className='number_card'>3</h1>
-                            <h3 className='text-content'><b>Integrity</b></h3>
-                            <p className='text-content-text'>
-                                Safety is one of the highest priorities within
-                                Facmaster. It is imperative that everyone follows the
-                                policies and guidelines to ensure their own safety
-                                and the safety of others around them. It is a long
-                                established fact that a reader.</p>
-                        </div>
-                    </Col>
-                </Row>
-            </Container> 
-           <Container className='mt-5'>
+                </div>
+
+            </div>
+
+
+
+            <Container className='mt-5'>
                 <div className='background_color_aboutus_name'>
                     <h3 className='aboutus_name'><b>About Us</b></h3>
                 </div>
@@ -161,7 +162,7 @@ function About() {
 
             <VissionMission />
             <FaqCom />
-            <Testimonials/>
+            <Testimonials />
 
 
         </>

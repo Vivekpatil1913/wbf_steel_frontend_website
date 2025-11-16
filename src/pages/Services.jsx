@@ -18,10 +18,12 @@ import Services_cards from '../components/service_page_cards_data/Services_cards
 import Start_work_together from '../components/Work Together Com/Start_work_together';
 import OurExperience from '../components/our experience/OurExperience';
 import Service_Faqs from '../components/service_faqs/Service_Faqs';
+import services_banner from '../../public/assets/services/service_banner.png'
 
 function Services() {
   return (
     <>
+      <img src={services_banner} class="img-fluid" alt="..."></img>
       <p className='service_heading_name'>Why Choose Us</p>
       <Container>
         <Row>
@@ -63,10 +65,10 @@ function Services() {
           </Col>
         </Row>
       </Container>
-      <Services_cards/>
-      <Start_work_together/>
+      <Services_cards />
+      <Start_work_together />
       <OurExperience />
-      <Service_Faqs/>
+      <Service_Faqs />
 
 
     </>

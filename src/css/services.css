@@ -22,7 +22,7 @@
     content: "";
     flex-grow: 1;
     /* lines grow to fill space */
-    height: 2px;
+    height: 1px;
     /* line thickness */
     background-color: #055597;
     align-self: center;

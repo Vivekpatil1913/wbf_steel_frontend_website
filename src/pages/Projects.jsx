@@ -305,8 +305,6 @@ function Projects() {
                                   .substring(0, MAX_LENGTH)             // truncate
                                   .replace(/\s+\S*$/, "")               // remove last word
                                 : project.description}
-
-                              {project.description.length > MAX_LENGTH && (
                                 <span
                                   className="read-more"
                                   onClick={() => setShowProductSection(true)}
@@ -320,7 +318,7 @@ function Projects() {
                                 >
                                   Read More <FaExternalLinkAlt />
                                 </span>
-                              )}
+                            
                             </p>
 
                           </div>
