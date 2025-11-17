@@ -92,10 +92,10 @@ const Testimonials = () => {
                   <h3>{item.name}</h3>
 
                   <p>
-                    {item.text.length > 58
-                      ? item.text.slice(0, 58) + "..."
+                    {item.text.length > 82
+                      ? item.text.slice(0, 82) + "..."
                       : item.text}
-                    {item.text.length > 58 && (
+                    {item.text.length > 82 && (
                       <span
                         className="text-warning fw-semibold read-more"
                         onClick={() => handleReadMore(item)}

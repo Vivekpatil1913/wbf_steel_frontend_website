@@ -17,41 +17,99 @@ const ContactSection = () => {
   });
 
   const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    subject: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value });
+
+    // Live validation
+    setErrors((prev) => {
+      const updated = { ...prev };
+
+      // Name
+      if (name === "name") {
+        updated.name = value.trim() ? "" : "Name is required.";
+      }
+
+      // Email
+      if (name === "email") {
+        if (!value.trim()) {
+          updated.email = "Email is required.";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          updated.email = "Enter a valid email address.";
+        } else {
+          updated.email = "";
+        }
+      }
+
+      // Mobile
+      if (name === "mobile") {
+        if (!value.trim()) {
+          updated.mobile = "Mobile number is required.";
+        } else if (!/^[0-9]{10}$/.test(value)) {
+          updated.mobile = "Mobile number must be 10 digits.";
+        } else {
+          updated.mobile = "";
+        }
+      }
+
+      // Subject
+      if (name === "subject") {
+        updated.subject = value.trim() ? "" : "Subject is required.";
+      }
+
+      // Message
+      // Message
+      if (name === "message") {
+        if (!value.trim()) {
+          updated.message = "Message is required.";
+        } else if (value.length > 250) {
+          updated.message = "Message cannot exceed 250 characters.";
+        } else {
+          updated.message = "";
+        }
+      }
+
+      return updated;
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (
-      !formData.name.trim() ||
-      !formData.email.trim() ||
-      !formData.mobile.trim() ||
-      !formData.subject.trim() ||
-      !formData.message.trim()
-    ) {
-      setErrorMessage("Please fill in all fields.");
-      return;
-    }
+    const newErrors = {};
+
+    if (!formData.name.trim()) newErrors.name = "Please enter Name.";
+    if (!formData.email.trim()) newErrors.email = "Please enter Email.";
+    if (!formData.mobile.trim())
+      newErrors.mobile = "Please enter Mobile number.";
+    if (!formData.subject.trim()) newErrors.subject = "Please enter Subject.";
+    if (!formData.message.trim()) newErrors.message = "Please enter Message.";
+    if (formData.message.length > 250)
+      newErrors.message = "Message cannot exceed 250 characters.";
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(formData.email)) {
-      setErrorMessage("Enter a valid email address.");
-      return;
-    }
+    if (formData.email && !emailPattern.test(formData.email))
+      newErrors.email = "Enter a valid email address.";
 
     const mobilePattern = /^[0-9]{10}$/;
-    if (!mobilePattern.test(formData.mobile)) {
-      setErrorMessage("Mobile number must be 10 digits.");
-      return;
-    }
+    if (formData.mobile && !mobilePattern.test(formData.mobile))
+      newErrors.mobile = "Mobile number must be 10 digits.";
 
-    setErrorMessage("");
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) return;
 
     setSuccessMessage("Thank you! Your message has been sent successfully.");
+
     setFormData({
       name: "",
       email: "",
@@ -60,16 +118,13 @@ const ContactSection = () => {
       message: "",
     });
 
-    setTimeout(() => {
-      setSuccessMessage("");
-    }, 3000);
+    setTimeout(() => setSuccessMessage(""), 3000);
   };
 
   return (
     <section className="contact-section">
       <div className="container">
         <div className="contact-wrapper row">
-
           {/* LEFT FORM */}
           <div className="col-lg-6 col-md-12 mb-5 mb-lg-0">
             <div className="contact-form-box">
@@ -79,33 +134,41 @@ const ContactSection = () => {
               </p>
 
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
-
                 <input
                   type="text"
                   name="name"
                   placeholder="Name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
                 />
+                {errors.name && <p className="error-message">{errors.name}</p>}
 
                 <div className="half-inputs">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email ID"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="mobile"
-                    placeholder="Mobile No"
-                    value={formData.mobile}
-                    onChange={handleChange}
-                    required
-                  />
+                  <div style={{ width: "100%" }}>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email ID"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                    {errors.email && (
+                      <p className="error-message">{errors.email}</p>
+                    )}
+                  </div>
+
+                  <div style={{ width: "100%" }}>
+                    <input
+                      type="text"
+                      name="mobile"
+                      placeholder="Mobile No"
+                      value={formData.mobile}
+                      onChange={handleChange}
+                    />
+                    {errors.mobile && (
+                      <p className="error-message">{errors.mobile}</p>
+                    )}
+                  </div>
                 </div>
 
                 <input
@@ -114,8 +177,10 @@ const ContactSection = () => {
                   placeholder="Subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  required
                 />
+                {errors.subject && (
+                  <p className="error-message">{errors.subject}</p>
+                )}
 
                 <textarea
                   name="message"
@@ -123,12 +188,17 @@ const ContactSection = () => {
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                 ></textarea>
+                <p
+                  className={`char-count ${
+                    formData.message.length > 250 ? "exceeded" : ""
+                  }`}
+                >
+                  {formData.message.length}/250 
+                </p>
 
-                {/* 🔥 All errors shown here above the submit button */}
-                {errorMessage && (
-                  <p className="error-message">{errorMessage}</p>
+                {errors.message && (
+                  <p className="error-message">{errors.message}</p>
                 )}
 
                 <button type="submit" className="submit-btn">
@@ -179,11 +249,41 @@ const ContactSection = () => {
                 <div className="info-block">
                   <h5>Social Network</h5>
                   <div className="social-icons d-flex gap-2 flex-wrap">
-                    <a href="https://facebook.com" target="_blank"><img src={facebookIcon} alt="Facebook" className="social-icon-img" /></a>
-                    <a href="https://instagram.com" target="_blank"><img src={instaIcon} alt="Instagram" className="social-icon-img" /></a>
-                    <a href="https://linkedin.com" target="_blank"><img src={linkedinIcon} alt="LinkedIn" className="social-icon-img" /></a>
-                    <a href="https://wa.me/918564000000" target="_blank"><img src={whatsappIcon} alt="WhatsApp" className="social-icon-img" /></a>
-                    <a href="mailto:info@wellproducts.co.in" target="_blank"><img src={mailIcon} alt="Mail" className="social-icon-img" /></a>
+                    <a href="https://facebook.com" target="_blank">
+                      <img
+                        src={facebookIcon}
+                        alt="Facebook"
+                        className="social-icon-img"
+                      />
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                      <img
+                        src={instaIcon}
+                        alt="Instagram"
+                        className="social-icon-img"
+                      />
+                    </a>
+                    <a href="https://linkedin.com" target="_blank">
+                      <img
+                        src={linkedinIcon}
+                        alt="LinkedIn"
+                        className="social-icon-img"
+                      />
+                    </a>
+                    <a href="https://wa.me/918564000000" target="_blank">
+                      <img
+                        src={whatsappIcon}
+                        alt="WhatsApp"
+                        className="social-icon-img"
+                      />
+                    </a>
+                    <a href="mailto:info@wellproducts.co.in" target="_blank">
+                      <img
+                        src={mailIcon}
+                        alt="Mail"
+                        className="social-icon-img"
+                      />
+                    </a>
                   </div>
                 </div>
 
@@ -193,10 +293,8 @@ const ContactSection = () => {
                   <p className="mb-0">+91 4658-0000-00</p>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>
