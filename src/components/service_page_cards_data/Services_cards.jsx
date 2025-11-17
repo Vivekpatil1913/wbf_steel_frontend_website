@@ -18,7 +18,7 @@ function Services_cards() {
                         <img src={service_img1} alt="..." className="responsive-image"/>
                     </div>
                     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex flex-column justify-content-center align-items-start p-5 m-0 colum_backcolor">
-                        <p className="service_card1_headingstrature">Detailing & Estimations</p>
+                        <p className="service_card1_headingstrature">Detailing & Estimations </p>
                         <p className="service_card_para">
                             WBF Steel is a leading global provider of Structural Steel Detailing and Estimation services, following AISC, NISD, CISC, OSHA, and ASTM standards. Using SDS/2, TEKLA, and Advanced Steel platforms, our 35+ skilled detailers and expert managers deliver accurate, cost-effective, and on-time solutions. We focus on quality, trust, and long-term client relationships built through consistent excellence.
                         </p>
