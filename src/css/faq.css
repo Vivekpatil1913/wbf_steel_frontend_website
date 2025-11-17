@@ -1,48 +1,46 @@
 .backimge {
-    background-image: url('../../public/assets/FAQ/FAQ_BACK.png');
+  background-image: url('../../public/assets/FAQ/FAQ_BACK.png');
 }
 
 .title {
-    text-align: center;
-    color: #0D1678;
-      font-family: "Outfit", sans-serif;
-    font-size: 25px;
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-    margin: 0 auto;
-    font-weight: 600;
+  text-align: center;
+  color: #0D1678;
+  font-family: "Outfit", sans-serif;
+  font-size: 25px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 600;
 }
 
-.title_req{
-   text-align: center;
-    color: #0D1678;
-      font-family: "Outfit", sans-serif;
-    font-size: 48px;
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-    margin: 0 auto;
-    font-weight: 600;
+.title_req {
+  text-align: center;
+  color: #0D1678;
+  font-family: "Outfit", sans-serif;
+  font-size: 48px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 600;
 }
 
 .parafaq {
-    text-align: center;             
-    color: #8a8a8a;                
-      font-family: "Outfit", sans-serif;
-    font-size: 20px;                 
-    line-height: 1.5;               
-    letter-spacing: 0.01em;          
-    margin: 0 auto;                 
-    font-weight: 400;               
+  text-align: center;
+  color: #8a8a8a;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 400;
 }
 
 .card-header {
-    background-color: #055597 !important;
-    padding: 0; /* optional: remove default padding if needed */
+  background-color: #055597 !important;
+  padding: 0;
+  /* optional: remove default padding if needed */
 }
-.card{
-    border: 0px;
-    background-color: #055597 ;
-}
+
 
 .btn_custom {
   background-color: #055597;
@@ -98,94 +96,112 @@
 
 
 .card-header .btn {
-    color: white;
-    text-decoration: none;
-    width: 100%;
-    text-align: left;
-    padding: 1rem 1.25rem; /* consistent padding */
-    background: transparent;
-    border: none;
-      font-family: "Outfit", sans-serif; 
-    font-size: 16px;                 
-    line-height: 1.5;               
-    letter-spacing: 0.01em;          
-    margin: 0 auto;                 
-    font-weight: 400;               
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  /* consistent padding */
+  background: transparent;
+  border: none;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  font-weight: 400;
 }
+
 .card_data {
   font-family: "Outfit", sans-serif;
   font-size: 16px;
   border-radius: 0px;
 }
+
 /* First card header default style */
 .accordion .card:first-child .card-header {
-    background-color: #055597 !important;
-    color: white ;
+  background-color: #055597 !important;
+  color: white;
 }
 
 /* First card header button text color */
 .accordion .card:first-child .card-header .btn {
-    color: white;
+  color: white;
 }
 
 /* All other card headers default */
 .accordion .card:not(:first-child) .card-header {
-    background-color: #055597 !important;
-    color: white ;
-    border-top: 1px solid #ddd;
+  background-color: #055597 !important;
+  color: white;
+  border-top: 1px solid #ddd;
 }
 
 /* Optional: button color inside other headers */
 .accordion .card:not(:first-child) .card-header .btn {
-    color: white;
+  color: white;
 }
 
 /* Default all accordion header button styles */
 .accordion_header button {
-    background-color: white  ;
-    color: black;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Open (expanded) state: button without .collapsed class */
 .accordion_header button:not(.collapsed) {
-    background-color: #055597 !important ;
-    color: white ;
+  background-color: #055597 !important;
+  color: white;
 }
 
 .accordion_header button:not(.collapsed) {
-    background-color: #055597 !important;
-    color: white ;
+  background-color: #055597 !important;
+  color: white;
 }
 
+.card_faq {
+  border-bottom: 2px solid black !important;
+}
 
 /* Center the form container and limit its width */
 .Formstart {
-  max-width: 500px; /* max width for form */
+  max-width: 500px;
+  /* max width for form */
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
+
 }
+
+
+.form-group {
+  margin-bottom: 3rem !important; /* Adjust this value as needed */
+}
+
 
 /* Style inputs and textarea with border, padding, and centering */
 .custom-input {
-  border: 1px solid #817373;
-  border-radius: 4px;
-  padding: 10px 12px;
+ 
+  border-radius: 0px !important;
   width: 100%;
+  padding: 30px !important;
   box-sizing: border-box;
-  margin: 10px 0; /* vertical spacing */
-    font-family: "Outfit", sans-serif;
-  font-size: 16px;
+  margin: 10px 0 !important;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px !important;
   color: #333;
-  background-color: #fff;
+  background-color: #D9D9D966 !important;
   transition: border-color 0.3s ease;
 }
 
+
 .custom-input:focus {
-  border-color: #0D1678;
-  outline: none;
-  box-shadow: 0 0 5px rgba(13, 22, 120, 0.5);
+  border-color: #817373 !important;
+  /* keep initial border color or any you want */
+  outline: none !important;
+  /* removes the default focus outline */
+  box-shadow: none !important;
+  /* removes the blue glow shadow on focus */
 }
 
 /* Style the send button and center it */
@@ -194,7 +210,7 @@
   background-color: #0D1678;
   width: 150px;
   padding: 10px;
-   font-family: "Outfit", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.01em;
@@ -203,7 +219,8 @@
   border-radius: 4px;
   cursor: pointer;
   margin: 20px auto 0;
-  display: block; /* make margin auto horizontal effective */
+  display: block;
+  /* make margin auto horizontal effective */
   transition: background-color 0.3s ease;
 }
 
@@ -225,11 +242,16 @@
 
 .custom-triangle {
   position: relative;
-  background-color: #fff; /* or your desired card background */
-  overflow: visible; /* important so triangle visible outside card bounds */
-  z-index: 0; /* base z-index */
-  padding: 10px; /* adjust as needed so text doesn't overlap triangle */
-  border-radius: 10px; /* if card has rounded corners */
+  background-color: #fff;
+  /* or your desired card background */
+  overflow: visible;
+  /* important so triangle visible outside card bounds */
+  z-index: 0;
+  /* base z-index */
+  padding: 10px;
+  /* adjust as needed so text doesn't overlap triangle */
+  border-radius: 10px;
+  /* if card has rounded corners */
 }
 
 .custom-triangle::before {
@@ -239,9 +261,11 @@
   left: 0;
   width: 0;
   height: 0;
-  border-top: 80px solid #FFC422; /* yellow triangle */
+  border-top: 80px solid #FFC422;
+  /* yellow triangle */
   border-right: 80px solid transparent;
-  z-index: 1; /* above card background but below text/buttons */
+  z-index: 1;
+  /* above card background but below text/buttons */
   pointer-events: none;
 }
 
@@ -254,7 +278,8 @@
   right: 0;
   width: 0;
   height: 0;
-  border-bottom: 80px solid #0D1678; /* dark triangle */
+  border-bottom: 80px solid #0D1678;
+  /* dark triangle */
   border-left: 80px solid transparent;
   z-index: 1;
   pointer-events: none;

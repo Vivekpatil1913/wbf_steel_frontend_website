@@ -1,0 +1,131 @@
+.card-outer-border {
+    border: 1px dashed;
+    border-width: 2px;
+    border-color: #9d9999;
+}
+
+.letstart_work_heading {
+    font-family: "Outfit", sans-serif;
+    color: #0A4376;
+    font-size: 37px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+.para-work {
+    font-family: "Outfit", sans-serif !important;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0.06em;
+    padding-top: 50px;
+
+    font-weight: 500;
+}
+
+/* Tablet view: reduce font size */
+@media (max-width: 1024px) {
+    .letstart_work_heading {
+        font-size: 28px !important;
+    }
+
+    .para-work {
+        font-size: 21px !important;
+    }
+}
+
+/* Mobile view: further reduce font size */
+@media (max-width: 768px) {
+    .letstart_work_heading {
+        font-size: 24px !important;
+    }
+
+    .para-work {
+        font-size: 18px !important;
+    }
+}
+
+.custom-hr {
+    width: 15%;
+
+    border: 4px solid #ffd900 !important;
+    margin-left: 15px;
+    /* Darker gold color */
+}
+
+/* Tablet devices: slightly wider */
+@media (max-width: 1024px) {
+    .custom-hr {
+        width: 25% !important;
+        margin-left: 10px;
+    }
+}
+
+/* Mobile devices: full width */
+@media (max-width: 768px) {
+    .custom-hr {
+        width: 50% !important;
+        margin-left: 15px;
+    }
+}
+
+.social-icons {
+    display: none;
+    /* Hide by default (desktop and mobile) */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .social-icons {
+        display: flex !important;
+        /* Show on tablet */
+        justify-content: flex-start !important;
+        /* Align items to left */
+        gap: 10px;
+        /* Spacing between icons */
+    }
+}
+
+.get_quote {
+    font-family: "Outfit", sans-serif !important;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0.06em;
+
+    font-weight: 500;
+}
+/* Tablet view: reduce font size */
+@media (max-width: 1024px) {
+    .get_quote {
+        font-size: 28px !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .get_quote {
+        font-size: 21px !important;
+    }
+
+}
+
+.pl-2 {
+  width: auto; /* default size */
+  height: auto;
+}
+
+/* Tablet devices (width 768px and below) */
+@media (max-width: 1024px) {
+  .pl-2 {
+    width: 50px; /* smaller width on tablets */
+    height: auto;
+  }
+}
+
+/* Mobile devices (width 768px and below) */
+@media (max-width: 768px) {
+  .pl-2 {
+    width: 35px; /* even smaller width on mobiles */
+    height: auto;
+  }
+}
