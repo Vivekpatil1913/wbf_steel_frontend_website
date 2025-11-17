@@ -129,7 +129,7 @@ function About() {
                             </div>
                             <div className="text-group">
                                 <span className="number">
-                                    <CountUp end={35} duration={2} enableScrollSpy scrollSpyOnce /> +
+                                    <CountUp end={35} duration={6} enableScrollSpy scrollSpyOnce /> +
                                 </span>
                                 <span className="label">Expert Engineers</span>
                             </div>
@@ -140,7 +140,7 @@ function About() {
                             </div>
                             <div className="text-group">
                                 <span className="number">
-                                    <CountUp end={250} duration={2} enableScrollSpy scrollSpyOnce /> +
+                                    <CountUp end={250} duration={6} enableScrollSpy scrollSpyOnce /> +
                                 </span>
                                 <span className="label">Project Completed</span>
                             </div>
@@ -151,7 +151,7 @@ function About() {
                             </div>
                             <div className="text-group">
                                 <span className="number">
-                                    <CountUp end={25} duration={2} enableScrollSpy scrollSpyOnce /> +
+                                    <CountUp end={25} duration={6} enableScrollSpy scrollSpyOnce /> +
                                 </span>
                                 <span className="label">Global Clients</span>
                             </div>

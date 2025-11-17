@@ -27,6 +27,9 @@
 .back_color_about1 {
   background-color: #0D1678 !important;
   color: white !important;
+  padding: 0px !important;
+  padding-left: 12px !important;
+  padding-right: 0px !important;
 }
 
 .back_color_about3 {
@@ -316,4 +319,9 @@
     height: 100% !important; /* Set your desired height for tablet */
     object-fit: cover; /* To maintain aspect ratio and cover the area */
   }
+  /* .label {
+  font-size: 24px;
+  font-weight: 600;
+  color: #142382;
+} */
 }

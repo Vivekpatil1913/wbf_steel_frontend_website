@@ -20,22 +20,22 @@ function FaqCom() {
         let isValid = true;
 
         if (!name.trim()) {
-            errors.name = 'Name is required';
+            errors.name = 'Please enter Name';
             isValid = false;
         }
         if (!email.trim()) {
-            errors.email = 'email is required';
+            errors.email = 'Please enter email';
             isValid = false;
         } else if (!/\S+@\S+\.\S+/.test(email)) {
-            errors.email = 'invalid email address';
+            errors.email = 'Please enter valid email address';
             isValid = false;
         }
         if (!subject.trim()) {
-            errors.subject = 'subject is required';
+            errors.subject = 'Please enter subject';
             isValid = false;
         }
         if (!message.trim()) {
-            errors.message = 'message is required only < 200 only';
+            errors.message = 'Please enter message is required only < 200 only';
             isValid = false;
         }
 
@@ -71,7 +71,7 @@ function FaqCom() {
         };
     }
     return (
-        <div className='backimge mt-5 ' >
+        <div className='backimge mt-4' >
             <Container>
                 <Row>
                     <Col lg={7} md={12} sm={12} className='mt-5'>
