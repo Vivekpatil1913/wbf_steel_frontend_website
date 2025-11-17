@@ -1,5 +1,6 @@
 import React from "react";
 import "./MapSection.css";
+import map from "../../assets/images/Map.png"
 
 const MapSection = () => {
   return (
@@ -10,7 +11,7 @@ const MapSection = () => {
         rel="noopener noreferrer"
       >
         <img
-          src="../../../public/assets/images/Map.png"
+          src= {map}
           alt="WBF Steel Office Location Map"
           className="map-image"
         />

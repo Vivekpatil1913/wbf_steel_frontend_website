@@ -32,7 +32,7 @@
   height: 100%;
 }
 
-/* equal height columns with vertical divider */
+
 .row {
   align-items: stretch !important;
 }
@@ -85,12 +85,12 @@
   }
 
   .why-item:not(:last-child)::after {
-    display: none; /* remove divider on small screens */
+    display: none; 
     content: "";
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%; /* full height of column */
+  height: 100%; 
   width: 1px;
   background-color: #cfcfcf;
 
@@ -126,32 +126,31 @@
   }
 }
 
-/* --------- Equal-height vertical dividers for Why Choose Us --------- */
-/* Attach lines to the row so both dividers are always the same height */
+
 .why-section .row {
-  position: relative;          /* make row the reference for the two lines */
-  align-items: stretch !important; /* ensure columns are full equal-height */
+  position: relative;          
+  align-items: stretch !important; 
 }
 
-/* Remove per-item divider if present (keeps it from interfering) */
+
 .why-section .why-item:not(:last-child)::after {
   display: none !important;
 }
 
-/* Two vertical lines drawn on the row (one between col1 & col2, one between col2 & col3) */
+
 .why-section .row::before,
 .why-section .row::after {
   content: "";
   position: absolute;
-  top: 8%;             /* adjust top offset to match design */
-  bottom: 8%;          /* adjust bottom offset to match design */
+  top: 0%;             
+  bottom: 0%;          
   width: 1px;
   background-color: #cfcfcf;
   z-index: 1;
   pointer-events: none;
 }
 
-/* place lines at ~33.33% and ~66.66% across the row */
+
 .why-section .row::before {
   left: 33.3333%;
   transform: translateX(-50%);
@@ -161,13 +160,13 @@
   transform: translateX(-50%);
 }
 
-/* hide the dividers on narrow screens (stacked layout) */
+
 @media (max-width: 992px) {
   .why-section .row::before,
   .why-section .row::after {
     display: none;
   }
 
-  /* keep existing small-screen behavior */
+  
   .why-item:not(:last-child)::after { display: none; }
 }

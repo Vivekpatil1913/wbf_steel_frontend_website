@@ -1,0 +1,358 @@
+
+
+/* WHY WORK WITH US */
+.why-work {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.why-work h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.why-sub {
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.why-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.why-item p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE WHY SECTION */
+@media (max-width: 900px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+
+/* FORM SECTION */
+.career-section {
+  background: #fff;
+  padding: 35px 0px;
+  margin-top:-30px;
+  margin-bottom: 10px;
+
+}
+
+.career-form label {
+  font-size: 14px;
+  margin: 10px;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+.career-form input,
+.career-form textarea {
+  width: 90%;
+  padding: 8px;
+  margin: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  background-color: #e8e8e8;
+}
+
+.job-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+
+}
+
+.career-box {
+  background: white;
+  border: 1px solid #e8e8e8;
+  padding: 10px 20px;          
+  border-radius: 8px;
+  box-shadow: 0px 2px 20px rgba(0,0,0,0.07);
+  max-width: 400px;            
+  width: 100%;                 
+  margin: auto;                
+}
+
+
+.join-title {
+  font-size: 18px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.form-heading {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.form-control {
+  background: #f3f3f3;
+  border: none;
+  border-radius: 6px !important;
+  padding: 6px 10px;
+}
+
+.example-text {
+  color: #777;
+  font-size: 11px;
+}
+
+.file-area {
+  flex: 1;
+}
+
+.choose-btn {
+  background-color: #000;
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+.choose-btn:hover {
+  background: #333;
+}
+
+textarea {
+  resize: none;
+}
+
+.submit-btn {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 10px 26px;
+  font-size: 15px;
+  border-radius: 6px;
+
+}
+
+.submit-btn:hover {
+  background: #b71c1c;
+}
+
+.choose-btn {
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 16px;
+  margin: 6px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.choose-btn:hover {
+  background-color: #222;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* reCAPTCHA + Submit in same row */
+.recaptcha-submit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Keep reCAPTCHA left */
+.recaptcha-submit-row .g-recaptcha {
+  transform: scale(0.95);     
+  transform-origin: left;
+}
+
+/* Submit button right aligned */
+.recaptcha-submit-row .submit-btn {
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 10px 26px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.recaptcha-submit-row .submit-btn:hover {
+  background-color: #b71c1c;
+}
+
+.career-form textarea {
+  width: 96% !important;
+}
+
+.file-area {
+  flex: none;
+  width: 85% !important;
+
+}
+
+
+
+/* For tablets & small desktops */
+@media (max-width: 992px) {
+  .career-box {
+    max-width: 500px !important;
+    width: 100% !important;
+    padding: 25px 20px !important;
+  }
+
+  .career-form input,
+  .career-form textarea {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .file-area {
+    width: 100% !important;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .choose-btn {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .recaptcha-submit-row {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .recaptcha-submit-row .g-recaptcha {
+    transform: scale(0.9);
+  }
+
+  .recaptcha-submit-row .submit-btn {
+    width: 100% !important;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+  .career-box {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 20px 15px !important;
+  }
+
+  .career-section {
+    padding: 20px 0px !important;
+  }
+
+  .job-title {
+    font-size: 22px !important;
+  }
+
+  .join-title {
+    font-size: 16px !important;
+  }
+
+  .form-heading {
+    font-size: 15px !important;
+  }
+
+  .career-form input,
+  .career-form textarea {
+    width: 100% !important;
+    margin: 5px 0 !important;
+    font-size: 13px !important;
+  }
+
+  .career-form label {
+    margin: 5px 0 !important;
+  }
+
+  .file-area {
+    width: 100% !important;
+  }
+
+  .choose-btn {
+    width: 100% !important;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column !important;
+  }
+
+  .recaptcha-submit-row {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .recaptcha-submit-row .submit-btn {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+
+  textarea {
+    width: 100% !important;
+  }
+}
+
+/* Hide default file input text */
+.file-area::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.file-area::before {
+  content: "";
+}
+
+.file-area {
+  color: transparent !important;
+}
+
+.file-area::-webkit-file-upload-button {
+  color: transparent !important;
+}
+
+.file-area:focus {
+  outline: none !important;
+}

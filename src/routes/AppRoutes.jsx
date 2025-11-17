@@ -8,6 +8,7 @@ import Projects from "../pages/Projects";
 import ContactUs from "../pages/ContactUs";
 import ProjectDetails from "../pages/ProjectDetails";
 import ProjectNav from "../components/projectCom/ProjectNav";
+import Careers from "../pages/Careers";
 
 function AppRoutes() {
   return (
@@ -22,6 +23,7 @@ function AppRoutes() {
         <Route path="/projects" element={<Projects />} />
         {/* <Route path="/projects/details" element={<ProjectDetails />} /> */}
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
       <Footer />
     </Router>

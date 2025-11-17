@@ -1,24 +1,25 @@
-.home-banner {
+.Project{
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9; 
-  background: url("../../../src/assets/images/Banner.jpg") center center / cover no-repeat;
+  background: url("../../../src/assets/images/Group\ 1000005619.png") center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  margin: 0 0;
 }
 
 /* Larger screens */
 @media (min-width: 1200px) {
-  .home-banner {
+  .Project {
     aspect-ratio: 21 / 9; /* wider look for desktop */
   }
 }
 
 /* Tablets */
 @media (max-width: 992px) {
-  .home-banner {
+  .Project {
     aspect-ratio: 10 / 4;
     background-position: center top;
   }
@@ -26,11 +27,9 @@
 
 /* Mobile */
 @media (max-width: 576px) {
-  .home-banner {
-       height: 510px; 
-    background-size: cover; 
-    background-position: center;
-    aspect-ratio: 4 / 5; /* taller for mobile */
+  .Project {
+   
+    aspect-ratio: 3 / 4; /* taller for mobile */
     background-position: top center;
     background-size: contain; /* show entire image */
     background-repeat: no-repeat;

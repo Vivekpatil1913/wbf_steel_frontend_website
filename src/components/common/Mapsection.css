@@ -21,7 +21,7 @@
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Hover effect for better interactivity */
+
 .map-section a:hover .map-image {
   transform: scale(1.02);
   filter: brightness(0.95);
