@@ -23,7 +23,7 @@ import services_banner from '../../public/assets/services/service_banner.png'
 function Services() {
   return (
     <>
-      <img src={services_banner} class="img-fluid" alt="..."></img>
+      <img src={services_banner} class="img-fluid" alt="..." width={'100%'}></img>
       <p className='service_heading_name'>Why Choose Us</p>
       <Container>
         <Row>
