@@ -39,8 +39,6 @@ import { Link } from 'react-router-dom'
 
 
 function Projects() {
-<<<<<<< HEAD
-=======
   // return (
   // <>
   //   <ProjectImage />
@@ -51,7 +49,6 @@ function Projects() {
   // </>
   
   // );
->>>>>>> 74e668f1b60db871384de409ab5707ab37b3e284
 
   const sliderRefs = useRef([]);   // store refs for each project
 
