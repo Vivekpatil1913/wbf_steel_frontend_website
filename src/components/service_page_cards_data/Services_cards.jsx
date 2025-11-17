@@ -15,7 +15,7 @@ function Services_cards() {
             <div class="container-fluid mb-5">
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-0 m-0">
-                        <img src={service_img1} alt="..." className="img-fluid responsive-image" />
+                        <img src={service_img1} alt="..." className="responsive-image"/>
                     </div>
                     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex flex-column justify-content-center align-items-start p-5 m-0 colum_backcolor">
                         <p className="service_card1_headingstrature">Detailing & Estimations</p>

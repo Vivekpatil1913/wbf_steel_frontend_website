@@ -31,12 +31,10 @@
 
 
 .responsive-image {
-    width: 100%;
-    height: auto;
-    /* Default height, keeps aspect ratio */
-    max-height: 600px;
-    /* Large enough for desktops and Mac */
-    object-fit: cover;
+    width: 100%;                 /* Always full width */
+    /* height:  340px !important;                 */
+    max-height: 400px;           /* Prevents from getting too tall */
+    display: block;
 }
 
 /* Increase height specifically for tablets */
