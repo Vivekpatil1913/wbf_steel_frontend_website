@@ -46,25 +46,30 @@
     }
 }
 
-.custom-hr {
-    width: 15%;
+/* .custom_hr_line{
+    
+    padding-left: 15px !important;
+    
+} */
 
-    border: 4px solid #ffd900 !important;
-    margin-left: 15px;
-    /* Darker gold color */
+.custom-line {
+    width: 15%;
+    /* you can set example: 200px */
+    height: 3px;
+    /* thickness of the line */
+    background-color: #e8a725;
+    /* your yellow color */
+    border-radius: 0px;
+    /* smooth rounded edges */
+   margin-left: 15px !important;
 }
 
 /* Tablet devices: slightly wider */
-@media (max-width: 1024px) {
-    .custom-hr {
-        width: 25% !important;
-        margin-left: 10px;
-    }
-}
+
 
 /* Mobile devices: full width */
 @media (max-width: 768px) {
-    .custom-hr {
+    .custom-line {
         width: 50% !important;
         margin-left: 15px;
     }
@@ -72,17 +77,17 @@
 
 .social-icons {
     display: none;
-    /* Hide by default (desktop and mobile) */
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .social-icons {
         display: flex !important;
-        /* Show on tablet */
         justify-content: flex-start !important;
-        /* Align items to left */
         gap: 10px;
-        /* Spacing between icons */
+    }
+    .custom-line {
+        width: 25% !important;
+        margin-left: 15px;
     }
 }
 
@@ -91,9 +96,50 @@
     font-size: 30px;
     line-height: 100%;
     letter-spacing: 0.06em;
-
     font-weight: 500;
 }
+
+.get_quote a {
+    color: black !important;
+    text-decoration: none !important;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.get_quote a:hover {
+    color: #e8a725 !important;
+}
+
+/* Arrow default */
+.get_quote_icon {
+    color: black !important;
+    transition: 0.3s ease;
+
+    /* Increase arrow size here */
+    width: 50px !important;
+    height: 32px !important;
+
+    margin-left: 10px;
+}
+
+/* Arrow hover */
+.get_quote a:hover .get_quote_icon {
+    color: #e8a725 !important;
+}
+
+.get_quote a:active,
+.get_quote a:focus {
+    color: #033b6d !important;
+}
+
+
+/* Arrow hover EXACT rgb(232, 167, 37) */
+.get_quote a:hover img {
+    filter: brightness(0) saturate(100%) invert(78%) sepia(46%) saturate(812%) hue-rotate(2deg) brightness(96%) contrast(93%);
+}
+
+
 /* Tablet view: reduce font size */
 @media (max-width: 1024px) {
     .get_quote {
@@ -110,22 +156,25 @@
 }
 
 .pl-2 {
-  width: auto; /* default size */
-  height: auto;
+    width: auto;
+    /* default size */
+    height: auto;
 }
 
 /* Tablet devices (width 768px and below) */
 @media (max-width: 1024px) {
-  .pl-2 {
-    width: 50px; /* smaller width on tablets */
-    height: auto;
-  }
+    .pl-2 {
+        width: 50px;
+        /* smaller width on tablets */
+        height: auto;
+    }
 }
 
 /* Mobile devices (width 768px and below) */
 @media (max-width: 768px) {
-  .pl-2 {
-    width: 35px; /* even smaller width on mobiles */
-    height: auto;
-  }
+    .pl-2 {
+        width: 35px;
+        /* even smaller width on mobiles */
+        height: auto;
+    }
 }
