@@ -11,7 +11,7 @@ import ContactUs from "../pages/ContactUs";
 import ProjectDetails from "../pages/ProjectDetails";
 import ProjectNav from "../components/projectCom/ProjectNav";
 import Careers from "../pages/Careers";
-import Careers from "../pages/Careers";
+// import Careers from "../pages/Careers";
 
 // ScrollToTop component resets scroll on route change
 function ScrollToTop() {
