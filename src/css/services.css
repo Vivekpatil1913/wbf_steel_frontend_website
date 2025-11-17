@@ -33,12 +33,14 @@
     .service_heading_name {
         font-size: 32px;
     }
+   
 }
 
 @media (max-width: 768px) {
     .service_heading_name {
         font-size: 30px;
     }
+   
 }
 
 .img2_from_service{

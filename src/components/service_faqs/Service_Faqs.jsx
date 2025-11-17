@@ -10,6 +10,7 @@ import rebars from "../../assets/images/rebar.png";
 import sds from "../../assets/images/Sds.png";
 
 import CountUp from 'react-countup';
+import { Link } from 'react-router-dom';
 
 
 function Service_Faqs() {
@@ -17,14 +18,13 @@ function Service_Faqs() {
         <>
             <div className='background_color_faq mt-5 mb-5'>
                 <div class="container-fluid  pb-5">
-                   
                     <div class="row ">
+                        <div class="col-lg-4 col-md-4 col-sm-12 pl-5 pe-5 d-flex flex-column align-items-center faq-column">
 
-                        <div class="col-lg-4 col-md-4 col-sm-12 pl-5 pe-5 d-flex flex-column align-items-center">
                             <p className="count">
                                 <CountUp
                                     end={10}
-                                    duration={2}
+                                    duration={10}
                                     enableScrollSpy
                                     scrollSpyOnce
                                     suffix="+"
@@ -32,13 +32,13 @@ function Service_Faqs() {
                             </p>
                             <p class="title_colum">Years of <span class="tablet-break">Expertise</span></p>
                             <p class="title_para">A decade of excellence in steel detailing, connection design, and BIM solutions</p>
-
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 pl-5 pe-5 d-flex flex-column align-items-center">
+                        <div class="col-lg-4 col-md-4 col-sm-12 pl-5 pe-5 d-flex flex-column align-items-center faq-column">
+
                             <p className="count">
                                 <CountUp
                                     end={1500}
-                                    duration={2}
+                                    duration={10}
                                     enableScrollSpy
                                     scrollSpyOnce
                                     suffix="+"
@@ -46,13 +46,13 @@ function Service_Faqs() {
                             </p>
                             <p class="title_colum">Successful Projects</p>
                             <p class="title_para">Delivered with unmatched precision, optimizing fabrication and installation</p>
-
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 pl-5 pe-5 d-flex flex-column align-items-center">
+                        <div class="col-lg-4 col-md-4 col-sm-12 pl-5 pe-5 d-flex flex-column align-items-center faq-column">
+
                             <p className="count">
                                 <CountUp
                                     end={1500}
-                                    duration={2}
+                                    duration={10}
                                     enableScrollSpy
                                     scrollSpyOnce
                                     suffix="+"
@@ -60,9 +60,7 @@ function Service_Faqs() {
                             </p>
                             <p class="title_colum">Tons of Steel Detailed Monthly</p>
                             <p class="title_para">Ensuring efficiency in fabrication and erection processes</p>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -76,7 +74,7 @@ function Service_Faqs() {
                             <p className='faq_section_para'>Have questions about our steel detailing services?
                                 Explore our FAQs for quick answers on workflows, software expertise, and industry standards. For further assistance, reach out to us</p>
                             <div class="contactUs_container">
-                                <p class="contactUs_name pl-3"><u>Contact Us</u> <FaExternalLinkAlt className='link-icons ml-2' /></p>
+                                <Link to='/ContactUs'><p class="contactUs_name pl-3"><u>Contact Us</u> <FaExternalLinkAlt className='link-icons ml-2' /></p></Link>
                             </div>
                         </div>
 

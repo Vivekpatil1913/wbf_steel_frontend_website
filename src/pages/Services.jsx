@@ -25,13 +25,14 @@ function Services() {
     <>
       <img src={services_banner} class="img-fluid" alt="..." width={'100%'}></img>
       <p className='service_heading_name'>Why Choose Us</p>
-      {/* <Container>
+      <Container>
         <Row>
           <Col lg={4} md={4} sm={12}>
             <div className="d-flex justify-content-center align-items-center">
               <Card className="rounded-circle circle_card_styling">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Image src={thum_icon} fluid className='img2_from_service'/>
+                  <img src={thum_icon} class="img-fluid img2_from_service" alt="..." />
+
                 </Card.Body>
               </Card>
             </div>
@@ -43,7 +44,7 @@ function Services() {
             <div className="d-flex justify-content-center align-items-center">
               <Card className="rounded-circle circle_card_styling">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Image src={services_card2} fluid className='img2_from_service'/>
+                  <Image src={services_card2} fluid className='img2_from_service' />
                 </Card.Body>
               </Card>
             </div>
@@ -55,7 +56,7 @@ function Services() {
             <div className="d-flex justify-content-center align-items-center ">
               <Card className="rounded-circle circle_card_styling">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Image src={service_card3} fluid className='img2_from_service'/>
+                  <Image src={service_card3} fluid className='img2_from_service' />
                 </Card.Body>
               </Card>
             </div>
@@ -65,10 +66,10 @@ function Services() {
           </Col>
         </Row>
       </Container>
-      <Services_cards /> */}
-     <Start_work_together />
-       {/* <OurExperience />
-      <Service_Faqs /> */}
+      <Services_cards />
+      <Start_work_together />
+      <OurExperience />
+      <Service_Faqs />
 
 
     </>
