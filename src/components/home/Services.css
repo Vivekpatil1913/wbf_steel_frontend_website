@@ -20,11 +20,13 @@
 .service-card {
   border-radius: 6px;
   padding: 35px 30px;
-  min-height: 250px;
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  height: 100%;
+ 
 }
 
 .service-card:hover {
@@ -121,3 +123,6 @@
     font-size: 15px;
   }
 }
+
+
+

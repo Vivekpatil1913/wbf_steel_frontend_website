@@ -1,5 +1,6 @@
 import React from "react";
 import "./Services.css";
+import { Link } from "react-router-dom";
 
 function Services() {
   return (
@@ -21,9 +22,9 @@ function Services() {
                 projects. Structural steel is considered as steel shaped for use
                 in development of projects.
               </p>
-              <a href="#" className="service-link">
+               <Link to="/services" className="service-link">
                 READ MORE
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -39,9 +40,9 @@ function Services() {
                 work on projects that consist of both simple and highly compound
                 ones.
               </p>
-              <a href="#" className="service-link">
+              <Link to="/services" className="service-link">
                 READ MORE
-              </a>
+              </Link>
             </div>
           </div>
         </div>

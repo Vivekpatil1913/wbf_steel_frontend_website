@@ -11,12 +11,10 @@ const CareersSections = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
 
-  
   const truncate = (str, max = 20) => {
     return str.length > max ? str.substring(0, max) + "..." : str;
   };
 
-  
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -30,7 +28,6 @@ const CareersSections = () => {
       setMessage(text);
     }
   };
-
 
   const validateForm = (e) => {
     e.preventDefault();
@@ -65,7 +62,8 @@ const CareersSections = () => {
       <section className="why-work">
         <h2>Why Work With Us?</h2>
         <p className="why-sub">
-          With Decades Of Experience In Manufacturing Switchgear, Busbars, <br />
+          With Decades Of Experience In Manufacturing Switchgear, Busbars,{" "}
+          <br />
           Laminations, And Transformers, We Are Trusted By Clients Across
           Industries <br /> And Continents.
         </p>
@@ -110,7 +108,6 @@ const CareersSections = () => {
           <form className="career-form" onSubmit={validateForm} noValidate>
             <h6 className="form-heading">UPLOAD YOUR CV</h6>
 
-            
             <div className="row mb-3">
               <div className="col-md-6">
                 <label>Name :</label>
@@ -135,7 +132,6 @@ const CareersSections = () => {
               </div>
             </div>
 
-            
             <div className="row mb-3">
               <div className="col-md-6">
                 <label>Email/Mobile Number With Country Code :</label>
@@ -192,22 +188,36 @@ const CareersSections = () => {
               </div>
             </div>
 
-            {/* File Upload */}
             <label>Upload CV</label>
-            <div className="d-flex gap-2 mb-3">
+
+            <div className="d-flex gap-2 mb-2">
+              {/* Hidden actual file input */}
               <input
                 id="fileInput"
                 type="file"
-                className="form-control file-area"
+                style={{ display: "none" }}
                 onChange={handleFileChange}
               />
-              <button type="button" className="choose-btn">
+
+              {/* Visible fake input showing file name */}
+              <input
+                className="form-control file-area"
+                type="text"
+                value={fileName}
+                readOnly
+              />
+
+              <button
+                type="button"
+                className="choose-btn"
+                onClick={() => document.getElementById("fileInput").click()}
+              >
                 CHOOSE FILE
               </button>
             </div>
 
             {fileName && (
-              <small style={{ marginLeft: "10px", color: "#555" }}>
+              <small style={{ marginLeft: "0px", color: "#555" }}>
                 {fileName}
               </small>
             )}
@@ -217,11 +227,10 @@ const CareersSections = () => {
               </small>
             )}
 
-            
             <label>Messages</label>
             <textarea
               rows="4"
-              className="form-control mb-4"
+              className="form-control mb-2"
               value={message}
               onChange={handleMessageChange}
               placeholder="Write your message (Max 250 chars)"
@@ -237,12 +246,7 @@ const CareersSections = () => {
               </p>
             )}
 
-          
-            {Object.keys(errors).length > 0 && (
-              <p className="error-message">
-                Please fix the errors above and submit again.
-              </p>
-            )}
+           
 
             {/* reCAPTCHA + Submit */}
             <div className="recaptcha-submit-row">
