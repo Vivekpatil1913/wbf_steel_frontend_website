@@ -31,11 +31,12 @@ function Services() {
             <div className="d-flex justify-content-center align-items-center">
               <Card className="rounded-circle circle_card_styling">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Image src={thum_icon} fluid />
+                  <img src={thum_icon} class="img-fluid img2_from_service" alt="..." />
+
                 </Card.Body>
               </Card>
             </div>
-            <div className="mt-2 text-center rounded_card1_data">
+            <div className="mt-1 text-center rounded_card1_data">
               Quality brands and Work
             </div>
           </Col>
@@ -43,11 +44,11 @@ function Services() {
             <div className="d-flex justify-content-center align-items-center">
               <Card className="rounded-circle circle_card_styling">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Image src={services_card2} fluid />
+                  <Image src={services_card2} fluid className='img2_from_service' />
                 </Card.Body>
               </Card>
             </div>
-            <div className="mt-2 text-center rounded_card1_data">
+            <div className="mt-1 text-center rounded_card1_data">
               Fully licensed and insured
             </div>
           </Col>
@@ -55,11 +56,11 @@ function Services() {
             <div className="d-flex justify-content-center align-items-center ">
               <Card className="rounded-circle circle_card_styling">
                 <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Image src={service_card3} fluid />
+                  <Image src={service_card3} fluid className='img2_from_service' />
                 </Card.Body>
               </Card>
             </div>
-            <div className="mt-2 text-center rounded_card1_data pl-5">
+            <div className="mt-1 text-center rounded_card1_data pl-5">
               100% service warranty
             </div>
           </Col>

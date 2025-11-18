@@ -62,6 +62,7 @@
   letter-spacing: 0.01em;
   margin: 0 auto;
   font-weight: 400;
+  transition: 0.3s ease;
 }
 
 /* Closed state (for normal buttons) */
@@ -86,13 +87,16 @@
 }
 
 /* 🟦 Fixed first button always stays blue */
-.fixed_btn,
+/* 🟦 Fixed first button always stays blue */
+/* .fixed_btn,
 .fixed_btn.collapsed,
 .fixed_btn:not(.collapsed) {
   background-color: #055597 !important;
   color: white !important;
   border: none !important;
 }
+ */
+
 
 
 .card-header .btn {
@@ -116,6 +120,7 @@
   font-family: "Outfit", sans-serif;
   font-size: 16px;
   border-radius: 0px;
+  border: 0px !important;
 }
 
 /* First card header default style */
@@ -160,7 +165,12 @@
 }
 
 .card_faq {
-  border-bottom: 2px solid black !important;
+  
+  border: 0px !important;
+
+  border-radius: 0px !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-bottom: 1px solid black !important;
 }
 
 /* Center the form container and limit its width */
@@ -183,15 +193,16 @@
 .custom-input {
  
   border-radius: 0px !important;
-  width: 100%;
+  width: 100% !important;
   padding: 30px !important;
-  box-sizing: border-box;
+ 
   margin: 10px 0 !important;
   font-family: "Outfit", sans-serif;
   font-size: 16px !important;
   color: #333;
   background-color: #D9D9D966 !important;
   transition: border-color 0.3s ease;
+ 
 }
 
 
@@ -252,6 +263,7 @@
   /* adjust as needed so text doesn't overlap triangle */
   border-radius: 10px;
   /* if card has rounded corners */
+  
 }
 
 .custom-triangle::before {

@@ -11,11 +11,11 @@ function VissionMission() {
     return (
         <>
             <Container fluid>
-                <div className="cards-container">
+                <div className="cards-container mt-3">
                     <Row className="row-equal-height">
 
                         <Col lg={6} md={12} sm={12}>
-                            <p className='card_name'>VISSION</p>
+                            <p className='card_name pl-4'>VISSION</p>
                             <div className="card-body vission_card_start mb-5 p-4">
                                 <div className='vissionpara d-flex align-items-center'>
                                     <p>We deliver ethical, innovative solutions that meet client needs and respect the environment.</p>
@@ -24,7 +24,7 @@ function VissionMission() {
                             </div>
                         </Col>
                         <Col lg={6} md={12} sm={12}>
-                        <p className='card_name mission_name'>MISION</p>
+                        <p className='card_name mission_name'>MISSION</p>
                             <div className="card-body mission_card_start mb-5 p-4">
                                 <div className='missionpara d-flex align-items-center'>
                                     <img src={mission_img} className="vision-image" alt="Vision" />

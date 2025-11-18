@@ -6,8 +6,14 @@ import instaIcon from "../../assets/icons/insta.png";
 import whatsappIcon from "../../assets/icons/logos_whatsapp-icon.png";
 import linkedinIcon from "../../assets/icons/Group.png";
 import mailIcon from "../../assets/icons/mail.png";
+import serviceLine from '../../imges/services/veritical_service_line.png'
+
 
 import arra from '../../../public/assets/services/Arrow 8.png'
+
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { Link } from 'react-router-dom';
 function Start_work_together() {
     return (
         <>
@@ -19,7 +25,9 @@ function Start_work_together() {
                         Please feel free to contact us. We will get back to you with 1-2 business days.<br />
                         Or just call us now.
                     </p>
-                    <hr className="custom-hr " />
+                    {/* <img src={serviceLine} className='custom_hr_line' /> */}
+                    <div class="custom-line"></div>
+
 
                     <div className="social-icons d-flex align-items-center pl-3 mt-5">
                         <a href="https://www.facebook.com/" className="me-2">
@@ -39,8 +47,8 @@ function Start_work_together() {
                         </a>
                     </div>
 
-                    <p className='get_quote pl-3'>
-                        GETS A QUOTE <img src={arra} alt="Facebook" className='pl-2' />
+                    <p className='get_quote pl-3 mt-3'>
+                        <Link to='/contactus'>GETS A QUOTE <HiOutlineArrowNarrowRight className='get_quote_icon get_quote'/></Link>
                     </p>
 
 
