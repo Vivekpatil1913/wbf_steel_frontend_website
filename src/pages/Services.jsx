@@ -25,7 +25,7 @@ function Services() {
     <>
       <img src={services_banner} class="img-fluid" alt="..." width={'100%'}></img>
       <p className='service_heading_name'>Why Choose Us</p>
-      <Container>
+      {/* <Container>
         <Row>
           <Col lg={4} md={4} sm={12}>
             <div className="d-flex justify-content-center align-items-center">
@@ -68,7 +68,7 @@ function Services() {
       </Container>
       <Services_cards />
       <Start_work_together />
-      <OurExperience />
+      <OurExperience /> */}
       <Service_Faqs />
 
 

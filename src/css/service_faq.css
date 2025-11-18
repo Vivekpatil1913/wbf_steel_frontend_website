@@ -295,35 +295,64 @@
 }
 
 .contactUs_name {
-    font-family: "Outfit", sans-serif;
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    /* vertically centers icon with text */
-    gap: 8px;
-    /* space between text and icon */
-    font-size: 22px;
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-    text-align: left;
-    /* aligns text to the left */
-    color: #333;
-    margin-top: 10px;
-    margin-left: 0;
-    /* ensures it sits flush on the left */
-    width: 100%;
-    padding-left: 0px !important;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 24px;
 }
 
 /* Optional: ensure the parent container aligns content left */
 .contactUs_container {
     display: flex;
-    justify-content: flex-start;
     align-items: flex-start;
-    text-align: left;
     width: 100%;
-    
+}
+
+.contactUs_name .text {
+    text-decoration: none;
 }
 
 
+.contactUs_name::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e8a725, transparent);
+
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover — start continuous animation */
+.contactUs_name:hover::after {
+    opacity: 1;
+    animation: moveLine 1.2s linear infinite;
+}
+
+/* Animation keyframes */
+@keyframes moveLine {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+/* Hover color change */
+.contactUs_name:hover,
+.contactUs_name:hover .link-icons {
+    color: #e8a725 !important;
+}
 
 .link-icons {
     font-size: clamp(16px, 2vw, 22px);
@@ -462,10 +491,12 @@
     color: black;
     transition: 0.3s ease;
 }
+
 .contactUs_container:hover .contactUs_name,
 .contactUs_container:hover .contactUs_name .link-icons {
     color: #e8a725 !important;
 }
+
 /* Default: dot visible */
 /* Column base */
 .faq-column {
@@ -477,7 +508,7 @@
 .faq-column::after {
     content: "";
     position: absolute;
-    bottom: 15px; 
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     width: 18px;
@@ -491,7 +522,8 @@
 .faq-column::before {
     content: "";
     position: absolute;
-    bottom: 24px;        /* vertically align to dot center */
+    bottom: 24px;
+    /* vertically align to dot center */
     left: 0;
     width: 100%;
     height: 2px;
@@ -501,9 +533,9 @@
 
 /* Hide both dot + line on mobile */
 @media (max-width: 767px) {
+
     .faq-column::after,
     .faq-column::before {
         display: none;
     }
 }
-

@@ -74,8 +74,14 @@ function Service_Faqs() {
                             <p className='faq_section_para'>Have questions about our steel detailing services?
                                 Explore our FAQs for quick answers on workflows, software expertise, and industry standards. For further assistance, reach out to us</p>
                             <div class="contactUs_container">
-                                <Link to='/ContactUs'><p class="contactUs_name pl-3"><u>Contact Us</u> <FaExternalLinkAlt className='link-icons ml-2' /></p></Link>
+                                <Link to='/ContactUs'>
+                                    <p class="contactUs_name">
+                                        <span class="text">Contact Us</span>
+                                        <FaExternalLinkAlt className='link-icons ml-2' />
+                                    </p>
+                                </Link>
                             </div>
+
                         </div>
 
 
