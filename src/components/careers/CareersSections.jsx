@@ -305,7 +305,7 @@ const CareersSections = () => {
               placeholder="Write your message (Max 250 chars)"
             ></textarea>
 
-            <small style={{ marginLeft: "1080px", color: "#777" }}>
+            <small className="count">
               {message.length}/250
             </small>
 
