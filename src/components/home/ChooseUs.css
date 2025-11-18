@@ -3,7 +3,7 @@
   background: #fff;
   padding: 40px 0 60px; 
   font-family: 'Outfit', sans-serif;
-  margin-top: -65px; 
+  margin-top: -60px; 
 }
 
 
@@ -107,13 +107,14 @@
 
 @media (max-width: 576px) {
   .why-item .icon i {
-    font-size: 40px;
+    font-size: 38px;
   
   }
 
   .why-title {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 12px;
+    margin-top: -15px;
   }
 
   .why-text {

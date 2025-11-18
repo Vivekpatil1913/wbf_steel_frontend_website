@@ -1,4 +1,5 @@
-/* WHY WORK WITH US */
+
+
 .why-work {
   text-align: center;
   padding: 50px 20px;
@@ -37,20 +38,11 @@
   line-height: 1.5;
 }
 
-@media (max-width: 900px) {
-  .why-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
 
-/* FORM SECTION */
+
 .career-section {
   background: #fff;
-  padding: 25px 30px;
-  padding-left: 100px;
-  padding-right: 100px; 
- 
+  padding: 25px 100px;
 }
 
 .job-title {
@@ -59,75 +51,60 @@
   margin-bottom: 30px;
 }
 
-/* MAIN WHITE FORM CARD (Figma) */
 .career-box {
   background: #ffffff;
   border: 1px solid #e6e6e6;
   border-radius: 8px;
   max-width: 950px;
   width: 100%;
-  margin: 40px auto;
-  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.08);
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  margin: 2.5rem !important;
+  padding: 2.5rem !important;
 }
 
 .join-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
+  margin-top: -15px;
 }
 
 .form-heading {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 25px;
 }
 
-/* FORM LABELS */
+/* Labels */
 .career-form label {
   font-size: 14px;
   margin-bottom: 5px;
   display: block;
   color: #333;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* INPUTS + TEXTAREAS */
+/* Inputs & Textarea */
 .form-control,
 .career-form input,
 .career-form textarea {
   background: #f0f0f0;
   border: 1px solid #dcdcdc;
   border-radius: 6px;
-  padding: 10px 55px;
+  padding: 10px;
   font-size: 14px;
   width: 100%;
 }
 
-/* TEXTAREA */
 .career-form textarea {
   resize: none;
   min-height: 130px;
 }
 
-/* ROW SPACING */
-.row {
-  margin-bottom: 18px;
-}
-
-.col-md-6 {
-  padding: 0 10px;
-}
-
-/* EXAMPLE TEXT */
 .example-text {
   color: #777;
   font-size: 11px;
 }
 
-/* FILE UPLOAD */
+/* File Upload */
 .file-area {
   width: 100%;
   height: 38px;
@@ -146,24 +123,24 @@
   outline: none !important;
 }
 
-/* CHOOSE FILE BUTTON */
 .choose-btn {
   background: #000;
   color: #fff;
-  padding: 1px 20px;
+  padding: 0 30px;
   font-size: 12px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 .choose-btn:hover {
   background: #222;
 }
 
-/* SUBMIT BUTTON */
+/* Submit Button */
 .submit-btn {
   background-color: #d32f2f;
   color: #fff;
@@ -179,7 +156,7 @@
   background-color: #b71c1c;
 }
 
-/* RECAPTCHA + SUBMIT ALIGNMENT */
+/* Recaptcha + Submit Row */
 .recaptcha-submit-row {
   display: flex;
   justify-content: space-between;
@@ -192,7 +169,15 @@
   transform-origin: left;
 }
 
-/* MESSAGE COUNT */
+.recaptcha-wrapper {
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: inline-block;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}
+
 .message-count {
   display: block;
   text-align: right;
@@ -201,10 +186,31 @@
   margin-top: -5px;
 }
 
-/* RESPONSIVE TABLET */
+
+
+/* 900px */
+@media (max-width: 900px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* 1200px */
+@media (max-width: 1200px) {
+  .career-section {
+    padding: 25px 40px;
+  }
+}
+
+/* 992px */
 @media (max-width: 992px) {
+  .career-section {
+    padding: 25px 30px;
+  }
+
   .career-box {
-    max-width: 500px;
+    max-width: 700px;
     padding: 25px 20px;
   }
 
@@ -212,9 +218,9 @@
     flex-direction: column;
   }
 
-  .choose-btn {
+  .choose-btn,
+  .submit-btn {
     width: 100%;
-    text-align: center;
   }
 
   .recaptcha-submit-row {
@@ -222,44 +228,110 @@
     gap: 15px;
   }
 
-  .recaptcha-submit-row .submit-btn {
-    width: 100%;
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 }
 
-/* RESPONSIVE MOBILE */
-@media (max-width: 576px) {
+/* 768px */
+@media (max-width: 768px) {
+  .career-section {
+    padding: 20px;
+  }
+
   .career-box {
-    padding: 20px 15px;
+    padding: 20px;
+  }
+
+  .recaptcha-submit-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .recaptcha-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .message-count {
+    margin-top: -10px;
+    text-align: right;
+  }
+}
+
+/* 576px */
+@media (max-width: 576px) {
+  .career-section {
+    padding: 15px;
+  }
+
+  .career-box {
+    padding: 18px;
   }
 
   .job-title {
     font-size: 22px;
   }
 
-  .join-title {
-    font-size: 16px;
-  }
-
   .form-heading {
     font-size: 15px;
+    margin-top: 20px;
   }
 
-  .d-flex.gap-2 {
-    flex-direction: column;
+  textarea {
+    min-height: 110px;
   }
 
-  .choose-btn {
-    width: 100%;
-  }
-
-  .recaptcha-submit-row {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .recaptcha-submit-row .submit-btn {
-    width: 100%;
+  .file-area {
+    height: 40px;
   }
 }
 
+/* 400px */
+@media (max-width: 400px) {
+  .job-title {
+    font-size: 20px;
+  }
+
+  .join-title {
+    font-size: 15px;
+  }
+
+  .form-heading {
+    font-size: 14px;
+  }
+
+  label,
+  input,
+  textarea {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* 330px */
+@media (max-width: 330px) {
+  .career-box {
+    padding: 12px;
+  }
+
+  .choose-btn {
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  .submit-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}

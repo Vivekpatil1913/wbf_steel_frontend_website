@@ -19,6 +19,8 @@ const CareersSections = () => {
     const file = e.target.files[0];
     if (file) {
       setFileName(truncate(file.name, 18));
+      // clear file error once a file is chosen
+      setErrors((prev) => ({ ...prev, file: "" }));
     }
   };
 
@@ -26,17 +28,43 @@ const CareersSections = () => {
     const text = e.target.value;
     if (text.length <= 250) {
       setMessage(text);
+      // clear/adjust message error while typing
+      if (text.trim().length >= 5) {
+        setErrors((prev) => ({ ...prev, message: "" }));
+      }
     }
   };
+
+  // Basic email regex (sufficient for common validation)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const validateForm = (e) => {
     e.preventDefault();
 
     let newErrors = {};
 
-    if (mobile === "" || errors.mobile)
-      newErrors.mobile = "Enter a valid mobile number";
-    if (message.trim().length < 5) newErrors.message = "Message is too short";
+    // Name
+    if (name.trim() === "") newErrors.name = "Please Enter Name";
+
+    // Email: check non-empty and pattern
+    if (email.trim() === "") {
+      newErrors.email = "Please Enter Email";
+    } else if (!emailRegex.test(email.trim())) {
+      newErrors.email = "Please Enter a valid Email";
+    }
+
+    // Subject
+    if (subject.trim() === "") newErrors.subject = "Please Enter Subject";
+
+    // Mobile: keep your original logic but ensure error message consistency
+    if (mobile === "" || errors.mobile) {
+      newErrors.mobile = "Please Enter a valid mobile number";
+    }
+
+    // Message
+    if (message.trim().length < 5) newErrors.message = "Please Enter a Message";
+
+    // File
     if (!fileName) newErrors.file = "Please upload CV";
 
     setErrors(newErrors);
@@ -44,7 +72,6 @@ const CareersSections = () => {
     if (Object.keys(newErrors).length === 0) {
       alert("Form Submitted Successfully!");
 
-      // reset all fields
       setMobile("");
       setFileName("");
       setMessage("");
@@ -52,7 +79,8 @@ const CareersSections = () => {
       setEmail("");
       setSubject("");
       setErrors({});
-      document.getElementById("fileInput").value = "";
+      const fileInput = document.getElementById("fileInput");
+      if (fileInput) fileInput.value = "";
     }
   };
 
@@ -115,9 +143,19 @@ const CareersSections = () => {
                   className="form-control"
                   type="text"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                    if (e.target.value.trim() !== "") {
+                      setErrors((prev) => ({ ...prev, name: "" }));
+                    }
+                  }}
                   required
                 />
+                {errors.name && (
+                  <small style={{ color: "red", fontSize: "13px" }}>
+                    {errors.name}
+                  </small>
+                )}
               </div>
 
               <div className="col-md-6">
@@ -126,9 +164,21 @@ const CareersSections = () => {
                   className="form-control"
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setEmail(val);
+                    // validate on each change and clear error if valid
+                    if (val.trim() !== "" && emailRegex.test(val.trim())) {
+                      setErrors((prev) => ({ ...prev, email: "" }));
+                    }
+                  }}
                   required
                 />
+                {errors.email && (
+                  <small style={{ color: "red", fontSize: "13px" }}>
+                    {errors.email}
+                  </small>
+                )}
               </div>
             </div>
 
@@ -168,7 +218,7 @@ const CareersSections = () => {
                     style={{
                       color: "red",
                       marginLeft: "10px",
-                      fontSize: "11px",
+                      fontSize: "13px",
                     }}
                   >
                     {errors.mobile}
@@ -182,9 +232,19 @@ const CareersSections = () => {
                   className="form-control"
                   type="text"
                   value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
+                  onChange={(e) => {
+                    setSubject(e.target.value);
+                    if (e.target.value.trim() !== "") {
+                      setErrors((prev) => ({ ...prev, subject: "" }));
+                    }
+                  }}
                   required
                 />
+                {errors.subject && (
+                  <small style={{ color: "red", fontSize: "13px" }}>
+                    {errors.subject}
+                  </small>
+                )}
               </div>
             </div>
 
@@ -222,7 +282,16 @@ const CareersSections = () => {
               </small>
             )}
             {errors.file && (
-              <small style={{ color: "red", marginLeft: "10px" }}>
+              <small
+                style={{
+                  color: "red",
+                  marginLeft: "0px",
+                  fontSize: "13px",
+                  marginTop: "4px",
+                  marginBottom: "8px",
+                  display: "block",
+                }}
+              >
                 {errors.file}
               </small>
             )}
@@ -236,21 +305,28 @@ const CareersSections = () => {
               placeholder="Write your message (Max 250 chars)"
             ></textarea>
 
-            <small style={{ marginLeft: "10px", color: "#777" }}>
+            <small style={{ marginLeft: "1080px", color: "#777" }}>
               {message.length}/250
             </small>
 
             {errors.message && (
-              <p style={{ color: "red", marginLeft: "10px" }}>
+              <p
+                style={{
+                  color: "red",
+                  marginLeft: "3px",
+                  fontSize: "13px",
+                  marginTop: "-22px",
+                }}
+              >
                 {errors.message}
               </p>
             )}
 
-           
-
             {/* reCAPTCHA + Submit */}
             <div className="recaptcha-submit-row">
-              <div className="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+              <div className="recaptcha-wrapper">
+                <div className="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+              </div>
 
               <button className="submit-btn" type="submit">
                 Submit

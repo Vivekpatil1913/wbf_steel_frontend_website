@@ -184,6 +184,11 @@
 }
 
 @media (max-width: 480px) {
+
+   .projects-section {
+    padding: 30px 20px;
+  }
+
   .overlay-content h2 {
     font-size: 26px;
   }

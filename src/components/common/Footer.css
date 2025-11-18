@@ -19,19 +19,19 @@
 
 .footer-section .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   gap: 40px;
 }
 
-/* Column base */
+
 .footer-section .col-lg-4,
 .footer-section .col-lg-3 {
   flex: 1;
   min-width: 300px;
 }
 
-
+/* Titles */
 .footer-title {
   font-size: 26px;
   font-weight: 800;
@@ -40,7 +40,11 @@
   letter-spacing: 1px;
 }
 
+.men {
+  margin-left: 50px;
+}
 
+/* Contact List */
 .footer-contact li {
   display: flex;
   align-items: center;
@@ -56,10 +60,11 @@
   font-size: 20px;
 }
 
-
+/* Menu */
 .footer-menu {
   padding-left: 20px;
   list-style: disc;
+  margin-left: 50px;
 }
 
 .footer-menu li {
@@ -80,13 +85,14 @@
   padding-left: 5px;
 }
 
-
+/* Logo */
 .footer-logo {
   height: 120px;
   object-fit: contain;
   margin-bottom: 15px;
 }
 
+/* Description */
 .footer-desc {
   color: #fff;
   font-size: 18px;
@@ -95,7 +101,7 @@
   max-width: 400px;
 }
 
-
+/* Social */
 .footer-follow-title {
   color: #fff;
   font-weight: 800;
@@ -136,7 +142,7 @@
   transform: scale(1.15);
 }
 
-
+/* Footer Bottom */
 .footer-bottom {
   margin-top: 5px;
   font-size: 16px;
@@ -144,6 +150,7 @@
   color: #fff;
 }
 
+/* Map (if used) */
 .footer-map-section {
   width: 100%;
   overflow: hidden;
@@ -155,17 +162,13 @@
   object-fit: cover;
 }
 
+
 @media (max-width: 1200px) {
   .footer-section {
     padding: 30px 40px;
   }
 
-  .footer-section .row {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-
+ 
   .footer-menu {
     list-style: none;
     padding-left: 0;
@@ -185,13 +188,6 @@
 @media (max-width: 768px) {
   .footer-section {
     padding: 25px 30px;
-  }
-
-  .footer-section .row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 25px;
   }
 
   .footer-section .col-lg-4,
@@ -215,86 +211,74 @@
   }
 }
 
-@media (max-width: 480px) {
-  .footer-section {
-    padding: 20px;
-  }
-
-  .footer-logo {
-    height: 90px;
-  }
-
-  .footer-desc {
-    font-size: 16px;
-    max-width: 90%;
-  }
-
-  .footer-social a {
-    width: 40px;
-    height: 40px;
-  }
-
-  .footer-bottom {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-}
-
-
 
 @media (max-width: 480px) {
-
+  
+  /* Outer layout */
   .footer-section {
-    padding: 20px 0;
+  
+    padding: 20px !important;
+    text-align: center;
   }
 
+ 
+  .footer-section .container-fluid {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Title */
   .footer-title {
     font-size: 22px;
     margin-bottom: 10px;
   }
 
-  
+  .men {
+    margin-left: -5px;
+  }
+
+  /* Contact */
   .footer-contact li {
     font-size: 18px;
     gap: 6px;
-    margin-bottom: 4px;
+    margin-bottom: 4px !important;
   }
 
   .footer-contact i {
     font-size: 16px;
   }
 
-  /* Menu smaller & tighter */
+  /* Menu */
   .footer-menu li a {
     font-size: 16px;
   }
 
   .footer-menu li {
     margin-bottom: 4px !important;
+    margin-left: -50px;
   }
 
-  /* Logo smaller */
+  /* Logo */
   .footer-logo {
     height: 70px;
     margin-bottom: 10px;
   }
 
-  /* Description smaller */
+  /* Description */
   .footer-desc {
     font-size: 14px;
     max-width: 95%;
   }
 
-  /* Follow title */
+  /* Follow section */
   .footer-follow-title {
     font-size: 16px;
     margin: 10px 0;
   }
+
   .footer-social {
-    display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;        
-    justify-content: center !important;  
+    justify-content: center !important;
     align-items: center !important;
     gap: 10px !important;
     width: 100% !important;
@@ -303,13 +287,12 @@
   .footer-social a {
     width: 34px !important;
     height: 34px !important;
-    min-width: 34px !important;          
+    min-width: 34px !important;
   }
 
   .footer-social a img {
     width: 60% !important;
     height: 60% !important;
-    object-fit: contain;
   }
 
   /* Copyright */
@@ -318,20 +301,302 @@
     margin-top: 10px;
   }
 
-  
+  /* Column width */
   .footer-section .col-lg-4,
   .footer-section .col-lg-3 {
     max-width: 320px;
   }
 }
 
-.footer-contact li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 12px;
+@media only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 390px)
+  and (-webkit-device-pixel-ratio: 3) {
+
+  .footer-section .row {
+    gap: 8px !important;
+  }
+
+  .footer-section {
+    padding: 18px !important;
+  }
+
+  .footer-menu li a {
+    font-size: 15px !important;
+  }
 }
 
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 414px)
+  and (-webkit-device-pixel-ratio: 2) {
+
+  .footer-section {
+    padding: 22px !important;
+  }
+
+  .footer-section .row {
+    gap: 10px !important;
+  }
+
+  .footer-desc {
+    font-size: 15px !important;
+  }
+}
+
+@media only screen
+  and (min-device-width: 430px)
+  and (max-device-width: 430px)
+  and (-webkit-device-pixel-ratio: 3) {
+
+  .footer-section {
+    padding: 24px !important;
+  }
+
+  .footer-section .row {
+    gap: 12px !important;
+  }
+
+  .footer-social a {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+
+
+@media only screen
+  and (max-device-width: 375px)
+  and (-webkit-device-pixel-ratio: 2) {
+
+  .footer-section {
+    padding: 15px !important;
+  }
+
+
+  .footer-menu li a {
+    font-size: 14px !important;
+  }
+
+  .footer-social a {
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+/* iPhone 14 / 14 Plus / 14 Pro / 14 Pro Max */
+@media only screen 
+  and (min-device-width: 390px)
+  and (max-device-width: 430px)
+  and (-webkit-device-pixel-ratio: 3) {
+
+  .footer-section {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* Contact block tighter */
+  .footer-contact li {
+    margin-bottom: 4px !important;
+  }
+
+  /* Menu spacing tighter */
+  .footer-menu li {
+    margin-bottom: 3px !important;
+  }
+
+  /* Shrink logo spacing */
+  .footer-logo {
+    margin-bottom: 8px !important;
+    height: 80px !important;
+  }
+
+  /* Reduce description spacing */
+  .footer-desc {
+    margin-top: 6px !important;
+  }
+
+  /* Footer bottom text adjustment */
+  .footer-bottom {
+    margin-top: 8px !important;
+  }
+}
+
+
+@media only screen
+  and (min-device-width: 360px)
+  and (max-device-width: 430px)
+  and (-webkit-device-pixel-ratio: 2),
+only screen
+  and (min-device-width: 360px)
+  and (max-device-width: 430px)
+  and (-webkit-device-pixel-ratio: 3) {
+
+  /* Reduce extra vertical padding iPhone adds */
+  .footer-section {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+
+  /* MENU block top + bottom spacing */
+  .footer-title,
+  .footer-follow-title {
+    margin-top: 8px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* List items spacing tighter */
+  .footer-menu li,
+  .footer-contact li {
+    margin-bottom: 4px !important;
+  }
+
+  /* Logo inward spacing */
+  .footer-logo {
+    margin-bottom: 6px !important;
+  }
+
+  /* Description tighter */
+  .footer-desc {
+    margin-top: 6px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Follow us section */
+  .footer-social {
+    gap: 8px !important;
+    margin-top: 8px !important;
+  }
+
+  .footer-social a {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  /* Copyright */
+  .footer-bottom {
+    margin-top: 6px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .footer-section {
+    padding: 40px 60px !important;
+    text-align: left !important;
+  }
+
+  
+
+  .footer-section .col-lg-4,
+  .footer-section .col-lg-3 {
+    width: 48% !important;
+    max-width: 48% !important;
+    text-align: left !important;
+  }
+
+  /* Titles */
+  .footer-title {
+    font-size: 26px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .men {
+    margin-left: 0 !important;
+  }
+
+  /* Contact List */
+  .footer-contact li {
+    justify-content: flex-start !important;
+    margin-bottom: 8px !important;
+    font-size: 18px !important;
+  }
+
+  /* Menu */
+  .footer-menu {
+    list-style: disc !important;
+    padding-left: 20px !important;
+    margin-left: 0 !important;
+  }
+
+  .footer-menu li {
+    margin-bottom: 6px !important;
+  }
+
+  .footer-menu li a {
+    font-size: 18px !important;
+  }
+
+  /* Description */
+  .footer-desc {
+    font-size: 16px !important;
+    max-width: 90% !important;
+    margin-top: 10px !important;
+  }
+
+  /* Social section */
+  .footer-follow-title {
+    font-size: 18px !important;
+    margin-top: 15px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-social {
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .footer-social a {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Copyright */
+  .footer-bottom {
+    margin-top: 12px !important;
+    text-align: center !important;
+    font-size: 14px !important;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .footer-section {
+    padding: 40px 40px !important;
+  }
+
+  .footer-section .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+  }
+
+  /* Two columns per row */
+  .footer-section .col-lg-4,
+  .footer-section .col-lg-3 {
+    flex: 0 0 48% !important;
+    max-width: 48% !important;
+    min-width: auto !important;
+  }
+
+  /* Remove unwanted spacing from menu */
+  .men {
+    margin-left: 0 !important;
+  }
+
+  /* Menu bullet style */
+  .footer-menu {
+    padding-left: 20px !important;
+    margin-left: 0 !important;
+    list-style: disc !important;
+  }
+
+  .footer-social a {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}

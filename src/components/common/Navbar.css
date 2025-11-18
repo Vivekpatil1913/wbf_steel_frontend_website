@@ -1,4 +1,4 @@
-/* ===== STICKY HEADER ===== */
+
 .sticky-header {
   position: sticky;
   top: 0;
@@ -7,7 +7,7 @@
   background: #fff;
 }
 
-/* ===== INFOBAR ===== */
+
 .top-infobar {
   background: #fff;
   color: #000;
@@ -33,7 +33,7 @@
   text-align: center;
 }
 
-/* ===== RIGHT INFO SECTION ===== */
+
 .right-info {
   flex: 1;
   justify-content: flex-end;
@@ -51,7 +51,7 @@
   color: #6c757d;
 }
 
-/* ===== SOCIAL ICONS ===== */
+
 .social-icons {
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@
   margin-right: -4px !important;
 }
 
-/* ===== NAVBAR ===== */
+
 .main-navbar {
   background: linear-gradient(90deg, #0f4c8a, #022a64);
   height: 70px;
@@ -140,12 +140,12 @@
   font-weight: 700;
 }
 
-/* Hide desktop mobile logo by default */
+
 .navbar-mobile-logo {
   display: none;
 }
 
-/* ===== HIDE INFOBAR ON SCROLL ===== */
+
 .hide-infobar {
   opacity: 0;
   visibility: hidden;
@@ -156,7 +156,7 @@
   transition: opacity 0.4s ease-in-out;
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 1200px) {
   .main-navbar .navbar-nav {
     gap: 45px;
@@ -216,7 +216,7 @@
   }
 }
 
-/* ===== MOBILE (<=768px) ===== */
+
 @media (max-width: 768px) {
 
 
@@ -224,12 +224,12 @@
     width: 100% !important;
     position: absolute;
     left: 0;
-    top: 70px; /* height of your navbar */
+    top: 70px; 
     z-index: 2000;
   }
 
 
-  /* Infobar hide elements */
+
   .top-infobar .left-logo,
   .top-infobar .social-icons,
   .top-infobar .info-item:nth-child(2) {
@@ -241,7 +241,7 @@
     text-align: center !important;
   }
 
-  /* MOBILE LOGO FIX (your requirement: 55px) */
+ 
   .navbar-mobile-logo {
     display: block !important;
     height: 55px !important;
@@ -264,7 +264,7 @@
     padding: 0 1rem;
   }
 
-  /* TOGGLER ALWAYS VISIBLE (your requirement) */
+  
   .navbar-toggler {
     display: block !important;
     border: none;
@@ -294,8 +294,82 @@
   }
 }
 
-/* ===== BODY SCROLL PADDING ===== */
+/* BODY SCROLL PADDING */
 body {
-  scroll-padding-top: 135px; /* YOUR REQUIREMENT */
+  scroll-padding-top: 135px;
 }
 
+
+
+
+@media (min-width: 768px) and (max-width: 1180px) {
+
+  /* Hidden by default */
+  .navbar-collapse {
+    display: none !important;
+    width: 100% !important;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    z-index: 2000;
+    background: linear-gradient(90deg, #0f4c8a, #022a64);
+    text-align: center;
+  }
+
+  /* Show when toggled */
+  .navbar-collapse.show {
+    display: block !important;
+  }
+
+  /* Collapse menu layout */
+  .navbar-nav {
+    flex-direction: column !important;
+    gap: 14px !important;
+    padding: 14px 0 !important;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 18px !important;
+    padding: 10px 0 !important;
+  }
+
+  /* Toggler always visible */
+  .navbar-toggler {
+    display: block !important;
+    border: none;
+    background: transparent;
+    margin-left: auto !important;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  /* Tablet mobile-style logo */
+  .navbar-mobile-logo {
+    display: block !important;
+    height: 60px !important;
+    object-fit: contain;
+  }
+
+  /* Adjust container alignment */
+  .main-navbar .container {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    height: 70px;
+    padding: 0 1rem !important;
+  }
+
+  /* Hide infobar items same as mobile */
+  .top-infobar .left-logo,
+  .top-infobar .social-icons,
+  .top-infobar .info-item:nth-child(2) {
+    display: none !important;
+  }
+
+  .top-infobar .right-info {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
