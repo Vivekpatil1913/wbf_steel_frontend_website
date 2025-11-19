@@ -5,30 +5,30 @@ import ProjectProducts from "../components/project1/ProjectProducts";
 import React, { useRef, useState } from 'react'
 import '../css/project.css'
 
-import com_img from '../../public/assets/project img/Commercial_img.png'
+import com_img from '../../src/assets/projectimg/project_page2/Commercial_img.png';
 
 
-import brand1 from '../../public/assets/project img/brand1.png'
-import brand2 from '../../public/assets/project img/brand2.png'
-import brand3 from '../../public/assets/project img/brand3.png'
-import brand4 from '../../public/assets/project img/brand4.png'
-import brand5 from '../../public/assets/project img/brand5.png'
+import brand1 from '../../src/assets/projectimg/project_page2/brand1.png';
+import brand2 from '../../src/assets/projectimg/project_page2/brand2.png';
+import brand3 from '../../src/assets/projectimg/project_page2/brand3.png';
+import brand4 from '../../src/assets/projectimg/project_page2/brand4.png';
+import brand5 from '../../src/assets/projectimg/project_page2/brand5.png';
 
 
-import product1 from '../../public/assets/project img/project_page2/product1.png'
-import product2 from '../../public/assets/project img/project_page2/product2.png'
-import product3 from '../../public/assets/project img/project_page2/product3.png'
-import product4 from '../../public/assets/project img/project_page2/product4.png'
-import product5 from '../../public/assets/project img/project_page2/product5.png'
-import product6 from '../../public/assets/project img/project_page2/product6.png'
-import product7 from '../../public/assets/project img/project_page2/product7.png'
-import product8 from '../../public/assets/project img/project_page2/product8.png'
-import product9 from '../../public/assets/project img/project_page2/product9.png'
-import product10 from '../../public/assets/project img/project_page2/product10.png'
+import product1 from '../../src/assets/projectimg/project_page2/product1.png';
+import product2 from '../../src/assets/projectimg/project_page2/product2.png';
+import product3 from '../../src/assets/projectimg/project_page2/product3.png';
+import product4 from '../../src/assets/projectimg/project_page2/product4.png';
+import product5 from '../../src/assets/projectimg/project_page2/product5.png';
+import product6 from '../../src/assets/projectimg/project_page2/product6.png';
+import product7 from '../../src/assets/projectimg/project_page2/product7.png';
+import product8 from '../../src/assets/projectimg/project_page2/product8.png';
+import product9 from '../../src/assets/projectimg/project_page2/product9.png';
+import product10 from '../../src/assets/projectimg/project_page2/product10.png';
 
 import Card from 'react-bootstrap/Card';
 
-import project_banner from '../../public/assets/project img/project_banner.png'
+import project_banner from '../../src/assets/projectimg/project_page2/project_banner.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

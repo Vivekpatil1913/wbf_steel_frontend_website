@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import '../css/vission.css';
-import vission_img from '../../public/assets/vission_mission_img/vission.png';
-import mission_img from '../../public/assets/vission_mission_img/mission.png';
+import vission_img from '../../src/assets/vission_mission_img/vission.png';
+import mission_img from '../../src/assets/vission_mission_img/mission.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

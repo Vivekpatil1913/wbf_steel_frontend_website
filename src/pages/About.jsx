@@ -5,14 +5,14 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import about_banner from '../../public/assets/about_img/Abpout_banner.png'
-import about_img1 from '../../public/assets/about_img/about_img1.png'
-import about_img2 from '../../public/assets/about_img/about_img2.png'
-import about_img3 from '../../public/assets/about_img/about_img3.png'
+import about_banner from '../../src/assets/about_img/Abpout_banner.png'
+import about_img1 from '../../src/assets/about_img/about_img1.png'
+import about_img2 from '../../src/assets/about_img/about_img2.png'
+import about_img3 from '../../src/assets/about_img/about_img3.png'
 
-import constrction_icons from '../../public/assets/about_img/constractionperson_img.png'
-import file_img from '../../public/assets/about_img/exportFile_img.png'
-import export_global from '../../public/assets/about_img/globalIMg.png'
+import constrction_icons from '../../src/assets/about_img/constractionperson_img.png'
+import file_img from '../../src/assets/about_img/exportFile_img.png'
+import export_global from '../../src/assets/about_img/globalIMg.png'
 
 import CountUp from 'react-countup';
 import VissionMission from './VissionMission';

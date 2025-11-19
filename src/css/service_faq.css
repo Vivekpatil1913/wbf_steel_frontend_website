@@ -195,7 +195,7 @@
 
 /* new FAQ */
 .faq_backimg_service {
-    background-image: url('../../public/assets/services/faq_service_back.png');
+    background-image: url('../../src/assets/services/faq_service_back.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;

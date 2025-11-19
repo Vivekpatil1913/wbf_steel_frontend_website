@@ -1,17 +1,17 @@
 import React from 'react'
 import '../../css/our_experince.css'
-import expe_img1 from '../../../public/assets/ourExperince/ourExp_img1.png'
-import charches from '../../../public/assets/ourExperince/Churches.png'
-import sports from '../../../public/assets/ourExperince/Sport Aarenas and Stadiums.png'
-import airport from '../../../public/assets/ourExperince/Airports.png'
+import expe_img1 from '../../../src/assets/ourExperince/ourExp_img1.png'
+import charches from '../../../src/assets/ourExperince/Churches.png'
+import sports from '../../../src/assets/ourExperince/Sport Aarenas and Stadiums.png'
+import airport from '../../../src/assets/ourExperince/Airports.png'
 
 
-import car from '../../../public/assets/ourExperince/cars.png'
-import home from '../../../public/assets/ourExperince/Warehouses.png'
-import school from '../../../public/assets/ourExperince/school.png'
-import hightschool from '../../../public/assets/ourExperince/high_school.png'
-import instdustrie from '../../../public/assets/ourExperince/industries.png'
-import truck from '../../../public/assets/ourExperince/truck.png'
+import car from '../../../src/assets/ourExperince/cars.png'
+import home from '../../../src/assets/ourExperince/Warehouses.png'
+import school from '../../../src/assets/ourExperince/school.png'
+import hightschool from '../../../src/assets/ourExperince/high_school.png'
+import instdustrie from '../../../src/assets/ourExperince/industries.png'
+import truck from '../../../src/assets/ourExperince/truck.png'
 function OurExperience() {
     return (
         <>

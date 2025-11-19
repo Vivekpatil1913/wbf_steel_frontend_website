@@ -5,9 +5,9 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import '../../css/service_card.css'
 
-import service_img1 from '../../../public/assets/services/service_img1.png'
-import service_img2 from '../../../public/assets/services/services_img2.png'
-import service_img3 from '../../../public/assets/services/services_img3.png'
+import service_img1 from '../../../src/assets/services/service_img1.png'
+import service_img2 from '../../../src/assets/services/services_img2.png'
+import service_img3 from '../../../src/assets/services/services_img3.png'
 
 function Services_cards() {
     return (

@@ -1,15 +1,15 @@
 import React from 'react'
 import '../../css/startworkTogether.css'
 
-import facebookIcon from "../../assets/icons/logos_facebook.png";
-import instaIcon from "../../assets/icons/insta.png";
-import whatsappIcon from "../../assets/icons/logos_whatsapp-icon.png";
-import linkedinIcon from "../../assets/icons/Group.png";
-import mailIcon from "../../assets/icons/mail.png";
+import facebookIcon from "../../../src/assets/icons/logos_facebook.png";
+import instaIcon from "../../../src/assets/icons/insta.png";
+import whatsappIcon from "../../../src/assets/icons/logos_whatsapp-icon.png";
+import linkedinIcon from "../../../src/assets/icons/Group.png";
+import mailIcon from "../../../src/assets/icons/mail.png";
 import serviceLine from '../../imges/services/veritical_service_line.png'
 
 
-import arra from '../../../public/assets/services/Arrow 8.png'
+import arra from '../../../src/assets/services/Arrow_8.png'
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";

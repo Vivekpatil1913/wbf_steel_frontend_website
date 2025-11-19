@@ -11,14 +11,14 @@ import Container from 'react-bootstrap/Container';
 
 
 
-import thum_icon from '../../public/assets/services/services_thum_icon.png'
-import services_card2 from '../../public/assets/services/service_card2_img.png'
-import service_card3 from '../../public/assets/services/services_card3_img.png'
-import Services_cards from '../components/service_page_cards_data/Services_cards';
-import Start_work_together from '../components/Work Together Com/Start_work_together';
-import OurExperience from '../components/our experience/OurExperience';
-import Service_Faqs from '../components/service_faqs/Service_Faqs';
-import services_banner from '../../public/assets/services/service_banner.png'
+import thum_icon from '../../src/assets/services/services_thum_icon.png';
+import services_card2 from '../../src/assets/services/service_card2_img.png';
+import service_card3 from '../../src/assets/services/services_card3_img.png';
+import Services_cards from '../../src/components/service_page_cards_data/Services_cards';
+import Start_work_together from '../../src/components/Work Together Com/Start_work_together';
+import OurExperience from '../../src/components/our experience/OurExperience';
+import Service_Faqs from '../../src/components/service_faqs/Service_Faqs';
+import services_banner from '../../src/assets/services/service_banner.png';
 
 function Services() {
   return (
