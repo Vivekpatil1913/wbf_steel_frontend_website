@@ -33,9 +33,7 @@
 }
 
 
-.row {
-  align-items: stretch !important;
-}
+
 
 .why-item:not(:last-child)::after {
   content: "";

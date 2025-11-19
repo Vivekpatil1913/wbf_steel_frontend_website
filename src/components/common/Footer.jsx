@@ -74,7 +74,7 @@ function Footer() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/AboutUs" className="menu-link">
+                  <NavLink to="/About" className="menu-link">
                     About Us
                   </NavLink>
                 </li>
@@ -109,7 +109,7 @@ function Footer() {
                 FOLLOW <span>US</span>
               </h5>
 
-              <div className="footer-social d-flex gap-2 justify-content-lg-start justify-content-center">
+              <div className="footer-social justify-content-lg-start justify-content-center">
                 <a href="https://www.facebook.com/">
                   <img src={facebookIcon} alt="Facebook" />
                 </a>

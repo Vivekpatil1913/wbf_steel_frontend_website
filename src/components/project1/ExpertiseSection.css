@@ -6,8 +6,8 @@
   border: 2px dashed #000;
   margin: 40px auto;
   max-width: 1100px;
-  height: 450px;
   border-radius: 8px;
+  height: auto; /* 🔥 FIX: remove fixed height */
 }
 
 .expertise-container {
@@ -20,10 +20,10 @@
   margin-left: 50px;
 }
 
-/* Left text */
+/* LEFT SIDE */
 .expertise-left {
   flex: 1;
-  min-width: 280px;
+  min-width: 260px;
 }
 
 .expertise-left h2 {
@@ -52,7 +52,7 @@
   max-width: 340px;
 }
 
-.contact-link {
+.learn-more {
   font-weight: 600;
   color: #000;
   text-decoration: none;
@@ -60,39 +60,40 @@
   transition: 0.3s;
 }
 
-.contact-link:hover {
+.learn-more:hover {
   opacity: 0.7;
 }
 
-/* Right Expertise logos */
+/* RIGHT SIDE */
 .expertise-right {
   flex: 1;
-  min-width: 600px;
+  min-width: 330px;
   background: #fff;
   border: 1px solid #000;
   border-radius: 6px;
-  padding: 30px;
+  padding: 30px 20px;
   text-align: center;
-  margin-top: -40px;
+  margin-top: 0;
 }
 
 .expertise-right h3 {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 55px;
+  margin-bottom: 40px;
   color: #000;
 }
 
+/* LOGO GRID */
 .logo-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
 
 .logo-grid img {
-  max-width: 180px;
+  max-width: 160px;
   max-height: 80px;
   object-fit: contain;
   transition: 0.3s ease;
@@ -102,23 +103,119 @@
   transform: scale(1.05);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .expertise-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
+
+
+/* --------- Tablets (768px) --------- */
+@media (max-width: 768px) {
   .expertise-left h2 {
     font-size: 32px;
   }
 
-  .expertise-right {
-    width: 100%;
+  .expertise-section {
+    padding: 30px 10px;
+    margin: 20px;
+  }
+
+  .expertise-right h3 {
+    font-size: 20px;
   }
 
   .logo-grid img {
-    max-width: 120px;
+    max-width: 110px;
+    gap: 20px;
+  }
+}
+
+/* --------- Mobile (600px) --------- */
+@media (max-width: 600px) {
+  .expertise-left h2 {
+    font-size: 28px;
+  }
+
+  .expertise-left p {
+    font-size: 15px;
+  }
+
+  .expertise-right {
+    padding: 25px 15px;
+  }
+
+  .logo-grid {
+    gap: 20px;
+  }
+
+  .logo-grid img {
+    max-width: 100px;
+  }
+}
+
+/* --------- Small Mobile (450px) --------- */
+@media (max-width: 450px) {
+  .expertise-left h2 {
+    font-size: 24px;
+  }
+
+  .expertise-right h3 {
+    font-size: 18px;
+  }
+
+  .logo-grid img {
+    max-width: 85px;
+  }
+}
+
+/* --- iPad & tablet fix (768px - 1100px) --- */
+@media (max-width: 1100px) {
+  .expertise-section {
+    padding: 40px 20px;
+  }
+
+  .expertise-container {
+    margin-left: 0;
+    gap: 40px;
+  }
+
+  .expertise-left {
+    text-align: left;
+  }
+
+  .expertise-left h2 {
+    font-size: 36px;
+  }
+
+  .expertise-left p {
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .expertise-right {
+    width: 100%;
+    margin: 0 auto;
+    padding: 35px 25px;
+  }
+
+  .logo-grid img {
+    max-width: 130px;
+  }
+}
+
+/* --- iPad Air & portrait tablets (820px and below) --- */
+@media (max-width: 900px) {
+  .expertise-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .expertise-left {
+    text-align: center;
+  }
+
+  .expertise-right {
+    margin-top: 10px;
+  }
+
+  .expertise-left h2 {
+    font-size: 32px;
   }
 }

@@ -245,10 +245,10 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="info-row d-flex flex-wrap justify-content-between align-items-start">
+              <div className="info-row  justify-content-between align-items-start">
                 <div className="info-block">
                   <h5>Social Network</h5>
-                  <div className="social-icons d-flex gap-2 flex-wrap">
+                  <div className="social-icons flex-wrap">
                     <a href="https://facebook.com" target="_blank">
                       <img
                         src={facebookIcon}

@@ -599,4 +599,13 @@ only screen
     width: 40px !important;
     height: 40px !important;
   }
+
+  .footer-follow-title {
+    margin-left: 85px !important;
+    justify-content: center !important;
+  }
+
 }
+
+
+

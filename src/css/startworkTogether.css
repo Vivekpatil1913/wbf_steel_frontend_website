@@ -4,6 +4,13 @@
     border-color: #9d9999;
 }
 
+
+.card-outer-border .social-icons {
+
+    gap: 1px;
+}
+
+
 .letstart_work_heading {
     font-family: "Outfit", sans-serif;
     color: #0A4376;

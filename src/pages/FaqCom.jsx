@@ -3,7 +3,6 @@ import '../css/faq.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useSearchParams } from 'react-router-dom';
 
 function FaqCom() {
 
@@ -12,8 +11,65 @@ function FaqCom() {
     const [subject, setsubject] = useState("");
     const [message, setmessage] = useState("");
 
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState({});
 
+   
+
+    const handleNameChange = (e) => {
+        const value = e.target.value;
+        setname(value);
+
+        if (!value.trim()) {
+            setErrors((prev) => ({ ...prev, name: "Please enter Name" }));
+        } else {
+            setErrors((prev) => ({ ...prev, name: "" }));
+        }
+    };
+
+    const handleEmailChange = (e) => {
+        const value = e.target.value;
+        setemail(value);
+
+        if (!value.trim()) {
+            setErrors((prev) => ({ ...prev, email: "Please enter email" }));
+        } else if (!/\S+@\S+\.\S+/.test(value)) {
+            setErrors((prev) => ({ ...prev, email: "Please enter valid email address" }));
+        } else {
+            setErrors((prev) => ({ ...prev, email: "" }));
+        }
+    };
+
+    const handleSubjectChange = (e) => {
+        const value = e.target.value;
+        setsubject(value);
+
+        if (!value.trim()) {
+            setErrors((prev) => ({ ...prev, subject: "Please enter subject" }));
+        } else {
+            setErrors((prev) => ({ ...prev, subject: "" }));
+        }
+    };
+
+    const handleMessageLive = (e) => {
+        const value = e.target.value;
+
+        if (value.length <= 200) {
+            setmessage(value);
+
+            if (!value.trim()) {
+                setErrors((prev) => ({
+                    ...prev,
+                    message: "Please enter message ",
+                }));
+            } else {
+                setErrors((prev) => ({ ...prev, message: "" }));
+            }
+        }
+    };
+
+    // =========================
+    // SUBMIT VALIDATION
+    // =========================
 
     const validateForm = () => {
         let errors = {};
@@ -39,28 +95,10 @@ function FaqCom() {
             isValid = false;
         }
 
-
-
         setErrors(errors);
         return isValid;
     };
-    console.log("errors", errors);
 
-
-    const handleChange = (e) => {
-        const text = e.target.value;
-        const words = text.trim().split(/\s+/);
-        if (words.length <= 200) {
-            setmessage(text);
-        } else {
-            // Limit to first 200 words if exceeded
-            setmessage(words.slice(0, 200).join(" "));
-        }
-    };
-
-    const wordCount = message.trim() === "" ? 0 : message.trim().split(/\s+/).length;
-
-    // 3. Diplay Data Which is store into state and print data into console. (Check Data is proper accepting or Not)
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
@@ -68,10 +106,11 @@ function FaqCom() {
                 name, email, subject, message
             }
             console.log("newData", newData);
-        };
-    }
+        }
+    };
+
     return (
-        <div className='backimge mt-4' >
+        <div className='backimge mt-4'>
             <Container>
                 <Row>
                     <Col lg={7} md={12} sm={12} className='mt-5'>
@@ -81,6 +120,7 @@ function FaqCom() {
                             laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
                             architecto beatae vitae dicta sunt explicabo.
                         </p>
+
                         <div className="d-flex justify-content-center mb-5">
                             <div className="progress" style={{ height: "5px", width: "50%" }}>
                                 <div
@@ -94,8 +134,6 @@ function FaqCom() {
                             </div>
                         </div>
 
-
-
                         <div id="accordionExample">
                             {/* card1 */}
                             <button
@@ -108,14 +146,9 @@ function FaqCom() {
                             >
                                 Is there free parking?
                             </button>
-                            <div
-                                className="collapse show"
-                                id="collapseOne"
-                                data-parent="#accordionExample"  // 👈 ensure it’s part of same group
-                            >
+                            <div className="collapse show" id="collapseOne" data-parent="#accordionExample">
                                 <div className="card card-body card_data">
                                     No, cell phones aren’t permitted on the ropes and trampoline areas due to safety reasons.
-                                    We do have a cell phone storage area to put them in or you can get a locker to store your phone.
                                 </div>
                             </div>
 
@@ -130,17 +163,10 @@ function FaqCom() {
                             >
                                 Can I bring my cell phone on the trampoline or ropes course?
                             </button>
-                            <div
-                                className="collapse"
-                                id="collapseTwo"
-                                data-parent="#accordionExample"  // 👈 same parent
-                            >
+                            <div className="collapse" id="collapseTwo" data-parent="#accordionExample">
                                 <div className="card card-body card_data">
-
-                                    No, cell phones aren’t permitted on the ropes and
-                                    trampoline areas due to safety reasons.
-                                    We do have a cell phone storage area to put them in or
-                                    you can get a locker to store your phone.                                </div>
+                                    No, cell phones aren’t permitted on the ropes and trampoline areas due to safety reasons.
+                                </div>
                             </div>
 
                             {/* card3 */}
@@ -154,17 +180,10 @@ function FaqCom() {
                             >
                                 Do you have a nursing station?
                             </button>
-                            <div
-                                className="collapse"
-                                id="collapsethree"
-                                data-parent="#accordionExample"  // 👈 same parent
-                            >
+                            <div className="collapse" id="collapsethree" data-parent="#accordionExample">
                                 <div className="card card-body card_data">
-
-                                    No, cell phones aren’t permitted on the ropes and
-                                    trampoline areas due to safety reasons.
-                                    We do have a cell phone storage area to put them in or
-                                    you can get a locker to store your phone.                                </div>
+                                    No, cell phones aren’t permitted on the ropes and trampoline areas due to safety reasons.
+                                </div>
                             </div>
 
                             {/* card4 */}
@@ -178,17 +197,12 @@ function FaqCom() {
                             >
                                 When should I arrive before my scheduled attraction?
                             </button>
-                            <div
-                                className="collapse"
-                                id="collapsefour"
-                                data-parent="#accordionExample"  // 👈 same parent
-                            >
+                            <div className="collapse" id="collapsefour" data-parent="#accordionExample">
                                 <div className="card card-body card_data">
                                     Comfortable athletic clothing and grip socks are recommended.
                                 </div>
                             </div>
                         </div>
-
                     </Col>
 
                     <Col lg={5} md={12} sm={12} className='mt-5 mb-3'>
@@ -196,87 +210,76 @@ function FaqCom() {
                             <div className="card-body mt-5 mb-5">
                                 <h3 className='title_req'>Request A Quote</h3>
                                 <p className='parafaq mb-5'>
-                                    Fill all information details to consult with us to
-                                    get services from us
+                                    Fill all information details to consult with us to get services from us
                                 </p>
-                                <Container className='Formstart '>
+
+                                <Container className='Formstart'>
                                     <div className='container'>
                                         <form onSubmit={handleSubmit}>
+
+                                            {/* NAME */}
                                             <div className="form-group">
                                                 <input
                                                     type="text"
                                                     className="form-control custom-input"
                                                     placeholder="Enter Name"
                                                     value={name}
-                                                    onChange={(e) => setname(e.target.value)}
+                                                    onChange={handleNameChange}
                                                 />
                                                 {errors.name && <span className="error text-danger">{errors.name}</span>}
                                             </div>
+
+                                            {/* EMAIL */}
                                             <div className="form-group ">
                                                 <input
                                                     type="email"
-                                                    className="form-control custom-input "
+                                                    className="form-control custom-input"
                                                     placeholder="Enter Email"
                                                     value={email}
-                                                    onChange={(e) => setemail(e.target.value)}
+                                                    onChange={handleEmailChange}
                                                 />
                                                 {errors.email && <span className="error text-danger">{errors.email}</span>}
                                             </div>
+
+                                            {/* SUBJECT */}
                                             <div className="form-group">
                                                 <input
                                                     type="text"
                                                     className="form-control custom-input"
                                                     placeholder="Enter Subject"
                                                     value={subject}
-                                                    onChange={(e) => setsubject(e.target.value)}
+                                                    onChange={handleSubjectChange}
                                                 />
                                                 {errors.subject && <span className="error text-danger">{errors.subject}</span>}
                                             </div>
 
+                                            {/* MESSAGE */}
                                             <div className="form-group">
-                                                <div className="form-group">
-                                                    <input
-                                                        type="text"
-                                                        className="form-control custom-input"
-                                                        placeholder="Enter message"
-                                                        value={message}
-                                                        onChange={(e) => setmessage(e.target.value)}
-                                                    />
-                                                    {/* <textarea
-                                                        className="form-control custom-input"
-                                                        placeholder="Enter Message"
-                                                        rows="1"
-                                                        maxLength={200}
-                                                        value={message}
-                                                        onChange={(e) => setmessage(e.target.value)}
-                                                    /> */}
-                                                    {errors.message && <span className="error text-danger">{errors.message}</span>}
-                                                    <div>{message.length} / 200</div>
-                                                </div>
-
+                                                <input
+                                                    type="text"
+                                                    className="form-control custom-input"
+                                                    placeholder="Enter message"
+                                                    value={message}
+                                                    onChange={handleMessageLive}
+                                                />
+                                                {errors.message && <span className="error text-danger">{errors.message}</span>}
+                                                <div>{message.length} / 200</div>
                                             </div>
-
-
-
 
                                             <div className="text-center">
                                                 <button type="submit" className="send_btn">
                                                     SEND
                                                 </button>
-
                                             </div>
                                         </form>
                                     </div>
                                 </Container>
-
                             </div>
                         </div>
                     </Col>
-
                 </Row>
             </Container>
-
-        </div >
+        </div>
     );
 }
 

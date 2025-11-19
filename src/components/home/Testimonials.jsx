@@ -81,8 +81,9 @@ const Testimonials = () => {
             className="testimonial-swiper"
             breakpoints={{
               1280: { slidesPerView: 2 },
-              1024: { slidesPerView: 1.5 },
-              768: { slidesPerView: 1 },
+              1024: { slidesPerView: 2 },
+              768: { slidesPerView: 2 },
+              576: { slidesPerView: 1.2 },
               0: { slidesPerView: 1 },
             }}
           >

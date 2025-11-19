@@ -155,6 +155,53 @@
   }
 }
 
+ @media (max-width: 1200px) {
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+   ;
+  }
+
+  .main-image-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-title {
+    text-align: center;
+  }
+
+  .main-image {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .info-box {
+    max-width: 90%;
+    margin-top: 25px;
+    height: 190px;
+    margin-bottom: 45px;
+  }
+
+  .image-list {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .image-thumbnails {
+    flex-direction: row;
+  }
+
+  .image-thumbnails img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+
+
+
 @media (max-width: 576px) {
   .project-title {
     font-size: 20px;
