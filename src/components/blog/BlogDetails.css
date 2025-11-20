@@ -1,0 +1,30 @@
+.blog-details {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.blog-details-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.blog-details-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 30px 20px;
+  color: black;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-details-content {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  justify-content: center;
+}

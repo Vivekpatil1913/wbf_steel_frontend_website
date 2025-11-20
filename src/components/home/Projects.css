@@ -1,8 +1,10 @@
 /*  PROJECTS SECTION */
 .projects-section {
   background-color: #fff;
-  padding: 30px 50px;
+  /* padding: 30px 50px; */
 }
+
+
 
 .projects-grid {
   display: grid;
@@ -16,6 +18,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 1px;
+  margin-left: 5px;
 }
 
 .project-main img {
@@ -23,6 +26,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  
 }
 
 .project-overlay {
@@ -201,3 +205,21 @@
     padding: 10px 20px;
   }
 }
+
+.projects-section,
+.projects-grid,
+.project-main,
+.project-side,
+.project-card {
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.projects-grid {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+

@@ -27,7 +27,7 @@ function Footer() {
         className="footer-section text-white"
         style={{ backgroundImage: `url(${bg})` }}
       >
-        <div className="container-fluid py-4 px-4">
+        <div className="container-fluid ">
           <div className="row gy-5 justify-content-between align-items-start">
 
             {/* ===== LEFT COLUMN ===== */}
@@ -81,6 +81,11 @@ function Footer() {
                 <li>
                   <NavLink to="/Services" className="menu-link">
                     Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/Blog" className="menu-link">
+                    Blog
                   </NavLink>
                 </li>
                 <li>

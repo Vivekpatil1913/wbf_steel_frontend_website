@@ -1,10 +1,10 @@
 .testimonials-section {
   background: #fff;
-  padding: 100px 0;
+  padding: 50px 0;
   display: flex;
   justify-content: center;
-   margin-top: -90px;
-   margin-bottom:-40px;
+   /* margin-top: -90px;
+   margin-bottom:-40px; */
 }
 
 .testimonials-wrapper {

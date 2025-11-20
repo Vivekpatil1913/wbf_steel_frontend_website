@@ -4,6 +4,7 @@
   /* font-size: 64px; */
 }
 
+
 #pills-tab {
   display: flex;
   justify-content: space-between;
@@ -810,9 +811,7 @@
 
 /* Wrapper to allow horizontal scroll */
 .responsive-tabs-wrapper {
-  overflow-x: auto;
-  
-
+  overflow: auto;
   width: 100%;
 }
 
@@ -873,8 +872,7 @@
     /* keep all tabs in a single line */
     width: max-content !important;
     /* allow container to grow with all tabs */
-    overflow-x: auto;
-    /* enable horizontal scroll */
+  
   }
 
   .responsive-tab-item {

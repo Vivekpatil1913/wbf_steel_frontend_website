@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HomeAbout.css";
 import aboutImg from "../../assets/images/image 136.png";
 
@@ -15,8 +16,8 @@ const HomeAbout = () => {
             support and advice team always helps customers wholeheartedly and
             answers all customers' questions.
           </p>
-          <a
-            href="AboutUs"
+          <Link
+            to="/AboutUs"
             className="learn-more"
             onClick={(e) => {
               e.currentTarget.classList.add("clicked");
@@ -27,7 +28,7 @@ const HomeAbout = () => {
           >
             LEARN MORE{" "}
             <i className="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          </Link>
         </div>
         <div className="home-about-image">
           <img src={aboutImg} alt="About WBF Steel" />

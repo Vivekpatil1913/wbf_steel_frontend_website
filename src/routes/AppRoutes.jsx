@@ -11,6 +11,8 @@ import ContactUs from "../pages/ContactUs";
 import ProjectDetails from "../pages/ProjectDetails";
 import ProjectNav from "../components/projectCom/ProjectNav";
 import Careers from "../pages/Careers";
+import Blog from "../pages/Blog";
+import BlogDetails from "../components/blog/BlogDetails";
 // import Careers from "../pages/Careers";
 
 // ScrollToTop component resets scroll on route change
@@ -37,6 +39,8 @@ function AppRoutes() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/blog" element={<Blog />} />
+         <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
       <Footer />
     </Router>

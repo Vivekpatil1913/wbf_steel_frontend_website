@@ -39,16 +39,7 @@ import { Link } from 'react-router-dom'
 
 
 function Projects() {
-  // return (
-  // <>
-  //   <ProjectImage />
-  //   <ProjectProducts />
-  //   <ProjectDetails />
-  //   <ExpertiseSection />
-  
-  // </>
-  
-  // );
+
 
   const sliderRefs = useRef([]);   // store refs for each project
 
@@ -192,14 +183,7 @@ function Projects() {
 
       sliderImages: [product1, product2, product3, product3]
     },
-    // {
-    //   name: "Project 7",
-    //   location: "Commercial Building, GA USA",
-    //   description: "Located in Georgia, USA, WBF Steel Company specializes in commercial building projects. The company provides high-quality structural steel fabrication, design, and erection services for industrial and commercial constructions. Known for durability, precision, and timely project delivery",
-    //   mainImage: product10,
-
-    //   sliderImages: [product1, product2, product3, product3]
-    // },
+   
 
 
 
@@ -217,7 +201,7 @@ function Projects() {
     <>
       <img src={project_banner} class="img-fluid" alt="project_img" width={'100%'} />
       <h1 className='text-center head_project mt-3 mb-3'>Built to Power Your Product</h1>
-      <div className='container'>
+      <div className='container pro'>
         <div className="responsive-tabs-wrapper">
           <ul className="nav nav-pills mb-3 responsive-tabs" id="pills-tab" role="tablist">
             {projects.map((project, index) => (

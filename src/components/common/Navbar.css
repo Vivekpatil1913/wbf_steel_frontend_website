@@ -5,13 +5,15 @@
   z-index: 3000;
   transition: transform 0.4s ease, opacity 0.4s ease;
   background: #fff;
+
 }
+
+
 
 
 .top-infobar {
   background: #fff;
   color: #000;
-  font-family: 'Outfit', sans-serif;
   padding: 6px 0;
   position: sticky;
   top: 0;
@@ -302,7 +304,7 @@ body {
 
 
 
-@media (min-width: 768px) and (max-width: 1180px) {
+@media (min-width: 768px) and (max-width: 980px) {
 
   /* Hidden by default */
   .navbar-collapse {
@@ -373,3 +375,4 @@ body {
     text-align: center !important;
   }
 }
+
