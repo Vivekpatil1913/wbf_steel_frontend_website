@@ -8,30 +8,28 @@
 
 }
 
-
-
-
 .top-infobar {
   background: #fff;
   color: #000;
-  padding: 6px 0;
+  padding: 4px 0;
   position: sticky;
   top: 0;
   z-index: 1100;
   transition: all 0.4s ease-in-out;
-  min-height: 55px;
+  height: 70px;
 }
 
 .infobar-logo {
-  height: 65px;
+  height: 55px;
   object-fit: contain;
 }
 
 .tagline {
-  font-size: 13px;
-  letter-spacing: 1.2px;
+  font-size: 1rem;
+  /* letter-spacing: 1.2px; */
+  line-height: 1.5rem;
   color: #555;
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -44,12 +42,12 @@
 }
 
 .info-item .info-title {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 .info-item .info-sub {
-  font-size: 14px;
+  font-size: 1rem;
   color: #6c757d;
 }
 
@@ -90,7 +88,7 @@
 
 .main-navbar {
   background: linear-gradient(90deg, #0f4c8a, #022a64);
-  height: 70px;
+  height: 60px;
   padding: 0;
   border: none !important;
   margin: 0 !important;
@@ -108,7 +106,9 @@
 
 .main-navbar .nav-link {
   color: #fff !important;
-  font-size: 20px;
+  font-size: 1rem;
+  font-weight: 400px;
+  line-height: 1.5rem;
   letter-spacing: 0.5px;
   position: relative;
   transition: all 0.3s ease;

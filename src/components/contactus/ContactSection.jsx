@@ -201,7 +201,7 @@ const ContactSection = () => {
                   <p className="error-message">{errors.message}</p>
                 )}
 
-                <button type="submit" className="submit-btn">
+                <button type="submit" className="submit-btn sbmit">
                   Submit
                 </button>
 

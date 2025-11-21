@@ -7,27 +7,26 @@
 
 .card-outer-border .social-icons {
 
-    gap: 1px;
+    gap:1px;
 }
 
 
 .letstart_work_heading {
     font-family: "Outfit", sans-serif;
     color: #0A4376;
-    font-size: 37px;
+    font-size: 32px;
     line-height: 100%;
     letter-spacing: 0.01em;
     margin: 0 auto;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .para-work {
     font-family: "Outfit", sans-serif !important;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 100%;
     letter-spacing: 0.06em;
     padding-top: 50px;
-
     font-weight: 500;
 }
 
@@ -60,14 +59,10 @@
 } */
 
 .custom-line {
-    width: 15%;
-    /* you can set example: 200px */
+    width: 19%;
     height: 3px;
-    /* thickness of the line */
     background-color: #e8a725;
-    /* your yellow color */
     border-radius: 0px;
-    /* smooth rounded edges */
    margin-left: 15px !important;
 }
 
@@ -100,10 +95,10 @@
 
 .get_quote {
     font-family: "Outfit", sans-serif !important;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 100%;
     letter-spacing: 0.06em;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .get_quote a {

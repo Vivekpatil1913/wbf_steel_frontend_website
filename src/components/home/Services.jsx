@@ -23,7 +23,7 @@ function Services() {
                 in development of projects.
               </p>
                <Link to="/services" className="service-link">
-                READ MORE
+                READ MORE  <i className="fa-solid fa-arrow-up-right-from-square"></i>
               </Link>
             </div>
           </div>
@@ -41,7 +41,7 @@ function Services() {
                 ones.
               </p>
               <Link to="/services" className="service-link">
-                READ MORE
+                READ MORE  <i className="fa-solid fa-arrow-up-right-from-square"></i>
               </Link>
             </div>
           </div>

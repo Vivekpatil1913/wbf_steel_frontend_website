@@ -32,7 +32,7 @@ function Footer() {
 
             {/* ===== LEFT COLUMN ===== */}
             <div className="col-lg-4 col-md-4 text-md-start text-center">
-              <h4 className="footer-title mb-4">CONTACT COMPANY</h4>
+              <h4 className="footer-title mb-3">CONTACT COMPANY</h4>
               <ul className="footer-contact list-unstyled">
                 
                 <li>
@@ -66,7 +66,7 @@ function Footer() {
 
             {/* ===== MIDDLE COLUMN ===== */}
             <div className="col-lg-3 col-md-4 text-md-start text-center footer-follow-col">
-              <h4 className="footer-title mb-4 men">MENU</h4>
+              <h4 className="footer-title mb-3 men">MENU</h4>
               <ul className="footer-menu">
                 <li>
                   <NavLink to="/" className="menu-link">

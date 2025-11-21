@@ -7,7 +7,7 @@
 
 /* Section title */
 .section-title {
-  font-size: 32px;
+  font-size: 1.6rem;
   font-weight: 700;
   text-align: left;
   margin-bottom: 20px;
@@ -51,14 +51,14 @@
 
 /* Title */
 .service-title {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
 /* Description */
 .service-text {
-  font-size: 16px;
+  font-size: 1rem;
   margin-bottom: 20px;
   line-height: 1.6;
 }

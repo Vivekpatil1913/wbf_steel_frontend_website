@@ -1,4 +1,4 @@
-.white-box {
+.project-details .white-box {
   background: #fff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -16,7 +16,7 @@
   margin-top: -50px;
 }
 
-.project-container {
+ .white-box .project-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -27,14 +27,14 @@
 }
 
 /* Left: Thumbnail List */
-.image-list {
+.project-container .image-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 
-.arrow-btn {
+.image-list .arrow-btn {
   background: none;
   border: none;
   font-size: 20px;
@@ -44,18 +44,18 @@
   transition: 0.2s;
 }
 
-.arrow-btn:hover {
+.image-list .arrow-btn:hover {
   transform: scale(1.2);
 }
 
-.image-thumbnails {
+.image-list .image-thumbnails {
   display: flex;
   flex-direction: column;
   gap: 28px;
   align-items: center;
 }
 
-.image-thumbnails img {
+.image-list .image-thumbnails img {
   margin-top: -15px;
   width: 200px;
   height: 150px;
@@ -67,28 +67,28 @@
   box-shadow: 0 2px 4px #fff;
 }
 
-.image-thumbnails img.active,
-.image-thumbnails img:hover {
+.image-list .image-thumbnails img.active,
+.image-list .image-thumbnails img:hover {
   border: 1px solid #fff;
   transform: scale(1.03);
 }
 
 /* Center: Main Image + Title */
-.main-image-section {
+.project-details .main-image-section {
   display: flex;
   flex-direction: column;
   align-items: start;
   margin-top: 60px;
 }
 
-.project-title {
+.project-details .project-title {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 18px;
   color: #000;
 }
 
-.main-image {
+.project-details  .main-image {
   width: 400px;
   height: auto;
   border-radius: 0px;
@@ -98,7 +98,7 @@
 }
 
 /* Right: Yellow Info Box */
-.info-box {
+ .project-details  .info-box {
   background-color: #ffc422;
   color: #000;
   font-size: 22px;
@@ -155,53 +155,6 @@
   }
 }
 
- @media (max-width: 1200px) {
-  .project-container {
-    flex-direction: column;
-    align-items: center;
-   ;
-  }
-
-  .main-image-section {
-    align-items: center;
-    text-align: center;
-  }
-
-  .project-title {
-    text-align: center;
-  }
-
-  .main-image {
-    width: 90%;
-    max-width: 500px;
-  }
-
-  .info-box {
-    max-width: 90%;
-    margin-top: 25px;
-    height: 190px;
-    margin-bottom: 45px;
-  }
-
-  .image-list {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .image-thumbnails {
-    flex-direction: row;
-  }
-
-  .image-thumbnails img {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-
-
-
-
 @media (max-width: 576px) {
   .project-title {
     font-size: 20px;
@@ -224,5 +177,3 @@
 }
 
 }
-
-

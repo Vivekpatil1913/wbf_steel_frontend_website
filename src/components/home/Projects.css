@@ -8,7 +8,7 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: 1.8fr 1.7fr;
+  grid-template-columns: 1.8fr 1.8fr;
   gap: 20px;
   align-items: stretch;
 }
@@ -17,7 +17,7 @@
 .project-main {
   position: relative;
   overflow: hidden;
-  border-radius: 1px;
+  border-radius: 2px;
   margin-left: 5px;
 }
 
@@ -41,24 +41,24 @@
 }
 
 .overlay-content h2 {
-  font-size: 48px;
+  font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .overlay-content p {
-  font-size: 22px;
+  font-size: 1.2rem;
   margin-bottom: 30px;
 }
 
 .btn-yellow {
   background-color: #ffc107;
   color: #000;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
-  padding: 14px 30px;
+  padding: 12px 28px;
   border-radius: 6px;
-  font-size: 18px;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -70,13 +70,13 @@
 .project-side {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 18px;
 }
 
 .project-card {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 /* Image */
@@ -105,7 +105,7 @@
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600;
   color: #ffffff !important; /* force white text */
   z-index: 3; /* keep text above overlay */
@@ -124,7 +124,7 @@
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
   z-index: 3; /* ensure it's above overlay */
@@ -186,10 +186,10 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
 
    .projects-section {
-    padding: 30px 20px;
+    padding: 5px 20px;
   }
 
   .overlay-content h2 {
@@ -223,3 +223,30 @@ body {
   overflow-x: hidden;
 }
 
+.project-main,
+.project-card {
+  aspect-ratio: 16 / 12;  /* controls the shape */
+  height: auto;
+}
+
+.project-main img,
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-main,
+.project-card {
+  aspect-ratio: 4 / 3;   /* same shape for all cards */
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.project-main img,
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -42,7 +42,8 @@ function About() {
 
 
     return (
-        <>
+        <>   
+        <section className='par'>
             <img src={about_banner} class="img-fluid " alt="..." width={'100%'}></img>
             <h3 className='text-center mt-4'><b>Company Overview</b></h3>
 
@@ -159,12 +160,13 @@ function About() {
                     </Col>
                 </Row>
             </Container>
+         </section>
 
             <VissionMission />
             <FaqCom />
             <Testimonials />
 
-
+          
         </>
     )
 }

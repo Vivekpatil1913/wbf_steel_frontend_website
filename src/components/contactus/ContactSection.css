@@ -48,18 +48,23 @@
   gap: 12px;
 }
 
-.submit-btn {
+.sbmit {
   background: #004aad;
   color: #fff;
   border: none;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: 600;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: 500;
   cursor: pointer;
   transition: 0.3s ease;
+  text-align: right;
+  justify-content:flex-end;
+  margin-left: auto;
+  display: block;
+
 }
 
-.submit-btn:hover {
+.sbmit:hover {
   background: #002f73;
 }
 

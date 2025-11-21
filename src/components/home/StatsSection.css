@@ -5,7 +5,6 @@
   padding-top:-40px;
   margin-bottom: 40px;
 
-  
 }
 
 .stats-box {
@@ -24,7 +23,7 @@
 }
 
 .stats-subtitle {
-  font-size: 28px;
+  font-size: 1rem;
   color: #222;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -32,9 +31,9 @@
 
 .get-in-touch {
   color: #000;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1rem;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -81,12 +80,12 @@
 }
 
 .stat-header i {
-  font-size: 36px;
+  font-size: 34px;
   color: #000;
 }
 
 .stat-header h3 {
-  font-size: 34px;
+  font-size: 20px;
   font-weight: 700;
   color: #000;
   margin: 0;
@@ -94,7 +93,7 @@
 
 /* Description below */
 .stat-item p {
-  font-size: 18px;
+  font-size: 1rem;
   color: #666;
   font-weight: 600;
   margin-top: 6px;
@@ -245,3 +244,54 @@
     font-size: 13px;
   }
 }
+
+@media (max-width: 576px) {
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .stats-row {
+    display: contents; /* Allows individual stat items to follow the grid */
+  }
+
+  .stat-item {
+    background: transparent;
+  }
+
+  .stats-row.single {
+    grid-column: span 2; /* center the last one across the row */
+    justify-content: center;
+    display: flex;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .stats-row {
+    display: contents; /* Allows individual stat items to follow the grid */
+  }
+
+  .stat-item {
+    background: transparent;
+  }
+
+  .stats-row.single {
+    grid-column: span 2; /* center the last one across the row */
+    justify-content: center;
+    display: flex;
+  }
+}
+
