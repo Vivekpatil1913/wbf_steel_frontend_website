@@ -18,10 +18,10 @@ function Start_work_together() {
     return (
         <>
             <div className='container-fluid '>
-                <div class="card-outer-border p-3">
+                <div class="card-outer-border p-2">
 
-                    <p className='letstart_work_heading pt-3 pl-3'>Let’s Start Work Together</p>
-                    <p className='para-work pl-3'>
+                    <p className='letstart_work_heading pt-2 pl-3'>Let’s Start Work Together</p>
+                    <p className='para-work pl-3 '>
                         Please feel free to contact us. We will get back to you with 1-2 business days.<br />
                         Or just call us now.
                     </p>
@@ -29,7 +29,7 @@ function Start_work_together() {
                     <div class="custom-line"></div>
 
 
-                    <div className="social-icons d-flex align-items-center pl-3 mt-5">
+                    <div className=" sociall social-icons d-flex align-items-center pl-3 mt-5 ">
                         <a href="https://www.facebook.com/" className="me-2">
                             <img src={facebookIcon} alt="Facebook" />
                         </a>
