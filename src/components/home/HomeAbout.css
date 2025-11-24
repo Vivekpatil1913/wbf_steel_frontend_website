@@ -3,7 +3,7 @@
 }
   
  .home-about {
-  padding: 60px 90px;
+  padding: 40px 90px;
   display: flex;
   justify-content: center;
   background: #fff;
@@ -27,7 +27,7 @@
     )
     2 round;
 
-  padding: 40px 70px;
+  padding: 30px 70px;
   gap: 60px;
 }
 
@@ -230,6 +230,7 @@
   }
 }
 
+
 /* Small Mobile (≤480px) */
 @media (max-width: 480px) {
   .home-about {
@@ -307,3 +308,6 @@
     font-size: 12px;
   }
 }
+
+
+

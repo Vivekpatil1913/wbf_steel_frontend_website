@@ -1,5 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./StatsSection.css";
+import peopleIcon from "../../assets/icons/streamline-ultimate_human-resources-search-employees-bold (1).png";
+import clipboardIcon from "../../assets/icons/Vector (5).png";
+import globeIcon from "../../assets/icons/mingcute_earth-2-line.png";
+
 
 function StatsSection() {
   const [stats, setStats] = useState({
@@ -80,8 +84,8 @@ function StatsSection() {
                 <div className="stats-row">
                   <div className="stat-item">
                     <div className="stat-header">
-                      <i className="bi bi-people-fill"></i>
-                      <h3>{stats.experts} +</h3>
+                     <img src={peopleIcon} alt="Experts" className="stats-icon" />
+                      <h3>{stats.experts} <span>+</span></h3>
                     </div>
                     <p>EXPERT EMPLOYED</p>
                   </div>
@@ -90,8 +94,8 @@ function StatsSection() {
 
                   <div className="stat-item">
                     <div className="stat-header">
-                      <i className="bi bi-clipboard-data"></i>
-                      <h3>{stats.platforms} +</h3>
+                        <img src={clipboardIcon} alt="Platforms" className="stats-icon" />
+                      <h3>{stats.platforms} <span>+</span></h3>
                     </div>
                     <p>WORK PLATFORMS</p>
                   </div>
@@ -101,8 +105,8 @@ function StatsSection() {
                 <div className="stats-row single">
                   <div className="stat-item">
                     <div className="stat-header">
-                      <i className="bi bi-globe"></i>
-                      <h3>{stats.clients} +</h3>
+                        <img src={globeIcon} alt="Clients" className="stats-icon" />
+                      <h3>{stats.clients} <span>+</span></h3>
                     </div>
                     <p>CLIENTS</p>
                   </div>

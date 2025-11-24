@@ -1,15 +1,20 @@
 import React from "react";
 import "./ChooseUs.css";
 
+import icon1 from "../../assets/icons/Vector (3).png";
+import icon2 from "../../assets/icons/Vector (4).png";
+import icon3 from "../../assets/icons/ic_twotone-support-agent.png";
+
+
 function WhyChooseUs() {
   return (
-    <section className="why-section py-5">
+    <section className="why-section ">
       <div className="container">
         <div className="row text-center justify-content-center align-items-start">
           {/* COLUMN 1 */}
           <div className="col-md-4 col-sm-12 why-item">
             <div className="icon mb-3">
-              <i className="bi bi-people-fill"></i>
+               <img src={icon1} alt="Professional Team" className="why-icon" />
             </div>
             <h4 className="why-title">PROFESSIONAL TEAM</h4>
             <p className="why-text">
@@ -23,7 +28,7 @@ function WhyChooseUs() {
           {/* COLUMN 2 */}
           <div className="col-md-4 col-sm-12 why-item">
             <div className="icon mb-3">
-              <i className="bi bi-headset"></i>
+               <img src={icon3} alt="Smart Work" className="why-icon" />
             </div>
             <h4 className="why-title">GREAT SUPPORT</h4>
             <p className="why-text">

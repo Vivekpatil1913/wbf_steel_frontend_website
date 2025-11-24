@@ -1,185 +1,232 @@
-
+/* SECTION */
 .work-platform-section {
-  background-color: #fff;
-  padding: 60px 0;
+  background: #fff;
+  padding: 40px 10px;
   display: flex;
   justify-content: center;
-   /* margin-bottom: -50px; */
-   
 }
 
-/*  MAIN BOX  */
-.work-platform-box {
+/* MAIN BOX */
+.work-platform-section .work-platform-box {
   background: #fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  padding: 50px 60px;
+  padding: 30px 10px;
   width: 90%;
   max-width: 1100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* TITLE */
+.work-platform-section .work-platform-title {
   text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 45px;
 }
 
-/*  TITLE INSIDE BOX  */
-.work-platform-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-/* CONTENT ROW  */
-.work-platform-content {
-  display: flex;
+/* GRID */
+.work-platform-section .work-platform-grid {
+  display: grid;
+  grid-template-columns: 57% 1px 30%;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+  gap: 35px;
 }
 
-/* LEFT SIDE: LOGOS  */
-.work-platform-logos {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 30px;
+/* LEFT */
+.work-platform-section .left-logos {
+  width: 100%;
 }
 
-.logo-row {
-  display: flex;
-  justify-content: center;
+.work-platform-section .logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 40px !important;
+  grid-column-gap: 10px !important;
+  justify-items: center;
   align-items: center;
-  gap: 40px;
+  width: 100%;
+  padding-left: 35px;
 }
 
-.logo-row.single {
-  justify-content: center;
+.work-platform-section .full-row {
+  grid-column: span 2;
 }
 
-.work-platform-logos img {
-  width: 190px;
+.work-platform-section .single-logo {
+  grid-column: span 2;
+  justify-self: center;
+}
+
+/* LOGO IMAGE */
+.work-platform-section .logo-grid img {
+  width: 300px !important;
+  max-width: none !important;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
-.work-platform-logos img:hover {
+.work-platform-section .logo-grid img:hover {
   transform: scale(1.05);
 }
 
 /* DIVIDER */
-.divider {
+.work-platform-section .divider {
   width: 1px;
-  height: 230px;
-  align-self: center;
-  background-color: #000;
+  height: 290px;
+  background: #000;
+  margin: auto;
+  margin-left:-20px !important;
 }
 
-/*  RIGHT SIDE: TEXT */
-.work-platform-text {
-  flex: 1;
-  text-align: left;
-  font-size: 1.2rem;
-  font-weight: 400;
+/* RIGHT TEXT */
+.work-platform-section .right-text {
+  font-size: 20px;
   color: #000;
   line-height: 1.6;
+  margin-left: 25px;
+  margin: 0 10px;
 }
 
-.work-platform-text p {
-  margin-bottom: 24px;
+.work-platform-section .right-text p {
+  margin-bottom: 22px;
 }
 
-.work-platform-text a {
+.work-platform-section .right-text a {
+  text-decoration: underline !important;
   color: #000;
   font-weight: 600;
-  text-decoration: underline;
 }
 
-.work-platform-text a:hover {
-  color: #f7b500;
-}
+/* =======================================================
+   RESPONSIVE MEDIA QUERIES – FULLY OPTIMIZED
+=======================================================*/
 
-/* RESPONSIVE DESIGN  */
-@media (max-width: 1280px) {
-  .work-platform-box {
-    padding: 50px 40px;
+/* 🔵 1400px */
+@media (max-width: 1400px) {
+  .work-platform-section .logo-grid img {
+    width: 220px !important;
   }
 
-  .work-platform-logos img {
-    width: 110px;
-  }
-
-  .divider {
-    height: 250px;
+  .work-platform-section .work-platform-grid {
+    grid-template-columns: 55% 1px 35%;
   }
 }
 
-@media (max-width: 768px) {
-  .work-platform-section {
-   margin-top: -80px;
-   
+/* 🔵 1200px */
+@media (max-width: 1200px) {
+  .work-platform-section .logo-grid img {
+    width: 240px !important;
   }
 
+  .work-platform-section .divider {
+    height: 240px;
+  }
+}
 
-  .work-platform-content {
-    flex-direction: column;
+/* 🔵 992px (Tablets Landscape) */
+@media (max-width: 992px) {
+  .work-platform-section .work-platform-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
     text-align: center;
-    gap: 40px;
   }
 
-  .divider {
+  /* hide divider */
+  .work-platform-section .divider {
     display: none;
   }
 
-  .work-platform-logos {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 25px;
+  /* center logos */
+  .work-platform-section .logo-grid {
+    padding-left: 0;
+  }
+
+  .work-platform-section .left-logos {
+    display: flex;
     justify-content: center;
   }
 
-  .work-platform-logos img {
-    width: 100px;
+  .work-platform-section .logo-grid img {
+    width: 220px !important;
   }
 
-  .work-platform-text {
-    text-align: center;
+  .work-platform-section .right-text {
+    margin-left: 0;
+    font-size: 18px;
   }
 }
 
-@media (max-width: 576px) {
-
-   
-.work-platform-section {
-   margin-top: 10px;
-}
-
-
-  .work-platform-title {
+/* 🔵 768px (Tablets Portrait) */
+@media (max-width: 768px) {
+  .work-platform-section .work-platform-title {
     font-size: 28px;
+  }
+
+  .work-platform-section .work-platform-box {
+    padding: 25px 15px;
+  }
+
+  .work-platform-section .logo-grid img {
+    width: 180px !important;
+  }
+
+  .work-platform-section .right-text {
+    font-size: 17px;
+  }
+}
+
+/* 🔵 576px (Mobile Phones) */
+@media (max-width: 576px) {
+  .work-platform-section {
+    padding: 25px 5px;
+  }
+
+  .work-platform-section .work-platform-box {
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .work-platform-section .work-platform-title {
+    font-size: 24px;
     margin-bottom: 30px;
   }
 
-  .work-platform-box {
-    padding: 30px 20px;
+  /* LOGOS stack properly */
+  .work-platform-section .logo-grid {
+    grid-template-columns: 1fr;
+    row-gap: 25px !important;
+    margin-right: 20px;
   }
 
-  .work-platform-logos img {
-    width: 85px;
+  .work-platform-section .logo-grid img {
+    width: 160px !important;
   }
 
-  .work-platform-text {
+  /* TEXT */
+  .work-platform-section .right-text {
+    font-size: 16px;
+    text-align: center;
+    padding: 0 10px;
+     margin-right: 10px;
+  }
+
+  .work-platform-section .right-text p {
+    margin-bottom: 18px;
+  }
+
+  .work-platform-section .right-text a {
+    font-size: 16px;
+  }
+}
+
+/* 🔵 400px (Small Phones) */
+@media (max-width: 400px) {
+  .work-platform-section .logo-grid img {
+    width: 140px !important;
+  }
+
+  .work-platform-section .right-text {
     font-size: 15px;
   }
-}
-
-@media (min-width: 768px) and (max-width: 1000px) {
-  .work-platform-section {
-    padding-bottom: 10px;
-    margin-top: -40px;
-  }
-}
-
-.work-platform-logos img {
-  width: 190px;  /* was 190px */
 }

@@ -52,7 +52,7 @@
   background: #004aad;
   color: #fff;
   border: none;
-  padding: 8px 25px;
+  padding: 10px 25px;
   border-radius: 30px;
   font-weight: 600;
 
@@ -60,10 +60,10 @@
   transition: 0.3s ease;
   text-align: right;
   justify-content:flex-end;
-  margin-left:320px;
+  margin-left:350px;
   display: block;
   /* margin-top: -10px; */
-  margin-bottom: 5px;
+   margin: 10px 0 5px auto; 
 
 }
 
@@ -164,6 +164,13 @@
 }
 
 @media (max-width: 576px){
+
+   .sbmit {
+    margin: 15px auto 5px; /* center the button on mobile */
+    width: 40%;          /* full width mobile button */
+    text-align: center;
+  }
+
 
     .social-icons a {
   margin-top: 9px;
@@ -269,6 +276,20 @@
 
 /* Mobile */
 @media (max-width: 576px) {
+
+    .contact-info {
+  padding-top: 20px;
+
+}
+
+  
+.contact-info p {
+  color: #444;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+    
   .Contact {
     height: 120px; 
     background-position: center top;

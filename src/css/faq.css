@@ -1,15 +1,27 @@
-.backimge {
-  background-image: url('../../src/assets/FAQ/FAQ_BACK.png');
+/* ===========================
+   WRAPPER + BACKGROUND
+=========================== */
+.faq_section {
+  width: 100%;
+  padding-top: 10px;
 }
 
+.backimge {
+  background-image: url('../../src/assets/FAQ/FAQ_BACK.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* ===========================
+   TITLES & PARAGRAPH
+=========================== */
 .title {
   text-align: center;
   color: #0D1678;
   font-family: "Outfit", sans-serif;
-  font-size: 25px;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  margin: 0 auto;
+  font-size: 34px;
   font-weight: 600;
 }
 
@@ -17,282 +29,273 @@
   text-align: center;
   color: #0D1678;
   font-family: "Outfit", sans-serif;
-  font-size: 48px;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  margin: 0 auto;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .parafaq {
   text-align: center;
   color: #8a8a8a;
   font-family: "Outfit", sans-serif;
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  margin: 0 auto;
-  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.card-header {
-  background-color: #055597 !important;
-  padding: 0;
-  /* optional: remove default padding if needed */
-}
-
-
+/* ===========================
+   FAQ ACCORDION BUTTONS
+=========================== */
 .btn_custom {
-  background-color: #055597;
-  color: white;
+  border: #000;
+  margin-left: 100px;
+  background-color: white;
+  color: black;
   font-family: "Outfit", sans-serif;
-  font-size: 17px;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  margin: 0 auto;
-  font-weight: 400;
-  width: 100%;
+  font-size: 16px;
+  width: 70%;
+  justify-content: center;
+  text-align:start;
+  border: none;
+  padding: 10px 16px;
   text-align: left !important;
-  border: 1px solid #ccc;
-  padding: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: none !important;
-  outline: none !important;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  margin: 0 auto;
-  font-weight: 400;
   transition: 0.3s ease;
+  /* border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px; */
 }
-
-/* Closed state (for normal buttons) */
-.btn_custom.collapsed {
-  background-color: white !important;
-  color: black !important;
-}
-
-/* Open state (active collapse) */
+/* ACTIVE BUTTON (When accordion is open) */
 .btn_custom:not(.collapsed) {
   background-color: #055597 !important;
   color: white !important;
+  /* border-radius: 8px 8px 0 0 !important;   /* attach to answer box */
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;  */
+  text-align: left;
 }
 
-/* Remove borders on click/focus */
-.btn_custom:focus,
-.btn_custom:active,
-.btn_custom:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
-  border-color: transparent !important;
+/* CLOSED BUTTON */
+.btn_custom.collapsed {
+  background-color: white !important;
+  color: #000 !important;
+  border-radius: 8px !important;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px;
 }
 
-/* 🟦 Fixed first button always stays blue */
-/* 🟦 Fixed first button always stays blue */
-/* .fixed_btn,
-.fixed_btn.collapsed,
-.fixed_btn:not(.collapsed) {
-  background-color: #055597 !important;
-  color: white !important;
+/* ANSWER BOX (Accordion body) */
+.card_data {
+    margin-left: 100px !important;
+    width: 70% !important;
+    background: #fff;
+    color: #333;
+    border: none !important;
+    border-radius: 0 0 8px 8px !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    /* margin-top: -10px; */
+    text-align: left !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+}
+
+/* #accordionExample .collapse:not(:last-of-type) .card_data {
+    margin-bottom: 20px !important;
+} */
+
+/* Remove default bootstrap border */
+.accordion-item,
+.accordion-body {
   border: none !important;
 }
- */
 
-
-
-.card-header .btn {
-  color: white;
-  text-decoration: none;
-  width: 100%;
-  text-align: left;
-  padding: 1rem 1.25rem;
-  /* consistent padding */
-  background: transparent;
-  border: none;
-  font-family: "Outfit", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  margin: 0 auto;
-  font-weight: 400;
+/* Reduce weird spacing when accordion opens */
+.accordion-collapse {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
-.card_data {
-  font-family: "Outfit", sans-serif;
-  font-size: 16px;
-  border-radius: 0px;
-  border: 0px !important;
+/* Proper button spacing before each item */
+#accordionExample > button {
+  margin-bottom: 5px;
 }
 
-/* First card header default style */
-.accordion .card:first-child .card-header {
-  background-color: #055597 !important;
-  color: white;
-}
 
-/* First card header button text color */
-.accordion .card:first-child .card-header .btn {
-  color: white;
-}
-
-/* All other card headers default */
-.accordion .card:not(:first-child) .card-header {
-  background-color: #055597 !important;
-  color: white;
-  border-top: 1px solid #ddd;
-}
-
-/* Optional: button color inside other headers */
-.accordion .card:not(:first-child) .card-header .btn {
-  color: white;
-}
-
-/* Default all accordion header button styles */
-.accordion_header button {
-  background-color: white;
-  color: black;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Open (expanded) state: button without .collapsed class */
-.accordion_header button:not(.collapsed) {
-  background-color: #055597 !important;
-  color: white;
-}
-
-.accordion_header button:not(.collapsed) {
-  background-color: #055597 !important;
-  color: white;
-}
-
+/* ===========================
+   RIGHT SIDE FORM CARD
+=========================== */
 .card_faq {
-  
-  border: 0px !important;
-
-  border-radius: 0px !important;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  border-bottom: 1px solid black !important;
-}
-
-/* Center the form container and limit its width */
-.Formstart {
-  max-width: 500px;
-  /* max width for form */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 15px;
-
-}
-
-
-.form-group {
-  margin-bottom: 3rem !important; /* Adjust this value as needed */
-}
-
-
-/* Style inputs and textarea with border, padding, and centering */
-.custom-input {
- 
-  border-radius: 0px !important;
-  width: 100% !important;
-  padding: 30px !important;
- 
-  margin: 10px 0 !important;
-  font-family: "Outfit", sans-serif;
-  font-size: 16px !important;
-  color: #333;
-  background-color: #D9D9D966 !important;
-  transition: border-color 0.3s ease;
- 
-}
-
-
-.custom-input:focus {
-  border-color: #817373 !important;
-  /* keep initial border color or any you want */
-  outline: none !important;
-  /* removes the default focus outline */
-  box-shadow: none !important;
-  /* removes the blue glow shadow on focus */
-}
-
-/* Style the send button and center it */
-.send_btn {
-  color: white;
-  background-color: #0D1678;
-  width: 150px;
-  padding: 10px;
-  font-family: "Outfit", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  font-weight: 400;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 20px auto 0;
-  display: block;
-  /* make margin auto horizontal effective */
-  transition: background-color 0.3s ease;
-}
-
-
-
-/* Responsive: reduce max width on small devices */
-@media (max-width: 576px) {
-  .Formstart {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .send_btn {
-    width: 100%;
-    max-width: 250px;
-  }
-}
-
-
-.custom-triangle {
-  position: relative;
-  background-color: #fff;
-  /* or your desired card background */
-  overflow: visible;
-  /* important so triangle visible outside card bounds */
-  z-index: 0;
-  /* base z-index */
-  padding: 10px;
-  /* adjust as needed so text doesn't overlap triangle */
+  border: none !important;
   border-radius: 10px;
-  /* if card has rounded corners */
-  
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 15px;
+  overflow: visible;
+ margin-top: -40px;
+ margin-bottom: 50px;
 }
 
+/* TOP LEFT YELLOW TRIANGLE */
 .custom-triangle::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 0;
-  height: 0;
-  border-top: 80px solid #FFC422;
-  /* yellow triangle */
-  border-right: 80px solid transparent;
+  border-top: 85px solid #FFC422;
+  border-right: 85px solid transparent;
   z-index: 1;
-  /* above card background but below text/buttons */
-  pointer-events: none;
 }
 
-/* Similarly for ::after if used on bottom right */
-
+/* BOTTOM RIGHT DARK BLUE TRIANGLE */
 .custom-triangle::after {
   content: "";
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 80px solid #0D1678;
-  /* dark triangle */
-  border-left: 80px solid transparent;
+  border-bottom: 85px solid #0D1678;
+  border-left: 85px solid transparent;
   z-index: 1;
-  pointer-events: none;
 }
+
+/* ===========================
+   FORM INPUTS
+=========================== */
+.Formstart {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 30px !important;
+  
+}
+
+.custom-input {
+   width: 65% !important;     /* reduce width from 100% */
+  margin: 0 auto; 
+  padding: 12px 12px !important;   /* smaller height */
+  font-size: 14px !important;      /* smaller text */
+  height: 52px !important;         /* fix final input height */
+  background-color: #D9D9D966 !important;
+  border-radius: 0px !important;
+  border: 1px solid transparent !important;
+}
+
+.custom-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid #777 !important;
+}
+
+/* ===========================
+   SEND BUTTON
+=========================== */
+.send_btn {
+  width: 180px;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: -12px;
+  background-color: #0D1678;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  border: none;
+  font-size: 20px;
+  
+  transition: 0.3s ease;
+}
+
+.send_btn:hover {
+  background-color: #091052;
+}
+
+.title_req {
+  font-size: 44px;
+}
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 992px) {
+
+   .btn_custom {
+    margin-left: 50px;
+   }
+
+   .card_data {
+        margin-left: 50px !important;
+    width: 70% !important;
+   }
+
+  .title_req {
+    font-size: 36px;
+  }
+  .Formstart {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+
+   .btn_custom {
+    margin-left: 50px;
+   }
+
+  .title_req {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .btn_custom {
+    margin-left: 50px;
+   }
+   
+
+  .send_btn {
+    width: 100%;
+  }
+  .custom-input {
+    padding: 18px !important;
+  }
+}
+
+/* Add extra space under last accordion item */
+#accordionExample {
+  margin-bottom: 40px !important;   /* adjust value as you like */
+}
+
+/* Add more if needed */
+/* #accordionExample > button:last-of-type {
+  margin-bottom: 45px !important;   
+} */
+
+.card_data:last-of-type {
+  margin-bottom: 25px !important;    /* space under last answer */
+}
+
+/* Add space under the LAST accordion item */
+#accordionExample > .accordion-collapse:last-of-type {
+  margin-bottom: 70px !important; 
+}
+
+.card_data:last-of-type {
+  margin-bottom: 20px !important;
+}
+
+/* Add more space UNDER the entire left FAQ column */
+.left_faq_col {
+  margin-bottom: 80px !important;   /* increase as much as you need */
+}
+
+/* Remove bootstrap default margin inside collapse */
+#accordionExample .collapse {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Make card attach to button */
+#accordionExample .card_data {
+    margin-top: 0 !important;
+}
+
+
+/* FORCE LAST ANSWER CARD TO ATTACH TO THE BUTTON */
+/* #accordionExample .collapse.show:last-of-type .card_data {
+    margin-top: -10px !important;
+} */

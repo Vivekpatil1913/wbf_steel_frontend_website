@@ -1,7 +1,7 @@
 /*  PROJECTS SECTION */
 .projects-section {
   background-color: #fff;
-  /* padding: 30px 50px; */
+  padding: 20px 5px;
 }
 
 
@@ -76,7 +76,7 @@
 .project-card {
   position: relative;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 2px;
 }
 
 /* Image */

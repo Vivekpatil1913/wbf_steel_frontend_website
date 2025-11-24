@@ -2,9 +2,13 @@ import React from "react";
 import "./Services.css";
 import { Link } from "react-router-dom";
 
+import icon1 from "../../assets/icons/image 141.png";  // your image
+import icon2 from "../../assets/icons/image 142.png";         // your image
+
+
 function Services() {
   return (
-    <section className="services-section py-5">
+    <section className="services-section">
       <div className="container">
         <h2 className="section-title">Our Services</h2>
         <div className="row justify-content-center">
@@ -12,7 +16,8 @@ function Services() {
           <div className="col-md-6 col-sm-12 mb-4">
             <div className="service-card yellow-card shadow-sm">
               <div className="service-icon">
-                <i className="bi bi-exclamation-triangle-fill"></i>
+                <img src={icon1} alt="Structural Steel" className="service-img-icon" />
+
               </div>
               <h4 className="service-title">
                 Structural & Miscellaneous Steel
@@ -32,7 +37,8 @@ function Services() {
           <div className="col-md-6 col-sm-12 mb-4">
             <div className="service-card blue-card shadow-sm">
               <div className="service-icon">
-                <i className="bi bi-building"></i>
+                <img src={icon2} alt="PEB" className="service-img-icon" />
+
               </div>
               <h4 className="service-title">Pre-Engineered Metal Building</h4>
               <p className="service-text">

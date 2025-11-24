@@ -15,14 +15,6 @@ import mailIcon from "../../assets/icons/mail.png";
 function Footer() {
   return (
     <>
-      {/* ===== GOOGLE MAP SECTION ===== */}
-      {/* <section className="footer-map-section">
-        <div className="container-fluid p-0">
-          <img src={mapImage} alt="Map" className="footer-map w-100" />
-        </div>
-      </section> */}
-
-      {/* ===== FOOTER SECTION ===== */}
       <footer
         className="footer-section text-white"
         style={{ backgroundImage: `url(${bg})` }}

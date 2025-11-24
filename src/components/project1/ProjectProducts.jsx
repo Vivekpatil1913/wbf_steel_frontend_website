@@ -4,7 +4,7 @@ function ProjectProducts() {
   return (
     <section className="project-products">
       <div className="container text-center">
-        <h2 className="product-title">Built to Power Your Product</h2>
+        <h2 className="product-title">Built to Power Your Productttt</h2>
 
         <div className="product-tabs">
           <button>Project 1</button>

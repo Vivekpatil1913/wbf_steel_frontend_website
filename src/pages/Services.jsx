@@ -19,6 +19,7 @@ import Start_work_together from '../../src/components/Work Together Com/Start_wo
 import OurExperience from '../../src/components/our experience/OurExperience';
 import Service_Faqs from '../../src/components/service_faqs/Service_Faqs';
 import services_banner from '../../src/assets/services/service_banner.png';
+import WorkPlatforms from '../components/home/WorkPlatforms';
 
 function Services() {
   return (
@@ -69,7 +70,8 @@ function Services() {
       <Services_cards />
       <Start_work_together />
       <OurExperience />
-      <Service_Faqs />
+      
+      <WorkPlatforms />
 
 
     </>

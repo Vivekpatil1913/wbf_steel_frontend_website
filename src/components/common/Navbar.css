@@ -42,12 +42,12 @@
 }
 
 .info-item .info-title {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
 .info-item .info-sub {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #6c757d;
 }
 
@@ -106,7 +106,7 @@
 
 .main-navbar .nav-link {
   color: #fff !important;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400px;
   line-height: 1.5rem;
   letter-spacing: 0.5px;
