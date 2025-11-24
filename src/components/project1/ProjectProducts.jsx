@@ -2,7 +2,7 @@ import "./ProjectProducts.css";
 
 function ProjectProducts() {
   return (
-    <section className="project-products">
+    <div className="project-products">
       <div className="container text-center">
         <h2 className="product-title">Built to Power Your Product</h2>
 
@@ -15,7 +15,7 @@ function ProjectProducts() {
           <button>Project 6</button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

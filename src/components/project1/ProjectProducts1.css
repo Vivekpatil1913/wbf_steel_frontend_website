@@ -1,0 +1,196 @@
+/* =========================================================
+   SECTION 1: PROJECT PRODUCTS (Top Section)
+========================================================= */
+
+.project-products {
+  padding: 60px 0;
+  text-align: center;
+  background-color: #fff;
+  margin-top: -10px;
+}
+
+/* ---- Product Image Container ---- */
+.img_container {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 300px;      /* Fixed image height */
+  border-radius: 10px;
+}
+
+.img_product {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;  /* Prevent stretching */
+  transition: transform 0.3s ease-in-out;
+}
+
+.img_container:hover .img_product {
+  transform: scale(1.1);
+}
+
+/* =========================================================
+   SECTION 2: PRODUCT TABS (Button Tabs)
+========================================================= */
+
+/* Tabs Main Container */
+.product-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Individual Buttons */
+.product-tabs button {
+  flex: 1;
+  padding: 12px 18px;
+  background: #fff;
+  border: none;
+  border-right: 1px solid #ccc;
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-tabs button:last-child {
+  border-right: none;
+}
+
+.product-tabs button:hover {
+  background-color: #f8f8f8;
+  color: #222;
+}
+
+/* Scroll Styling */
+.product-tabs::-webkit-scrollbar { height: 6px; }
+.product-tabs::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* ---- Tabs Responsive ---- */
+@media (max-width: 768px) {
+  .product-title { font-size: 28px; }
+  .product-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 8px;
+    gap: 10px;
+  }
+  .product-tabs button {
+    flex: 0 0 auto;
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-title { font-size: 22px; }
+  .product-tabs {
+    gap: 8px;
+    padding: 6px;
+  }
+  .product-tabs button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
+/* =========================================================
+   SECTION 3: BOTTOM CARD (Dashed Box Section)
+========================================================= */
+
+/* ---- Base Card Styling ---- */
+.product2_buttom_card {
+  border: 2px dashed #7a7373 !important;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: transparent !important;
+}
+
+/* Left Column Divider */
+.border-right-column {
+  border-right: 2px solid #d8d8d8;
+}
+
+/* ---- Left Side Text ---- */
+.wbf_steel_name {
+  font-family: "Outfit", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.Detailing_num {
+  font-family: "Outfit", sans-serif;
+  font-size: 28px;
+  font-weight: 200;
+}
+
+.gettouch {
+  font-family: "Outfit", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* ---- Right Side Text ---- */
+.workingpara {
+  font-family: "Outfit", sans-serif;
+  font-size: 52px;
+  font-weight: 200;
+}
+
+.para_card {
+  font-family: "Outfit", sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+/* =========================================================
+   SECTION 3: BOTTOM CARD RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+  .wbf_steel_name { font-size: 40px; }
+  .Detailing_num { font-size: 22px; }
+  .gettouch { font-size: 18px; }
+  .workingpara { font-size: 40px; }
+  .para_card { font-size: 18px; }
+}
+
+/* ---- Mobile Layout ---- */
+@media (max-width: 768px) {
+  .border-right-column {
+    border-right: none;
+    border-bottom: 2px solid #d8d8d8;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .product2_buttom_card { padding: 20px; }
+
+  .wbf_steel_name,
+  .Detailing_num,
+  .gettouch,
+  .workingpara,
+  .para_card {
+    text-align: center;
+    padding-left: 0 !important;
+  }
+
+  .workingpara { font-size: 30px; }
+  .wbf_steel_name { font-size: 32px; }
+  .Detailing_num { font-size: 20px; }
+  .gettouch { font-size: 16px; }
+  .para_card { font-size: 16px; }
+}

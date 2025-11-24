@@ -168,7 +168,7 @@ function Navbar() {
 
                 <li className="nav-item">
                   <NavLink
-                    to="/projects"
+                    to="/projectproducts1"
                     className="nav-link"
                     onClick={() => setIsNavOpen(false)}
                   >
