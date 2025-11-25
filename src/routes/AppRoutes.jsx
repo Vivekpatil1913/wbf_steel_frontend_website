@@ -6,7 +6,7 @@ import Footer from "../components/common/Footer";
 import Home from "../pages/Home";
 import About from '../pages/About';
 import Services from "../pages/Services";
-import Projects from "../pages/Projects";
+// import Projects from "../pages/Projects";
 import ContactUs from "../pages/ContactUs";
 import ProjectDetails from "../pages/ProjectDetails";
 import ProjectNav from "../components/projectCom/ProjectNav";
