@@ -124,14 +124,14 @@ function FaqCom() {
               {/* FAQ ACCORDION */}
               <div id="accordionExample">
                 <button
-                  className="btn btn_custom fixed_btn"
+                  className="btn btn_custom "
                   data-toggle="collapse"
                   data-target="#collapseOne"
                 >
                   Is there free parking?
                 </button>
 
-                <div className="collapse" id="collapseOne">
+                <div className="collapse show" id="collapseOne">
                   <div className="card card-body card_data">
                     No, cell phones aren’t permitted on the ropes and trampoline
                     areas due to safety reasons.

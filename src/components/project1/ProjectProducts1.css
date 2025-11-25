@@ -1,12 +1,17 @@
 /* =========================================================
    SECTION 1: PROJECT PRODUCTS (Top Section)
 ========================================================= */
+ .product-title {
+  padding-bottom:15px;
+  font-weight: 600;
+ }
+
 
 .project-products {
-  padding: 60px 0;
+  padding: 20px 0;
   text-align: center;
   background-color: #fff;
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
 /* ---- Product Image Container ---- */
@@ -15,7 +20,7 @@
   display: inline-block;
   width: 100%;
   height: 300px;      /* Fixed image height */
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 .img_product {
@@ -33,36 +38,33 @@
    SECTION 2: PRODUCT TABS (Button Tabs)
 ========================================================= */
 
-/* Tabs Main Container */
 .product-tabs {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1290px;
+  margin: 0 auto;
   border: 1px solid black;
   border-radius: 8px;
-  overflow: hidden;
-  max-width: 1400px;
-  margin: 0 auto;
+  overflow: hidden; /* prevents spacing issues */
 }
 
-/* Individual Buttons */
+
 .product-tabs button {
-  flex: 1;
-  padding: 12px 18px;
+  flex: 1;                   /* 👈 makes all 6 buttons equal width */
+  padding: 12px 0;
   background: #fff;
   border: none;
   border-right: 1px solid #ccc;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  color: #000;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .product-tabs button:last-child {
   border-right: none;
 }
+
 
 .product-tabs button:hover {
   background-color: #f8f8f8;
@@ -79,17 +81,22 @@
 /* ---- Tabs Responsive ---- */
 @media (max-width: 768px) {
   .product-title { font-size: 28px; }
-  .product-tabs {
-    flex-wrap: nowrap;
+    .product-tabs {
+    flex-wrap: nowrap; /* ensure single row */
     overflow-x: auto;
-    padding: 8px;
     gap: 10px;
+    padding: 8px;
   }
   .product-tabs button {
     flex: 0 0 auto;
     font-size: 15px;
     padding: 10px 12px;
   }
+
+   .product-tabs::-webkit-scrollbar {
+    display: none;            /* Hide scrollbar for cleaner UI */
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -193,4 +200,335 @@
   .Detailing_num { font-size: 20px; }
   .gettouch { font-size: 16px; }
   .para_card { font-size: 16px; }
+}
+
+
+
+
+
+/* Whole section background */
+.wbf-wrapper {
+  width: 80%;
+  background-color: #eef3f8;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;  /* spacing like design */
+ margin: 0 auto;
+ margin-top: 20px;
+ margin-bottom: 40px;
+  
+}
+
+/* Main content area */
+.wbf-container {
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+/* Split columns */
+.wbf-left,
+.wbf-right {
+  flex: 1;
+}
+
+/* Main heading */
+.wbf-left h2,
+.wbf-right h2 {
+  font-size: 50px;
+  font-weight: 300;
+  text-align: left;
+  line-height: 1.2;
+  margin-bottom: 22px;
+  color: #000;
+  text-align: left;
+}
+
+ 
+
+   .wbf-left {
+    padding-left: 0;
+  
+   }
+
+.wbf-right span {
+  font-size: 48px;
+  font-weight: 600 !important;
+  text-align: left;
+  line-height: 1.2;
+  margin-bottom: 22px;
+  color: #000;
+  text-align: left;
+
+}
+
+
+.wbf-left h2 {
+  font-size: 50px;
+  font-weight: 600 !important;
+  text-align: left;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #000;
+  text-align: left;
+ }
+
+/* Subtitle under left heading */
+.subtitle {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #000;
+  line-height: 1.4;
+}
+
+.cta-btn {
+  display: inline-flex; /* aligns content more cleanly */
+  
+  gap: 6px;
+
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+
+  padding-top: 8px; /* aligns baseline like design */
+  margin-left: 0; /* ensure left alignment */
+}
+
+
+/* Right text */
+.wbf-right p {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.4;
+  width: 100%;
+  margin-top: 38px;
+  text-align: left;
+}
+
+/* Divider full height */
+.wbf-divider {
+  width: 1.5px;
+  background-color: #c7ccd1;
+  height: 100%;
+  min-height: 290px; /* ensures full stretch visually */
+}
+
+/* Bold span on "world" */
+.wbf-right h2 span {
+  font-weight: 900;
+  text-align: left;
+}
+
+/* Icon Styling */
+.cta-btn i {
+  font-size: 14px;
+  margin-top: 6px;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+/* Hover animation */
+.cta-btn:hover i {
+  transform: translateY(-3px) translateX(3px);
+}
+
+
+
+.wbf-left * {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.wbf-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keeps everything perfectly aligned left */
+  gap: 1px; /* spacing between items */
+  margin-bottom: 110px;
+}
+
+.product-tabs {
+  scroll-snap-type: x mandatory;
+}
+
+.product-tabs button {
+  scroll-snap-align: start;
+}
+
+.product-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+.product-tabs::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+
+/* ============================= */
+/* 📱 Tablet Screens (≤ 992px) */
+/* ============================= */
+@media (max-width: 992px) {
+
+  .wbf-wrapper {
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .wbf-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .wbf-left,
+  .wbf-right {
+    width: 100%;
+    align-items: center;
+  }
+
+  .wbf-left h2,
+  .wbf-right h2,
+  .subtitle,
+  .wbf-right p {
+    text-align: center;
+  }
+
+  .wbf-divider {
+    width: 100%;
+    height: 2px;
+    min-height: unset;
+    margin: 10px 0;
+  }
+
+  .cta-btn {
+    margin: 0 auto;
+  }
+}
+
+
+/* ============================= */
+/* 📱 Mobile Screens (≤ 600px) */
+/* ============================= */
+@media (max-width: 600px) {
+
+     .wbf-left {
+    align-items: center !important;
+    
+    
+  }
+
+  .cta-btn {
+    margin: 0 auto !important;
+    justify-content: center;
+  }
+  
+
+  .wbf-wrapper {
+    width: 100%;
+    padding: 10px 5px;
+  }
+
+  .wbf-container {
+    gap: -5px;
+    justify-content: center;
+    
+  }
+
+  .wbf-left h2,
+  .wbf-right h2 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .wbf-right span {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 26px;
+  }
+
+  .wbf-right p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .cta-btn {
+    font-size: 16px;
+    padding-top: 4px;
+  }
+
+  .cta-btn i {
+    font-size: 12px;
+    margin-top: 3px;
+   
+  }
+}
+
+@media (max-width: 600px) {
+
+
+    .wbf-left {
+        margin-bottom: 10px;
+    }
+
+  .wbf-wrapper {
+    width: 100%;
+    padding: 40px 5px; /* reduced vertical spacing */
+  }
+
+  .wbf-container {
+    gap: 15px !important; /* tighten spacing */
+    align-items: center;
+  }
+
+  .wbf-divider {
+    margin: 0 !important;     /* remove extra margin */
+    padding: 0 !important;
+    height: 1px !important; /* thin width */
+  }
+
+   .wbf-section {
+    padding-bottom: 0 !important;  /* remove space under upper section */
+    margin-bottom: 5px !important; /* very small gap */
+  }
+
+  .wbf-divider {
+    margin-top: 0 !important;
+  }
+
+  .wbf-left h2,
+  .wbf-right h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+ .wbf-right {
+    padding: 10px;
+ }
+
+  .subtitle {
+    font-size: 22px;
+  }
+
+  .wbf-right p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .cta-btn {
+    font-size: 16px;
+    padding-top: 4px;
+  }
+
+  .cta-btn i {
+    font-size: 12px;
+    margin-top: 3px;
+  }
+
 }

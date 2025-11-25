@@ -60,7 +60,7 @@ const CareersSections = () => {
     }
 
     // Truncate file name for display
-    setFileName(truncate(file.name, 18));
+    setFileName(truncate(file.name, 40));
 
     setErrors((prev) => ({
       ...prev,

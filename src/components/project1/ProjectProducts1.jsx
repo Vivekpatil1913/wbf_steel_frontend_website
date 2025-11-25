@@ -1,5 +1,6 @@
 import "./ProjectProducts1.css";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import product1 from "../../assets/projectimg/project_page2/product1.png";
 import product2 from "../../assets/projectimg/project_page2/product2.png";
@@ -13,7 +14,6 @@ import product9 from "../../assets/projectimg/project_page2/product9.png";
 import product10 from "../../assets/projectimg/project_page2/product10.png";
 
 function ProjectProducts1() {
-
   const navigate = useNavigate();
 
   const productdata = [
@@ -29,63 +29,88 @@ function ProjectProducts1() {
     { product_img: product10, text: "Commercial Building, MD USA" },
   ];
 
+  const projectImages = {
+    "Project 1": productdata.slice(0, 3),
+    "Project 2": productdata.slice(3, 6),
+    "Project 3": productdata.slice(6, 9),
+    "Project 4": productdata.slice(0, 4),
+    "Project 5": productdata.slice(4, 8),
+    "Project 6": productdata.slice(7, 10),
+  };
+
+  const [selectedTab, setSelectedTab] = useState("Project 1");
+  const [products, setProducts] = useState(projectImages["Project 1"]);
+
+  useEffect(() => {
+    setProducts(projectImages[selectedTab]);
+  }, [selectedTab]);
+
   return (
-    <section className="project-products">
-      <div className="container text-center">
-        <h2 className="product-title">Built to Power Your Product</h2>
+    <>
+      <section className="project-products">
+        <div className="container text-center">
+          <h2 className="product-title text-center">Built to Power Your Product</h2>
 
-        <div className="product-tabs">
-          <button>Project 1</button>
-          <button>Project 2</button>
-          <button>Project 3</button>
-          <button>Project 4</button>
-          <button>Project 5</button>
-          <button>Project 6</button>
-        </div>
-      </div>
-      
-      <div className='container mt-5'>
-        <div className="row justify-content-center">
-          {productdata.map((a, index) => (
-            <div 
-              key={index} 
-              className="col-lg-4 col-md-6 col-sm-12 text-center"
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate("/projectproducts2")}   // ⭐ navigation added
-            >
-              <div className="img_container">
-                <img src={a.product_img} className="img-fluid img_product" alt={`Product ${index+1}`} />
-              </div>
-              <p className="product_name mt-3">{a.text}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="card product2_buttom_card mb-3">
-          <div className="card-body">
-            <div className='container'>
-              <div className="row">
-                <div className="col-lg-6 col-md-6 col-sm-12 border-right-column">
-                  <h2 className='wbf_steel_name'>WBF Steel</h2>
-                  <p className='Detailing_num'>Detailing in Numbers</p>
-                  <p className='gettouch mt-3'>
-                    <b>Get in Touch</b> <i className="fa-solid fa-square-arrow-up-right ms-2"></i>
-                  </p>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12 colou2">
-                  <p className='workingpara'>We work across the <b className='bold_work'>world</b></p>
-                  <p className='para_card mt-3'>
-                    Contact WBF Steel for professional advice on steel detailing and industry best practices
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="product-tabs">
+            {Object.keys(projectImages).map((tab, i) => (
+              <button
+                key={i}
+                onClick={() => setSelectedTab(tab)}
+                style={{
+                  background: selectedTab === tab ? "#eef3f8" : "#fff",
+                  fontWeight: selectedTab === tab ? "700" : "500",
+                }}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
         </div>
 
-      </div>
-    </section>
-    
+        <div className="container mt-5">
+          <div className="row justify-content-center">
+            {products.map((a, index) => (
+              <div
+                key={index}
+                className="col-lg-4 col-md-6 col-sm-12 text-center"
+                style={{ cursor: "pointer" }}
+                onClick={() => navigate("/projectproducts2")}
+              >
+                <div className="img_container">
+                  <img src={a.product_img} className="img-fluid img_product" alt="" />
+                </div>
+                <p className="product_name mt-3">{a.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Your second section untouched */}
+      <section className="wbf-wrapper">
+        <div className="wbf-container">
+          <div className="wbf-left">
+            <h2>WBF Steel</h2>
+            <p className="subtitle">Detailing in Numbers</p>
+            <a href="#" className="cta-btn">
+              Get in Touch <i className="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div className="wbf-divider"></div>
+
+          <div className="wbf-right">
+            <h2>
+              We work across <br /> the <span> world</span>
+            </h2>
+            <p>
+              Contact WBF Steel for <br /> professional advice on steel <br /> detailing and
+              industry best <br /> Practices
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 

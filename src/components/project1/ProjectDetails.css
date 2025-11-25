@@ -1,22 +1,22 @@
-/* .project-details .white-box {
+* .project-details .white-box {
   background: #fff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   padding: 40px 60px;
   max-width: 1200px;
   width: 100%;
-} */
+} 
 
 
-/* .project-details {
+.project-details {
   padding: 40px 0;
   display: flex;
   justify-content: center;
   background: #fff;
   margin-top: -50px;
-} */
+} 
 
- /* .white-box .project-container {
+  .white-box .project-container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -24,14 +24,13 @@
   max-width: 1200px;
   width: 100%;
   flex-wrap: wrap;
-} */
+} 
 
-/* Left: Thumbnail List
+ 
 .project-container .image-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-} */
+} 
 
-/* */

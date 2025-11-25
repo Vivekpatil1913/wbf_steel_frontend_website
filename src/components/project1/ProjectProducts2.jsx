@@ -91,7 +91,7 @@ function ProjectProducts2() {
 
             {/* MAIN IMAGE */}
             <div className="main-image-section">
-              <h2 className="project-title">Commercial Building, GA USA</h2>
+              <h2 className="project-title">Commercial Building,<br></br> GA USA</h2>
               <img src={mainImage} alt="main" className="main-image" />
             </div>
 

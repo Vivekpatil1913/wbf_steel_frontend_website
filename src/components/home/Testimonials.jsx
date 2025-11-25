@@ -16,7 +16,7 @@ const Testimonials = () => {
         const data = [
           {
             name: "Edward Glenn",
-            text: "WBF team did a fantastic project, they were quick, efficient and very professional.",
+            text: "WBF team did a fantastic project, they were quick, efficient and very professional. Wbf team did a fantastic project, they were quick, efficient and very professional Wbf team did a fantastic project, they were quick, efficient and very professional Wbf team did a fantastic project, they were quick, efficient and very professional Wbf team did a fantastic project, they were quick, efficient and very professional Wbf team did a fantastic project, they were quick, efficient and very professional Wbf team did a fantastic project, they were quick, efficient and very professional Wbf team did a fantastic project, they were quick, efficient and very professional Wbf team did a fantastic project, they were quick, efficient and very professional Wbf team did a fantastic project, they were quick, efficient and very professional  ",
           },
           {
             name: "Mark Tiner",
@@ -58,6 +58,7 @@ const Testimonials = () => {
 
   return (
     <section className="testimonials-section">
+      <div className="container" >
       <div className="testimonials-wrapper">
         {/* LEFT STATIC PART */}
         <div className="testimonials-left">
@@ -76,7 +77,7 @@ const Testimonials = () => {
             spaceBetween={20}
             slidesPerView={2}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
             loop={true}
             className="testimonial-swiper"
             breakpoints={{
@@ -93,10 +94,10 @@ const Testimonials = () => {
                   <h3>{item.name}</h3>
 
                   <p>
-                    {item.text.length > 82
-                      ? item.text.slice(0, 82) + "..."
+                    {item.text.length > 220
+                      ? item.text.slice(0, 220) + "..."
                       : item.text}
-                    {item.text.length > 82 && (
+                    {item.text.length > 220 && (
                       <span
                         className="text-warning fw-semibold read-more"
                         onClick={() => handleReadMore(item)}
@@ -134,6 +135,7 @@ const Testimonials = () => {
           </div>
         </div>
       )}
+      </div>
     </section>
   );
 };

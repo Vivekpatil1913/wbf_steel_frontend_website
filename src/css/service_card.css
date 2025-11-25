@@ -137,3 +137,10 @@
     text-overflow: ellipsis;
   }
 }
+
+/* Mobile - increase top padding */
+@media (max-width: 768px) {
+  .service_card_para {
+    padding-top: 8px !important;   /* adjust size as you want */
+  }
+}

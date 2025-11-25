@@ -1,19 +1,4 @@
-/* ================= GLOBAL RESET ================= */
-/* Reset margin, padding and box-sizing for all elements */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-/* Set body and html full width and font */
-body, html {
-  width: 100%;
-  overflow-x: hidden;
-  font-family: 'Outfit', sans-serif;
-}
 
 /* ================= WHITE BOX ================= */
 /* Main container with shadow and rounded corners */
@@ -21,10 +6,10 @@ body, html {
   background: #fff;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   border-radius: 10px;
-  padding: 40px 25px;
+  padding: 30px 25px 0;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1300px;
+  margin: 30px auto;
 }
 
 /* ================= PROJECT CONTAINER ================= */
@@ -35,9 +20,9 @@ body, html {
   justify-content: center;
   gap: 25px;
   width: 100%;
-  flex-wrap: wrap; 
-  overflow-x: hidden;
+  flex-wrap: nowrap;    /* 👈 THIS FIXES YOUR ISSUE */
 }
+
 
 /* ================= THUMBNAILS ================= */
 /* Vertical thumbnails container */
@@ -45,8 +30,9 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 2px;
   width: 150px;
+  padding-top: 12px;
   flex-shrink: 0;
 }
 
@@ -55,7 +41,7 @@ body, html {
   color: #150101;
   border: none;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 35px;
   padding: 0;
   background: none;
 }
@@ -105,9 +91,9 @@ body, html {
 .project-title {
   padding-left:20px;
   padding-top: 50px;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 600;
-  margin-bottom: 10px;
+  
 }
 
 .main-image {
@@ -116,6 +102,7 @@ body, html {
   border-radius: 6px;
   object-fit: cover;
   padding: 20px;
+  margin-bottom: 30px;
 }
 
 /* ================= INFO BOX ================= */

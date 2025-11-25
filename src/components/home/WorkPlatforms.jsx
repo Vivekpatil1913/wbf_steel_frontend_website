@@ -9,6 +9,7 @@ import sds from "../../assets/images/Sds.png";
 const WorkPlatforms = () => {
   return (
     <section className="work-platform-section">
+       <div className="container">
       <div className="work-platform-box">
         <h2 className="work-platform-title">WORK PLATFORM</h2>
 
@@ -52,6 +53,7 @@ const WorkPlatforms = () => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

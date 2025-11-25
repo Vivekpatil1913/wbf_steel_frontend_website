@@ -37,6 +37,7 @@ const Projects = () => {
 
   return (
     <section className="projects-section">
+       <div className="container">
       <div className="projects-grid">
         {/* LEFT MAIN PROJECT */}
         <div className="project-main">
@@ -64,6 +65,7 @@ const Projects = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

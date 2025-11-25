@@ -3,7 +3,7 @@
 =========================== */
 .faq_section {
   width: 100%;
-  padding-top: 10px;
+  
 }
 
 .backimge {
@@ -127,7 +127,7 @@
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 15px;
   overflow: visible;
- margin-top: -40px;
+ margin-top: 10px;
  margin-bottom: 50px;
 }
 
@@ -244,8 +244,13 @@
 
   .btn_custom {
     margin-left: 50px;
+    width: 70%;
    }
    
+   .card_data {
+    width: 70% !important;
+   
+  }
 
   .send_btn {
     width: 100%;
@@ -299,3 +304,47 @@
 /* #accordionExample .collapse.show:last-of-type .card_data {
     margin-top: -10px !important;
 } */
+
+/* Remove blue border from active accordion button */
+.btn_custom:focus,
+.btn_custom:active,
+.btn_custom:not(.collapsed):focus,
+.btn_custom:not(.collapsed):active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#accordionExample .collapse.show .card_data {
+    margin-top: 0 !important;
+}
+
+/* REMOVE GAP BETWEEN ACCORDION BUTTON AND ANSWER BOX */
+.btn_custom {
+    margin-bottom: 0 !important;
+    border-radius: 8px 8px 0 0 !important; /* top round */
+    box-shadow: none !important;
+}
+
+/* When open, attach fully to card_data */
+.btn_custom:not(.collapsed) {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;  /* completely flat bottom */
+}
+
+/* Make card_data attach flush */
+.card_data {
+    margin-top: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+
+@media (max-width: 576px) {
+  .custom-input {
+    width: 90% !important;     /* increase width */
+    margin: 0 auto !important; /* keep centered */
+    padding: 18px !important;
+  }
+}
+

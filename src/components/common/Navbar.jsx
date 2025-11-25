@@ -37,6 +37,22 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+    // === Sticky Header on Scroll ===
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".header-wrapper");
+
+      if (window.scrollY > 100) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
       <div className="header-wrapper">

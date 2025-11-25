@@ -7,20 +7,17 @@
 }
 
 .testimonials-left .testimonials-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
 } 
 
-testimonials-left .testimonials-quote {
-  font-size: 1rem;
-  font-weight: 400;
-}
+
 
 .testimonials-wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: start;
   gap: 50px;
-  width: 90%;
+  width: 100% !important;
   max-width: 1400px;
 }
 
@@ -39,7 +36,7 @@ testimonials-left .testimonials-quote {
 }
 
 .testimonials-quote {
-  font-size: 1rem;
+  font-size: 1.3rem !important;
   line-height: 1.7;
   color: #000;
   font-weight: 300;
