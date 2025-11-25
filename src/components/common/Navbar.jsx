@@ -39,7 +39,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="sticky-header">
+      <div className="header-wrapper">
         {/* ======== INFOBAR ======== */}
         <div
           className={`top-infobar py-2 ${hideInfobar ? "hide-infobar" : ""}`}
