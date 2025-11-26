@@ -10,6 +10,7 @@ import product3 from "../../assets/projectimg/project_page2/product3.png";
 import product4 from "../../assets/projectimg/project_page2/product4.png";
 import product5 from "../../assets/projectimg/project_page2/product5.png";
 import product6 from "../../assets/projectimg/project_page2/product6.png";
+import ExpertiseSection from "./ExpertiseSection";
 
 import draftsight from "../../assets/images/draft.png";
 import autocad from "../../assets/images/auto.png";
@@ -106,44 +107,7 @@ function ProjectProducts2() {
         </div>
       </section>
 
-      {/* ⭐ SECOND BOTTOM EXPERTISE CARD ⭐ */}
-      <div className="card mt-5 mb-5 border-top-dashed-custom">
-        <div className="card-body">
-          <div className="container">
-            <div className="row">
-
-              <div className="col-lg-5">
-                <p className="work_proces_text">
-                  We work across the <b>world</b>
-                </p>
-                <p className="conactus_name mt-3">Connect with Us</p>
-                <p className="para_conatc">
-                  Contact WBF Steel for professional advice on steel detailing
-                </p>
-                <p className='gettouch mt-3'>
-                    <b>Get in Touch</b> <i className="fa-solid fa-square-arrow-up-right ms-2"></i>
-                  </p>
-              </div>
-
-              <div className="col-lg-7 experties-card-wrapper">
-                <Card className="experties-card">
-                  <Card.Body>
-                    <p className="experties text-center">Our Expertise Lies In</p>
-
-                    <div className="brands-wrapper">
-                      {[draftsight, autocad, tekla, rebard, sds2].map((img, i) => (
-                        <img key={i} src={img} className="brand-img" alt="brand" />
-                      ))}
-                    </div>
-
-                  </Card.Body>
-                </Card>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
+      <ExpertiseSection />
 
     </>
   );

@@ -6,6 +6,16 @@
   
 }
 
+#accordionExample > button {
+  margin-top: 30px !important;
+}
+
+#accordionExample > button:first-of-type {
+  margin-top: 0 !important;
+}
+
+
+
 .backimge {
   background-image: url('../../src/assets/FAQ/FAQ_BACK.png');
   background-size: cover;
@@ -166,6 +176,14 @@
   
 }
 
+ .text-danger {
+  display: block;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-left: 90px;
+}
+
+
 .custom-input {
    width: 65% !important;     /* reduce width from 100% */
   margin: 0 auto; 
@@ -190,7 +208,7 @@
   width: 180px;
   padding: 12px;
   margin-top: 10px;
-  margin-bottom: -12px;
+  
   background-color: #0D1678;
   color: white;
   font-family: "Outfit", sans-serif;
@@ -243,12 +261,13 @@
 @media (max-width: 576px) {
 
   .btn_custom {
-    margin-left: 50px;
-    width: 70%;
+    margin-left: 30px;
+    width: 80%;
    }
    
    .card_data {
-    width: 70% !important;
+     margin-left: 30px !important;
+    width: 80% !important;
    
   }
 

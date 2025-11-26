@@ -62,21 +62,21 @@ function About() {
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 back_color_about pb-5 pl-4">
               <div className="heading-row">
-              <p className="number_about_page">1</p>
+              <p className="number_about_page">1.</p>
               <p className="title_card">Environment</p>
               </div>
               <p className="about_card_para">
-                Safety is one of the highest priorities within Facmaster. <br></br> It is
+                Safety is one of the highest priorities within <br></br> Facmaster. <br></br> It is
                 imperative that everyone follows <br></br> the policies and guidelines to 
                 ensure their own safety and the safety of others around them.<br></br> We
-                are providing different  We are providing different.
+                are providing different  We are providing <br></br>different.
               </p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 back_color_about1 pb-5 pl-4">
                <div className="heading-row">
-              <p className="backcol2_color">2</p>
+              <p className="backcol2_color">2.</p>
               <p className="title_card1">Health & Safety</p>
               </div>
               <p className="about_card_para1">
@@ -96,7 +96,7 @@ function About() {
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 back_color_about3 pb-3 pl-4">
                <div className="heading-row">
-              <p className="backcol3_color">3</p>
+              <p className="backcol3_color">3.</p>
               <p className="title_card3">Integrity</p>
               </div> 
               <p className="about_card_para3">
@@ -109,15 +109,16 @@ function About() {
           </div>
         </div>
 
-
-        <Container className=" abt mt-6 mb-6">
-          <div className="background_color_aboutus_name">
+        
+        <section className="abt">
+         <Container>
+           <div className="background_color_aboutus_name">
             <h3 className="aboutus_name">
               <b>About Us</b>
             </h3>
           </div>
           <Row>
-            <Col lg={8} md={8} sm={12} className="mt-5">
+            <Col lg={8} md={8} sm={12} className="mt-4">
               <div className="paraAbout1">
                 <p>
                   We are a trusted name in structural engineering, committed to
@@ -134,7 +135,7 @@ function About() {
             </Col>
 
             <Col lg={4} md={4} sm={12}>
-              <div className="engineer-box mb-3">
+              <div className="engineer-box mb-5 mt-2">
                 <div className="icon">
                   <img
                     src={constrction_icons}
@@ -155,7 +156,7 @@ function About() {
                   <span className="label">Expert Engineers</span>
                 </div>
               </div>
-              <div className="engineer-box mb-3">
+              <div className="engineer-box mb-5">
                 <div className="icon">
                   <img
                     src={file_img}
@@ -200,6 +201,7 @@ function About() {
             </Col>
           </Row>
         </Container>
+        </section>
       </section>
 
       <VissionMission />

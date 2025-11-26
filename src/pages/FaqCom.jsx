@@ -124,7 +124,7 @@ function FaqCom() {
               {/* FAQ ACCORDION */}
               <div id="accordionExample">
                 <button
-                  className="btn btn_custom "
+                  className="btn btn_custom  "
                   data-toggle="collapse"
                   data-target="#collapseOne"
                 >
@@ -139,7 +139,7 @@ function FaqCom() {
                 </div>
 
                 <button
-                  className="btn btn_custom collapsed mt-5"
+                  className="btn btn_custom collapsed"
                   data-toggle="collapse"
                   data-target="#collapseTwo"
                 >
@@ -154,7 +154,7 @@ function FaqCom() {
                 </div>
 
                 <button
-                  className="btn btn_custom collapsed mt-5"
+                  className="btn btn_custom collapsed "
                   data-toggle="collapse"
                   data-target="#collapsethree"
                 >
@@ -167,8 +167,9 @@ function FaqCom() {
                   </div>
                 </div>
 
+              
                 <button
-                  className="btn btn_custom collapsed mt-5"
+                  className="btn btn_custom collapsed "
                   data-toggle="collapse"
                   data-target="#collapsefour"
                 >
@@ -184,9 +185,9 @@ function FaqCom() {
             </Col>
 
             {/* RIGHT SIDE (FORM CARD) */}
-            <Col lg={5} md={12} sm={12} className="mt-5 mb-2">
+            <Col lg={5} md={12} sm={12} className="mt-2 mb-4">
               <div className="card card_faq custom-triangle">
-                <div className="card-body mt-4 mb-5">
+                <div className="card-body mt-2 mb-2">
                   <h3 className="title_req">Request A Quote</h3>
                   <p className="parafaq mb-5">
                     Fill all information details to consult with us to <br></br>get
@@ -204,7 +205,7 @@ function FaqCom() {
                           onChange={handleNameChange}
                         />
                         {errors.name && (
-                          <span className="text-danger">{errors.name}</span>
+                          <span className="text-danger ">{errors.name}</span>
                         )}
                       </div>
 

@@ -120,7 +120,7 @@
 }
 
 .mission_name {
-    padding-left: 80px;
+    padding-left: 580px;
 }
 
 @media (max-width: 768px) {
@@ -254,5 +254,33 @@
         flex: 1 1 100%;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+    }
+}
+
+/* MOBILE FIX — Equal width + No weird side gap */
+@media (max-width: 768px) {
+
+    .cards-container {
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .row-equal-height > .col {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .vission_card_start,
+    .mission_card_start {
+        width: 100% !important;
+        border-radius: 0 !important; 
+        margin: 0 !important;
+    }
+
+    .card_name {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: left !important;
     }
 }

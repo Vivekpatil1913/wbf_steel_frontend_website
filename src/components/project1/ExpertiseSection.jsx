@@ -1,45 +1,30 @@
 import React from "react";
-import "./ExpertiseSection.css";
+import "./expertise.css";
 
-// Import your logos here
 import draftsight from "../../assets/images/draft.png";
 import autocad from "../../assets/images/auto.png";
 import tekla from "../../assets/images/tekla.png";
 import rebard from "../../assets/images/rebar.png";
-import sds2 from "../../assets/images/rebar.png";
+import sds2 from "../../assets/images/Sds.png";
+
+const logos = [draftsight, autocad, tekla, rebard, sds2];
 
 function ExpertiseSection() {
   return (
-    <section className="expertise-section">
-      <div className="expertise-container">
-        {/* Left Text Section */}
-        <div className="expertise-left">
-          <h2>
-            We work across <br /> the <span>world</span>
-          </h2>
-          <h3>Connect with Us</h3>
-          <p>
-            Contact WBF Steel for <br></br> professional advice on steel <br></br> detailing and
-            industry best <br></br>practices.
-          </p>
-          <a href="AboutUs" className="learn-more">
-            Get in Touch <i className="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
+    <div className="expertise-section">
+      <h2 className="expertise-title">Our Expertise Lies In</h2>
 
-        {/* Right Expertise Logos Section */}
-        <div className="expertise-right">
-          <h3>Our Expertise Lies In</h3>
-          <div className="logo-grid">
-            <img src={draftsight} alt="DraftSight" />
-            <img src={autocad} alt="AutoCAD" />
-            <img src={tekla} alt="Tekla" />
-            <img src={rebard} alt="RebarCAD" />
-            <img src={sds2} alt="SDS/2" />
-          </div>
+      <div className="scroll-wrapper">
+        <div className="scroll-track">
+          {/* Duplicate logos twice for seamless scroll */}
+          {[...logos, ...logos].map((logo, index) => (
+            <div className="scroll-item" key={index}>
+              <img src={logo} alt="brand logo" className="brand-img" />
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
