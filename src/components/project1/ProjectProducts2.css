@@ -1,153 +1,304 @@
-
-
-/* ================= WHITE BOX ================= */
-/* Main container with shadow and rounded corners */
-.white-box {
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  border-radius: 10px;
-  padding: 30px 25px 0;
-  width: 100%;
-  max-width: 1300px;
-  margin: 30px auto;
-}
-
-/* ================= PROJECT CONTAINER ================= */
-/* Flex container for main image + thumbnails */
-.project-container {
+/* ============================
+   SECTION WRAPPER
+============================ */
+.project-details {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  gap: 25px;
-  width: 100%;
-  flex-wrap: nowrap;    /* 👈 THIS FIXES YOUR ISSUE */
+  padding: 50px 0;
+  background: #ffffff;
 }
 
+/* ============================
+   MAIN WHITE BOX
+============================ */
+.white-box {
+  width: 1350px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 50px 70px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+}
 
-/* ================= THUMBNAILS ================= */
-/* Vertical thumbnails container */
+/* ============================
+   3-COLUMN WRAPPER (20/40/40)
+============================ */
+.project-container {
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  align-items: end;        /* bottom align all boxes */
+  column-gap: 35px;
+    justify-items: stretch;
+  width: 100%;
+}
+
+/* ============================
+   LEFT COLUMN - THUMBNAILS
+============================ */
 .image-list {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  width: 150px;
-  padding-top: 12px;
-  flex-shrink: 0;
+  gap: 5px;
 }
 
-/* Up/Down arrow buttons for thumbnails */
+/* Adjust spacing for arrows individually */
+.arrow-btn:first-child {
+  margin-bottom: 1px;  /* space between top arrow and first image */
+}
+
+.arrow-btn:last-child {
+  margin-top: 4px;     /* space between last image and bottom arrow */
+}
+
 .arrow-btn {
-  color: #150101;
+  background: none;
   border: none;
   cursor: pointer;
-  font-size: 35px;
-  padding: 0;
-  background: none;
+  font-size: 30px;
 }
 
-/* Thumbnail images scrollable list */
 .image-thumbnails {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  max-height: 500px;
+  gap: 14px;
+  height: 490px;
   overflow-y: auto;
-  scroll-behavior: smooth;
+  padding-right: 6px;
 }
 
 .image-thumbnails::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
-/* Individual thumbnail style */
+/* Bigger thumbnails */
 .image-thumbnails img {
-  /* margin-top: -15px; */
   width: 200px;
-  height: 150px;
-  border-radius: 4px;
+  height: 160px;                  /* increased height */
+
   object-fit: cover;
-  border: 1px solid transparent;
   cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 2px 4px #fff;
 }
 
-/* Active or hover thumbnail */
-.image-thumbnails img.active,
-.image-thumbnails img:hover {
-  border: 1px solid #fff;
-  transform: scale(1.03);
+.image-thumbnails img.active {
+  border-color: black;
 }
 
-/* ================= MAIN IMAGE ================= */
-/* Main image and title section */
-.main-image-section {
+/* ============================
+   CENTER COLUMN - MAIN IMAGE
+============================ */
+.center-column {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .project-title {
-  padding-left:20px;
-  padding-top: 50px;
-  font-size: 32px;
-  font-weight: 600;
-  
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.main-image-holder {
+  margin-top: auto;
 }
 
 .main-image {
-  width: 500px;
-  /* height: 500px; */
-  border-radius: 6px;
-  object-fit: cover;
-  padding: 20px;
-  margin-bottom: 30px;
-}
-
-/* ================= INFO BOX ================= */
-/* Scrollable info box container */
-.info-box-container {
-  display: flex;
-  justify-content:flex-end;
   width: 100%;
+  border-radius: 0px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+
 }
 
-/* Info box style */
+/* ============================
+   RIGHT COLUMN - INFO BOX
+============================ */
 .info-box {
-  background: #ffc422;
-  padding-left: 40px;
-  width: 450px;
-  height: 450px;
-  border-radius: 6px;
-  font-size: 20px;
+  width: 100%;
+  background: #f7c948;
+  padding: 40px 38px;
   line-height: 1.5;
-  margin-top: 50px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Scrollable content inside info box */
-.info-box-content {
-  height: 90%;
-  overflow-y: auto;
-  padding: 45px;
+  font-size: 24px;
+  font-weight: 500;
+  min-height: 530px;
+   /* your yellow color */
+  padding: 30px ;
+  margin-top: 40px;
+  width: 100%;
+  
+  /* Add scroll behavior */
+  max-height: 520px;           /* adjust to your preferred height */
+  overflow-y: auto;            /* enables scrollbar */
+  /* Optional smoother scrolling */
   scroll-behavior: smooth;
-  font-size: 20px;
 }
 
-/* Scrollbar style */
+.info-box-content {
+  max-height: 440px;
+  overflow-y: auto;
+}
+
 .info-box-content::-webkit-scrollbar {
-  width: 1px;
+  width: 4px;
+
 }
 
-.info-box-content::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 3px;
+/* ============================
+   MEDIA QUERIES - RESPONSIVE
+============================ */
+
+/* ---------- Desktop (Large) ---------- */
+@media (min-width: 1200px) {
+  .white-box {
+    width: 1350px;
+    padding: 50px 70px;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    column-gap: 35px;
+    align-items: start;
+  }
+
+  .image-thumbnails {
+    height: calc(3 * 160px + 2 * 14px);
+    gap: 14px;
+  }
+
+  .image-thumbnails img {
+    width: 200px;
+    height: 160px;
+  }
+
+  .info-box {
+    max-height: 520px;
+    font-size: 24px;
+    padding: 40px;
+  }
 }
 
-/* Read More button hover */
-.read-more-btn:hover {
-  opacity: 0.8;
+/* ---------- Small Desktop / Laptop ---------- */
+@media (max-width: 1199px) {
+  .white-box {
+    width: 1000px;
+    padding: 40px 50px;
+  }
+
+  .project-container {
+    grid-template-columns: 20% 40% 40%;
+    column-gap: 25px;
+  }
+
+  .image-thumbnails {
+    height: calc(3 * 140px + 2 * 12px);
+    gap: 12px;
+  }
+
+  .image-thumbnails img {
+    width: 180px;
+    height: 140px;
+  }
+
+  .info-box {
+    max-height: 450px;
+    font-size: 22px;
+    padding: 40px;
+  }
 }
 
+/* ---------- Tablet (Stack vertically) ---------- */
+@media (max-width: 991px) {
+  .white-box {
+    width: 90%;
+    padding: 30px 40px;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: 1fr; /* stack vertically */
+    row-gap: 25px;
+  }
+
+  .image-thumbnails {
+    height: calc(3 * 140px + 2 * 12px);
+    gap: 12px;
+  }
+
+  .image-thumbnails img {
+    width: 160px;
+    height: 120px;
+  }
+
+  .info-box {
+    max-height: 400px;
+    font-size: 20px;
+    padding: 30px;
+  }
+
+  .main-image {
+    width: 100%; /* keep main image full width */
+  }
+}
+
+/* ---------- Mobile (Stack vertically) ---------- */
+@media (max-width: 767px) {
+  .white-box {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: 1fr; /* stack vertically */
+    row-gap: 20px;
+  }
+
+  .image-thumbnails {
+    height: calc(2 * 120px + 1 * 10px); /* smaller thumbnails */
+    gap: 10px;
+  }
+
+  .image-thumbnails img {
+    width: 120px;
+    height: 100px;
+  }
+
+  .info-box {
+    max-height: 300px;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .main-image {
+    width: 100%; /* full width */
+  }
+
+  .project-title {
+    font-size: 26px;
+    text-align: center;
+  }
+}
+
+/* ---------- Extra Small Mobile ---------- */
+@media (max-width: 480px) {
+  .image-thumbnails {
+    height: calc(2 * 80px + 1 * 6px);
+    gap: 6px;
+  }
+
+  .image-thumbnails img {
+    width: 100px;
+    height: 80px;
+  }
+
+  .info-box {
+    max-height: 250px;
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+}

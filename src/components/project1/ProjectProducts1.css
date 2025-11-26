@@ -45,6 +45,7 @@
   max-width: 1290px;
   margin: 0 auto;
   border: 1px solid black;
+  
   border-radius: 8px;
   overflow: hidden; /* prevents spacing issues */
 }
@@ -54,6 +55,7 @@
   flex: 1;                   /* 👈 makes all 6 buttons equal width */
   padding: 12px 0;
   background: #fff;
+  color: black;
   border: none;
   border-right: 1px solid #ccc;
   font-size: 20px;

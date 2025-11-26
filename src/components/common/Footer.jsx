@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
-import logo from "../../assets/images/wbfnewlogo.png";
+import logo from "../../assets/images/wbf-Reverse_Logo.png";
 import bg from "../../assets/images/Footer.webp"; // Background image
 
 

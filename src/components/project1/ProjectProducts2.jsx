@@ -12,12 +12,6 @@ import product5 from "../../assets/projectimg/project_page2/product5.png";
 import product6 from "../../assets/projectimg/project_page2/product6.png";
 import ExpertiseSection from "./ExpertiseSection";
 
-import draftsight from "../../assets/images/draft.png";
-import autocad from "../../assets/images/auto.png";
-import tekla from "../../assets/images/tekla.png";
-import rebard from "../../assets/images/rebar.png";
-import sds2 from "../../assets/images/rebar.png";
-
 import { Col, Container, Row, Card } from "react-bootstrap";
 
 function ProjectProducts2() {
@@ -91,16 +85,35 @@ function ProjectProducts2() {
             </div>
 
             {/* MAIN IMAGE */}
-            <div className="main-image-section">
-              <h2 className="project-title">Commercial Building,<br></br> GA USA</h2>
-              <img src={mainImage} alt="main" className="main-image" />
+            <div className="center-column">
+              <h2 className="project-title">
+                Commercial Building,
+                <br /> GA USA
+              </h2>
+
+              <div className="main-image-holder">
+                <img src={mainImage} alt="main" className="main-image" />
+              </div>
             </div>
 
             {/* RIGHT INFO BOX */}
             <div className="info-box">
               <div className="info-box-content" ref={infoRef}>
-                <p>Located in Georgia, USA, WBF Steel Company specializes in commercial building projects. The company provides high-quality structural steel fabrication, design, and erection services for industrial and commercial constructions. Known for durability, precision, and timely project delivery.</p>
-               
+                <p>
+                  Located in Georgia, USA, WBF Steel Company specializes in
+                  commercial building projects. The company provides
+                  high-quality structural steel fabrication, design, and
+                  erection services for industrial and commercial constructions.
+                  Known for durability, precision, and timely project delivery.
+                  The company provides
+                  high-quality structural steel fabrication, design, and
+                  erection services for industrial and commercial constructions.
+                  Known for durability, precision, and timely project delivery.
+                  The company provides
+                  high-quality structural steel fabrication, design, and
+                  erection services for industrial and commercial constructions.
+                  Known for durability, precision, and timely project delivery.
+                </p>
               </div>
             </div>
           </div>
@@ -108,7 +121,6 @@ function ProjectProducts2() {
       </section>
 
       <ExpertiseSection />
-
     </>
   );
 }
