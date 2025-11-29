@@ -1,39 +1,49 @@
-
-
-.Contact{
+.Contact {
   position: relative;
   width: 100%;
-   aspect-ratio: 16 / 9; 
-  background: url("../../../src/assets/images/Group\ 1000005624.png") center center / cover no-repeat;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
 }
 
-/* Larger screens */
-@media (min-width: 1200px) {
-  .Contact {
-    aspect-ratio: 21 / 9; 
-  }
+.contact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+
 
 /* Tablets */
 @media (max-width: 992px) {
   .Contact {
     aspect-ratio: 10 / 4;
-    background-position: center top;
   }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
   .Contact {
-   
-    aspect-ratio: 3 / 4; 
-    background-position: top center;
-    background-size: contain; 
-    background-repeat: no-repeat;
+    aspect-ratio: 3 / 4;
+  }
+
+  .contact-img {
+    object-fit: contain;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .Contact {
+    aspect-ratio: auto;      /* remove forced ratio */
+    height: auto;            /* allow natural height */
+  }
+
+  .contact-img {
+    width: 100%;
+    height: auto;            /* allow image to decide height */
+    object-fit: cover;       /* fill width like a real banner */
   }
 }

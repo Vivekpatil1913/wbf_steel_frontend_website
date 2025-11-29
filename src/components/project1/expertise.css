@@ -21,7 +21,7 @@
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 18s linear infinite;
 }
 
 .scroll-item {
@@ -52,7 +52,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-1750px); /* 5 logos × 350px = 1750px for seamless scroll */
+    transform: translateX(-50%); /* 5 logos × 350px = 1750px for seamless scroll */
   }
 }
 

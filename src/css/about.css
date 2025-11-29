@@ -367,3 +367,49 @@
     flex-direction: column-reverse;
   }
 }
+
+/* ================================
+   GLOBAL IMAGE STYLING
+================================ */
+.aboutimgs {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================================
+   TABLET — 768px to 1024px
+================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .aboutimgs {
+    height: 300px;     /* Better height for tablet */
+    object-fit: cover;
+  }
+}
+
+/* ================================
+   MOBILE — below 767px
+================================ */
+@media (max-width: 767px) {
+  .aboutimgs {
+    height: auto;      /* Allow natural mobile height */
+    max-height: 380px; /* Optional: prevents very tall images */
+    object-fit: cover;
+  }
+}
+
+/* ================================
+   FIX rows on mobile (IMAGE FIRST)
+================================ */
+@media (max-width: 767px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Reverse ONLY the 2nd row */
+  .row:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+}

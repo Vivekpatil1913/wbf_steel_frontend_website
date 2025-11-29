@@ -1,7 +1,5 @@
 import React from "react";
-import Navbar from "../components/common/Navbar";
-import MapSection from "../components/common/Footer";
-import Footer from "../components/common/Footer";
+import MapSection from "../components/common/MapSection";
 import ContactSection from "../components/contactus/ContactSection";
 import ContactImage from "../components/contactus/ContactImage";
 
@@ -31,9 +29,10 @@ const contactData = {
 const ContactUs = () => {
   return (
     <>
-      <ContactImage />
+     <ContactImage />
+
       <ContactSection contactData={contactData} />
-      
+      <MapSection/>
       
     </>
   );

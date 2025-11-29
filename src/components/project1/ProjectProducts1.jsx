@@ -17,16 +17,16 @@ function ProjectProducts1() {
   const navigate = useNavigate();
 
   const productdata = [
-    { product_img: product1, text: "Commercial Building, GA USA" },
-    { product_img: product2, text: "Commercial Building, LA USA" },
-    { product_img: product3, text: "Commercial Building, MD USA" },
-    { product_img: product4, text: "Commercial Building, FL USA" },
-    { product_img: product5, text: "Commercial Building USA" },
-    { product_img: product6, text: "Industrial Building, AR USA" },
-    { product_img: product7, text: "Commercial Building, FL USA" },
-    { product_img: product8, text: "Commercial Building, IL USA" },
-    { product_img: product9, text: "Commercial Building, FL USA" },
-    { product_img: product10, text: "Commercial Building, MD USA" },
+    { id:1, product_img: product1, text: "Commercial Building, GA USA" },
+    { id:2, product_img: product2, text: "Commercial Building, LA USA" },
+    { id:3, product_img: product3, text: "Commercial Building, MD USA" },
+    { id:4, product_img: product4, text: "Commercial Building, FL USA" },
+    { id:5, product_img: product5, text: "Commercial Building USA" },
+    { id:6, product_img: product6, text: "Industrial Building, AR USA" },
+    { id:7, product_img: product7, text: "Commercial Building, FL USA" },
+    { id:8, product_img: product8, text: "Commercial Building, IL USA" },
+    { id:9, product_img: product9, text: "Commercial Building, FL USA" },
+    { id:10, product_img: product10, text: "Commercial Building, MD USA" },
   ];
 
   const projectImages = {
@@ -57,7 +57,7 @@ function ProjectProducts1() {
                 key={i}
                 onClick={() => setSelectedTab(tab)}
                 style={{
-                  background: selectedTab === tab ? "#eef3f8" : "#fff",
+                  background: selectedTab === tab ? "#FFC442" : "#fff",
                   fontWeight: selectedTab === tab ? "700" : "500",
                 }}
               >
@@ -74,7 +74,7 @@ function ProjectProducts1() {
                 key={index}
                 className="col-lg-4 col-md-6 col-sm-12 text-center"
                 style={{ cursor: "pointer" }}
-                onClick={() => navigate("/projectproducts2")}
+                onClick={() => navigate(`/projectproducts2?id=${a.id}`)}
               >
                 <div className="img_container">
                   <img src={a.product_img} className="img-fluid img_product" alt="" />

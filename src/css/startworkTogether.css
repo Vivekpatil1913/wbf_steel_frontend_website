@@ -17,6 +17,12 @@
   color: #0A4376;
 }
 
+.join {
+  font-size: 36px;
+  font-weight: 600;
+  color: #0A4376;
+}
+
 .startwork-para-work {
   font-size: 24px;
   margin-top: 20px;
@@ -132,6 +138,7 @@
     justify-content: flex-start;
     gap: 16px;
   }
+ 
 }
 
 
@@ -144,6 +151,7 @@
     font-size: 28px;
     text-align: left;
   }
+  
   .startwork-para-work {
     font-size: 20px;
     text-align: left;
@@ -151,6 +159,7 @@
   .startwork-social-icons {
     justify-content: flex-start;
   }
+
 }
 
 
@@ -185,10 +194,10 @@
 /* ======================= */
 @media (max-width: 575px) {
   .startwork-letstart_work_heading {
-    font-size: 20px;
+    font-size: 26px;
   }
   .startwork-para-work {
-    font-size: 16px;
+    font-size: 18px;
   }
   .startwork-custom-line {
     width: 100px;
@@ -196,7 +205,7 @@
   .startwork-social-icons {
     justify-content: center !important;
     gap: 8px;
-    padding-right: 70px;
+    padding-right: 10px;
   }
   .startwork-social-icons a {
     width: 42px;
@@ -205,5 +214,12 @@
   .startwork-social-icons img {
     width: 18px;
     height: 18px;
+    
   }
+  .startwork-get-quote a  {
+  font-size: 24px;
+  padding-right: 12px;
+  
+  
+}
 }
