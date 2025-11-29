@@ -2,6 +2,7 @@ import "./Navbar.css";
 import logo from "../../assets/images/wbfnewlogo.png";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 import facebookIcon from "../../assets/icons/logos_facebook.png";
 import instaIcon from "../../assets/icons/insta.png";
@@ -12,6 +13,9 @@ import mailIcon from "../../assets/icons/mail.png";
 function Navbar() {
   const [hideInfobar, setHideInfobar] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false); // <-- ADDED
+
+  const [contacts, setContacts] = useState([]);
+  const [socialLinks, setSocialLinks] = useState({});
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -53,6 +57,31 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Fetch Contact Info
+    axios
+      .get("/header-contact/getheaderContacts")
+      .then((response) => {
+        if (response.data.result) {
+          setContacts(response.data.responseData || []);
+        } else {
+          setError(response.data.message);
+        }
+      })
+      .catch(() => setError("Failed to fetch contact info"));
+
+    // Fetch Social Media Links
+    axios
+      .get("/social-contact/get-socialcontacts")
+      .then((response) => {
+        setSocialLinks(response.data.responseData[0] || {});
+      })
+      .catch((error) => {
+        console.error("Error fetching social media links:", error);
+      });
+  }, []);
+
   return (
     <>
       <div className="header-wrapper">
@@ -69,18 +98,25 @@ function Navbar() {
 
             <div className="right-info d-flex align-items-center justify-content-end flex-wrap">
               <div className="info-item d-flex align-items-center me-4">
-                <a
-                  href="tel:2483010901"
-                  className="d-flex align-items-center text-decoration-none text-dark"
-                >
                   <i className="bi bi-telephone-fill text-warning fs-4 me-2"></i>
                   <div>
                     <div className="fw-semibold info-title">
-                      Call Us: 248-301-0901
+                      {/* Call Us: 248-301-0901 */}
+                      Call Us: <a href={`tel:${contacts[0]?.phone1 || "248-301-0901"}`} className="me-3 d-block d-md-inline" style={{ textDecoration: "none", color: "#000" }}>
+                        {contacts[0]?.phone1 || "248-301-0901"}
+                      </a>
                     </div>
-                    <div className="text-muted info-sub">info@wbfsteel.com</div>
+                    <div className="text-muted info-sub">
+                      {/* info@wbfsteel.com */}
+                      <a
+                        href={`mailto:${socialLinks.email || "info@wbfsteel.com"}`}
+                        className="me-3 d-block d-md-inline"
+                        style={{ textDecoration: "none", color: "#000" }}
+                      >
+                        {socialLinks.email || "info@wbfsteel.com"}
+                      </a>
+                    </div>
                   </div>
-                </a>
               </div>
 
               <div className="info-item d-flex align-items-center me-4">
