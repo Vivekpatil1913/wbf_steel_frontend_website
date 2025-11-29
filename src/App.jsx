@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 function App() {
 
-  axios.defaults.baseURL = `http://localhost:8000/`;
+  axios.defaults.baseURL = `http://localhost:8000/`; 
   
   return (
     <>
