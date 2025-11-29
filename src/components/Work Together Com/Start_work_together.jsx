@@ -19,8 +19,8 @@ function Start_work_together() {
     
       <div className="container">
         <section className="start">
-        <div className="startwork-card-outer-border pt-5 pl-5">
-          <div className="row align-items-center">
+        <div className="startwork-card-outer-border pt-5 ">
+          <div className="row align-items-center  flex-column flex-md-row">
             {/* LEFT COLUMN */}
             <div className="col-lg-6 col-md-6 col-12 mb-5">
               <p className="startwork-letstart_work_heading">
@@ -37,7 +37,7 @@ function Start_work_together() {
 
             {/* RIGHT COLUMN */}
             <div className="col-lg-6 col-md-6 col-12 mb-5">
-              <p className="startwork-letstart_work_heading">Join Us</p>
+              <p className="startwork-letstart_work_heading join">Join Us</p>
               <div className="startwork-social-icons d-flex justify-content-md-start justify-content-center gap-2 ">
                 <a href="#">
                   <img src={facebookIcon} alt="Facebook" />

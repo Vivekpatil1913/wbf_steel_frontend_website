@@ -1,11 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import img1 from "../../assets/images/Blog2.png";
-import img2 from "../../assets/images/Blog2.png";
-import img3 from "../../assets/images/Blog2.png";
+import img1 from "../../assets/images/Blog/image 523.webp";
+import img2 from "../../assets/images/Blog/image 524.webp";
+import img3 from "../../assets/images/Blog/image 525.webp";
 import "./BlogDetails.css";
-import Navbar from "../common/Footer";
-import Footer from "../common/Footer";
+
 
 const blogs = [
   {
@@ -73,3 +72,40 @@ const BlogDetails = () => {
 };
 
 export default BlogDetails;
+
+
+
+// import React, { useEffect, useState } from "react";
+// import { useParams } from "react-router-dom";
+// import "./BlogDetails.css";
+
+// const BlogDetails = () => {
+//   const { slug } = useParams();
+//   const [blog, setBlog] = useState(null);
+
+//   useEffect(() => {
+//     fetch(`http://localhost:5000/api/blogs/${slug}`)
+//       .then((res) => res.json())
+//       .then((data) => setBlog(data))
+//       .catch((err) => console.log(err));
+//   }, [slug]);
+
+//   if (!blog) return <p>Loading...</p>;
+
+//   return (
+//     <section className="blog-details">
+//       <h1 className="blog-details-title">{blog.title}</h1>
+
+//       <div className="blog-details-image">
+//         <img src={blog.image} alt={blog.title} />
+//       </div>
+
+//       <div
+//         className="blog-details-content"
+//         dangerouslySetInnerHTML={{ __html: blog.content }}
+//       />
+//     </section>
+//   );
+// };
+
+// export default BlogDetails;

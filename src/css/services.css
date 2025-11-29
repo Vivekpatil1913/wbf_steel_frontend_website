@@ -78,6 +78,7 @@
   .rounded_card1_data {
     font-size: 24px !important;  /* smaller font for tablets */
   }
+
 }
 
 @media (max-width: 768px) { /* Mobile */

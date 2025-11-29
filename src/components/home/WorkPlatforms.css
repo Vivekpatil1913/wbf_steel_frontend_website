@@ -230,3 +230,39 @@
     font-size: 15px;
   }
 }
+
+
+/* Tablet only (768px – 992px) */
+@media (max-width: 992px) and (min-width: 768px) {
+
+  /* TWO COLUMNS for the right text */
+  .work-platform-section .right-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    text-align: left;
+    padding-left: 90px !important;
+    margin-top: 10px;
+  }
+
+  /* Column 1: Paragraph 1 */
+  .work-platform-section .right-text p:nth-child(1) {
+    grid-column: 1;
+  }
+
+  /* Column 2: Tools + Website stacked */
+  .work-platform-section .right-text p:nth-child(2),
+  .work-platform-section .right-text p:nth-child(3) {
+    grid-column: 2;
+  }
+
+  .work-platform-section .right-text p {
+    margin-bottom: 15px;
+
+  }
+   .work-platform-section .right-text p:nth-child(3){
+    margin-top: -80px;
+   }
+ 
+}
+

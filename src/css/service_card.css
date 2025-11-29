@@ -61,18 +61,18 @@
 /* Optional tablet view adjustment for intermediate size reduction */
 @media (max-width: 1024px) and (min-width: 769px) {
     .service_card1_heading {
-        font-size: 34px !important;
-        padding-left: 0px !important;
+        font-size: 32px !important;
+        padding-left:10px !important;
         /* Medium font size for tablets */
 
     }
     .service_card1_headingstrature{
-        padding-left: 0px;
+        padding-left: 10px;
     }
 }
 
 .service_card_para {
-    font-size: 20px !important;
+    font-size: 18px !important;
     font-weight: 200;
     padding-left: 30px;
     padding-right: 30px;
@@ -85,7 +85,7 @@
         font-size: 20px !important;
         /* Smaller font size for tablets */
         font-weight: 200;
-        padding-left: 0px;
+        padding-left: 10px;
         padding-right: 0px;
     }
 }
@@ -144,3 +144,15 @@
     padding-top: 8px !important;   /* adjust size as you want */
   }
 }
+
+   .service_card1_heading {
+        font-size: 30px !important;
+        padding-left: 0px !important; /* Adjusted for tablet */
+    }
+    .service_card_para {
+      padding-left: 10px;
+    }
+
+    .service_card1_headingstrature {
+        padding-left: 10px !important; /* <-- Add this */
+    }

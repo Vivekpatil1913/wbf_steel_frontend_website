@@ -409,6 +409,8 @@
 
   .cta-btn {
     margin: 0 auto;
+    
+   
   }
 }
 
@@ -531,6 +533,33 @@
   .cta-btn i {
     font-size: 12px;
     margin-top: 3px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .wbf-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;  /* center everything */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  
+  }
+
+
+
+  .cta-btn {
+    margin: 0 auto !important;  /* force center */
+    text-align: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+
+   
+  .cta-btn i {
+   
+    font-size: 32px;
   }
 
 }

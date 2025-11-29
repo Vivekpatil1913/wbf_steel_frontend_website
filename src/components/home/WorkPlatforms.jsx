@@ -40,7 +40,8 @@ const WorkPlatforms = () => {
             <p>
               <strong>Tools:</strong> Tekla, SDS/2, <br></br>AutoCAD. 
             </p>
-
+            
+          
             <p>
               <strong>Website:</strong>{" "}
               <a
@@ -52,9 +53,11 @@ const WorkPlatforms = () => {
               </a>
             </p>
           </div>
-        </div>
-      </div>
-      </div>
+          </div>
+          </div>
+          </div>
+          
+    
     </section>
   );
 };

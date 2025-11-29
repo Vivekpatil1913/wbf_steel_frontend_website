@@ -300,7 +300,7 @@
 
 
 
-@media (min-width: 768px) and (max-width: 980px) {
+@media (min-width: 769px) and (max-width: 980px) {
 
   /* Hidden by default */
   .navbar-collapse {
@@ -361,8 +361,7 @@
 
   /* Hide infobar items same as mobile */
   .top-infobar .left-logo,
-  .top-infobar .social-icons,
-  .top-infobar .info-item:nth-child(2) {
+  .top-infobar .social-icons {
     display: none !important;
   }
 
@@ -374,12 +373,6 @@
 
 
 
-/* MOBILE + TABLET < 992px -> NOT Sticky */
-@media (max-width: 991px) {
-  .header-wrapper {
-    position: static !important;
-  }
-}
 
 /* Desktop sticky (>=992px) */
 @media (min-width: 992px) {
@@ -399,3 +392,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .main-navbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3000;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-infobar + nav {
+    top: 0 !important;
+  }
+}

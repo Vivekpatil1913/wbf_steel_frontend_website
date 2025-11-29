@@ -23,7 +23,7 @@
 .footer-section .col-lg-4,
 .footer-section .col-lg-3 {
   flex: 1;
-  min-width: 300px;
+
 } /* Titles */
 .footer-title {
   font-size: 1.5rem;
@@ -396,6 +396,88 @@
     justify-content: center !important;
   }
   .footer-section .row {
-    gap: 14px !important; /* reduce vertical space */
+    gap: 6px !important; /* reduce vertical space */
+  }
+}
+
+/* === Tablet Styles: 577px - 1024px === */
+@media (min-width: 577px) and (max-width: 1024px) {
+     /* Fix CONTACT COMPANY alignment */
+  .footer-contact {
+    padding-left: 0 !important;
+  }
+
+  .footer-contact li {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 10px !important;
+  }
+
+  .footer-contact li i {
+    flex-shrink: 0;
+  }
+
+
+
+  .footer-section .row {
+    display: flex;
+    flex-wrap: nowrap; /* keep 3 columns in one row */
+    justify-content: space-between;
+    gap: 5px !important; /* reduce gap to prevent overflow */
+  }
+
+  /* Columns widths adjusted */
+  .footer-section .col-lg-4,
+  .footer-section .col-lg-3 {
+    flex: 1 1 32%; /* slightly smaller to fit all columns */
+    max-width: 32%;
+    text-align: left;
+  }
+
+  /* Titles */
+  .footer-title {
+    font-size: 1.2rem;
+    
+    
+  }
+   
+  .footer-follow-title {
+    font-size: 1.2rem;
+    padding-left: 45px;
+    
+  }
+
+  /* Contact & Menu text */
+  .footer-contact li,
+  .footer-menu li a {
+    font-size: 1.05rem;
+  }
+
+  /* Logo */
+  .footer-logo {
+    height: 110px;
+  }
+
+  /* Description */
+  .footer-desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* Social icons */
+  .footer-social a {
+    width: 34px;
+    height: 34px;
+  }
+
+  .footer-social a img {
+    width: 60%;
+  }
+
+  /* Footer bottom text */
+  .footer-bottom {
+    font-size: 0.95rem;
   }
 }
