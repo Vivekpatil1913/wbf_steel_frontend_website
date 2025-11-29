@@ -15,7 +15,7 @@ import Blog from "../pages/Blog";
 import BlogDetails from "../components/blog/BlogDetails";
 import ProjectProducts1 from "../components/project1/ProjectProducts1";
 import ProjectProducts2 from "../components/project1/ProjectProducts2";
-// import Careers from "../pages/Careers";
+// import Careers from "../pages/Careers"; 
 
 // ScrollToTop component resets scroll on route change
 function ScrollToTop() {
