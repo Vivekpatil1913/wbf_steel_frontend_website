@@ -41,8 +41,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
-    // === Sticky Header on Scroll ===
+  // === Sticky Header on Scroll ===
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".header-wrapper");
@@ -98,25 +97,32 @@ function Navbar() {
 
             <div className="right-info d-flex align-items-center justify-content-end flex-wrap">
               <div className="info-item d-flex align-items-center me-4">
-                  <i className="bi bi-telephone-fill text-warning fs-4 me-2"></i>
-                  <div>
-                    <div className="fw-semibold info-title">
-                      {/* Call Us: 248-301-0901 */}
-                      Call Us: <a href={`tel:${contacts[0]?.phone1 || "248-301-0901"}`} className="me-3 d-block d-md-inline" style={{ textDecoration: "none", color: "#000" }}>
-                        {contacts[0]?.phone1 || "248-301-0901"}
-                      </a>
-                    </div>
-                    <div className="text-muted info-sub">
-                      {/* info@wbfsteel.com */}
-                      <a
-                        href={`mailto:${socialLinks.email || "info@wbfsteel.com"}`}
-                        className="me-3 d-block d-md-inline"
-                        style={{ textDecoration: "none", color: "#000" }}
-                      >
-                        {socialLinks.email || "info@wbfsteel.com"}
-                      </a>
-                    </div>
+                <i className="bi bi-telephone-fill text-warning fs-4 me-2"></i>
+                <div>
+                  <div className="fw-semibold info-title">
+                    {/* Call Us: 248-301-0901 */}
+                    Call Us:{" "}
+                    <a
+                      href={`tel:${contacts[0]?.phone1 || "248-301-0901"}`}
+                      className="me-3 d-block d-md-inline"
+                      style={{ textDecoration: "none", color: "#000" }}
+                    >
+                      {contacts[0]?.phone1 || "248-301-0901"}
+                    </a>
                   </div>
+                  <div className="text-muted info-sub">
+                    {/* info@wbfsteel.com */}
+                    <a
+                      href={`mailto:${
+                        socialLinks.email || "info@wbfsteel.com"
+                      }`}
+                      className="me-3 d-block d-md-inline"
+                      style={{ textDecoration: "none", color: "#000" }}
+                    >
+                      {socialLinks.email || "info@wbfsteel.com"}
+                    </a>
+                  </div>
+                </div>
               </div>
 
               <div className="info-item d-flex align-items-center me-4">
@@ -135,19 +141,19 @@ function Navbar() {
               </div>
 
               <div className="social-icons d-flex align-items-center">
-                <a href="https://www.facebook.com/" className="me-2">
+                <a href={socialLinks.facebook} className="me-2">
                   <img src={facebookIcon} alt="Facebook" />
                 </a>
-                <a href="https://www.instagram.com/" className="me-2">
+                <a href={socialLinks.instagram} className="me-2">
                   <img src={instaIcon} alt="Instagram" />
                 </a>
-                <a href="https://www.whatsapp.com/" className="me-2">
+                <a href={`https://wa.me/${socialLinks.whatsapp}`} className="me-2">
                   <img src={whatsappIcon} alt="WhatsApp" />
                 </a>
-                <a href="https://in.linkedin.com/" className="me-2">
+                <a href={socialLinks.linkedin} className="me-2">
                   <img src={linkedinIcon} alt="LinkedIn" />
                 </a>
-                <a href="https://www.mail.com/">
+                <a href={`mailto:${socialLinks.email}`}>
                   <img src={mailIcon} alt="Mail" />
                 </a>
               </div>
@@ -175,7 +181,7 @@ function Navbar() {
               aria-controls="mainNav"
               aria-expanded={isNavOpen}
               aria-label="Toggle navigation"
-              onClick={() => setIsNavOpen(!isNavOpen)}  // <-- ADDED
+              onClick={() => setIsNavOpen(!isNavOpen)} // <-- ADDED
             >
               <span className="navbar-toggler-icon"></span>
             </button>

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./ContactSection.css";
 
 import facebookIcon from "../../assets/icons/logos_facebook.png";
@@ -24,6 +25,24 @@ const ContactSection = () => {
     subject: "",
     message: "",
   });
+
+  // Dynamic info
+  const [contacts, setContacts] = useState([]);
+  const [socialLinks, setSocialLinks] = useState({});
+
+  useEffect(() => {
+    // Fetch contact info (same as navbar)
+    axios
+      .get("/header-contact/getheaderContacts")
+      .then((res) => setContacts(res.data.responseData || []))
+      .catch((err) => console.error("Failed to fetch contacts:", err));
+
+    // Fetch social links (same as navbar)
+    axios
+      .get("/social-contact/get-socialcontacts")
+      .then((res) => setSocialLinks(res.data.responseData[0] || {}))
+      .catch((err) => console.error("Failed to fetch social links:", err));
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -108,15 +127,27 @@ const ContactSection = () => {
 
     if (Object.keys(newErrors).length > 0) return;
 
-    setSuccessMessage("Thank you! Your message has been sent successfully.");
+     axios.post("/requestcallbackform/add-requestcallback", formData)
+8
+      .then((res) => {
+        setSuccessMessage(
+          "Thank you! Your message has been sent successfully."
+        );
 
-    setFormData({
-      name: "",
-      email: "",
-      mobile: "",
-      subject: "",
-      message: "",
-    });
+        setFormData({
+          name: "",
+          email: "",
+          mobile: "",
+          subject: "",
+          message: "",
+        });
+
+        setTimeout(() => setSuccessMessage(""), 3000);
+      })
+      .catch((err) => {
+        console.error("Form submission error:", err);
+        alert("Something went wrong. Please try again.");
+      });
 
     setTimeout(() => setSuccessMessage(""), 3000);
   };
@@ -194,7 +225,7 @@ const ContactSection = () => {
                     formData.message.length > 250 ? "exceeded" : ""
                   }`}
                 >
-                  {formData.message.length}/250 
+                  {formData.message.length}/250
                 </p>
 
                 {errors.message && (
@@ -214,86 +245,107 @@ const ContactSection = () => {
 
           {/* RIGHT INFO */}
           <div className="col-lg-6 col-md-12">
-            <div className="contact-info">
-              <h3>
-                Your Connection to Quality
-                <br /> Manufacturing Starts
-                <br /> Here.
-              </h3>
-              <p>
-                With decades of experience in manufacturing switchgear, busbars,
-                laminations, and transformers, we are trusted by clients across
-                industries and continents.
-                <br />
-                Have questions about our products or services? Reach out to us
-                and we’ll get back to you with the right solution.
-              </p>
+            {contacts.length > 0 ? (
+              <div className="contact-info">
+                <h3>
+                  Your Connection to Quality
+                  <br /> Manufacturing Starts
+                  <br /> Here.
+                </h3>
+                <p>
+                  With decades of experience in manufacturing switchgear,
+                  busbars, laminations, and transformers, we are trusted by
+                  clients across industries and continents.
+                  <br />
+                  Have questions about our products or services? Reach out to us
+                  and we’ll get back to you with the right solution.
+                </p>
 
-              <div className="info-row d-flex flex-wrap justify-content-between">
-                <div className="info-block mb-3">
-                  <h5>Our Address</h5>
-                  <p className="mb-0">
-                    423/17; Talegaon Industrial Area, Igatpuri, Nashik 422 403,
-                    Maharashtra, India
-                  </p>
-                </div>
+                <div className="info-row d-flex flex-wrap justify-content-between">
+                  <div className="info-block mb-3">
+                    <h5>Our Address</h5>
+                    <p className="mb-0">
+                      423/17; Talegaon Industrial Area, Igatpuri, Nashik 422
+                      403, Maharashtra, India
+                    </p>
+                  </div>
 
-                <div className="info-block mb-3">
-                  <h5>Email</h5>
-                  <p className="mb-0">info@wellproducts.co.in</p>
-                  <p className="mb-0">support@wellproducts.co.in</p>
-                </div>
-              </div>
-
-              <div className="info-row  justify-content-between align-items-start">
-                <div className="info-block">
-                  <h5>Social Network</h5>
-                  <div className="social-icons flex-wrap">
-                    <a href="https://facebook.com" target="_blank">
-                      <img
-                        src={facebookIcon}
-                        alt="Facebook"
-                        className="social-icon-img"
-                      />
-                    </a>
-                    <a href="https://instagram.com" target="_blank">
-                      <img
-                        src={instaIcon}
-                        alt="Instagram"
-                        className="social-icon-img"
-                      />
-                    </a>
-                    <a href="https://linkedin.com" target="_blank">
-                      <img
-                        src={linkedinIcon}
-                        alt="LinkedIn"
-                        className="social-icon-img"
-                      />
-                    </a>
-                    <a href="https://wa.me/918564000000" target="_blank">
-                      <img
-                        src={whatsappIcon}
-                        alt="WhatsApp"
-                        className="social-icon-img"
-                      />
-                    </a>
-                    <a href="mailto:info@wellproducts.co.in" target="_blank">
-                      <img
-                        src={mailIcon}
-                        alt="Mail"
-                        className="social-icon-img"
-                      />
-                    </a>
+                  <div className="info-block mb-3">
+                    <h5>Email</h5>
+                    {socialLinks.email && (
+                      <p>
+                        <a href={`mailto:${socialLinks.email}`}>
+                          {socialLinks.email}
+                        </a>
+                      </p>
+                    )}
+                    {socialLinks.email2 && (
+                      <p>
+                        <a href={`mailto:${socialLinks.email2}`}>
+                          {socialLinks.email2}
+                        </a>
+                      </p>
+                    )}
                   </div>
                 </div>
 
-                <div className="info-block">
-                  <h5>Contact</h5>
-                  <p className="mb-0">+91 8564-0000-00</p>
-                  <p className="mb-0">+91 4658-0000-00</p>
+                <div className="info-row justify-content-between align-items-start">
+                  <div className="info-block">
+                    <h5>Social Network</h5>
+                    <div className="social-icons">
+                      {socialLinks.facebook && (
+                        <a href={socialLinks.facebook} target="_blank">
+                          <img src={facebookIcon} alt="Facebook" />
+                        </a>
+                      )}
+                      {socialLinks.instagram && (
+                        <a href={socialLinks.instagram} target="_blank">
+                          <img src={instaIcon} alt="Instagram" />
+                        </a>
+                      )}
+                      {socialLinks.linkedin && (
+                        <a href={socialLinks.linkedin} target="_blank">
+                          <img src={linkedinIcon} alt="LinkedIn" />
+                        </a>
+                      )}
+                      {socialLinks.whatsapp && (
+                        <a
+                          href={`https://wa.me/${socialLinks.whatsapp}`}
+                          target="_blank"
+                        >
+                          <img src={whatsappIcon} alt="WhatsApp" />
+                        </a>
+                      )}
+                      {socialLinks.email && (
+                        <a href={`mailto:${socialLinks.email}`} target="_blank">
+                          <img src={mailIcon} alt="Mail" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="info-block">
+                    <h5>Contact</h5>
+                    {contacts[0].phone1 && (
+                      <p>
+                        <a href={`tel:${contacts[0].phone1}`}>
+                          {contacts[0].phone1}
+                        </a>
+                      </p>
+                    )}
+                    {contacts[0].phone2 && (
+                      <p>
+                        <a href={`tel:${contacts[0].phone2}`}>
+                          {contacts[0].phone2}
+                        </a>
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <p>Loading contact info...</p>
+            )}
           </div>
         </div>
       </div>

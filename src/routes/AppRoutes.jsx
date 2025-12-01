@@ -43,7 +43,8 @@ function AppRoutes() {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
-         <Route path="/blog/:id" element={<BlogDetails />} />
+         <Route path="/blog/:slug" element={<BlogDetails />} />
+
       </Routes>
       <Footer />
     </Router>

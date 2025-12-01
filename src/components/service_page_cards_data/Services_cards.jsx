@@ -1,55 +1,101 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import '../../css/service_card.css'
+import React, { useEffect, useState } from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import axios from "axios";
+import "../../css/service_card.css";
 
-import service_img1 from '../../../src/assets/images/Service page/Rectangle 4810.webp'
-import service_img2 from '../../../src/assets/images/Service page/Rectangle 4808.webp'
-import service_img3 from '../../../src/assets/images/Service page/Rectangle 4809.webp'
+import service_img1 from "../../../src/assets/images/Service page/Rectangle 4810.webp";
+import service_img2 from "../../../src/assets/images/Service page/Rectangle 4808.webp";
 
 function Services_cards() {
-    return (
-        <>
-            <div class="container-fluid mb-5">
-                <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-0 m-0">
-                        <img src={service_img1} alt="..." className="responsive-image"/>
-                    </div>
-                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex flex-column justify-content-center align-items-start m-0 pt-2 colum_backcolor">
-                        <p className="service_card1_headingstrature">Detailing & Estimations </p>
-                        <p className="service_card_para">
-                            WBF Steel is a leading global provider of Structural Steel Detailing and Estimation services, following AISC, NISD, CISC, OSHA, and ASTM standards. Using SDS/2, TEKLA, and Advanced Steel platforms, our 35+ skilled detailers and expert managers deliver accurate, cost-effective, and on-time solutions. We focus on quality, trust, and long-term client relationships built through consistent excellence.
-                        </p>
-                    </div>
-                </div>
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-                <div class="row mt-3">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex flex-column justify-content-center align-items-left text-left p-0 m-0 pt-2 colum_backcolor p-0 m-0">
-                        <p className='service_card1_headingstrature'>Commercial Structures</p>
-                        <p className='service_card_para'>
-                            We deliver high-quality, on-time commercial projects with precision and excellence. Serving owners, contractors, engineers, fabricators, and architects, we offer complete architectural and structural solutions. Using SDS/2 and Tekla Structures, we handle new builds, extensions, and renovations with the same commitment and expertise across all project sizes.                        </p>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 m-0 p-0">
-                        <img src={service_img2} class="img-fluid responsive-image" alt="..." />
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 m-0 p-0">
-                        <img src={service_img3} class="img-fluid responsive-image" alt="..." />
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex flex-column justify-content-center align-items-left text-left p-0 m-0 pt-2 colum_backcolor p-0 m-0">
-                        <p className='service_card1_headingstrature'>Architectural And Structural Design Support</p>
-                        <p className='service_card_para'>
-                            We specialize in delivering high-quality commercial construction solutions with precision, efficiency, and on-time performance. Our services cater to owners, contractors, engineers, fabricators, and architects, providing end-to-end architectural and structural design support.
-                        </p>
-                    </div>
-                </div>
-            </div>
+  useEffect(() => {
+    axios
+      .get("infrastructure/get-infrastructure") 
+      .then((res) => {
+        const fetchedServices = res.data?.data || res.data?.responseData || [];
 
-        </>
-    )
+        if (fetchedServices.length > 0) {
+          setServices(fetchedServices);
+        } else {
+          setError("No services found.");
+        }
+      })
+      .catch((err) => {
+        console.error("Error fetching services:", err);
+        setError("Failed to load services.");
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  
+  const safeText = (text, fallback = "No data") => text || fallback;
+
+  return (
+    <>
+      {loading && (
+        <p style={{ textAlign: "center", padding: "50px" }}>Loading services...</p>
+      )}
+
+      {error && (
+        <p style={{ textAlign: "center", padding: "50px", color: "red" }}>{error}</p>
+      )}
+
+      {!loading && !error && (
+        <Container fluid className="mb-5">
+          {services.map((service, index) => {
+            const imgSrc = service.img || (index % 2 === 0 ? service_img1 : service_img2);
+            const title = safeText(service.title, "No Title");
+            const desc = safeText(service.desc, "No Description");
+
+            return (
+              <Row className="mt-3" key={service.id || index}>
+                {index % 2 === 0 ? (
+                  <>
+                    <Col md={6} className="p-0 m-0">
+                      <img
+                        src={imgSrc}
+                        alt={title}
+                        className="responsive-image img-fluid"
+                      />
+                    </Col>
+                    <Col
+                      md={6}
+                      className="d-flex flex-column justify-content-center align-items-start p-3 colum_backcolor"
+                    >
+                      <p className="service_card1_headingstrature">{title}</p>
+                      <p className="service_card_para">{desc}</p>
+                    </Col>
+                  </>
+                ) : (
+                  <>
+                    <Col
+                      md={6}
+                      className="d-flex flex-column justify-content-center align-items-start p-3 colum_backcolor"
+                    >
+                      <p className="service_card1_headingstrature">{title}</p>
+                      <p className="service_card_para">{desc}</p>
+                    </Col>
+                    <Col md={6} className="p-0 m-0">
+                      <img
+                        src={imgSrc}
+                        alt={title}
+                        className="responsive-image img-fluid"
+                      />
+                    </Col>
+                  </>
+                )}
+              </Row>
+            );
+          })}
+        </Container>
+      )}
+    </>
+  );
 }
 
-export default Services_cards
+export default Services_cards;

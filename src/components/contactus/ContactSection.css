@@ -104,7 +104,7 @@
 .info-block h5 {
   font-size: 18px;
   font-weight: 600;
-  color: #000;
+  color: #000 !important;
   margin-bottom: 8px;
 }
 
@@ -113,6 +113,18 @@
   color: #555;
   margin: 2px 0;
 }
+ 
+.info-block a {
+  color: #555;          /* change to desired color */
+  text-decoration: none; /* remove underline */
+  font-weight: 500;      /* optional */
+}
+
+.info-block a:hover {
+  color: #004aad;       /* optional hover color */
+  text-decoration: underline; /* optional hover effect */
+}
+
 
 .social-icons {
   display: flex;

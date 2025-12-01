@@ -3,16 +3,35 @@ import "./Footer.css";
 import logo from "../../assets/images/wbf-Reverse_Logo.png";
 import bg from "../../assets/images/Footer.webp"; // Background image
 
-
 import facebookIcon from "../../assets/icons/logos_facebook.png";
 import instaIcon from "../../assets/icons/insta.png";
 import whatsappIcon from "../../assets/icons/logos_whatsapp-icon.png";
 import linkedinIcon from "../../assets/icons/Group.png";
 import mailIcon from "../../assets/icons/mail.png";
+import axios from "axios";
 
-
+import { useEffect, useState } from "react";
 
 function Footer() {
+  const [contacts, setContacts] = useState([]);
+  const [socialLinks, setSocialLinks] = useState({});
+
+  useEffect(() => {
+    axios
+      .get("/header-contact/getheaderContacts")
+      .then((response) => {
+        setContacts(response.data.responseData || []);
+      })
+      .catch(() => console.error("Failed to fetch contact info"));
+
+    axios
+      .get("/social-contact/get-socialcontacts")
+      .then((response) => {
+        setSocialLinks(response.data.responseData[0] || {});
+      })
+      .catch(() => console.error("Failed to fetch social media links"));
+  }, []);
+
   return (
     <>
       <footer
@@ -21,35 +40,69 @@ function Footer() {
       >
         <div className="container-fluid ">
           <div className="row gy-5 justify-content-between align-items-start">
-
             {/* ===== LEFT COLUMN ===== */}
             <div className="col-lg-4 col-md-4 text-md-start text-center">
               <h4 className="footer-title mb-3">CONTACT COMPANY</h4>
               <ul className="footer-contact list-unstyled">
+                {/* PHONE 1 */}
+                <li className="footer-phone-stack">
+                <i className="bi bi-telephone-fill text-warning fs-5"></i>
+                <div className="phone-numbers">
+
+                  <a
+                    href={`tel:${contacts[0]?.phone1}`}
+                    className="text-white text-decoration-none d-flex align-items-center"
+                  >
+                    {contacts[0]?.phone1}
+                  </a>
+              
+
+                {/* PHONE 2 */}
+                {contacts[0]?.phone2 && (
+              
+                    <a
+                      href={`tel:${contacts[0]?.phone2}`}
+                      className="text-white text-decoration-none d-flex align-items-center"
+                    >
+                    
+                      {contacts[0]?.phone2}
+                    </a>
+                )}
+                    </div>
+                  </li>
                 
+
+                {/* EMAIL */}
                 <li>
-                  <i className="bi bi-telephone-fill me-2 text-warning fs-5"></i>
-                  248-301-0901
+                  <a
+                    href={`mailto:${socialLinks.email}`}
+                    className="text-white text-decoration-none d-flex align-items-center"
+                  >
+                    <i className="bi bi-envelope-fill me-2 text-warning fs-5"></i>
+                    {socialLinks.email}
+                  </a>
                 </li>
+
+                {/* ADDRESS */}
                 <li>
-                  
-                  <i className="bi bi-envelope-fill me-2 text-warning fs-5"></i>
-                  info@wbfsteel.com,
-                  <br />
-                  sales@wbfsteel.com
+                  <a
+                    href="https://www.google.com/maps?q=1309+Coffeen+Ave+1200+Sheridan+WY+82801"
+                    className="text-white text-decoration-none d-flex align-items-start"
+                    target="_blank"
+                  >
+                    <i className="bi bi-geo-alt-fill me-2 text-warning fs-5 mt-1"></i>
+                    1309 Coffeen Ave #1200 <br /> Sheridan, WY 82801, USA
+                  </a>
                 </li>
+
+                {/* WEBSITE */}
                 <li>
-                  <i className="bi bi-geo-alt-fill me-2 text-warning fs-5"></i>
-                  1309 Coffeen Ave #1200
-                  <br />
-                  Sheridan, WY 82801, USA
-                </li>
-                <li>
-                  <i className="bi bi-globe2 me-2 text-warning fs-5"></i>
                   <a
                     href="https://www.wbfsteel.com"
-                    className="text-white text-decoration-none"
+                    className="text-white text-decoration-none d-flex align-items-center"
+                    target="_blank"
                   >
+                    <i className="bi bi-globe2 me-2 text-warning fs-5"></i>
                     https://www.wbfsteel.com
                   </a>
                 </li>
@@ -105,21 +158,27 @@ function Footer() {
               <h5 className="footer-follow-title fw-bold mt-4 mb-3">
                 FOLLOW <span>US</span>
               </h5>
-
               <div className="footer-social justify-content-lg-start justify-content-center">
-                <a href="https://www.facebook.com/">
+                <a href={socialLinks.facebook} target="_blank">
                   <img src={facebookIcon} alt="Facebook" />
                 </a>
-                <a href="https://www.instagram.com/">
+
+                <a href={socialLinks.instagram} target="_blank">
                   <img src={instaIcon} alt="Instagram" />
                 </a>
-                <a href="https://www.whatsapp.com/">
+
+                <a
+                  href={`https://wa.me/${socialLinks.whatsapp}`}
+                  target="_blank"
+                >
                   <img src={whatsappIcon} alt="WhatsApp" />
                 </a>
-                <a href="https://in.linkedin.com/">
+
+                <a href={socialLinks.linkedin} target="_blank">
                   <img src={linkedinIcon} alt="LinkedIn" />
                 </a>
-                <a href="https://www.mail.com/">
+
+                <a href={`mailto:${socialLinks.email}`} target="_blank">
                   <img src={mailIcon} alt="Email" />
                 </a>
               </div>
@@ -130,7 +189,10 @@ function Footer() {
         {/* ===== COPYRIGHT ===== */}
         <div className="footer-bottom text-center py-3">
           © 2025 Copyright:{" "}
-          <a href="https://www.sumagoinfotech.com/" className="fw-semibold text-white text-decoration-none">
+          <a
+            href="https://www.sumagoinfotech.com/"
+            className="fw-semibold text-white text-decoration-none"
+          >
             Made With Passion by Sumago Infotech
           </a>
         </div>
