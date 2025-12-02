@@ -5,8 +5,8 @@ import Col from "react-bootstrap/Col";
 import axios from "axios";
 import "../../css/service_card.css";
 
-import service_img1 from "../../../src/assets/images/Service page/Rectangle 4810.webp";
-import service_img2 from "../../../src/assets/images/Service page/Rectangle 4808.webp";
+import service_img1 from "../../../src/assets/images/Servicepage/Rectangle 4810.webp";
+import service_img2 from "../../../src/assets/images/Servicepage/Rectangle 4808.webp";
 
 function Services_cards() {
   const [services, setServices] = useState([]);

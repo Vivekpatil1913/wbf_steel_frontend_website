@@ -1,5 +1,5 @@
 import "./ContactImage.css";
-import ContactImg from "../../assets/images/Group 1000005624.png";
+import ContactImg from "../../assets/images/Blog/Group 1000005623[1].webp";
 import ContactImgMobile from "../../assets/images/Mobile Banner/Group 1000005623.webp";
 
 function ContactImage() {

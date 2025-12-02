@@ -44,33 +44,29 @@ function Footer() {
             <div className="col-lg-4 col-md-4 text-md-start text-center">
               <h4 className="footer-title mb-3">CONTACT COMPANY</h4>
               <ul className="footer-contact list-unstyled">
-                {/* PHONE 1 */}
                 <li className="footer-phone-stack">
-                <i className="bi bi-telephone-fill text-warning fs-5"></i>
-                <div className="phone-numbers">
+                  <div className="phone-icon">
+                    <i className="bi bi-telephone-fill text-warning fs-5"></i>
+                  </div>
 
-                  <a
-                    href={`tel:${contacts[0]?.phone1}`}
-                    className="text-white text-decoration-none d-flex align-items-center"
-                  >
-                    {contacts[0]?.phone1}
-                  </a>
-              
-
-                {/* PHONE 2 */}
-                {contacts[0]?.phone2 && (
-              
+                  <div className="phone-numbers">
                     <a
-                      href={`tel:${contacts[0]?.phone2}`}
-                      className="text-white text-decoration-none d-flex align-items-center"
+                      href={`tel:${contacts[0]?.phone1}`}
+                      className="text-white text-decoration-none"
                     >
-                    
-                      {contacts[0]?.phone2}
+                      {contacts[0]?.phone1}
                     </a>
-                )}
-                    </div>
-                  </li>
-                
+
+                    {contacts[0]?.phone2 && (
+                      <a
+                        href={`tel:${contacts[0]?.phone2}`}
+                        className="text-white text-decoration-none"
+                      >
+                        {contacts[0]?.phone2}
+                      </a>
+                    )}
+                  </div>
+                </li>
 
                 {/* EMAIL */}
                 <li>

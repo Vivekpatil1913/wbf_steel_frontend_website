@@ -1,5 +1,5 @@
 import "./CareerImage.css";
-import careerImg from "../../assets/images/careers.png"; 
+import careerImg from "../../assets/images/Blog/Group 1000005670.webp"; 
 import careerImgMobile from "../../assets/images/Mobile Banner/Group 1000005670.webp";
 
 function CareerImage() {

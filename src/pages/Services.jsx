@@ -15,7 +15,7 @@ import Services_cards from "../../src/components/service_page_cards_data/Service
 import Start_work_together from "../../src/components/Work Together Com/Start_work_together";
 import OurExperience from "../../src/components/our experience/OurExperience";
 import Service_Faqs from "../../src/components/service_faqs/Service_Faqs";
-import services_banner from "../../src/assets/services/service_banner.png";
+import services_banner from "../../src/assets/images/Servicepage/Group 1000005630.webp";
 import WorkPlatforms from "../components/home/WorkPlatforms";
 import services_banner_mobile from "../../src/assets/images/Mobile Banner/Group 1000005629.webp";
 
