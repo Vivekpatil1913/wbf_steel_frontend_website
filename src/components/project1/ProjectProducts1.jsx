@@ -87,8 +87,9 @@ function ProjectProducts1() {
                   className="col-lg-4 col-md-6 col-sm-12 text-center"
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                    localStorage.setItem("projectData", JSON.stringify(p));
-                    navigate(`/projectproducts2?id=${p.id}`);
+                      const slug = p.project_name.toLowerCase().replace(/\s+/g, "-");
+                      localStorage.setItem("projectData", JSON.stringify(p));
+                      navigate(`/projectproducts2/${slug}`);
                   }}
                 >
                   <div className="img_container">
