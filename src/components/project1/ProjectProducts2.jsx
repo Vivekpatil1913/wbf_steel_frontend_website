@@ -1,84 +1,129 @@
-import React, { useState, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
-import { projects } from "../../data/projects";
+import React, { useState, useRef, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import "./ProjectProducts2.css";
+import ExpertiseSection from "./ExpertiseSection";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import ExpertiseSection from "./ExpertiseSection";
 
 function ProjectProducts2() {
-  const [params] = useSearchParams();
-  const id = Number(params.get("id")); // get ?id=1
-
-  const project = projects.find((p) => p.id === id);
-
-  // fallback if project not found
-  if (!project) return <h2 className="text-center mt-5">Project Not Found</h2>;
+  const { slug } = useParams();
 
   const scrollRef = useRef(null);
   const infoRef = useRef(null);
 
-  const scrollUp = () =>
-    scrollRef.current?.scrollBy({ top: -110, behavior: "smooth" });
+  const [projectDetails, setProjectDetails] = useState(null);
+  const [projectFull, setProjectFull] = useState(null);
+  const [mainImage, setMainImage] = useState("");
 
-  const scrollDown = () =>
-    scrollRef.current?.scrollBy({ top: 110, behavior: "smooth" });
+  // Load basic localStorage info
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("projectData"));
+    if (!stored) return;
 
-  const [mainImage, setMainImage] = useState(project.images[0]);
+    const storedSlug = stored.project_name.toLowerCase().replace(/\s+/g, "-");
+    if (storedSlug === slug) {
+      setProjectDetails(stored);
+    }
+  }, [slug]);
+
+  // Fetch project images using ID
+  useEffect(() => {
+    if (!projectDetails) return;
+
+    const loadFullProject = async () => {
+      try {
+        const res = await axios.get(
+          `/projectDetailsWithImages/projects/${projectDetails.id}`
+        );
+
+        const formatted = {
+          ...res.data,
+          project_images:
+            typeof res.data.project_images === "string"
+              ? JSON.parse(res.data.project_images)
+              : res.data.project_images,
+        };
+
+        setProjectFull(formatted);
+        setMainImage(formatted.project_images[0]);
+      } catch (err) {
+        console.log("Image API Error:", err);
+      }
+    };
+
+    loadFullProject();
+  }, [projectDetails]);
+
+  if (!projectDetails) {
+    return <h2 className="text-center mt-5">Project Not Found</h2>;
+  }
 
   return (
     <>
-      {/* ⭐ Project Tabs (Optional, can be dynamic later) ⭐ */}
       <section className="project-products">
         <div className="container text-center">
           <h2 className="product-title mt-3">Built to Power Your Product</h2>
         </div>
       </section>
 
-      {/* ⭐ Project Details ⭐ */}
       <section className="project-details">
         <div className="white-box">
           <div className="project-container">
 
-            {/* LEFT — THUMBNAILS */}
+            {/* LEFT THUMBNAILS */}
             <div className="image-list">
-              <button className="arrow-btn" onClick={scrollUp}>
-                <FontAwesomeIcon icon={faAngleUp} className="thumb-arrow" />
+              <button className="arrow-btn" 
+                onClick={() => scrollRef.current.scrollBy({ top: -120, behavior: "smooth" })}
+              >
+                <FontAwesomeIcon icon={faAngleUp} />
               </button>
 
               <div className="image-thumbnails" ref={scrollRef}>
-                {project.images.map((img, i) => (
+                {projectFull?.project_images?.map((img, i) => (
                   <img
                     key={i}
-                    src={img}
-                    alt=""
-                    onClick={() => setMainImage(img)}
+                    src={`${axios.defaults.baseURL}${img}`}
                     className={mainImage === img ? "active" : ""}
+                    onClick={() => setMainImage(img)}
                   />
                 ))}
               </div>
 
-              <button className="arrow-btn" onClick={scrollDown}>
-                <FontAwesomeIcon icon={faAngleDown} className="thumb-arrow" />
+              <button className="arrow-btn" 
+                onClick={() => scrollRef.current.scrollBy({ top: 120, behavior: "smooth" })}
+              >
+                <FontAwesomeIcon icon={faAngleDown} />
               </button>
             </div>
 
-            {/* CENTER — MAIN IMAGE + TITLE */}
+            {/* CENTER MAIN IMAGE */}
             <div className="center-column">
-              <h2 className="project-title">{project.title}</h2>
+              <h2 className="project-title">{projectDetails.project_name}</h2>
 
               <div className="main-image-holder">
-                <img src={mainImage} alt="main" className="main-image" />
+                {mainImage && (
+                  <img
+                    src={`${axios.defaults.baseURL}${mainImage}`}
+                    className="main-image"
+                  />
+                )}
               </div>
             </div>
 
-            {/* RIGHT — INFO BOX */}
+            {/* RIGHT INFO BOX */}
             <div className="info-box">
               <div className="info-box-content" ref={infoRef}>
-                <p>{project.description}</p>
+                <p>{projectDetails.project_info}</p>
+
+                <h5><strong>Location:</strong> {projectDetails.project_location}</h5>
+                <h5><strong>Total Tonnage:</strong> {projectDetails.project_total_tonnage}</h5>
+                <h5><strong>Completion Year:</strong> {projectDetails.project_year_of_completion}</h5>
+                <h5><strong>Status:</strong> {projectDetails.project_status}</h5>
               </div>
             </div>
+
           </div>
         </div>
       </section>

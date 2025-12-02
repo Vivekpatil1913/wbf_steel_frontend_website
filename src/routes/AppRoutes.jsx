@@ -39,7 +39,8 @@ function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projectproducts1" element={<ProjectProducts1 />} />
-        <Route path="/projectproducts2" element={<ProjectProducts2 />} />
+        <Route path="/projectproducts2/:slug" element={<ProjectProducts2 />} />
+        {/* <Route path="/projectproducts2" element={<ProjectProducts2 />} /> */}
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
