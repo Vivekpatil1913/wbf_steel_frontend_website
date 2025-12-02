@@ -1,6 +1,4 @@
-/* =========================================================
-   SECTION 1: PROJECT PRODUCTS (Top Section)
-========================================================= */
+
  .product-title {
   padding-bottom:15px;
   font-weight: 600;
@@ -34,15 +32,10 @@
   transform: scale(1.1);
 }
 
-/* =========================================================
-   SECTION 2: PRODUCT TABS (Button Tabs)
-========================================================= */
-
 .product-tabs {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1290px;
   margin: 0 auto;
   border: 1px solid black;
   
@@ -58,8 +51,8 @@
   color: black;
   border: none;
   border-right: 1px solid #ccc;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 19px;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -113,9 +106,7 @@
   }
 }
 
-/* =========================================================
-   SECTION 3: BOTTOM CARD (Dashed Box Section)
-========================================================= */
+
 
 /* ---- Base Card Styling ---- */
 .product2_buttom_card {
@@ -165,9 +156,6 @@
   font-weight: 200;
 }
 
-/* =========================================================
-   SECTION 3: BOTTOM CARD RESPONSIVE
-========================================================= */
 
 @media (max-width: 992px) {
   .wbf_steel_name { font-size: 40px; }
@@ -349,8 +337,8 @@
 .wbf-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* keeps everything perfectly aligned left */
-  gap: 1px; /* spacing between items */
+  align-items: flex-start; 
+  gap: 1px; 
   margin-bottom: 110px;
 }
 
@@ -369,9 +357,7 @@
   background: #aaa;
 }
 
-/* ============================= */
-/* 📱 Tablet Screens (≤ 992px) */
-/* ============================= */
+
 @media (max-width: 992px) {
 
   .wbf-wrapper {
@@ -415,9 +401,7 @@
 }
 
 
-/* ============================= */
-/* 📱 Mobile Screens (≤ 600px) */
-/* ============================= */
+
 @media (max-width: 600px) {
 
      .wbf-left {
