@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef, useState } from "react";
 import "./CareersSections.css";
+import Swal from "sweetalert2";
 
 const CareersSections = () => {
+  const captchaRef = useRef();
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
   const [mobile, setMobile] = useState("");
   const [fileName, setFileName] = useState("");
   const [message, setMessage] = useState("");
@@ -69,34 +73,36 @@ const CareersSections = () => {
   };
 
   const handleMessageChange = (e) => {
-  const text = e.target.value;
+    const text = e.target.value;
 
-  if (text.length <= 250) {
-    setMessage(text);
+    if (text.length <= 250) {
+      setMessage(text);
 
-    if (text.trim().length === 0) {
-      setErrors((prev) => ({
-        ...prev,
-        message: "Please Enter a Message",
-      }));
-    } else if (text.trim().length < 10) {
-      setErrors((prev) => ({
-        ...prev,
-        message: "Message must be at least 10 characters",
-      }));
-    } else {
-      setErrors((prev) => ({ ...prev, message: "" }));
+      if (text.trim().length === 0) {
+        setErrors((prev) => ({
+          ...prev,
+          message: "Please Enter a Message",
+        }));
+      } else if (text.trim().length < 10) {
+        setErrors((prev) => ({
+          ...prev,
+          message: "Message must be at least 10 characters",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, message: "" }));
+      }
     }
-  }
-};
-
-
-
+  };
 
   const validateForm = (e) => {
     e.preventDefault();
 
     let newErrors = {};
+
+    // RECAPTCHA VALIDATION
+    if (!recaptchaValue) {
+      newErrors.recaptcha = "Please complete the ReCAPTCHA";
+    }
 
     // NAME
     if (name.trim() === "") {
@@ -125,19 +131,17 @@ const CareersSections = () => {
     // MESSAGE
     if (message.trim().length === 0) {
       newErrors.message = "Please Enter a Message";
-    } 
+    }
 
     // MOBILE
+    // MOBILE VALIDATION
     if (mobile.trim() === "") {
       newErrors.mobile = "Please enter mobile number";
     } else if (
       !indiaMobileRegex.test(mobile.trim()) &&
       !usMobileRegex.test(mobile.trim())
     ) {
-      newErrors.mobile =
-        "Enter valid mobile number: +91XXXXXXXXXX or +1XXXXXXXXXX";
-    } else if (mobile.trim().length > 10) {
-      newErrors.mobile = "Mobile number must be valid";
+      newErrors.mobile = "Enter valid number: +91XXXXXXXXXX or +1XXXXXXXXXX";
     }
 
     // FILE (run independently)
@@ -148,7 +152,15 @@ const CareersSections = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      alert("Form Submitted Successfully!");
+      Swal.fire({
+        title: "Success!",
+        text: "Your CV has been submitted successfully.",
+        icon: "success",
+        confirmButtonColor: "#3085d6",
+      });
+
+      captchaRef.current.reset();
+      setRecaptchaValue(null);
 
       setMobile("");
       setFileName("");
@@ -475,16 +487,26 @@ const CareersSections = () => {
               </p>
             )}
 
-            {/* reCAPTCHA + Submit */}
-            <div className="recaptcha-submit-row">
-              <div className="recaptcha-wrapper">
-                <div className="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-              </div>
-
-              <button className="submit-btn sub" type="submit">
-                Submit
-              </button>
+            {/* ReCAPTCHA */}
+            <div className="mb-3">
+              <ReCAPTCHA
+                ref={captchaRef}
+                sitekey="6Lee9gkrAAAAACIG8szun_Hc6Jbn--2D_Cm79cqj"
+                onChange={(value) => {
+                  setRecaptchaValue(value);
+                  setErrors((prev) => ({ ...prev, recaptcha: "" }));
+                }}
+              />
+              {errors.recaptcha && (
+                <p style={{ color: "red", fontSize: "13px" }}>
+                  {errors.recaptcha}
+                </p>
+              )}
             </div>
+
+            <button className="submit-btn sub" type="submit">
+              Submit
+            </button>
           </form>
         </div>
       </section>
