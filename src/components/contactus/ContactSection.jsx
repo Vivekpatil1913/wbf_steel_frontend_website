@@ -144,7 +144,7 @@ const ContactSection = () => {
     try {
       setLoading(true);
 
-      await axios.post("/carousal-form/addcarousalform");
+      await axios.post("/carousal-form/addcarousalform", formData);
 
       Swal.fire({
         title: "Success!",
