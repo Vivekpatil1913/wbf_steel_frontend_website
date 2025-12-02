@@ -1,3 +1,10 @@
+.img-fluid {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+
 .service_heading_name {
     font-family: "Outfit", sans-serif;
     color: #055597;
