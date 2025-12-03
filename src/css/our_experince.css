@@ -1,60 +1,98 @@
-.ourExperince_title {
-    text-align: center !important;
-    font-family: "Outfit", sans-serif !important;
-    font-size: 35px;
-    line-height: 100%;
-    letter-spacing: 0.01em;
-    margin: 0 auto;
-    font-weight: 700;
+/* Wrapper */
+.ourExp-section {
+  width: 100%;
+  padding: 10px;
 }
 
+/* Titles */
+.ourExperince_title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #055597;
+}
+
+/* Card Style */
+.ourExp-card {
+  height: 160px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+
+/* Icons */
+.ourExp-card img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+}
+
+/* Text */
+.office-text {
+  font-size:15px;
+  font-weight:600;
+  margin-top:6px;
+  color: #ffffff;
+}
+
+/* Colors */
 .expe1 {
-    border: none;
-    background-color: #055597 !important;
-    color: white !important;
-    height: 96% !important;
+  background: #055597;
+  color: #fff;
 }
 
 .expe2 {
-    background-color: #FFC422 !important;
-    color: black !important;
-    height: 96% !important;
+  background: #Ffc422;
+  color: #055597;
 }
 
-/* .card{
-    border: none !important;
-    border-radius: 0px !important;
-    
-} */
-
-/* To ensure equal column height */
-.cont {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+/* Hover Effect */
+.ourExp-card:hover {
+  transform: translateY(-6px);
 }
 
-/* Ensure columns stretch to same height */
-.row>div[class*='col-'] {
-    /* display: flex !important; */
-    flex-direction: column !important;
-    justify-content: center !important;
-    /* align-items: center !important; */
+/* Grid Fix */
+.ourExp-col {
+  padding: 5px 1px;
+   
 }
 
+/* Desktop: 4 items in one row */
 @media (min-width: 992px) {
-    .col-xs-12.col-sm-12.col-md-3.col-lg-6.col-xl-3 {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
+  .ourExp-col {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
 }
 
-.office-text {
-    display: block;
-    font-family: "Outfit", sans-serif !important;
-    font-size: 21px;
-    line-height: 100%;
-    letter-spacing: 0.01em;
-    margin: 0 auto;
+/* Tablet Layout: 2 per row */
+@media (max-width: 991px) {
+  .ourExp-card {
+    height: 160px;
+  }
+  .ourExp-card img {
+    width: 55px;
+    height: 55px;
+  }
+}
 
+/* Mobile Layout: full width */
+@media (max-width: 576px) {
+  .ourExp-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .ourExp-card {
+    height: 150px;
+  }
+
+  .ourExp-card img {
+    width: 50px;
+    height: 50px;
+  }
 }
