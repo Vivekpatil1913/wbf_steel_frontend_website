@@ -1,9 +1,9 @@
 
- .product-title {
-  padding-bottom:15px;
-  font-weight: 600;
- }
 
+.product-title {
+  padding-bottom: 15px;
+  font-weight: 600;
+}
 
 .project-products {
   padding: 20px 0;
@@ -17,14 +17,14 @@
   overflow: hidden;
   display: inline-block;
   width: 100%;
-  height: 300px;      /* Fixed image height */
+  height: 300px; /* Fixed image height */
   border-radius: 2px;
 }
 
 .img_product {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover;  /* Prevent stretching */
+  object-fit: cover; /* Prevent stretching */
   transition: transform 0.3s ease-in-out;
 }
 
@@ -32,66 +32,79 @@
   transform: scale(1.1);
 }
 
+/* ---------- PRODUCT TABS (consolidated) ---------- */
 .product-tabs {
   display: flex;
-  justify-content: space-between;
+  gap: 0;
   width: 100%;
   margin: 0 auto;
-  border: 1px solid black;
-  
-  border-radius: 8px;
-  overflow: hidden; /* prevents spacing issues */
+  border: 1px solid #000;
+  border-radius: 10px;
+  white-space: nowrap; /* keep text in one line */
+  overflow-x: auto;    /* allow horizontal scrolling when needed */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  position: relative;
+  scroll-snap-type: x mandatory;
 }
 
+/* subtle scroll shadow on the right edge */
+.product-tabs::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  /* background: linear-gradient(to left, #fff, transparent); */
+  pointer-events: none;
+}
 
 .product-tabs button {
-  flex: 1;                   /* 👈 makes all 6 buttons equal width */
-  padding: 12px 0;
+  flex: 0 0 auto; /* do not shrink */
+  padding: 14px 22px;
   background: #fff;
   color: black;
   border: none;
-  border-right: 1px solid #ccc;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
+  white-space: nowrap;
+  border-right: 1px solid #ccc;
   cursor: pointer;
+  scroll-snap-align: start;
 }
 
 .product-tabs button:last-child {
   border-right: none;
 }
 
-
 .product-tabs button:hover {
-  background-color: #f8f8f8;
-  color: #222;
+  background: #f5f5f5;
 }
 
-/* Scroll Styling */
-.product-tabs::-webkit-scrollbar { height: 6px; }
-.product-tabs::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
+
+
+/* Firefox */
+.product-tabs {
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
 }
 
 /* ---- Tabs Responsive ---- */
 @media (max-width: 768px) {
   .product-title { font-size: 28px; }
-    .product-tabs {
+  .product-tabs {
     flex-wrap: nowrap; /* ensure single row */
-    overflow-x: auto;
     gap: 10px;
     padding: 8px;
   }
   .product-tabs button {
-    flex: 0 0 auto;
     font-size: 15px;
     padding: 10px 12px;
   }
-
-   .product-tabs::-webkit-scrollbar {
-    display: none;            /* Hide scrollbar for cleaner UI */
-  }
-
+  /* hide native scrollbar on small screens for a cleaner look */
+  .product-tabs::-webkit-scrollbar { display: none; }
 }
 
 @media (max-width: 480px) {
@@ -105,8 +118,6 @@
     padding: 8px 10px;
   }
 }
-
-
 
 /* ---- Base Card Styling ---- */
 .product2_buttom_card {
@@ -156,7 +167,6 @@
   font-weight: 200;
 }
 
-
 @media (max-width: 992px) {
   .wbf_steel_name { font-size: 40px; }
   .Detailing_num { font-size: 22px; }
@@ -192,21 +202,16 @@
   .para_card { font-size: 16px; }
 }
 
-
-
-
-
 /* Whole section background */
 .wbf-wrapper {
   width: 80%;
   background-color: #eef3f8;
   display: flex;
   justify-content: center;
-  padding: 40px 0;  /* spacing like design */
- margin: 0 auto;
- margin-top: 20px;
- margin-bottom: 40px;
-  
+  padding: 40px 0; /* spacing like design */
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 /* Main content area */
@@ -220,9 +225,7 @@
 
 /* Split columns */
 .wbf-left,
-.wbf-right {
-  flex: 1;
-}
+.wbf-right { flex: 1; }
 
 /* Main heading */
 .wbf-left h2,
@@ -233,15 +236,9 @@
   line-height: 1.2;
   margin-bottom: 22px;
   color: #000;
-  text-align: left;
 }
 
- 
-
-   .wbf-left {
-    padding-left: 0;
-  
-   }
+.wbf-left { padding-left: 0; }
 
 .wbf-right span {
   font-size: 48px;
@@ -250,10 +247,7 @@
   line-height: 1.2;
   margin-bottom: 22px;
   color: #000;
-  text-align: left;
-
 }
-
 
 .wbf-left h2 {
   font-size: 50px;
@@ -262,8 +256,7 @@
   line-height: 1.2;
   margin-bottom: 10px;
   color: #000;
-  text-align: left;
- }
+}
 
 /* Subtitle under left heading */
 .subtitle {
@@ -277,18 +270,14 @@
 
 .cta-btn {
   display: inline-flex; /* aligns content more cleanly */
-  
   gap: 6px;
-
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
   color: #000;
-
   padding-top: 8px; /* aligns baseline like design */
   margin-left: 0; /* ensure left alignment */
 }
-
 
 /* Right text */
 .wbf-right p {
@@ -309,10 +298,7 @@
 }
 
 /* Bold span on "world" */
-.wbf-right h2 span {
-  font-weight: 900;
-  text-align: left;
-}
+.wbf-right h2 span { font-weight: 900; }
 
 /* Icon Styling */
 .cta-btn i {
@@ -323,10 +309,7 @@
 }
 
 /* Hover animation */
-.cta-btn:hover i {
-  transform: translateY(-3px) translateX(3px);
-}
-
+.cta-btn:hover i { transform: translateY(-3px) translateX(3px); }
 
 
 .wbf-left * {
@@ -337,213 +320,287 @@
 .wbf-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  gap: 1px; 
+  align-items: flex-start;
+  gap: 1px;
   margin-bottom: 110px;
 }
 
-.product-tabs {
-  scroll-snap-type: x mandatory;
-}
-
-.product-tabs button {
-  scroll-snap-align: start;
-}
-
-.product-tabs::-webkit-scrollbar {
-  height: 4px;
-}
-.product-tabs::-webkit-scrollbar-thumb {
-  background: #aaa;
-}
-
-
 @media (max-width: 992px) {
-
-  .wbf-wrapper {
-    width: 100%;
-    padding: 40px 20px;
-  }
-
-  .wbf-container {
-    width: 100%;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    text-align: center;
-  }
-
+  .wbf-wrapper { width: 100%; padding: 40px 20px; }
+  .wbf-container { width: 100%; flex-direction: column; gap: 40px; align-items: center; text-align: center; }
   .wbf-left,
-  .wbf-right {
-    width: 100%;
-    align-items: center;
-  }
-
+  .wbf-right { width: 100%; align-items: center; }
   .wbf-left h2,
   .wbf-right h2,
   .subtitle,
-  .wbf-right p {
-    text-align: center;
-  }
-
-  .wbf-divider {
-    width: 100%;
-    height: 2px;
-    min-height: unset;
-    margin: 10px 0;
-  }
-
-  .cta-btn {
-    margin: 0 auto;
-    
-   
-  }
-}
-
-
-
-@media (max-width: 600px) {
-
-     .wbf-left {
-    align-items: center !important;
-    
-    
-  }
-
-  .cta-btn {
-    margin: 0 auto !important;
-    justify-content: center;
-  }
-  
-
-  .wbf-wrapper {
-    width: 100%;
-    padding: 10px 5px;
-  }
-
-  .wbf-container {
-    gap: -5px;
-    justify-content: center;
-    
-  }
-
-  .wbf-left h2,
-  .wbf-right h2 {
-    font-size: 32px;
-    line-height: 1.3;
-  }
-
-  .wbf-right span {
-    font-size: 34px;
-  }
-
-  .subtitle {
-    font-size: 26px;
-  }
-
-  .wbf-right p {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  .cta-btn {
-    font-size: 16px;
-    padding-top: 4px;
-  }
-
-  .cta-btn i {
-    font-size: 12px;
-    margin-top: 3px;
-   
-  }
+  .wbf-right p { text-align: center; }
+  .wbf-divider { width: 100%; height: 2px; min-height: unset; margin: 10px 0; }
+  .cta-btn { margin: 0 auto; }
 }
 
 @media (max-width: 600px) {
-
-
-    .wbf-left {
-        margin-bottom: 10px;
-    }
-
-  .wbf-wrapper {
-    width: 100%;
-    padding: 40px 5px; /* reduced vertical spacing */
-  }
-
-  .wbf-container {
-    gap: 15px !important; /* tighten spacing */
-    align-items: center;
-  }
-
-  .wbf-divider {
-    margin: 0 !important;     /* remove extra margin */
-    padding: 0 !important;
-    height: 1px !important; /* thin width */
-  }
-
-   .wbf-section {
-    padding-bottom: 0 !important;  /* remove space under upper section */
-    margin-bottom: 5px !important; /* very small gap */
-  }
-
-  .wbf-divider {
-    margin-top: 0 !important;
-  }
-
+  .wbf-left { align-items: center !important; }
+  .cta-btn { margin: 0 auto !important; justify-content: center; }
+  .wbf-wrapper { width: 100%; padding: 10px 5px; }
+  .wbf-container { gap: -5px; justify-content: center; }
   .wbf-left h2,
-  .wbf-right h2 {
-    font-size: 28px;
-    line-height: 1.3;
-  }
+  .wbf-right h2 { font-size: 32px; line-height: 1.3; }
+  .wbf-right span { font-size: 34px; }
+  .subtitle { font-size: 26px; }
+  .wbf-right p { font-size: 16px; margin-top: 10px; }
+  .cta-btn { font-size: 16px; padding-top: 4px; }
+  .cta-btn i { font-size: 12px; margin-top: 3px; }
+}
 
- .wbf-right {
-    padding: 10px;
- }
-
-  .subtitle {
-    font-size: 22px;
-  }
-
-  .wbf-right p {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  .cta-btn {
-    font-size: 16px;
-    padding-top: 4px;
-  }
-
-  .cta-btn i {
-    font-size: 12px;
-    margin-top: 3px;
-  }
-
+@media (max-width: 600px) {
+  .wbf-left { margin-bottom: 10px; }
+  .wbf-wrapper { width: 100%; padding: 40px 5px; /* reduced vertical spacing */ }
+  .wbf-container { gap: 15px !important; align-items: center; }
+  .wbf-divider { margin: 0 !important; padding: 0 !important; height: 1px !important; }
+  .wbf-section { padding-bottom: 0 !important; margin-bottom: 5px !important; }
+  .wbf-divider { margin-top: 0 !important; }
+  .wbf-left h2,
+  .wbf-right h2 { font-size: 28px; line-height: 1.3; }
+  .wbf-right { padding: 10px; }
+  .subtitle { font-size: 22px; }
+  .wbf-right p { font-size: 16px; margin-top: 10px; }
+  .cta-btn { font-size: 16px; padding-top: 4px; }
+  .cta-btn i { font-size: 12px; margin-top: 3px; }
 }
 
 @media (max-width: 992px) {
-  .wbf-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center !important;  /* center everything */
-    margin-top: 20px;
-    margin-bottom: 20px;
-  
-  }
+  .wbf-left { display: flex; flex-direction: column; align-items: center !important; margin-top: 20px; margin-bottom: 20px; }
+  .cta-btn { margin: 0 auto !important; text-align: center; justify-content: center; font-size: 32px; }
+  .cta-btn i { font-size: 32px; }
+}
+
+/* see-more button styles */
+.see-more-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Underline animation */
+.see-more-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background-color: #FFC442;
+  transition: width 0.35s ease;
+  border-radius: 10px;
+}
+
+/* Expand underline on hover */
+.see-more-btn:hover::after { width: 100%; }
+
+/* Arrow */
+.see-more-btn .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: translateX(-6px);
+}
+
+/* Sliding arrow on hover */
+.see-more-btn:hover .arrow { opacity: 1; transform: translateX(3px); }
+
+/* End of cleaned CSS */
 
 
+/* Firefox matching */
+.product-tabs {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
 
-  .cta-btn {
-    margin: 0 auto !important;  /* force center */
-    text-align: center;
-    justify-content: center;
-    font-size: 32px;
-  }
+/* Thin white underline below scroll tabs */
+.product-tabs {
+  position: relative;
+}
 
-   
-  .cta-btn i {
-   
-    font-size: 32px;
-  }
+/* Static thin line */
+.product-tabs::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  /* height: 2px;
+  background-color: #ffffff; */
+}
 
+/* ===== SCROLLBAR FIXED CLEAN BLACK STYLE ===== */
+.product-tabs::-webkit-scrollbar {
+  height: 1px;  /* thin height line */
+}
+
+.product-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.product-tabs::-webkit-scrollbar-thumb {
+  background-color: #000;  /* black scroll indicator */
+  border-radius: 10px;
+}
+
+/* Firefox support */
+.product-tabs {
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
+
+/* OUTER WRAPPER — border + rounded look */
+.tabs-scroll-wrapper {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden; /* only hide outside, NOT the scrollbar */
+  background: #fff;
+}
+
+/* INNER SCROLL AREA — scroll stays visible */
+.product-tabs {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 0;
+}
+
+/* SCROLLBAR — thin black line */
+.product-tabs::-webkit-scrollbar {
+  height: 1px;
+}
+
+.product-tabs::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+}
+
+.product-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+.product-tabs {
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
+
+.see-more-projects {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+  padding: 0;
+}
+
+/* arrow base (pointing up-right = ↗) */
+.thin-arrow {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-right: 2px solid #000;
+  border-top: 2px solid #000;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+  margin-top: 1px; /* visually align with text baseline */
+}
+
+/* when parent has .active, flip the arrow (point down-left) */
+.see-more-projects.active .thin-arrow {
+  transform: rotate(-135deg);
+}
+
+/* optional hover nudge to match reference */
+.see-more-projects:hover .thin-arrow {
+  transform: translate(2px, -2px) rotate(45deg);
+}
+
+/* on active+hover keep flipped + nudge */
+.see-more-projects.active:hover .thin-arrow {
+  transform: translate(-2px, 2px) rotate(-135deg);
+}
+
+.see-more-projects {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+  padding: 0;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/* Underline default state */
+.see-more-projects::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: #ffd700; /* Yellow line */
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Hover animation — expands from center */
+.see-more-projects:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Arrow styling */
+.thin-arrow {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-right: 2px solid #000;
+  border-top: 2px solid #000;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+  margin-top: 1px;
+}
+
+/* Flip on active */
+.see-more-projects.active .thin-arrow {
+  transform: rotate(-135deg);
+}
+
+/* Hover nudge for premium effect */
+.see-more-projects:hover .thin-arrow {
+  transform: translate(2px, -2px) rotate(45deg);
+}
+
+.see-more-projects.active:hover .thin-arrow {
+  transform: translate(-2px, 2px) rotate(-135deg);
 }

@@ -57,22 +57,26 @@ function ProjectProducts1() {
       {/* PAGE HEADER */}
       <section className="project-products">
         <div className="container text-center">
-          <h2 className="product-title text-center">Built to Power Your Product</h2>
+          <h2 className="product-title text-center">
+            Built to Power Your Product
+          </h2>
 
           {/* CATEGORY TABS FROM API */}
-          <div className="product-tabs">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                style={{
-                  background: activeCategory === cat.id ? "#FFC442" : "#fff",
-                  fontWeight: activeCategory === cat.id ? "700" : "500",
-                }}
-                onClick={() => setActiveCategory(cat.id)}
-              >
-                {cat.title}
-              </button>
-            ))}
+          <div class="tabs-scroll-wrapper">
+            <div className="product-tabs">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  style={{
+                    background: activeCategory === cat.id ? "#FFC442" : "#fff",
+                    fontWeight: activeCategory === cat.id ? "700" : "500",
+                  }}
+                  onClick={() => setActiveCategory(cat.id)}
+                >
+                  {cat.title}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -87,9 +91,11 @@ function ProjectProducts1() {
                   className="col-lg-4 col-md-6 col-sm-12 text-center"
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                      const slug = p.project_name.toLowerCase().replace(/\s+/g, "-");
-                      localStorage.setItem("projectData", JSON.stringify(p));
-                      navigate(`/projectproducts2/${slug}`);
+                    const slug = p.project_name
+                      .toLowerCase()
+                      .replace(/\s+/g, "-");
+                    localStorage.setItem("projectData", JSON.stringify(p));
+                    navigate(`/projectproducts2/${slug}`);
                   }}
                 >
                   <div className="img_container">
@@ -99,15 +105,16 @@ function ProjectProducts1() {
                 </div>
               ))}
           </div>
-
           {/* SEE MORE BUTTON */}
           {projects.length > 6 && (
             <div className="text-center mt-4">
               <button
-                className="see-more-btn"
+                className={`see-more-projects ${showAll ? "active" : ""}`}
                 onClick={() => setShowAll(!showAll)}
+                aria-expanded={showAll}
               >
-                {showAll ? "See Less" : "See More"}
+                {showAll ? "See Less" : "See More Projects"}
+                <span className="thin-arrow" />
               </button>
             </div>
           )}

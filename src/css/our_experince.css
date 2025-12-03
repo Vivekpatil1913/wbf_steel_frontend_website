@@ -28,7 +28,7 @@
 } */
 
 /* To ensure equal column height */
-.row {
+.cont {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;

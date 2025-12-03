@@ -1,158 +1,143 @@
-.service_card1_heading {
-    font-family: "Outfit", sans-serif;
-    color: white;
-    font-size: 40px;
-    /* Desktop font size */
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: 0.01em;
-    text-align: left;
-    white-space: nowrap;
-    padding-left: 28px;
-    padding-right: 28px !important;
-
-}
+/* Headings */
 .service_card1_headingstrature {
   font-family: "Outfit", sans-serif;
   color: white;
   font-size: 40px;
   padding-left: 27px;
-  text-align: left !important; /* default for mobile */
-  line-height: 110% !important;
+  text-align: left;
+  line-height: 110%;
 }
 
-/* Desktop view - 992px and above */
-@media (min-width: 992px) {
+/* Paragraphs */
+.service_card_para {
+  font-size: 18px;
+  font-weight: 200;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Column background */
+.colum_backcolor {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-left: 0 !important;
+}
+
+/* Images */
+.responsive-image {
+  width: 100%;
+  max-height: 400px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Row stretch */
+/* .row {
+  display: flex;
+  align-items: stretch;
+} */
+
+/* Mobile view - reorder for all cards: image first, text second */
+@media (max-width: 768px) {
+  .service-card-row .img-col {
+    order: 1 !important;
+  }
+  .service-card-row .text-col {
+    order: 2 !important;
+  }
+
   .service_card1_headingstrature {
-    text-align: left !important;
+    font-size: 28px !important;
+    padding-left: 0 !important;
+  }
+
+  .service_card_para {
+    font-size: 20px !important;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 8px;
   }
 }
 
-
-
-
-.responsive-image {
-    width: 100%;                 /* Always full width */
-    /* height:  340px !important;                 */
-    max-height: 400px;           /* Prevents from getting too tall */
-    display: block;
-}
-
-/* Increase height specifically for tablets */
+/* Tablet view */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .responsive-image {
-        height: 100% !important;
-        /* Height optimized for tablets */
-        max-height: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .service_card1_heading {
-        font-size: 28px !important;
-        padding-left: 0px !important;
-
-    }
-    .service_card1_headingstrature{
-        padding-left: 0px;
-    }
-}
-
-/* Optional tablet view adjustment for intermediate size reduction */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .service_card1_heading {
-        font-size: 32px !important;
-        padding-left:10px !important;
-        /* Medium font size for tablets */
-
-    }
-    .service_card1_headingstrature{
-        padding-left: 10px;
-    }
-}
-
-.service_card_para {
-    font-size: 18px !important;
-    font-weight: 200;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-@media (max-width: 1024px) {
-
-    /* Tablet */
-    .service_card_para {
-        font-size: 20px !important;
-        /* Smaller font size for tablets */
-        font-weight: 200;
-        padding-left: 10px;
-        padding-right: 0px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    /* Mobile */
-    .service_card_para {
-        font-size: 20px !important;
-        /* Even smaller font size for mobiles */
-        font-weight: 200;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-}
-
-.colum_backcolor {
-    background-color: black;
-    color: white;
-    padding-left: 0px !important;
-}
-
-.row {
-  display: flex !important;           /* Make row a flex container */
-  align-items: stretch !important;   /* Stretch both columns to same height */
-}
-
-.img-fluid.responsive-image {
-  width: 100% !important;
-  height: 100% !important;           /* Take full height of parent column */
-  object-fit: cover !important;      /* Maintain aspect ratio and cover */
-}
-
-.colum_backcolor {
-  background-color: black !important;
-  color: white !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: left !important;
-}
-
-
-@media (min-width: 768px) and (max-width: 1024px) {
+  .responsive-image {
+    height: 100% !important;
+    max-height: none;
+  }
   .service_card_para {
     display: -webkit-box;
-    -webkit-line-clamp: 4;    /* Only tablet → 4 lines */
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 20px !important;
+    padding-left: 10px;
+    padding-right: 0;
+  }
+  .service_card1_headingstrature {
+    padding-left: 10px;
+    font-size: 32px !important;
   }
 }
 
-/* Mobile - increase top padding */
+/* Desktop - reverse odd rows */
+@media (min-width: 768px) {
+  .reverse-row {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Mobile - always image first */
 @media (max-width: 768px) {
-  .service_card_para {
-    padding-top: 8px !important;   /* adjust size as you want */
+  .service-card-row {
+    flex-direction: column !important;
   }
 }
 
-   .service_card1_heading {
-        font-size: 30px !important;
-        padding-left: 0px !important; /* Adjusted for tablet */
-    }
-    .service_card_para {
-      padding-left: 10px;
-    }
+@media (max-width: 768px) {
+  .service-card-row .img-col {
+    order: 1 !important;
+  }
+  .service-card-row .text-col {
+    order: 2 !important;
+  }
+  .service-card-row {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
 
-    .service_card1_headingstrature {
-        padding-left: 10px !important; /* <-- Add this */
-    }
+/* MOBILE FIX — Only affect screens below 768px */
+@media (max-width: 768px) {
+  .service-card-row {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .service-card-row .img-col {
+    order: 1;  /* Image ALWAYS first */
+  }
+
+  .service-card-row .text-col {
+    order: 2;  /* Text ALWAYS second */
+  }
+
+  .service_card1_headingstrature {
+    font-size: 28px !important;
+    padding-left: 10px !important;
+  }
+
+  .service_card_para {
+    font-size: 18px !important;
+    padding: 10px !important;
+    text-align: left;
+  }
+
+  .colum_backcolor {
+    padding-left: 10px !important;
+  }
+}

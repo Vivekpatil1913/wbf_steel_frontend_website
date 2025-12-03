@@ -55,7 +55,7 @@ function Footer() {
                       className="text-white text-decoration-none"
                     >
                       {contacts[0]?.phone1}
-                    </a>
+                    </a> /
 
                     {contacts[0]?.phone2 && (
                       <a

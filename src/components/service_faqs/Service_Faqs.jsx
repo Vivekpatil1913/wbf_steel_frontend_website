@@ -2,7 +2,7 @@ import React from "react";
 import "../../css/service_faq.css";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
-import "../home/WorkPlatforms.css";
+
 
 import CountUp from "react-countup";
 import { Link } from "react-router-dom";

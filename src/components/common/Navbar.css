@@ -237,6 +237,10 @@
   .top-infobar .right-info {
     justify-content: center !important;
     text-align: center !important;
+    gap: 5px !important; /* reduced overall spacing */
+    flex-wrap: wrap;
+
+    
   }
 
  
@@ -403,5 +407,36 @@
 @media (max-width: 768px) {
   .hide-infobar + nav {
     top: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Force Contact section in one line */
+  .top-infobar .info-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    flex-wrap: nowrap !important;
+    margin-bottom: 0 !important;
+    margin-top: 10px;
+  }
+
+  .info-title,
+  .info-sub {
+    white-space: nowrap !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+
+  .top-infobar a {
+    display: inline !important;
+  }
+
+  /* Reduce icon size so it fits nicely */
+  .top-infobar i {
+    font-size: 18px !important;
   }
 }

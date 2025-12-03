@@ -18,7 +18,7 @@ function OurExperience() {
             <p className='ourExperince_title mt-3'>Our Experience</p>
 
             <div className="container">
-                <div className="row mt-3 d-flex align-items-stretch justify-content-center">
+                <div className=" cont row mt-3 d-flex align-items-stretch justify-content-center">
 
                     <div className="col-sm-12 col-md-3 col-lg-6 col-xl-3 mt-3 d-flex">
                         <div className="card expe1 w-100 card-style d-flex flex-column justify-content-center align-items-center">
