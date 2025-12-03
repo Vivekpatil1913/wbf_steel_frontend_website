@@ -2,6 +2,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
 import "./CareersSections.css";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const CareersSections = () => {
   const captchaRef = useRef();
@@ -14,6 +15,8 @@ const CareersSections = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
+
+  const [loading, setLoading] = useState(false);
 
   const nameRegex = /^[A-Za-z ]+$/;
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
@@ -94,47 +97,40 @@ const CareersSections = () => {
     }
   };
 
-  const validateForm = (e) => {
+  const validateForm = async (e) => {
     e.preventDefault();
+
+    // 🔥 Prevent double click (if already submitting)
+    if (loading) return;
+    setLoading(true);
 
     let newErrors = {};
 
-    // RECAPTCHA VALIDATION
+    // ------------------- RECAPTCHA -------------------
     if (!recaptchaValue) {
       newErrors.recaptcha = "Please complete the ReCAPTCHA";
     }
 
-    // NAME
+    // ------------------- NAME -------------------
     if (name.trim() === "") {
       newErrors.name = "Please enter name";
     } else if (!nameRegex.test(name.trim())) {
-      newErrors.name = "Name must contain only letters ";
+      newErrors.name = "Name must contain only letters";
     }
 
-    // Email: check non-empty and pattern
+    // ------------------- EMAIL -------------------
     if (email.trim() === "") {
       newErrors.email = "Please Enter Email";
     } else if (!emailRegex.test(email.trim())) {
       newErrors.email = "Please Enter a valid Email";
     }
 
-    // SUBJECT
+    // ------------------- SUBJECT -------------------
     if (subject.trim().length === 0) {
       newErrors.subject = "Please Enter a Subject";
     }
 
-    // Mobile: keep your original logic but ensure error message consistency
-    if (mobile === "" || errors.mobile) {
-      newErrors.mobile = "Please Enter a valid mobile number";
-    }
-
-    // MESSAGE
-    if (message.trim().length === 0) {
-      newErrors.message = "Please Enter a Message";
-    }
-
-    // MOBILE
-    // MOBILE VALIDATION
+    // ------------------- MOBILE -------------------
     if (mobile.trim() === "") {
       newErrors.mobile = "Please enter mobile number";
     } else if (
@@ -144,14 +140,41 @@ const CareersSections = () => {
       newErrors.mobile = "Enter valid number: +91XXXXXXXXXX or +1XXXXXXXXXX";
     }
 
-    // FILE (run independently)
-    if (!fileName) {
+    // ------------------- MESSAGE -------------------
+    if (message.trim().length === 0) {
+      newErrors.message = "Please Enter a Message";
+    }
+
+    // ------------------- FILE -------------------
+    const fileInput = document.getElementById("fileInput");
+    const file = fileInput?.files[0];
+
+    if (!file) {
       newErrors.file = "Please upload CV";
     }
 
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
+    // ❌ Stop submit & stop loader if errors exist
+    if (Object.keys(newErrors).length > 0) {
+      setLoading(false);
+      return;
+    }
+
+    // ------------------- API SUBMISSION -------------------
+    try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("phone", mobile);
+      formData.append("subject", subject);
+      formData.append("message", message);
+      formData.append("cv", file);
+
+      const res = await axios.post("/uploadcv/create-uploadcv", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
       Swal.fire({
         title: "Success!",
         text: "Your CV has been submitted successfully.",
@@ -159,9 +182,9 @@ const CareersSections = () => {
         confirmButtonColor: "#3085d6",
       });
 
+      // Reset form
       captchaRef.current.reset();
       setRecaptchaValue(null);
-
       setMobile("");
       setFileName("");
       setMessage("");
@@ -169,9 +192,19 @@ const CareersSections = () => {
       setEmail("");
       setSubject("");
       setErrors({});
-      const fileInput = document.getElementById("fileInput");
       if (fileInput) fileInput.value = "";
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text: "Something went wrong while submitting your CV.",
+      });
+
+      console.error("CV upload failed:", error);
     }
+
+    // 🔥 Turn off loading always
+    setLoading(false);
   };
 
   return (
@@ -504,8 +537,13 @@ const CareersSections = () => {
               )}
             </div>
 
-            <button className="submit-btn sub" type="submit">
-              Submit
+            <button
+              className="submit-btn sub"
+              type="submit"
+              disabled={loading}
+              style={{ opacity: loading ? "0.6" : "1" }}
+            >
+              {loading ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>
