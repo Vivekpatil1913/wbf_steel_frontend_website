@@ -257,7 +257,7 @@ const ContactSection = () => {
                 )}
 
                 {/* ReCAPTCHA (added WITHOUT changing layout) */}
-                <div className="mb-3">
+                <div className="mb-3 recap">
                   <ReCAPTCHA
                     ref={captchaRef}
                     sitekey="6Lee9gkrAAAAACIG8szun_Hc6Jbn--2D_Cm79cqj"

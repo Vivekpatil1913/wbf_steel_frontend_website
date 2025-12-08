@@ -20,6 +20,7 @@ import VissionMission from "./VissionMission";
 import FaqCom from "./FaqCom";
 import Testimonials from "./Testimonials";
 import Service_Faqs from "../components/service_faqs/Service_Faqs";
+import OurTeam from "../components/contactus/OurTeam";
 // import VissionMission from '../Vision_mission/VissionMission';
 // import FaqCom from '../FAQ/FaqCom';
 // import Testimonials from '../testimonials/Testimonials';
@@ -218,6 +219,7 @@ function About() {
       </section>
 
       <VissionMission />
+      <OurTeam />
       <FaqCom />
       <Testimonials />
     </>

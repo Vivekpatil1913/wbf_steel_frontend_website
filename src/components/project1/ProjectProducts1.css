@@ -591,16 +591,3 @@
   margin-top: 1px;
 }
 
-/* Flip on active */
-.see-more-projects.active .thin-arrow {
-  transform: rotate(-135deg);
-}
-
-/* Hover nudge for premium effect */
-.see-more-projects:hover .thin-arrow {
-  transform: translate(2px, -2px) rotate(45deg);
-}
-
-.see-more-projects.active:hover .thin-arrow {
-  transform: translate(-2px, 2px) rotate(-135deg);
-}

@@ -32,6 +32,7 @@ const ContactUs = () => {
      <ContactImage />
 
       <ContactSection contactData={contactData} />
+    
       <MapSection/>
       
     </>
