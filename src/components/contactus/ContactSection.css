@@ -336,3 +336,63 @@
   color: red;
 }
 
+/* Default (Desktop) – full size */
+.recaptcha-container {
+  transform: scale(1);
+  transform-origin: 0 0;
+}
+
+/* Mobile – shrink the recaptcha */
+@media (max-width: 576px) {
+  .recaptcha-container {
+    transform: scale(0.90);   /* 80% size */
+    transform-origin: left top;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 400px) {
+  .recaptcha-container {
+    transform: scale(0.90);   /* 70% size */
+  }
+}
+
+
+/* iPhone 12/13/14/15 (width 390px) */
+@media (max-width: 400px) {
+  .recaptcha-container {
+    transform: scale(0.70) !important;
+    transform-origin: 0 0;
+  }
+}
+
+/* iPhone SE, iPhone 8 small screens (375px) */
+@media (max-width: 380px) {
+  .recaptcha-container {
+    transform: scale(0.70) !important;
+    transform-origin: 0 0;
+  }
+  
+  .sbmit{
+    padding: 10px;
+    width: 70%;
+    
+  }
+
+}
+
+/* Very small phones (360px and below) */
+@media (max-width: 360px) {
+  .recaptcha-container {
+    transform: scale(0.70) !important;
+    transform-origin: 0 0;
+  }
+}
+
+/* Extra small (320px — old iPhone 5/SE) */
+@media (max-width: 330px) {
+  .recaptcha-container {
+    transform: scale(0.70) !important;
+    transform-origin: 0 0;
+  }
+}

@@ -522,6 +522,7 @@ const CareersSections = () => {
 
             {/* ReCAPTCHA */}
             <div className="mb-3">
+              <div className="recaptcha-container">
               <ReCAPTCHA
                 ref={captchaRef}
                 sitekey="6Lee9gkrAAAAACIG8szun_Hc6Jbn--2D_Cm79cqj"
@@ -529,7 +530,8 @@ const CareersSections = () => {
                   setRecaptchaValue(value);
                   setErrors((prev) => ({ ...prev, recaptcha: "" }));
                 }}
-              />
+              /> 
+              </div>
               {errors.recaptcha && (
                 <p style={{ color: "red", fontSize: "13px" }}>
                   {errors.recaptcha}

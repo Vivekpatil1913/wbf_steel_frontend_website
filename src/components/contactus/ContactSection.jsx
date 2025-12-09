@@ -258,6 +258,7 @@ const ContactSection = () => {
 
                 {/* ReCAPTCHA (added WITHOUT changing layout) */}
                 <div className="mb-3 recap">
+                  <div className="recaptcha-container">
                   <ReCAPTCHA
                     ref={captchaRef}
                     sitekey="6Lee9gkrAAAAACIG8szun_Hc6Jbn--2D_Cm79cqj"
@@ -266,6 +267,7 @@ const ContactSection = () => {
                       setErrors({ ...errors, recaptcha: "" });
                     }}
                   />
+                  </div>
                   {errors.recaptcha && (
                     <p className="error-message">{errors.recaptcha}</p>
                   )}

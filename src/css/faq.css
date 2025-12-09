@@ -1,6 +1,4 @@
-/* ===========================
-   WRAPPER + BACKGROUND
-=========================== */
+
 .faq_section {
   width: 100%;
   
@@ -24,9 +22,7 @@
   padding: 40px 0;
 }
 
-/* ===========================
-   TITLES & PARAGRAPH
-=========================== */
+
 .title {
   text-align: center;
   color: #0D1678;
@@ -54,9 +50,7 @@
   margin-right: auto;
 }
 
-/* ===========================
-   FAQ ACCORDION BUTTONS
-=========================== */
+
 .btn_custom {
   border: #000;
   margin-left: 100px;
@@ -128,9 +122,6 @@
 }
 
 
-/* ===========================
-   RIGHT SIDE FORM CARD
-=========================== */
 .card_faq {
   border: none !important;
   border-radius: 10px;
@@ -163,9 +154,6 @@
   z-index: 1;
 }
 
-/* ===========================
-   FORM INPUTS
-=========================== */
 .Formstart {
   max-width: 200px;
   margin: 0 auto;
@@ -225,9 +213,7 @@
 .title_req {
   font-size: 44px;
 }
-/* ===========================
-   RESPONSIVE DESIGN
-=========================== */
+
 @media (max-width: 992px) {
 
    .btn_custom {
@@ -272,7 +258,7 @@
   }
 
   .send_btn {
-    width: 100%;
+    width: 75%;
   }
   .custom-input {
     padding: 18px !important;
