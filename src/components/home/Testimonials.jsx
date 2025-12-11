@@ -15,7 +15,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     axios
-      .get("/testimonials/get-testimonials") // your API endpoint
+      .get("/testimonials/get-web-testimonials") // your API endpoint
       .then((res) => {
         const data = res.data?.data || res.data?.responseData || [];
         if (data.length > 0) {

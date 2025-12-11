@@ -14,7 +14,7 @@ const BlogCard = () => {
   useEffect(() => {
     // Fetch blog details from API
     axios
-      .get("/blogdetails/get-blogdetails") // Your API endpoint
+      .get("/blogdetails/get-web-blogdetails") // Your API endpoint
       .then((response) => {
         setBlogs(response.data.responseData || []);
       })
@@ -44,7 +44,10 @@ const BlogCard = () => {
           </div>
         ))
       ) : (
-        <p>No blogs available at the moment.</p>
+       <div className="d-flex justify-content-center w-100">
+  <p>No blogs available at the moment.</p>
+</div>
+
       )}
     </section>
   );

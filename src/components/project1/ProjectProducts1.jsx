@@ -15,7 +15,7 @@ function ProjectProducts1() {
   useEffect(() => {
     const loadCategories = async () => {
       try {
-        const res = await axios.get("category/get-category");
+        const res = await axios.get("category/get-web-category");
         setCategories(res.data.responseData);
 
         if (res.data.responseData.length > 0) {

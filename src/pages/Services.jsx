@@ -26,7 +26,7 @@ function Services() {
         <source media="(max-width: 767px)" srcSet={services_banner_mobile} />
         <img
           src={services_banner}
-          className="img-fluid"
+          className="service-img"
           alt="Services Banner"
           width="100%"
         />

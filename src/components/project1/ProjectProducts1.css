@@ -591,3 +591,15 @@
   margin-top: 1px;
 }
 
+.product-tabs::-webkit-scrollbar {
+  height: 3px !important;      /*  this makes it thin */
+}
+
+.product-tabs::-webkit-scrollbar-thumb {
+  background: #000; /* change color if needed */
+  border-radius: 10px;
+}
+
+.product-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}

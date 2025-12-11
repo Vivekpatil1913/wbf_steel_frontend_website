@@ -340,6 +340,7 @@
 }
 .aboutimgs{
   width: 100% !important;
+  height: 60vh;
  
 }
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -391,7 +392,7 @@
 ================================ */
 @media (max-width: 767px) {
   .aboutimgs {
-    height: auto;      /* Allow natural mobile height */
+    height: 30vh;      /* Allow natural mobile height */
     /* max-height: 380px;  */
     object-fit: cover;
   }

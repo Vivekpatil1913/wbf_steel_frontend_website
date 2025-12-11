@@ -5,7 +5,8 @@ import "./ProjectProducts2.css";
 import ExpertiseSection from "./ExpertiseSection";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+// import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleUp, faAngleDown, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 function ProjectProducts2() {
   const { slug } = useParams();
@@ -74,7 +75,51 @@ function ProjectProducts2() {
 
             {/* LEFT THUMBNAILS */}
             <div className="image-list">
-              <button className="arrow-btn" 
+              {/* TOP / LEFT ARROW */}
+<button
+  className="arrow-btn"
+  onClick={() => {
+    const scrollAmount = scrollRef.current.firstChild?.offsetWidth + 10;
+    scrollRef.current.scrollBy({
+      left: window.innerWidth <= 767 ? -scrollAmount : 0,
+      top: window.innerWidth > 767 ? -150 : 0,
+      behavior: "smooth",
+    });
+  }}
+>
+  <FontAwesomeIcon icon={window.innerWidth <= 767 ? faAngleLeft : faAngleUp} />
+</button>
+
+{/* THUMBNAIL LIST */}
+<div className="image-thumbnails" ref={scrollRef}>
+  {projectFull?.project_images?.map((img, i) => (
+    <img
+      key={i}
+      src={`${axios.defaults.baseURL}${img}`}
+      className={mainImage === img ? "active" : ""}
+      onClick={() => setMainImage(img)}
+    />
+  ))}
+</div>
+
+{/* BOTTOM / RIGHT ARROW */}
+<button
+  className="arrow-btn"
+  onClick={() => {
+    const scrollAmount = scrollRef.current.firstChild?.offsetWidth + 10;
+    scrollRef.current.scrollBy({
+      left: window.innerWidth <= 767 ? scrollAmount : 0,
+      top: window.innerWidth > 767 ? 150 : 0,
+      behavior: "smooth",
+    });
+  }}
+>
+  <FontAwesomeIcon 
+    icon={window.innerWidth <= 767 ? faAngleRight : faAngleDown} 
+  />
+</button>
+
+              {/* <button className="arrow-btn" 
                 onClick={() => scrollRef.current.scrollBy({ top: -120, behavior: "smooth" })}
               >
                 <FontAwesomeIcon icon={faAngleUp} />
@@ -95,12 +140,12 @@ function ProjectProducts2() {
                 onClick={() => scrollRef.current.scrollBy({ top: 120, behavior: "smooth" })}
               >
                 <FontAwesomeIcon icon={faAngleDown} />
-              </button>
+              </button> */}
             </div>
 
             {/* CENTER MAIN IMAGE */}
             <div className="center-column">
-              <h2 className="project-title">{projectDetails.project_name}</h2>
+              <h3 className="project-title">{projectDetails.project_name}</h3>
 
               <div className="main-image-holder">
                 {mainImage && (
@@ -115,7 +160,7 @@ function ProjectProducts2() {
             {/* RIGHT INFO BOX */}
             <div className="info-box">
               <div className="info-box-content" ref={infoRef}>
-                <p>{projectDetails.project_info}</p>
+                <p className="mob-font-size">{projectDetails.project_info}</p>
 
                 <h5><strong>Location:</strong> {projectDetails.project_location}</h5>
                 <h5><strong>Total Tonnage:</strong> {projectDetails.project_total_tonnage}</h5>

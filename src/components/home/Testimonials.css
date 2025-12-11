@@ -262,4 +262,7 @@
     opacity: 1;
   }
 }
-
+/* ================= */
+.testimonials-wrapper p{
+  color: #000 !important;
+}
